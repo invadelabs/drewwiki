@@ -9,6 +9,7 @@ Contact info: drew AT readytoinvade DOT com
 *[[Independant X-server]]
 *Compiz Dual Monitor Giant Cube
 
+
 *DVB - channels.conf
 *[[Lirc Config - MythTV / mplayer]]
 *[[Lirc, Pinnacle 800i, and Comcast Remote]] - ir-keymap.c
