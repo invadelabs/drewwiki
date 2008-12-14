@@ -17,8 +17,10 @@ The Script
 
     mysqldump -u$USER -p$PW --all-databases | gzip > $DIR/mysql.`hostname`.`date +%F.%T`.sql.gz;
 
-    # delete backups older than 30 days
+    # DELETE backups older than 30 days
     find $DIR -type f -mtime +30 -exec rm -v {} \;
+
+-   Need to get pw off console command
 
 Crontab Entry
 -------------
