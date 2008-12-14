@@ -9,6 +9,7 @@ layout: default
 
 <!-- -->
 
+-   Lirc Config - MythTV / mplayer
 -   Lirc, Pinnacle 800i, and Atlas 1055 Remote - ir-keymap.c mod
 -   Multiple capture cards changing /dev/video\* /dev/dsp\* on reboot
 
