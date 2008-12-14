@@ -3,14 +3,12 @@ title: LircConfig-MythTV+mplayer
 layout: default
 ---
 
-mythtv;
-
 Buttons
 -------
 
-Arranged this way because comcast Aux remote code doesn't support
+Arranged this way because Comcast Aux remote code doesn't support
 buttons: up, down, left, right, ok/select, page up/down, guide, menu,
-info, exit, fav, or help buttons.
+info, exit, fav, or help.
 
 -   2,5,4,6 up,down,left,right
 -   1 Ok / Select / Enter
