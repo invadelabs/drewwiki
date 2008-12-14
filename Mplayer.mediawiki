@@ -15,8 +15,7 @@ or
 
 
 ==Different X Server==
-mplayer -display :1
-
+<pre>mplayer -display :1</pre>
 
 ==Audio Output==
 <pre>mplayer -ao alsa:device=hw=0.0</pre>

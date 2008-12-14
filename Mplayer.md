@@ -33,7 +33,7 @@ or
 Different X Server
 ------------------
 
-mplayer -display :1
+    mplayer -display :1
 
 Audio Output
 ------------
