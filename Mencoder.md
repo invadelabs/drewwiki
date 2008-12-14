@@ -29,7 +29,10 @@ LibAVC / XviD / x264 Examples
 PS3 WORKING --- H.264/MPEG-4 AVC + FAAC --- need to run MP4Box to
 convert
 
-    mencoder dvd:// -aid 128 -o dvd.avi -oac faac -faacopts br=64 -vf crop=720:352:0:66 -ovc x264 -x264encopts subq=6:bitrate=2000:bframes=3:partitions=p8x8,b8x8,i4x4:weight_b:threads=auto:nopsnr:nossim:frameref=3:mixed_refs:bime:brdo:level_idc=41:direct_pred=auto:trellis=1:threads=2
+    mencoder dvd:// -aid 128 -o dvd.avi \
+    -oac faac -faacopts br=64 \
+    -vf crop=720:352:0:66 \
+    -ovc x264 -x264encopts subq=6:bitrate=2000:bframes=3:partitions=p8x8,b8x8,i4x4:weight_b:threads=auto:nopsnr:nossim:frameref=3:mixed_refs:bime:brdo:level_idc=41:direct_pred=auto:trellis=1:threads=2
 
     MP4Box -aviraw video dvd.avi
     MP4Box -aviraw audio dvd.avi
