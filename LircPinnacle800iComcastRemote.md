@@ -3,6 +3,13 @@ title: LircPinnacle800iComcastRemote
 layout: default
 ---
 
+/var/log/messages shows errors like the following for the unmapped
+buttons on the remote.
+
+    messages.0:Dec 10 15:08:35 drew-desktop kernel: [81408.914101] cx88 IR (Pinnacle PCTV HD 800i): unknown key: key=0x3b raw=0x317b down=0
+
+Use key=**0x3b** or whatever key reported to modify ir-keymap.c
+
 Module Compile
 --------------
 
