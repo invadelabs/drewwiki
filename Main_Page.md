@@ -7,7 +7,9 @@ This is a collection of randomness I've encountered and configured for
 my Linux desktop, laptop, and servers (Mainly Fedora, Ubuntu, and
 CentOS).
 
-Contact info: drew @ readytoinvade.com ---
+Contact info: drew @ readytoinvade . com
+
+------------------------------------------------------------------------
 
 -   [mencoder](mencoder "wikilink") - codecs(x264, lavc, xvid) /
     de-interlace filters / dvd
