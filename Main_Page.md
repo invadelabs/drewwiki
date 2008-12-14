@@ -12,8 +12,11 @@ layout: default
 <!-- -->
 
 -   DVB - channels.conf
--   Lirc Config - MythTV / mplayer
--   Lirc, Pinnacle 800i, and Atlas 1055 Remote - ir-keymap.c mod
+-   [Lirc Config - MythTV /
+    mplayer](Lirc_Config_-_MythTV_/_mplayer "wikilink")
+-   [Lirc, Pinnacle 800i, and Comcast
+    Remote](Lirc,_Pinnacle_800i,_and_Comcast_Remote "wikilink") -
+    ir-keymap.c
 -   Multiple capture cards changing /dev/video\* /dev/dsp\* on reboot
 
 <!-- -->

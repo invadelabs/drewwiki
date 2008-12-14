@@ -4,8 +4,8 @@
 
 
 *DVB - channels.conf
-*Lirc Config - MythTV / mplayer
-*Lirc, Pinnacle 800i, and Atlas 1055 Remote - ir-keymap.c mod
+*[[Lirc Config - MythTV / mplayer]]
+*[[Lirc, Pinnacle 800i, and Comcast Remote]] - ir-keymap.c
 *Multiple capture cards changing /dev/video* /dev/dsp* on reboot
 
 
