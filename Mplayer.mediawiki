@@ -1,6 +1,6 @@
 ==Video Acceleration / Video decoder offload to GPU==
 ====Xvmc For mpeg2/DVD only====
-<pre>mplayer -vo xvmc -vc ffmpeg12mc -dvd://1 -alang en -ao alsa:device=hw=0.0</pre>
+<pre>mplayer -vo xvmc -vc ffmpeg12mc -dvd://1</pre>
 ====VDPAU For h264/AVC, VC-1/WMV3, and Mpeg1/2 ====
 ./mplayer -vc ffmpeg12vdpau,ffh264vdpau,ffwmv3vdpau,ffvc1vdpau -vo vdpau some_file.avi
 
@@ -16,3 +16,7 @@ or
 
 ==Different X Server==
 mplayer -display :1
+
+
+==Audio Output==
+<pre>mplayer -ao alsa:device=hw=0.0</pre>
