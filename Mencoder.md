@@ -42,3 +42,14 @@ convert
 OR??
 
     ffmpeg -y -i [input.mov] -sameq -acodec libfaac -ac 2 -ab 128 -vcodec mpeg4 -r 24 -b 800k -level 41 -mbd 2 -aic 2 [output.mp4]
+
+De-interlace filters
+
+    -vf lavcdeint
+    -vf kerndeint       #Donald Graft’s adaptive kernel deinterlacer
+    -vf filmdint
+    -vf pp=lb       #linear blend
+    -vf pp=li       #linear interpolate
+    -vf pp=ci       #cubic interpolate
+    -vf pp=md
+    -vf pp=fd
