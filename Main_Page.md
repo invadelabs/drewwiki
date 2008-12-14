@@ -8,7 +8,6 @@ layout: default
 -   [mplayer](mplayer "wikilink") - de-interlace filters / dvd / dvb /
     xvmc / vdpau
 -   [Independant X-server](Independant_X-server "wikilink")
--   [Nvidia](Nvidia "wikilink") - CoolBits
 
 <!-- -->
 

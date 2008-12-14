@@ -1,7 +1,6 @@
 *[[mencoder]] - codecs(x264, lavc, xvid) / de-interlace filters / dvd
 *[[mplayer]] - de-interlace filters / dvd / dvb / xvmc / vdpau
 *[[Independant X-server]]
-*[[Nvidia]] - CoolBits
 
 
 *DVB - channels.conf
