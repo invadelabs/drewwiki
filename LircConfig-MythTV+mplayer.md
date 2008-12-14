@@ -5,6 +5,20 @@ layout: default
 
 mythtv;
 
+Buttons
+-------
+
+-   2,5,4,6 up,down,left,right
+-   1 Ok / Select / Enter
+-   3 Back/Cancel/Exit
+-   7 Options Menu
+-   9 Delete
+-   8 OSD Info
+-   0 Skip Commercial
+
+~/.mythtv/lircrc
+----------------
+
     begin
     prog = mythtv
     button = 2
