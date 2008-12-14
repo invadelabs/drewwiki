@@ -37,3 +37,7 @@ layout: default
 -   Rsync over SSH - Different port / SSH Keys
 -   Rsync via <SMB::fstab> or smb directly
 
+<!-- -->
+
+-   Samba Unix User / Password
+
