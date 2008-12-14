@@ -3,17 +3,21 @@ title: Main Page
 layout: default
 ---
 
-<big>**MediaWiki has been successfully installed.**</big>
+mencoder- codecs(x264, lavc, xvid) / de-interlace filters / dvd mplayer
+- de-interlace filters / dvd / xvmc / vdpau X - 2 seperate xservers (1
+dual headed) / Nvidia
 
-Consult the [User's Guide](http://meta.wikimedia.org/wiki/Help:Contents)
-for information on using the wiki software.
+Lirc, Pinnacle 800i, and Atlas 1055 Remote - ir-keymap.c mod Multiple
+capture cards changing /dev/video\* /dev/dsp\* on reboot
 
-Getting started
----------------
+Raid5 mdadm
 
--   [Configuration settings
-    list](http://www.mediawiki.org/wiki/Manual:Configuration_settings)
--   [MediaWiki FAQ](http://www.mediawiki.org/wiki/Manual:FAQ)
--   [MediaWiki release mailing
-    list](http://lists.wikimedia.org/mailman/listinfo/mediawiki-announce)
+etckeeper - Source Control For /etc
 
+Virtualbox Bridged Networking
+
+Crontab Backup DD-WRT Config ClamAV Nightly Scan (cron) MySQL Backup
+Script
+
+Rsync over SSH - Different port / SSH Keys Rsync via <SMB::fstab> or smb
+directly

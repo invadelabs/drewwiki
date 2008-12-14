@@ -1,8 +1,19 @@
-<big>'''MediaWiki has been successfully installed.'''</big>
+mencoder- codecs(x264, lavc, xvid) / de-interlace filters / dvd
+mplayer - de-interlace filters / dvd / xvmc / vdpau
+X - 2 seperate xservers (1 dual headed) / Nvidia
 
-Consult the [http://meta.wikimedia.org/wiki/Help:Contents User's Guide] for information on using the wiki software.
+Lirc, Pinnacle 800i, and Atlas 1055 Remote - ir-keymap.c mod
+Multiple capture cards changing /dev/video* /dev/dsp* on reboot
 
-== Getting started ==
-* [http://www.mediawiki.org/wiki/Manual:Configuration_settings Configuration settings list]
-* [http://www.mediawiki.org/wiki/Manual:FAQ MediaWiki FAQ]
-* [http://lists.wikimedia.org/mailman/listinfo/mediawiki-announce MediaWiki release mailing list]
+Raid5 mdadm
+
+etckeeper - Source Control For /etc
+
+Virtualbox Bridged Networking
+
+Crontab Backup DD-WRT Config
+ClamAV Nightly Scan (cron)
+MySQL Backup Script
+
+Rsync over SSH - Different port / SSH Keys
+Rsync via SMB::fstab or smb directly
