@@ -1,0 +1,151 @@
+---
+title: Independant X-server
+layout: default
+---
+
+x.org
+-----
+
+<http://www.mythtv.org/wiki/index.php/Running_MythTV_on_independent_X-server>
+
+    Section "ServerLayout"
+        Identifier     "Layout0"
+        Screen      0  "Screen0" 1024 0
+        InputDevice    "Keyboard0" "CoreKeyboard"
+        InputDevice    "Mouse0" "CorePointer"
+    EndSection
+
+    Section "ServerLayout"
+       Identifier   "Myth Layout"
+       Screen      1  "Screen1"
+           Inputdevice     "Dummy Keyboard"
+           Inputdevice     "Dummy Mouse"
+    EndSection
+
+    Section "Files"
+    EndSection
+
+    Section "Module"
+        Load           "dbe"
+        Load           "extmod"
+        Load           "type1"
+        Load           "freetype"
+        Load           "glx"
+    EndSection
+
+    Section "ServerFlags"
+        Option         "Xinerama" "0"
+    EndSection
+
+    Section "InputDevice"
+
+        # generated from default
+        Identifier     "Mouse0"
+        Driver         "mouse"
+        Option         "Protocol" "auto"
+        Option         "Device" "/dev/psaux"
+        Option         "Emulate3Buttons" "no"
+        Option         "ZAxisMapping" "4 5"
+    EndSection
+
+    Section "InputDevice"
+
+        # generated from default
+        Identifier     "Keyboard0"
+        Driver         "kbd"
+    EndSection
+
+    Section "InputDevice"
+           Identifier      "Dummy Keyboard"
+           Driver          "void"
+           Option          "CoreKeyboard"
+    EndSection
+
+    Section "InputDevice"
+           Identifier      "Dummy Mouse"
+           Driver          "void"
+           Option          "CorePointer"
+    EndSection
+
+    Section "Monitor"
+        Identifier     "Monitor0"
+        VendorName     "Unknown"
+        ModelName      "LG L226W"
+        HorizSync       28.0 - 83.0
+        VertRefresh     56.0 - 75.0
+        Option         "DPMS"
+    EndSection
+
+    Section "Monitor"
+        Identifier     "Monitor1"
+        VendorName     "Unknown"
+        ModelName      "CRT-0"
+        HorizSync       28.0 - 83.0
+        VertRefresh     56.0 - 75.0
+    EndSection
+
+    Section "Device"
+        Identifier     "Device0"
+        Driver         "nvidia"
+        VendorName     "NVIDIA Corporation"
+        BoardName      "GeForce 8500 GT"
+        BusID          "PCI:2:0:0"
+    EndSection
+
+    Section "Device"
+        Identifier     "Device1"
+        Driver         "nvidia"
+        VendorName     "NVIDIA Corporation"
+        BoardName      "GeForce 7100 / NVIDIA nForce 630i"
+        #BusID          "PCI:0:16:0"
+        BusID          "PCI:1:06:0"
+    Option "AddARGBGLXVisuals" "True"
+    Option "RenderAccel" "True"
+    Option "AllowGLXWithComposite" "True"
+    Option "backingstore" "True"
+    Option "TripleBuffer" "True"
+    Option "DisableGLXRootClipping" "True"
+    EndSection
+
+    Section "Screen"
+        Identifier     "Screen0"
+        Device         "Device0"
+        Monitor        "Monitor0"
+        DefaultDepth    24
+        Option         "TwinView" "1"
+        Option         "TwinViewXineramaInfoOrder" "DFP-0"
+        Option         "metamodes" "DFP-0: nvidia-auto-select +0+0, DFP-1: nvidia-auto-select +1680+0"
+        SubSection     "Display"
+            Depth       24
+        EndSubSection
+    EndSection
+
+    Section "Screen"
+        Identifier     "Screen1"
+        Device         "Device1"
+        Monitor        "Monitor1"
+        DefaultDepth    24
+        SubSection     "Display"
+            Depth       24
+        EndSubSection
+    EndSection
+
+    Section "Extensions"
+        Option "Composite" "Enable"
+    EndSection
+
+Execute :1
+----------
+
+    xinit mythfrontend -- :1 -sharevts -layout "Myth Layout" -br -nolisten
+
+Quick VNC
+---------
+
+    x11vnc -safer -nopw -once -display :1& vncviewer localhost
+
+Nvidia Settings on Display :1
+-----------------------------
+
+    nvidia-settings --display :1.0
+    sudo nvidia-settings -c :1.0
