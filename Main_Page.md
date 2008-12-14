@@ -15,6 +15,7 @@ Contact info: drew AT readytoinvade DOT com
 -   [mplayer](mplayer "wikilink") - dvd and dvb playback / xvmc and
     vdpau gpu decoder offload
 -   [Independant X-server](Independant_X-server "wikilink")
+-   Compiz Dual Monitor Giant Cube
 
 <!-- -->
 

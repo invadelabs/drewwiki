@@ -7,7 +7,7 @@ Contact info: drew AT readytoinvade DOT com
 *[[mencoder]] - codecs(x264, lavc, xvid) / de-interlace filters / dvd
 *[[mplayer]] - dvd and dvb playback / xvmc and vdpau gpu decoder offload
 *[[Independant X-server]]
-
+*Compiz Dual Monitor Giant Cube
 
 *DVB - channels.conf
 *[[Lirc Config - MythTV / mplayer]]
