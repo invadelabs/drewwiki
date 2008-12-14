@@ -3,7 +3,11 @@ title: Main Page
 layout: default
 ---
 
-Contact info: drew @ readytoinvade.com
+This is a collection of randomness I've encountered and configured for
+my Linux desktop, laptop, and servers (Mainly Fedora, Ubuntu, and
+CentOS).
+
+Contact info: drew @ readytoinvade.com ---
 
 -   [mencoder](mencoder "wikilink") - codecs(x264, lavc, xvid) /
     de-interlace filters / dvd
