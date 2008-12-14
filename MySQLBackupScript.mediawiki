@@ -1,0 +1,23 @@
+==The Script==
+<pre>#!/bin/sh
+USER=some_user
+PW=some_pw
+DIR=/mnt/raid5/backup/mysql
+
+echo Running: `date`;
+
+mkdir -vp $DIR;
+
+mysqldump -u$USER -p$PW --all-databases | gzip > $DIR/mysql.`hostname`.`date +%F.%T`.sql.gz;
+
+# delete backups older than 30 days
+find $DIR -type f -mtime +30 -exec rm -v {} \;</pre>
+
+==Crontab Entry==
+/etc/crontab;
+<pre>0 4 	* * * 	drew	/home/drew/cron/mysql_backup.sh >> /home/drew/cron/mysql_backup.log;</pre>
+
+OR
+
+crontab -e;
+<pre>0 4 * * *	/home/drew/cron/mysql_backup.sh >> /home/drew/cron/mysql_backup.log;</pre>
