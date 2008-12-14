@@ -6,7 +6,7 @@ layout: default
 This is a collection of randomness I've encountered and configured for
 my Linux desktop, laptop, and servers (Fedora, Ubuntu, and CentOS).
 
-Contact info: drew @ readytoinvade . com
+Contact info: drew AT readytoinvade DOT com
 
 ------------------------------------------------------------------------
 
