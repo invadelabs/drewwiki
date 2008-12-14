@@ -4,8 +4,7 @@ layout: default
 ---
 
 This is a collection of randomness I've encountered and configured for
-my Linux desktop, laptop, and servers (Mainly Fedora, Ubuntu, and
-CentOS).
+my Linux desktop, laptop, and servers (Fedora, Ubuntu, and CentOS).
 
 Contact info: drew @ readytoinvade . com
 
