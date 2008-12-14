@@ -3,12 +3,13 @@ title: Main Page
 layout: default
 ---
 
--   mencoder- codecs(x264, lavc, xvid) / de-interlace filters / dvd
--   mplayer - de-interlace filters / dvd / xvmc / vdpau
+-   mencoder - codecs(x264, lavc, xvid) / de-interlace filters / dvd
+-   mplayer - de-interlace filters / dvd / dvb / xvmc / vdpau
 -   X - 2 seperate xservers (1 dual headed) / Nvidia
 
 <!-- -->
 
+-   DVB - channels.conf
 -   Lirc Config - MythTV / mplayer
 -   Lirc, Pinnacle 800i, and Atlas 1055 Remote - ir-keymap.c mod
 -   Multiple capture cards changing /dev/video\* /dev/dsp\* on reboot
