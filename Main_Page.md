@@ -29,14 +29,7 @@ Contact info: drew AT readytoinvade DOT com
 <!-- -->
 
 -   [mdadm](mdadm "wikilink") - Raid5
-
-<!-- -->
-
--   [etckeeper](etckeeper "wikilink") - Source Control For /etc
-
-<!-- -->
-
--   Virtualbox Bridged Networking
+-   etckeeper - Source Control For /etc
 
 <!-- -->
 
@@ -48,8 +41,5 @@ Contact info: drew AT readytoinvade DOT com
 
 -   Rsync over SSH - Different port / SSH Keys
 -   Rsync via <SMB::fstab> or smb directly
-
-<!-- -->
-
 -   Samba Unix User / Password
 
