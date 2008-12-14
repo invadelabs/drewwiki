@@ -20,3 +20,4 @@ mplayer -display :1
 
 ==Audio Output==
 <pre>mplayer -ao alsa:device=hw=0.0</pre>
+<pre>mplayer -ao oss</pre>

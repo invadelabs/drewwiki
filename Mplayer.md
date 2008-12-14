@@ -39,3 +39,5 @@ Audio Output
 ------------
 
     mplayer -ao alsa:device=hw=0.0
+
+    mplayer -ao oss
