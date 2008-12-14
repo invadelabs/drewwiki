@@ -26,8 +26,12 @@ Contact info: drew AT readytoinvade DOT com
     ir-keymap.c
 -   Multiple capture cards changing /dev/video\* /dev/dsp\* on reboot
 
-Alerts {mdadm, logwatch, tempurature}: via exim-&gt;
-myemail+alerts@gmail.com
+<!-- -->
+
+-   Alerts {mdadm, logwatch, tempurature}: via exim-&gt;
+    myemail+alerts@gmail.com
+
+<!-- -->
 
 -   [mdadm](mdadm "wikilink") - Raid5
 -   etckeeper - Source Control For /etc

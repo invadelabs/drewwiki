@@ -14,7 +14,7 @@ Contact info: drew AT readytoinvade DOT com
 *[[Lirc, Pinnacle 800i, and Comcast Remote]] - ir-keymap.c
 *Multiple capture cards changing /dev/video* /dev/dsp* on reboot
 
-Alerts {mdadm, logwatch, tempurature}: via exim-> myemail+alerts@gmail.com
+*Alerts {mdadm, logwatch, tempurature}: via exim-> myemail+alerts@gmail.com
 
 *[[mdadm]] - Raid5
 *etckeeper - Source Control For /etc
