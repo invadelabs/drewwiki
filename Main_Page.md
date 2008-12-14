@@ -3,8 +3,7 @@ title: Main Page
 layout: default
 ---
 
--   mencoder- codecs(x264, lavc, xvid) / de-interlace filters /
-    dvd[br](br "wikilink")
+-   mencoder- codecs(x264, lavc, xvid) / de-interlace filters / dvd
 -   mplayer - de-interlace filters / dvd / xvmc / vdpau\[br\]
 -   X - 2 seperate xservers (1 dual headed) / Nvidia\[br\]
 
