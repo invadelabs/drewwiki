@@ -1,7 +1,7 @@
-*mencoder - codecs(x264, lavc, xvid) / de-interlace filters / dvd
-*mplayer - de-interlace filters / dvd / dvb / xvmc / vdpau
-*X - 2 seperate xservers (1 dual headed) / Nvidia
-*Nvidia - CoolBits
+*[[mencoder]] - codecs(x264, lavc, xvid) / de-interlace filters / dvd
+*[[mplayer]] - de-interlace filters / dvd / dvb / xvmc / vdpau
+*[[Independant X-server]]
+*[[Nvidia]] - CoolBits
 
 
 *DVB - channels.conf
@@ -10,10 +10,10 @@
 *Multiple capture cards changing /dev/video* /dev/dsp* on reboot
 
 
-*Raid5 mdadm
+*[[mdadm]] - Raid5
 
 
-*etckeeper - Source Control For /etc
+*[[etckeeper]] - Source Control For /etc
 
 
 *Virtualbox Bridged Networking

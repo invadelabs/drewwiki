@@ -3,10 +3,12 @@ title: Main Page
 layout: default
 ---
 
--   mencoder - codecs(x264, lavc, xvid) / de-interlace filters / dvd
--   mplayer - de-interlace filters / dvd / dvb / xvmc / vdpau
--   X - 2 seperate xservers (1 dual headed) / Nvidia
--   Nvidia - CoolBits
+-   [mencoder](mencoder "wikilink") - codecs(x264, lavc, xvid) /
+    de-interlace filters / dvd
+-   [mplayer](mplayer "wikilink") - de-interlace filters / dvd / dvb /
+    xvmc / vdpau
+-   [Independant X-server](Independant_X-server "wikilink")
+-   [Nvidia](Nvidia "wikilink") - CoolBits
 
 <!-- -->
 
@@ -17,11 +19,11 @@ layout: default
 
 <!-- -->
 
--   Raid5 mdadm
+-   [mdadm](mdadm "wikilink") - Raid5
 
 <!-- -->
 
--   etckeeper - Source Control For /etc
+-   [etckeeper](etckeeper "wikilink") - Source Control For /etc
 
 <!-- -->
 
