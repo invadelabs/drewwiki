@@ -21,7 +21,7 @@
 
 *Crontab Backup DD-WRT Config
 *ClamAV Nightly Scan (cron)
-*MySQL Backup Script
+*[[MySQL Backup Script]]
 
 
 *Rsync over SSH - Different port / SSH Keys

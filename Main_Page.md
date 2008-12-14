@@ -33,7 +33,7 @@ layout: default
 
 -   Crontab Backup DD-WRT Config
 -   ClamAV Nightly Scan (cron)
--   MySQL Backup Script
+-   [MySQL Backup Script](MySQL_Backup_Script "wikilink")
 
 <!-- -->
 
