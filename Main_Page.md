@@ -3,6 +3,8 @@ title: Main Page
 layout: default
 ---
 
+Contact info: drew @ readytoinvade.com
+
 -   [mencoder](mencoder "wikilink") - codecs(x264, lavc, xvid) /
     de-interlace filters / dvd
 -   [mplayer](mplayer "wikilink") - de-interlace filters / dvd / dvb /

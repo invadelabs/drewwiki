@@ -1,3 +1,5 @@
+Contact info: drew @ readytoinvade.com
+
 *[[mencoder]] - codecs(x264, lavc, xvid) / de-interlace filters / dvd
 *[[mplayer]] - de-interlace filters / dvd / dvb / xvmc / vdpau
 *[[Independant X-server]]
