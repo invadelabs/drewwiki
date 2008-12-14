@@ -18,7 +18,7 @@
 *Virtualbox Bridged Networking
 
 
-*Crontab Backup DD-WRT Config
+*Backup DD-WRT Config (cron)
 *ClamAV Nightly Scan (cron)
 *[[MySQL Backup Script]]
 
