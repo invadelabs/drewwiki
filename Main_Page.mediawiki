@@ -5,7 +5,7 @@ Contact info: drew @ readytoinvade . com
 
 
 *[[mencoder]] - codecs(x264, lavc, xvid) / de-interlace filters / dvd
-*[[mplayer]] - de-interlace filters / dvd / dvb / xvmc / vdpau
+*[[mplayer]] - dvd and dvb playback / xvmc and vdpau gpu decoder offload
 *[[Independant X-server]]
 
 

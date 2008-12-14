@@ -12,8 +12,8 @@ Contact info: drew @ readytoinvade . com
 
 -   [mencoder](mencoder "wikilink") - codecs(x264, lavc, xvid) /
     de-interlace filters / dvd
--   [mplayer](mplayer "wikilink") - de-interlace filters / dvd / dvb /
-    xvmc / vdpau
+-   [mplayer](mplayer "wikilink") - dvd and dvb playback / xvmc and
+    vdpau gpu decoder offload
 -   [Independant X-server](Independant_X-server "wikilink")
 
 <!-- -->
