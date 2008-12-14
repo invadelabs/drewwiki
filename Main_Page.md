@@ -30,9 +30,9 @@ layout: default
 
 <!-- -->
 
--   Backup DD-WRT Config (cron)
--   ClamAV Nightly Scan (cron)
--   [MySQL Backup Script](MySQL_Backup_Script "wikilink")
+-   [Backup DD-WRT Config](Backup_DD-WRT_Config "wikilink") (cron)
+-   [ClamAV Weekly Scan](ClamAV_Weekly_Scan "wikilink") (cron)
+-   [MySQL Backup Script](MySQL_Backup_Script "wikilink") (cron)
 
 <!-- -->
 

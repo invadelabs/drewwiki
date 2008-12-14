@@ -18,9 +18,9 @@
 *Virtualbox Bridged Networking
 
 
-*Backup DD-WRT Config (cron)
-*ClamAV Nightly Scan (cron)
-*[[MySQL Backup Script]]
+*[[Backup DD-WRT Config]] (cron)
+*[[ClamAV Weekly Scan]] (cron)
+*[[MySQL Backup Script]] (cron)
 
 
 *Rsync over SSH - Different port / SSH Keys
