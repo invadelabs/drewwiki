@@ -6,6 +6,7 @@ layout: default
 -   mencoder - codecs(x264, lavc, xvid) / de-interlace filters / dvd
 -   mplayer - de-interlace filters / dvd / dvb / xvmc / vdpau
 -   X - 2 seperate xservers (1 dual headed) / Nvidia
+-   Nvidia - CoolBits
 
 <!-- -->
 
