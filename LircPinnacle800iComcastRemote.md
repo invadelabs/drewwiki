@@ -3,6 +3,9 @@ title: LircPinnacle800iComcastRemote
 layout: default
 ---
 
+Module Compile
+--------------
+
     sudo apt-get build-dep linux-source-2.6.24
     sudo apt-get install linux-source-2.6.24 build-essential
     tar -jxvf /usr/src/linux-source-2.6.24.tar.bz2
@@ -55,3 +58,8 @@ Changes to ir-keymap.c
             [0x3b] = KEY_LAST,      /* Labeled "?" */
     };
     EXPORT_SYMBOL_GPL(ir_codes_pinnacle_pctv_hd);
+
+Comcast remote
+--------------
+
+AUX - I think it was code 1081 ?

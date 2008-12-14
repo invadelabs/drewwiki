@@ -1,3 +1,4 @@
+==Module Compile==
 <pre>sudo apt-get build-dep linux-source-2.6.24
 sudo apt-get install linux-source-2.6.24 build-essential
 tar -jxvf /usr/src/linux-source-2.6.24.tar.bz2
@@ -50,3 +51,6 @@ IR_KEYTAB_TYPE ir_codes_pinnacle_pctv_hd[IR_KEYTAB_SIZE] = {
 };
 EXPORT_SYMBOL_GPL(ir_codes_pinnacle_pctv_hd);
 </pre>
+
+==Comcast remote==
+AUX - I think it was code 1081 ?
