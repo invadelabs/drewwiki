@@ -15,8 +15,8 @@ Setup Xvmc - <http://www.mythtv.org/wiki/index.php/XvMC>
 #### VDPAU For h264/AVC, VC-1/WMV3, and Mpeg1/2
 
 Setup VDPAU - <http://www.nvnews.net/vbulletin/forumdisplay.php?f=14>
-./mplayer -vc ffmpeg12vdpau,ffh264vdpau,ffwmv3vdpau,ffvc1vdpau -vo vdpau
-some\_file.avi
+
+    ./mplayer -vc ffmpeg12vdpau,ffh264vdpau,ffwmv3vdpau,ffvc1vdpau -vo vdpau some_file.avi
 
 DVD Related
 -----------
