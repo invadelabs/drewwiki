@@ -8,10 +8,13 @@ Video Acceleration / Video decoder offload to GPU
 
 #### Xvmc For mpeg2/DVD only
 
+Setup Xvmc - <http://www.mythtv.org/wiki/index.php/XvMC>
+
     mplayer -vo xvmc -vc ffmpeg12mc -dvd://1
 
 #### VDPAU For h264/AVC, VC-1/WMV3, and Mpeg1/2
 
+Setup VDPAU - <http://www.nvnews.net/vbulletin/forumdisplay.php?f=14>
 ./mplayer -vc ffmpeg12vdpau,ffh264vdpau,ffwmv3vdpau,ffvc1vdpau -vo vdpau
 some\_file.avi
 
