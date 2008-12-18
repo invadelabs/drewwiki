@@ -3,6 +3,17 @@ title: ECryptfs
 layout: default
 ---
 
+ecryptfs
+--------
+
+    sudo apt-get install ecryptfs-utils
+    ecryptfs-setup-private
+    umount.ecryptfs_private
+    mount.ecryptfs_private
+
+encfs
+-----
+
 <http://ubuntuforums.org/showthread.php?t=148600>
 
 Install encfs
