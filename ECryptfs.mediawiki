@@ -4,7 +4,7 @@ Install encfs
 <pre>apt-get install encfs</pre>
 <pre>mkdir -p ~/encrypted ~/temp_encr</pre>
 Created encrypted dir / create password
-<pre>mount -t encfs ~/encrypted ~/temp_encr</pre>
+<pre>encfs ~/encrypted ~/temp_encr</pre>
 
 Copy files to ~/temp_encr
 

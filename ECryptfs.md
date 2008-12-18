@@ -13,7 +13,7 @@ Install encfs
 
 Created encrypted dir / create password
 
-    mount -t encfs ~/encrypted ~/temp_encr
+    encfs ~/encrypted ~/temp_encr
 
 Copy files to ~/temp\_encr
 
