@@ -36,7 +36,7 @@ Contact info: drew AT readytoinvade DOT com
 
 -   [mdadm](mdadm "wikilink") - Raid5
 -   etckeeper - Source Control For /etc
--   eCryptfs - Private Encrypted Folders
+-   [eCryptfs](eCryptfs "wikilink") - Private Encrypted Folders
 -   Amanda - Backup Utility
 -   [Backup DD-WRT Config](Backup_DD-WRT_Config "wikilink") (cron)
 -   [ClamAV Weekly Scan](ClamAV_Weekly_Scan "wikilink") (cron)
