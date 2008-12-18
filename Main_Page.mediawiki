@@ -21,8 +21,8 @@ Contact info: drew AT readytoinvade DOT com
 
 *[[mdadm]] - Raid5
 *etckeeper - Source Control For /etc
-
-
+*eCryptfs - Private Encrypted Folders
+*Amanda - Backup Utility
 *[[Backup DD-WRT Config]] (cron)
 *[[ClamAV Weekly Scan]] (cron)
 *[[MySQL Backup Script]] (cron)
