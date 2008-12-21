@@ -48,3 +48,7 @@ Contact info: drew AT readytoinvade DOT com
 -   Rsync via <SMB::fstab> or smb directly
 -   Samba Unix User / Password
 
+<!-- -->
+
+-   [udevinfo](udevinfo "wikilink")
+

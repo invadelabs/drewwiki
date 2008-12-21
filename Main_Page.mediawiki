@@ -31,3 +31,6 @@ Contact info: drew AT readytoinvade DOT com
 *Rsync over SSH - Different port / SSH Keys
 *Rsync via SMB::fstab or smb directly
 *Samba Unix User / Password
+
+
+*[[udevinfo]]
