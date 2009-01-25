@@ -57,4 +57,4 @@ EXPORT_SYMBOL_GPL(ir_codes_pinnacle_pctv_hd);
 </pre>
 
 ==Comcast remote==
-AUX - I think it was code 1081 ?
+AUX - I think it was code 1081 or 0180

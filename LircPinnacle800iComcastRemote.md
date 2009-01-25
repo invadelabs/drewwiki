@@ -69,4 +69,4 @@ Changes to ir-keymap.c
 Comcast remote
 --------------
 
-AUX - I think it was code 1081 ?
+AUX - I think it was code 1081 or 0180
