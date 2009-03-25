@@ -50,3 +50,14 @@ Contact info: drew AT readytoinvade DOT com
 
 -   [udevinfo](udevinfo "wikilink")
 
+### Virtualization
+
+-   VirtualBox - Ubuntu8.10/NetworkManager broken/weirdness
+
+### Window Manager Related
+
+-   gnome-sensors - email alerts
+-   Compiz - Giant Cube / Fish Bowl / Configuration etc
+-   Gnome Do - Pidgin / RhythmBox integration
+-   TomBoy notes - WebDav Sync
+
