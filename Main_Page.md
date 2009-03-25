@@ -4,11 +4,11 @@ layout: default
 ---
 
 A collection of randomness I've encountered and configured for my Linux
-desktop, laptop, and servers (Fedora, Ubuntu, and CentOS).
+desktop, laptop, and servers (CentOS, Fedora, and Ubuntu).
 
 Contact info: drew AT readytoinvade DOT com
 
-------------------------------------------------------------------------
+### Media
 
 -   [mencoder](mencoder "wikilink") - codecs(x264, lavc, xvid) /
     de-interlace filters / dvd
@@ -16,9 +16,6 @@ Contact info: drew AT readytoinvade DOT com
     vdpau gpu decoder offload
 -   [Independant X-server](Independant_X-server "wikilink")
 -   Compiz Dual Monitor Giant Cube
-
-<!-- -->
-
 -   DVB - channels.conf
 -   [Lirc Config - MythTV /
     mplayer](Lirc_Config_-_MythTV_/_mplayer "wikilink")
@@ -27,28 +24,29 @@ Contact info: drew AT readytoinvade DOT com
     ir-keymap.c
 -   Multiple capture cards changing /dev/video\* /dev/dsp\* on reboot
 
-<!-- -->
+### System Administration
 
 -   Alerts {mdadm, logwatch, tempurature}: via exim-&gt;
     myemail+alerts@gmail.com
-
-<!-- -->
-
+-   [IPMI](IPMI "wikilink") - IPMI on SuperMicro AOC-IPMI20 with
+    Serial-Over-LAN Console
 -   [mdadm](mdadm "wikilink") - Raid5
+-   [NFS Optimization](NFS_Optimization "wikilink") - NFS Performance
+    and Optimization
 -   etckeeper - Source Control For /etc
 -   [eCryptfs](eCryptfs "wikilink") - Private Encrypted Folders
+-   Samba Unix User / Password
+
+#### Backup
+
 -   Amanda - Backup Utility
 -   [Backup DD-WRT Config](Backup_DD-WRT_Config "wikilink") (cron)
 -   [ClamAV Weekly Scan](ClamAV_Weekly_Scan "wikilink") (cron)
 -   [MySQL Backup Script](MySQL_Backup_Script "wikilink") (cron)
-
-<!-- -->
-
 -   Rsync over SSH - Different port / SSH Keys
 -   Rsync via <SMB::fstab> or smb directly
--   Samba Unix User / Password
 
-<!-- -->
+### Hardware
 
 -   [udevinfo](udevinfo "wikilink")
 
