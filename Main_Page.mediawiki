@@ -12,7 +12,6 @@ Contact info: drew AT readytoinvade DOT com
 *etckeeper - Source Control For /etc
 *[[eCryptfs]] - Private Encrypted Folders
 *Samba Unix User / Password
-
 =====Backup=====
 *Amanda - Backup Utility
 *[[Backup DD-WRT Config]] (cron)
@@ -20,12 +19,8 @@ Contact info: drew AT readytoinvade DOT com
 *[[MySQL Backup Script]] (cron)
 *Rsync over SSH - Different port / SSH Keys
 *Rsync via SMB::fstab or smb directly
-
-
 ====Hardware Related====
 *[[udevinfo]] - gathering system info
-
-
 ====Virtualization====
 *VirtualBox - Ubuntu8.10/NetworkManager broken/weirdness
 
@@ -39,7 +34,6 @@ Contact info: drew AT readytoinvade DOT com
 *[[Lirc Config - MythTV / mplayer]]
 *[[Lirc, Pinnacle 800i, and Comcast Remote]] - ir-keymap.c
 *Multiple capture cards changing /dev/video* /dev/dsp* on reboot
-
 ====Window Manager Related====
 *gnome-sensors - email alerts
 *Compiz - Giant Cube / Fish Bowl / Configuration etc
