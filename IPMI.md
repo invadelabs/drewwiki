@@ -33,5 +33,5 @@ layout: default
         kernel /vmlinuz-2.6.18-92.el5 ro root=/dev/VolGroup00/LogVol00 console=tty0 console=ttyS1,19200n8
         initrd /initrd-2.6.18-92.el5.img
     title "My bios update"
-        kernel /memdisk console=tty0 console=ttyS1,19200n8
+        kernel /memdisk
         initrd /fwdisk.img floppy
