@@ -8,7 +8,41 @@ desktop, laptop, and servers (CentOS, Fedora, and Ubuntu).
 
 Contact info: drew AT readytoinvade DOT com
 
-### Media
+------------------------------------------------------------------------
+
+System Administration
+---------------------
+
+-   Alerts {mdadm, logwatch, tempurature}: via exim-&gt;
+    myemail+alerts@gmail.com
+-   [IPMI](IPMI "wikilink") - IPMI on SuperMicro AOC-IPMI20 with
+    Serial-Over-LAN Console
+-   [mdadm](mdadm "wikilink") - Raid5
+-   [NFS Optimization](NFS_Optimization "wikilink") - NFS Performance
+    and Optimization
+-   etckeeper - Source Control For /etc
+-   [eCryptfs](eCryptfs "wikilink") - Private Encrypted Folders
+-   Samba Unix User / Password
+
+##### Backup
+
+-   Amanda - Backup Utility
+-   [Backup DD-WRT Config](Backup_DD-WRT_Config "wikilink") (cron)
+-   [ClamAV Weekly Scan](ClamAV_Weekly_Scan "wikilink") (cron)
+-   [MySQL Backup Script](MySQL_Backup_Script "wikilink") (cron)
+-   Rsync over SSH - Different port / SSH Keys
+-   Rsync via <SMB::fstab> or smb directly
+
+#### Hardware Related
+
+-   [udevinfo](udevinfo "wikilink") - gathering system info
+
+#### Virtualization
+
+-   VirtualBox - Ubuntu8.10/NetworkManager broken/weirdness
+
+Media
+-----
 
 -   [mencoder](mencoder "wikilink") - codecs(x264, lavc, xvid) /
     de-interlace filters / dvd
@@ -24,37 +58,7 @@ Contact info: drew AT readytoinvade DOT com
     ir-keymap.c
 -   Multiple capture cards changing /dev/video\* /dev/dsp\* on reboot
 
-### System Administration
-
--   Alerts {mdadm, logwatch, tempurature}: via exim-&gt;
-    myemail+alerts@gmail.com
--   [IPMI](IPMI "wikilink") - IPMI on SuperMicro AOC-IPMI20 with
-    Serial-Over-LAN Console
--   [mdadm](mdadm "wikilink") - Raid5
--   [NFS Optimization](NFS_Optimization "wikilink") - NFS Performance
-    and Optimization
--   etckeeper - Source Control For /etc
--   [eCryptfs](eCryptfs "wikilink") - Private Encrypted Folders
--   Samba Unix User / Password
-
-#### Backup
-
--   Amanda - Backup Utility
--   [Backup DD-WRT Config](Backup_DD-WRT_Config "wikilink") (cron)
--   [ClamAV Weekly Scan](ClamAV_Weekly_Scan "wikilink") (cron)
--   [MySQL Backup Script](MySQL_Backup_Script "wikilink") (cron)
--   Rsync over SSH - Different port / SSH Keys
--   Rsync via <SMB::fstab> or smb directly
-
-### Hardware
-
--   [udevinfo](udevinfo "wikilink")
-
-### Virtualization
-
--   VirtualBox - Ubuntu8.10/NetworkManager broken/weirdness
-
-### Window Manager Related
+#### Window Manager Related
 
 -   gnome-sensors - email alerts
 -   Compiz - Giant Cube / Fish Bowl / Configuration etc

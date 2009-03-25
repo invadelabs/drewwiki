@@ -1,8 +1,36 @@
 A collection of randomness I've encountered and configured for my Linux desktop, laptop, and servers (CentOS, Fedora, and Ubuntu).
 
 Contact info: drew AT readytoinvade DOT com
+----
 
-===Media===
+
+==System Administration==
+*Alerts {mdadm, logwatch, tempurature}: via exim-> myemail+alerts@gmail.com
+*[[IPMI]] - IPMI on SuperMicro AOC-IPMI20 with Serial-Over-LAN Console
+*[[mdadm]] - Raid5
+*[[NFS Optimization]] - NFS Performance and Optimization
+*etckeeper - Source Control For /etc
+*[[eCryptfs]] - Private Encrypted Folders
+*Samba Unix User / Password
+
+=====Backup=====
+*Amanda - Backup Utility
+*[[Backup DD-WRT Config]] (cron)
+*[[ClamAV Weekly Scan]] (cron)
+*[[MySQL Backup Script]] (cron)
+*Rsync over SSH - Different port / SSH Keys
+*Rsync via SMB::fstab or smb directly
+
+
+====Hardware Related====
+*[[udevinfo]] - gathering system info
+
+
+====Virtualization====
+*VirtualBox - Ubuntu8.10/NetworkManager broken/weirdness
+
+
+==Media==
 *[[mencoder]] - codecs(x264, lavc, xvid) / de-interlace filters / dvd
 *[[mplayer]] - dvd and dvb playback / xvmc and vdpau gpu decoder offload
 *[[Independant X-server]]
@@ -12,32 +40,7 @@ Contact info: drew AT readytoinvade DOT com
 *[[Lirc, Pinnacle 800i, and Comcast Remote]] - ir-keymap.c
 *Multiple capture cards changing /dev/video* /dev/dsp* on reboot
 
-
-===System Administration===
-*Alerts {mdadm, logwatch, tempurature}: via exim-> myemail+alerts@gmail.com
-*[[IPMI]] - IPMI on SuperMicro AOC-IPMI20 with Serial-Over-LAN Console
-*[[mdadm]] - Raid5
-*[[NFS Optimization]] - NFS Performance and Optimization
-*etckeeper - Source Control For /etc
-*[[eCryptfs]] - Private Encrypted Folders
-*Samba Unix User / Password
-
-====Backup====
-*Amanda - Backup Utility
-*[[Backup DD-WRT Config]] (cron)
-*[[ClamAV Weekly Scan]] (cron)
-*[[MySQL Backup Script]] (cron)
-*Rsync over SSH - Different port / SSH Keys
-*Rsync via SMB::fstab or smb directly
-
-
-===Hardware===
-*[[udevinfo]]
-
-===Virtualization===
-*VirtualBox - Ubuntu8.10/NetworkManager broken/weirdness
-
-===Window Manager Related===
+====Window Manager Related====
 *gnome-sensors - email alerts
 *Compiz - Giant Cube / Fish Bowl / Configuration etc
 *Gnome Do - Pidgin / RhythmBox integration
