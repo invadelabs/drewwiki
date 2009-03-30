@@ -3,8 +3,8 @@ title: Main Page
 layout: default
 ---
 
-A collection of randomness I've encountered and configured for my Linux
-desktops, laptops, and servers (CentOS, Fedora, and Ubuntu).
+A collection of randomness I've encountered and configured in Linux
+(CentOS, Fedora, and Ubuntu) and HP-UX.
 
 Contact info: drew AT readytoinvade DOT com
 
@@ -13,8 +13,10 @@ Contact info: drew AT readytoinvade DOT com
 System Administration
 ---------------------
 
--   Alerts {mdadm, logwatch, tempurature}: via exim-&gt;
+-   Alerts {mdadm, logwatch, tempurature, snmp}: via exim-&gt;
     myemail+alerts@gmail.com
+-   [SendmailRelayGmailCentos](SendmailRelayGmailCentos "wikilink") -
+    Sendmail with gmail relay in CentOS 5
 -   [IPMI](IPMI "wikilink") - IPMI on SuperMicro AOC-IPMI20 with
     Serial-Over-LAN Console
 -   [mdadm](mdadm "wikilink") - Raid5
