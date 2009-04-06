@@ -3,7 +3,7 @@ title: SendmailRelayGmailCentos
 layout: default
 ---
 
-### 1. Setup certs
+### Setup certs
 
     # mkdir /etc/mail/certs
     # cp /etc/pki/tls/certs/ca-bundle.crt /etc/mail/certs
@@ -11,7 +11,7 @@ layout: default
     # openssl req -new -x509 -keyout cakey.pem -out cacert.pem -days 3650
     # openssl req -nodes -new -x509 -keyout sendmail.pem -out sendmail.pem -days 3650
 
-### 2. Setup client info
+### Setup client info
 
     # mkdir /etc/mail/auth 
     # vi /etc/mail/auth/client-info
@@ -26,7 +26,7 @@ Make hash of client-info
 
     # makemap -r hash client-info.db < client-info
 
-### 3. /etc/mail/sendmail.mc
+### /etc/mail/sendmail.mc
 
     divert(-1)dnl
     include(`/usr/share/sendmail-cf/m4/cf.m4')dnl
@@ -125,15 +125,15 @@ Make hash of client-info
     #MAILER(procmail)dnl
     #MAILER(cyrusv2)dnl
 
-### 4. Build sendmail config
+### Build sendmail config
 
     # cd /etc/mail; make
 
-### 5. Restart sendmail
+### Restart sendmail
 
     # /etc/init.d/sendmail restart
 
-### 6. Send a test message;
+### 6. Send a test message
 
     echo "This is a test email..." | mail -s "Test Email" some-email@address.com
 
