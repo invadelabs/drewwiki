@@ -3,6 +3,13 @@ title: SendmailRelayGmailCentos
 layout: default
 ---
 
+Configure sendmail in Centos5 with a gmail smtp relay. Information
+pulled from;
+
+-   <http://www.linuxha.com/other/sendmail/gmail.html>
+-   <http://www.phinesolutions.com/sendmail-gmail-smtp-relay-howto.html>
+-   <http://elliotli.blogspot.com/2007/08/gmail-fetchmail-and-sendmail-on.html>
+
 ### Setup certs
 
     # mkdir /etc/mail/certs
