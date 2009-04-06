@@ -24,8 +24,9 @@ unmount cleanly..
 echo 0 &gt; /proc/sys/net/ipv4/tcp\_sack echo 0 &gt;
 /proc/sys/net/ipv4/tcp\_timestamps
 
-=====TCP Segmentation offload==== This will take off some of the tcp
-overhead if your card supports it..
+#### TCP Segmentation offload
+
+This will take off some of the tcp overhead if your card supports it..
 
     # ethtool -K ethN tso on
 

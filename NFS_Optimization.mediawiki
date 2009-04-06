@@ -16,7 +16,7 @@ async - dramatic throughput increase, but dangerous if a client does not unmount
 echo 0 > /proc/sys/net/ipv4/tcp_sack
 echo 0 > /proc/sys/net/ipv4/tcp_timestamps 
 
-=====TCP Segmentation offload====
+====TCP Segmentation offload====
 This will take off some of the tcp overhead if your card supports it..
 <pre># ethtool -K ethN tso on</pre>
 
