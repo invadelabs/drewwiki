@@ -8,7 +8,7 @@ Contact info: drew AT readytoinvade DOT com
 *Alerts {mdadm, logwatch, tempurature, snmp}: via exim-> myemail+alerts@gmail.com
 *[[SendmailRelayGmailCentos]] - Sendmail with gmail relay in CentOS 5
 *[[IPMI]] - IPMI on SuperMicro AOC-IPMI20 with Serial-Over-LAN Console
-*[[mdadm]] - Raid5
+*[[mdadm]] - Linux Software Raid Creation / Optimization
 *[[NFS Optimization]] - NFS Performance and Optimization
 *etckeeper - Source Control For /etc
 *[[eCryptfs]] - Private Encrypted Folders

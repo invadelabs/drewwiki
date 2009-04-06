@@ -19,7 +19,8 @@ System Administration
     Sendmail with gmail relay in CentOS 5
 -   [IPMI](IPMI "wikilink") - IPMI on SuperMicro AOC-IPMI20 with
     Serial-Over-LAN Console
--   [mdadm](mdadm "wikilink") - Raid5
+-   [mdadm](mdadm "wikilink") - Linux Software Raid Creation /
+    Optimization
 -   [NFS Optimization](NFS_Optimization "wikilink") - NFS Performance
     and Optimization
 -   etckeeper - Source Control For /etc
