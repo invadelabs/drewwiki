@@ -6,14 +6,17 @@ layout: default
 ### Setup certs
 
     # mkdir /etc/mail/certs
+    # chmod 700 /etc/mail/certs
     # cp /etc/pki/tls/certs/ca-bundle.crt /etc/mail/certs
     # cd /etc/mail/certs
     # openssl req -new -x509 -keyout cakey.pem -out cacert.pem -days 3650
     # openssl req -nodes -new -x509 -keyout sendmail.pem -out sendmail.pem -days 3650
+    # chmod 600 /etc/mail/certs/*
 
 ### Setup client info
 
     # mkdir /etc/mail/auth 
+    # chmod 700 /etc/mail/auth
     # vi /etc/mail/auth/client-info
 
 Add this to the file, changing username and password to gmail login
@@ -25,6 +28,7 @@ info.
 Make hash of client-info
 
     # makemap -r hash client-info.db < client-info
+    # chmod 600 /etc/mail/auth/*
 
 ### /etc/mail/sendmail.mc
 
