@@ -133,10 +133,10 @@ Make hash of client-info
 
     # /etc/init.d/sendmail restart
 
-### 6. Send a test message
+### Send a test message
 
     echo "This is a test email..." | mail -s "Test Email" some-email@address.com
 
-### 7. Debug
+### Debug
 
     # tail -f /var/log/maillog

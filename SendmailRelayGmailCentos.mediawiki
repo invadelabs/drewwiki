@@ -132,12 +132,12 @@ MAILER(smtp)dnl
 # /etc/init.d/sendmail restart
 </pre>
 
-===6. Send a test message===
+===Send a test message===
 <pre>
 echo "This is a test email..." | mail -s "Test Email" some-email@address.com
 </pre>
 
-===7. Debug===
+===Debug===
 <pre>
 # tail -f /var/log/maillog
 </pre>
