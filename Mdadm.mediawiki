@@ -1,12 +1,18 @@
 
-# yum install kmod-xfs xfsdump xfsprogs
 ===Create md device===
 Create a raid5 device with 256 chunk size on 4 devices with out any hot spares.
 <pre># mdadm --create /dev/md0 --level=raid5 --chunk=256 --raid-devices=4 --spare-devices=0 /dev/sd[b-e]</pre>
 
 ===Create filesystem===
-Create an ext3 file system with 0% space reserved for boot, a 4096 block size, and a raid stride of 16 ( 16 * 256 = 4096 | stride*chunk=block)
+====Ext3====
+Create an ext3 file system with 0% space reserved for root, a 4096 block size, and a raid stride of 16 ( 16 * 256 = 4096 | stride*chunk=block)
 <pre># mkfs.ext3 -m 0 -b 4096 -E stride=16 /dev/md0</pre>
+====Xfs====
+Install xfs in centos...
+<pre># yum install kmod-xfs xfsdump xfsprogs</pre>
+Create FS
+<pre># mkfs.xfs /dev/md0</pre>
+Need to research tunable fs parameters.
 
 ===Performance Testing===
 ====Bonnie++====
