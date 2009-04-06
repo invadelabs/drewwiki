@@ -21,8 +21,8 @@ unmount cleanly..
           net.ipv4.ipfrag_high_thresh = 524288
           net.ipv4.ipfrag_low_thresh = 393216
 
-echo 0 &gt; /proc/sys/net/ipv4/tcp\_sack echo 0 &gt;
-/proc/sys/net/ipv4/tcp\_timestamps
+    echo 0 > /proc/sys/net/ipv4/tcp_sack
+    echo 0 > /proc/sys/net/ipv4/tcp_timestamps 
 
 #### TCP Segmentation offload
 
