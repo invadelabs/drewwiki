@@ -45,12 +45,10 @@ Need to research tunable fs parameters.
 
 ### Additional Tunables
 
-    # Most of this came from these were pulled from article;
-    # See: http://www.3ware.com/KB/article.aspx?id=11050
+Most of this were pulled from
+<http://www.3ware.com/KB/article.aspx?id=11050>
 
--   Need to research.
-
-<!-- -->
+#### max\_sectors\_kb
 
     echo "Setting max_sectors_kb to chunk size of RAID5 arrays..."
     for i in sdb sdc sdd sde
@@ -59,6 +57,8 @@ Need to research tunable fs parameters.
        echo 128 > /sys/block/"$i"/queue/max_sectors_kb
     done
 
+#### Read-ahead on md0
+
 -   I hear this eats a lot of RAM
 
 <!-- -->
@@ -66,12 +66,28 @@ Need to research tunable fs parameters.
     echo "Setting read-ahead to 64MB for /dev/md3"
     blockdev --setra 65536 /dev/md0
 
--   Need to research.
+#### stripe\_cache\_size
+
+-   + stripe\_cache\_size (raid4, raid5 and raid6)
+-   number of entries in the stripe cache. This is writable, but there
+    are upper and lower limits (32768, 16). Default is 128.
+-   + stripe\_cache\_active (raid4, raid5 and raid6)
+-   number of active entries in the stripe cache
+
+<!-- -->
+
+-   + The stripe cache memory is locked down and not available for other
+    uses.
+-   + The total size of the stripe cache is determined by this formula:
+-   +
+-   + PAGE\_SIZE \* raid\_disks \* stripe\_cache\_size = memory used
 
 <!-- -->
 
     echo "Setting stripe_cache_size to 16MB for /dev/md3"
     echo 16384 > /sys/block/md0/md/stripe_cache_size
+
+#### Array resync speed
 
 -   Dramatically improves resync performance...
 
@@ -81,6 +97,8 @@ Need to research tunable fs parameters.
     echo "Setting minimum and maximum resync speed to 100MB/s..."
     echo 100000 > /sys/block/md0/md/sync_speed_min
     echo 100000 > /sys/block/md0/md/sync_speed_max
+
+#### Disable NCQ
 
 -   Disabling native command queuing ... Benefits?
 

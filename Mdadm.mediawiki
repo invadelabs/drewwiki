@@ -22,12 +22,9 @@ Need to research tunable fs parameters.
 <pre># iozone -a -b werd.xls -i 0 -i 1 -C -E</pre>
 
 ===Additional Tunables===
-<pre>
-# Most of this came from these were pulled from article;
-# See: http://www.3ware.com/KB/article.aspx?id=11050
-</pre>
+Most of this were pulled from http://www.3ware.com/KB/article.aspx?id=11050
 
-* Need to research.
+====max_sectors_kb====
 <pre>
 echo "Setting max_sectors_kb to chunk size of RAID5 arrays..."
 for i in sdb sdc sdd sde
@@ -37,18 +34,30 @@ do
 done
 </pre>
 
+====Read-ahead on md0====
 *I hear this eats a lot of RAM
 <pre>
 echo "Setting read-ahead to 64MB for /dev/md3"
 blockdev --setra 65536 /dev/md0
 </pre>
 
-* Need to research.
+====stripe_cache_size====
+* + stripe_cache_size (raid4, raid5 and raid6)
+* number of entries in the stripe cache. This is writable, but there are upper and lower limits (32768, 16). Default is 128.
+* + stripe_cache_active (raid4, raid5 and raid6)
+* number of active entries in the stripe cache
+
+
+* + The stripe cache memory is locked down and not available for other uses.
+* + The total size of the stripe cache is determined by this formula:
+* +
+* + PAGE_SIZE * raid_disks * stripe_cache_size = memory used
 <pre>
 echo "Setting stripe_cache_size to 16MB for /dev/md3"
 echo 16384 > /sys/block/md0/md/stripe_cache_size
 </pre>
 
+====Array resync speed====
 * Dramatically improves resync performance...
 <pre>
 # Increase the minimum / maximum resync speed of the array..
@@ -57,6 +66,7 @@ echo 100000 > /sys/block/md0/md/sync_speed_min
 echo 100000 > /sys/block/md0/md/sync_speed_max
 </pre>
 
+====Disable NCQ====
 * Disabling native command queuing ... Benefits?
 <pre>
 # Disable NCQ.
