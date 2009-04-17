@@ -45,36 +45,46 @@ Need to research tunable fs parameters.
 
 ### Additional Tunables
 
-=
-
-    # This step must come first.
+    # Most of this came from these were pulled from article;
     # See: http://www.3ware.com/KB/article.aspx?id=11050
 
+-   Need to research.
+
+<!-- -->
+
     echo "Setting max_sectors_kb to chunk size of RAID5 arrays..."
-    for i in sdc sdd sde sdf sdg sdh sdi sdj sdk sdl
+    for i in sdb sdc sdd sde
     do
        echo "Setting /dev/$i to 128K..."
        echo 128 > /sys/block/"$i"/queue/max_sectors_kb
     done
 
+-   I hear this eats a lot of RAM
+
+<!-- -->
+
     echo "Setting read-ahead to 64MB for /dev/md3"
-    blockdev --setra 65536 /dev/md3
+    blockdev --setra 65536 /dev/md0
+
+-   Need to research.
+
+<!-- -->
 
     echo "Setting stripe_cache_size to 16MB for /dev/md3"
-    echo 16384 > /sys/block/md3/md/stripe_cache_size
+    echo 16384 > /sys/block/md0/md/stripe_cache_size
 
-    # if you use more than the default 64kb stripe with raid5
-    # this feature is broken so you need to limit it to 30MB/s
-    # neil has a patch, not sure when it will be merged.
-    echo "Setting minimum and maximum resync speed to 30MB/s..."
-    echo 30000 > /sys/block/md0/md/sync_speed_min
-    echo 30000 > /sys/block/md0/md/sync_speed_max
-    echo 30000 > /sys/block/md1/md/sync_speed_min
-    echo 30000 > /sys/block/md1/md/sync_speed_max
-    echo 30000 > /sys/block/md2/md/sync_speed_min
-    echo 30000 > /sys/block/md2/md/sync_speed_max
-    echo 30000 > /sys/block/md3/md/sync_speed_min
-    echo 30000 > /sys/block/md3/md/sync_speed_max
+-   Dramatically improves resync performance...
+
+<!-- -->
+
+    # Increase the minimum / maximum resync speed of the array..
+    echo "Setting minimum and maximum resync speed to 100MB/s..."
+    echo 100000 > /sys/block/md0/md/sync_speed_min
+    echo 100000 > /sys/block/md0/md/sync_speed_max
+
+-   Disabling native command queuing ... Benefits?
+
+<!-- -->
 
     # Disable NCQ.
     echo "Disabling NCQ..."
