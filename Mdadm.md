@@ -39,7 +39,12 @@ Need to research tunable fs parameters.
 
 #### Iozone
 
--a auto -b output\_excel file -i run read test -i run write test
+-   -a auto
+-   -b output\_excel file
+-   -i 0 run read test
+-   -i 1 run write test
+
+<!-- -->
 
     # iozone -a -b werd.xls -i 0 -i 1 -C -E
 
