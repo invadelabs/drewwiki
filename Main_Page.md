@@ -3,8 +3,7 @@ title: Main Page
 layout: default
 ---
 
-A collection of randomness I've encountered and configured in Linux
-(CentOS, Fedora, and Ubuntu) and HP-UX.
+A collection of randomness I've encountered and configured in Linux.
 
 Contact info: drew AT readytoinvade DOT com
 
