@@ -18,6 +18,8 @@ System Administration
     Sendmail with gmail relay in CentOS 5
 -   [IPMI](IPMI "wikilink") - IPMI on SuperMicro AOC-IPMI20 with
     Serial-Over-LAN Console
+-   [UpstartSerialConsole](UpstartSerialConsole "wikilink") -
+    Configuring Fedora 11 Serial Console with Upstart
 -   [mdadm](mdadm "wikilink") - Linux Software Raid Creation /
     Optimization
 -   [NFS Optimization](NFS_Optimization "wikilink") - NFS Performance
