@@ -1,0 +1,21 @@
+---
+title: ExternalUSB+LUKS+LVM
+layout: default
+---
+
+cryptsetup luksFormat /dev/sdb cryptsetup luksOpen /dev/sdb external
+pvcreate /dev/mapper/external vgcreate vg-backup /dev/mapper/external
+lvcreate -l 17884 vg-backup mkfs.ext4 -m 0 /dev/vg-backup/lvol0
+
+mount /dev/vg-backup/lvol0 /mnt/backup
+
+umount /mnt/backup lvchange -a n /dev/vg-backup/lvol0 vgchange -a n
+vg-backup
+
+cryptsetup luksClose /dev/sdb
+
+rsync -av --delete --log-file=/root/raid5\_backup.log --exclude
+/mnt/raid5/drew/video /mnt/raid5/ /mnt/backup
+
+• Dry Run rsync -avn --delete --log-file=/root/raid5\_backup.log
+--exclude drew/video /mnt/raid5/ /mnt/backup
