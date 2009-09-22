@@ -37,4 +37,4 @@ all files named /mnt/raid5 to /mnt/backup.
 
 The real deal.
 
-    # rsync -av --delete --log-file=/root/raid5_backup.log --exclude /mnt/raid5/drew/video /mnt/raid5/ /mnt/backup
+    # rsync -av --delete --log-file=/root/raid5_backup.log --exclude drew/video /mnt/raid5/ /mnt/backup

@@ -23,4 +23,4 @@ Rsync backup;
 This is a '''dry run''' which will delete files not on the source, log everything to ~/backup.log, exclude a video directory from all files named /mnt/raid5 to /mnt/backup.
 <pre># rsync -avn --delete --log-file=/root/raid5_backup.log --exclude drew/video /mnt/raid5/ /mnt/backup</pre>
 The real deal.
-<pre># rsync -av --delete --log-file=/root/raid5_backup.log --exclude /mnt/raid5/drew/video /mnt/raid5/ /mnt/backup</pre>
+<pre># rsync -av --delete --log-file=/root/raid5_backup.log --exclude drew/video /mnt/raid5/ /mnt/backup</pre>
