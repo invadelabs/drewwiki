@@ -3,19 +3,38 @@ title: ExternalUSB+LUKS+LVM
 layout: default
 ---
 
-cryptsetup luksFormat /dev/sdb cryptsetup luksOpen /dev/sdb external
-pvcreate /dev/mapper/external vgcreate vg-backup /dev/mapper/external
-lvcreate -l 17884 vg-backup mkfs.ext4 -m 0 /dev/vg-backup/lvol0
+Format the drive for encryption, supply pass or key..
 
-mount /dev/vg-backup/lvol0 /mnt/backup
+    # cryptsetup luksFormat /dev/sdb
 
-umount /mnt/backup lvchange -a n /dev/vg-backup/lvol0 vgchange -a n
-vg-backup
+Open and mount the drive, it will be available at /dev/mapper/external
 
-cryptsetup luksClose /dev/sdb
+    # cryptsetup luksOpen /dev/sdb external
 
-rsync -av --delete --log-file=/root/raid5\_backup.log --exclude
-/mnt/raid5/drew/video /mnt/raid5/ /mnt/backup
+Create LVM (PV, VG, LV), format as ext4 reserving 0% for root, and mount
+the drive.
 
-• Dry Run rsync -avn --delete --log-file=/root/raid5\_backup.log
---exclude drew/video /mnt/raid5/ /mnt/backup
+    # pvcreate /dev/mapper/external
+    # vgcreate vg-backup /dev/mapper/external
+    # lvcreate -l 17884 vg-backup
+    # mkfs.ext4 -m 0 /dev/vg-backup/lvol0
+    # mount /dev/vg-backup/lvol0 /mnt/backup
+
+To unmount;
+
+    # umount /mnt/backup
+    # lvchange -a n /dev/vg-backup/lvol0
+    # vgchange -a n vg-backup
+    # cryptsetup luksClose /dev/sdb
+
+Research: What is the best way to remove LVM's left over device files.
+
+Rsync backup; This is a **dry run** which will delete files not on the
+source, log everything to ~/backup.log, exclude a video directory from
+all files named /mnt/raid5 to /mnt/backup.
+
+    # rsync -avn --delete --log-file=/root/raid5_backup.log --exclude drew/video /mnt/raid5/ /mnt/backup
+
+The real deal.
+
+    # rsync -av --delete --log-file=/root/raid5_backup.log --exclude /mnt/raid5/drew/video /mnt/raid5/ /mnt/backup
