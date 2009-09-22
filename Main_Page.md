@@ -26,6 +26,8 @@ System Administration
     and Optimization
 -   etckeeper - Source Control For /etc
 -   [eCryptfs](eCryptfs "wikilink") - Private Encrypted Folders
+-   [ExternalUSBEncryptedLVM](ExternalUSBEncryptedLVM "wikilink") -
+    Encrypted LVM for External USB (rsync backup)
 -   Samba Unix User / Password
 
 ##### Backup

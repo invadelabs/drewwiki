@@ -13,6 +13,7 @@ Contact info: drew AT readytoinvade DOT com
 *[[NFS Optimization]] - NFS Performance and Optimization
 *etckeeper - Source Control For /etc
 *[[eCryptfs]] - Private Encrypted Folders
+*[[ExternalUSBEncryptedLVM]] - Encrypted LVM for External USB (rsync backup)
 *Samba Unix User / Password
 =====Backup=====
 *Amanda - Backup Utility
