@@ -25,7 +25,12 @@ To unmount;
     # umount /mnt/backup
     # lvchange -a n /dev/vg-backup/lvol0
     # vgchange -a n vg-backup
-    # cryptsetup luksClose /dev/sdb
+    # cryptsetup luksClose /dev/mapper/external
+
+To mount;
+
+    # cryptsetup luksOpen /dev/sdb
+    <pre># mount /dev/vg-backup/lvol0 /mnt/backup
 
 Research: What is the best way to remove LVM's left over device files.
 
