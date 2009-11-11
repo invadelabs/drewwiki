@@ -1,6 +1,18 @@
-===Create md device===
+===Software RAID===
+====Create md device====
 Create a raid5 device with 256 chunk size on 4 devices with out any hot spares.
 <pre># mdadm --create /dev/md0 --level=raid5 --chunk=256 --raid-devices=4 --spare-devices=0 /dev/sd[b-e]</pre>
+====Create /etc/mdadm.conf====
+<pre># mdadm  --examine  --scan --config=mdadm.conf >> /etc/mdadm.conf</pre>
+Modify as appropriate, ex;
+<pre>
+DEVICE partitions
+CREATE owner=root group=disk mode=0660 auto=yes
+HOMEHOST <system>
+MAILADDR root
+</pre>
+====Replace dead device====
+<pre># mdadm /dev/mdadm -a /dev/sdc</pre>
 
 ===Create filesystem===
 ====Ext3====

@@ -3,12 +3,29 @@ title: Mdadm
 layout: default
 ---
 
-### Create md device
+### Software RAID
+
+#### Create md device
 
 Create a raid5 device with 256 chunk size on 4 devices with out any hot
 spares.
 
     # mdadm --create /dev/md0 --level=raid5 --chunk=256 --raid-devices=4 --spare-devices=0 /dev/sd[b-e]
+
+#### Create /etc/mdadm.conf
+
+    # mdadm  --examine  --scan --config=mdadm.conf >> /etc/mdadm.conf
+
+Modify as appropriate, ex;
+
+    DEVICE partitions
+    CREATE owner=root group=disk mode=0660 auto=yes
+    HOMEHOST <system>
+    MAILADDR root
+
+#### Replace dead device
+
+    # mdadm /dev/mdadm -a /dev/sdc
 
 ### Create filesystem
 
