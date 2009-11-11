@@ -12,7 +12,7 @@ HOMEHOST <system>
 MAILADDR root
 </pre>
 ====Replace dead device====
-<pre># mdadm /dev/mdadm -a /dev/sdc</pre>
+<pre># mdadm /dev/md0 -a /dev/sdc</pre>
 
 ===Create filesystem===
 ====Ext3====

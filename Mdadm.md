@@ -25,7 +25,7 @@ Modify as appropriate, ex;
 
 #### Replace dead device
 
-    # mdadm /dev/mdadm -a /dev/sdc
+    # mdadm /dev/md0 -a /dev/sdc
 
 ### Create filesystem
 
