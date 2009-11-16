@@ -50,6 +50,8 @@ System Administration
 Media
 -----
 
+-   [LinuxGPS](LinuxGPS "wikilink") - Linux GPS with sirfmon, gpsd, and
+    more
 -   [mencoder](mencoder "wikilink") - codecs(x264, lavc, xvid) /
     de-interlace filters / dvd
 -   [mplayer](mplayer "wikilink") - dvd and dvb playback / xvmc and

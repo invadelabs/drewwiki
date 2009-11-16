@@ -29,6 +29,7 @@ Contact info: drew AT readytoinvade DOT com
 
 
 ==Media==
+*[[LinuxGPS]] - Linux GPS with sirfmon, gpsd, and more
 *[[mencoder]] - codecs(x264, lavc, xvid) / de-interlace filters / dvd
 *[[mplayer]] - dvd and dvb playback / xvmc and vdpau gpu decoder offload
 *[[Independant X-server]]
