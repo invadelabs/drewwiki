@@ -29,6 +29,9 @@ System Administration
 -   [ExternalUSBEncryptedLVM](ExternalUSBEncryptedLVM "wikilink") -
     Encrypted LVM for External USB (rsync backup)
 -   Samba Unix User / Password
+-   [kdump](kdump "wikilink") - Crash dump
+-   [pxeiscsiboot](pxeiscsiboot "wikilink") - Booting off SAN via PXE
+    and iSCSI target
 
 ##### Backup
 

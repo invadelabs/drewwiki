@@ -15,6 +15,8 @@ Contact info: drew AT readytoinvade DOT com
 *[[eCryptfs]] - Private Encrypted Folders
 *[[ExternalUSBEncryptedLVM]] - Encrypted LVM for External USB (rsync backup)
 *Samba Unix User / Password
+*[[kdump]] - Crash dump
+*[[pxeiscsiboot]] - Booting off SAN via PXE and iSCSI target
 =====Backup=====
 *Amanda - Backup Utility
 *[[Backup DD-WRT Config]] (cron)
