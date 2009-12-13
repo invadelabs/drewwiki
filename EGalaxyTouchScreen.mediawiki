@@ -1,0 +1,62 @@
+Intsall evtouch;
+<pre>
+# sudo apt-get install xserver-xorg-input-evtouch
+</pre>
+
+Modify /etc/X11/xorg.conf;
+<pre>
+Add to Section "ServerLayout"
+        InputDevice "touchscreen" "CorePointer"
+
+Add new section;
+Section "InputDevice"
+    Identifier "touchscreen"
+    Driver "evtouch"
+    Option "Device" "/dev/input/event10"
+    Option "DeviceName" "touchscreen"
+    Option "MinX" "98"
+    Option "MinY" "43"
+    Option "MaxX" "940"
+    Option "MaxY" "925"
+#    Option "ReportingMode" "Raw"
+#    Option "Emulate3Buttons"
+#   Option "Emulate3Timeout" "50"
+    Option "SendCoreEvents" "On"
+    Option "SwapY" "true
+EndSection
+</pre>
+
+Had to;
+<pre>
+# rmmod usbhid
+# insmod usbtouchscreen
+</pre>
+
+Restart X;
+<pre>
+# sudo restart gdm
+</pre>
+
+Unable to get ev_calibrate to work
+
+How to use egalax driver;
+DL latest driver from eeti.com
+<pre>
+tar zxvf 
+cd USBSrc
+vi tkusb.h
+</pre>
+change asm/semaphore.h to linux/semphore.h
+<pre>
+make
+cp tkusb.ko /lib/modules 
+vi /etc/rc.local
+rmmod usbhid
+insmod /lib/modules/tkusb.ko
+vi /usr/share/hal/fdi/policy/20thirdparty/50-eGalaxy.fdi
+evtouch -> egalax
+Xorg -configure
+cp -i ~/xorg.conf.new /etc/X11/xorg.conf
+sudo sh setup.sh
+sudo restart gdm
+</pre>
