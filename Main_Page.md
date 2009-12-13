@@ -53,6 +53,8 @@ System Administration
 Media
 -----
 
+-   [eGalaxyTouchScreen](eGalaxyTouchScreen "wikilink") - eGalaxy Touch
+    Screen
 -   [LinuxGPS](LinuxGPS "wikilink") - Linux GPS with sirfmon, gpsd, and
     more
 -   [mencoder](mencoder "wikilink") - codecs(x264, lavc, xvid) /
