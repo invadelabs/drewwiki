@@ -43,18 +43,6 @@ size, and a raid stride of 16 ( 16 \* 256 = 4096 | stride\*chunk=block)
 
     # mkfs.ext3 -m 0 -b 4096 -E stride=16 /dev/md0
 
-#### Xfs
-
-Install xfs in centos...
-
-    # yum install kmod-xfs xfsdump xfsprogs
-
-Create FS
-
-    # mkfs.xfs /dev/md0
-
-Need to research tunable fs parameters.
-
 ### Performance Testing
 
 #### Bonnie++
