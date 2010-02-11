@@ -27,7 +27,7 @@ Modify as appropriate, ex;
 
     # mdadm /dev/md0 -a /dev/sdc
 
-#### Force a degraded array tp start
+#### Force a degraded array to start
 
 If a drive fails, reboot happens, and we need to restart an array with 3
 out of 4 drives running
