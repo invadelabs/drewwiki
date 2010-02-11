@@ -27,6 +27,13 @@ Modify as appropriate, ex;
 
     # mdadm /dev/md0 -a /dev/sdc
 
+#### Force a degraded array tp start
+
+If a drive fails, reboot happens, and we need to restart an array with 3
+out of 4 drives running
+
+    # mdadm -Af /dev/md0 -Af /dev/md0 /dev/sda /dev/sdb /dev/sdd
+
 ### Create filesystem
 
 #### Ext3

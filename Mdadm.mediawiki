@@ -14,6 +14,10 @@ MAILADDR root
 ====Replace dead device====
 <pre># mdadm /dev/md0 -a /dev/sdc</pre>
 
+====Force a degraded array tp start====
+If a drive fails, reboot happens, and we need to restart an array with 3 out of 4 drives running
+<pre># mdadm -Af /dev/md0 -Af /dev/md0 /dev/sda /dev/sdb /dev/sdd</pre>
+
 ===Create filesystem===
 ====Ext3====
 Create an ext3 file system with 0% space reserved for root, a 4096 block size, and a raid stride of 16 ( 16 * 256 = 4096 | stride*chunk=block)
