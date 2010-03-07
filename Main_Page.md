@@ -32,6 +32,7 @@ System Administration
 -   [kdump](kdump "wikilink") - Crash dump
 -   [PXEiSCSIboot](PXEiSCSIboot "wikilink") - Booting off SAN via PXE
     and iSCSI target
+-   SELinux
 
 ##### Backup
 

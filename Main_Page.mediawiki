@@ -17,6 +17,7 @@ Contact info: drew AT readytoinvade DOT com
 *Samba Unix User / Password
 *[[kdump]] - Crash dump
 *[[PXEiSCSIboot]] - Booting off SAN via PXE and iSCSI target
+*SELinux
 =====Backup=====
 *Amanda - Backup Utility
 *[[Backup DD-WRT Config]] (cron)
@@ -28,7 +29,6 @@ Contact info: drew AT readytoinvade DOT com
 *[[udevinfo]] - gathering system info
 ====Virtualization====
 *VirtualBox - Ubuntu8.10/NetworkManager broken/weirdness
-
 
 ==Media==
 *[[eGalaxyTouchScreen]] - eGalaxy Touch Screen
