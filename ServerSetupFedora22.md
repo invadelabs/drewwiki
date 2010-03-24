@@ -1,0 +1,45 @@
+---
+title: ServerSetupFedora22
+layout: default
+---
+
+    1. Disable root login via ssh
+    2. Enable sudo
+    3. yum remove unneeded software
+    4. yum update
+
+    5. Configure grub serial console redirection
+    6. Configure serial console via IPMI
+    7. Configure kdump for system panics
+    ^8. Configure UPS with alerts
+    9. Configure Time Server for local network access
+    10. Configure syslog for network client writes
+
+    11. Mount raid array
+    12. Configure md alerts
+    13. Enable NFS
+    14. Enable samba
+    15. Enable iSCSI
+
+    16. Setup mail relay
+    17. Configure smartd to monitor hard drives
+    ^18. Configure thermal alerts for server
+    19. Configure logwatch
+    20. Setup clamav virus protection
+
+    21. Setup cron jobs
+
+    22. Configure denyhosts or fail2ban
+
+    23. Upload firmware for tv tuner card
+    24. Setup mythtv
+    25. Configure MythWeb
+    26. Force http to https redirection
+
+    ^27. Configure webdav for tomboy notes / foxit marks
+
+    ^28. Configure SElinux
+
+    ^29. Verify all log files in /var/log are not giving any errors or notifications
+    ^30. Check logs for whats growing!
+    # ls -alR /var/log | grep ^- | awk {'print $5" "$8'} | sort -k 2| sort -n
