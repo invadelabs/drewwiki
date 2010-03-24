@@ -7,6 +7,8 @@ A collection of randomness I've encountered and configured in Linux.
 
 ------------------------------------------------------------------------
 
+-   [ServerSetup](ServerSetup "wikilink")
+
 System Administration
 ---------------------
 
