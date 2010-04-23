@@ -11,7 +11,7 @@ layout: default
     5. Configure grub serial console redirection
     6. Configure serial console via IPMI
     7. Configure kdump for system panics
-    ^8. Configure UPS with alerts
+    8. Configure NUT for UPS alerts
     9. Configure Time Server for local network access
     10. Configure syslog for network client writes
 
@@ -36,7 +36,7 @@ layout: default
     25. Configure MythWeb
     26. Force http to https redirection
 
-    ^27. Configure webdav for tomboy notes / foxit marks
+    27. Configure webdav for tomboy notes / foxit marks
 
     ^28. Configure SElinux
 
