@@ -25,21 +25,22 @@ layout: default
     17. Configure smartd to monitor hard drives
     ^18. Configure thermal alerts for server
     19. Configure logwatch
-    20. Setup clamav virus protection
+    20. Setup clamav virus protection for Samba and weekly scan
 
     21. Setup cron jobs
 
     22. Configure denyhosts or fail2ban
+    23. Configure Snort passive IDS
 
-    23. Upload firmware for tv tuner card
-    24. Setup mythtv
-    25. Configure MythWeb
-    26. Force http to https redirection
+    24. Upload firmware for tv tuner card
+    25. Setup mythtv
+    26. Configure MythWeb
+    27. Force http to https redirection
 
-    27. Configure webdav for tomboy notes / foxit marks
+    28. Configure webdav for tomboy notes / foxit marks
 
-    ^28. Configure SElinux
+    ^29. Configure SElinux
 
-    ^29. Verify all log files in /var/log are not giving any errors or notifications
-    ^30. Check logs for whats growing!
+    ^30. Verify all log files in /var/log are not giving any errors or notifications
+    ^31. Check logs for whats growing!
     # ls -alR /var/log | grep ^- | awk {'print $5" "$8'} | sort -k 2| sort -n
