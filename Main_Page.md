@@ -32,6 +32,8 @@ System Administration
 -   [kdump](kdump "wikilink") - Crash dump
 -   [PXEiSCSIboot](PXEiSCSIboot "wikilink") - Booting off SAN via PXE
     and iSCSI target
+-   [NUTUPSMonitor](NUTUPSMonitor "wikilink") - Configure NUT for UPS
+    monitoring and alerts in Fedora 12
 -   SELinux
 
 ##### Backup

@@ -17,6 +17,7 @@ A collection of randomness I've encountered and configured in Linux.
 *Samba Unix User / Password
 *[[kdump]] - Crash dump
 *[[PXEiSCSIboot]] - Booting off SAN via PXE and iSCSI target
+*[[NUTUPSMonitor]] - Configure NUT for UPS monitoring and alerts in Fedora 12
 *SELinux
 =====Backup=====
 *Amanda - Backup Utility
