@@ -14,12 +14,14 @@ layout: default
 
 3. Add a UPS device in /etc/ups/ups.conf;
 
+-   Use auto for port if USB
+
+<!-- -->
+
     [drewups]
             driver=usbhid-ups
             port = auto
             desc = "Office UPS"
-
--   -   Use auto for port if USB
 
 4. Create a master to use to communicate with nut in
 /etc/ups/upsd.users;

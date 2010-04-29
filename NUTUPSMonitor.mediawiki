@@ -1,25 +1,29 @@
 1. Install network ups tool;
 <pre># yum install nut nut-client</pre>
 
+
 2. Change mode from none -> standalone in /etc/ups/nut.conf
 <pre>
 #MODE = none
 MODE = standalone
 </pre>
 
+
 3. Add a UPS device in /etc/ups/ups.conf;
+* Use auto for port if USB
 <pre>
 [drewups]
         driver=usbhid-ups
         port = auto
         desc = "Office UPS"
 </pre>
-** Use auto for port if USB
+
 
 4. Create a master to use to communicate with nut in /etc/ups/upsd.users;
 <pre>[amasteruser]
        password = anawesomepassword
        upsmon master</pre>
+
 
 5. Configure /etc/ups/upsmon.conf to monitor drewups as amasteruser, run a script when an action occurs, as well as alert;
 <pre>MONITOR drewups@localhost 1 amasteruser anawesomepassword master
@@ -36,6 +40,7 @@ NOTIFYFLAG SHUTDOWN     SYSLOG+EXEC+WALL
 NOTIFYFLAG REPLBATT     SYSLOG+EXEC+WALL
 NOTIFYFLAG NOCOMM       SYSLOG+EXEC+WALL
 NOTIFYFLAG NOPARENT     SYSLOG+EXEC+WALL</pre>
+
 
 6. upspager.sh script;
 <pre>#!/bin/bash
