@@ -3,6 +3,7 @@ A collection of randomness I've encountered and configured in Linux.
 ----
 
 *[[ServerSetup]]
+*[[PowerDraw]]
 
 ==System Administration==
 *Alerts {mdadm, logwatch, tempurature, snmp}: via exim-> myemail+alerts@gmail.com
