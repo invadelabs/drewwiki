@@ -20,7 +20,7 @@ A collection of randomness I've encountered and configured in Linux.
 *[[PXEiSCSIboot]] - Booting off SAN via PXE and iSCSI target
 *[[NUTUPSMonitor]] - Configure NUT for UPS monitoring and alerts in Fedora 12
 *SELinux
-*[[dd-wrtiptablesportmirror]] - Port mirroring with iptable in dd-wrt
+*[[PortMirroringDDWRTiptables]] - Port mirroring with iptable in dd-wrt
 =====Backup=====
 *Amanda - Backup Utility
 *[[Backup DD-WRT Config]] (cron)
