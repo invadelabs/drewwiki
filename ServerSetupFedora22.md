@@ -32,17 +32,17 @@ layout: default
 
     23. Configure denyhosts or fail2ban
     24. Configure Snort passive IDS
-    25. Transparent Proxy with Squid for bandwidth utilization tally
+    ^25. Transparent Proxy with Squid for bandwidth utilization tally
 
-    25. Upload firmware for tv tuner card
-    26. Setup mythtv
-    27. Configure MythWeb
-    28. Force http to https redirection
+    26. Upload firmware for tv tuner card
+    27. Setup mythtv
+    28. Configure MythWeb
+    29. Force http to https redirection
 
-    29. Configure webdav for tomboy notes / foxit marks
+    30. Configure webdav for tomboy notes / foxit marks
 
-    ^30. Configure SElinux
+    ^31. Configure SElinux
 
-    ^31. Verify all log files in /var/log are not giving any errors or notifications
-    ^32. Check logs for whats growing!
+    ^32. Verify all log files in /var/log are not giving any errors or notifications
+    ^33. Check logs for whats growing!
     # ls -alR /var/log | grep ^- | awk {'print $5" "$8'} | sort -k 2| sort -n
