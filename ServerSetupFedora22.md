@@ -31,7 +31,7 @@ layout: default
     22. Setup cron jobs
 
     23. Configure denyhosts or fail2ban
-    24. Configure Snort passive IDS
+    ^24. Configure Snort passive IDS
     ^25. Transparent Proxy with Squid for bandwidth utilization tally
 
     26. Upload firmware for tv tuner card
