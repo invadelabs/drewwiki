@@ -20,7 +20,7 @@ layout: default
     13. Enable NFS
     14. Enable samba
     15. Enable iSCSI
-    16. Configure bacula and web interface
+    ^16. Configure bacula and web interface
 
     17. Setup mail relay
     18. Configure smartd to monitor hard drives
