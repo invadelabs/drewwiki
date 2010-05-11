@@ -32,6 +32,7 @@ layout: default
 
     23. Configure denyhosts or fail2ban
     24. Configure Snort passive IDS
+    25. Transparent Proxy with Squid for bandwidth utilization tally
 
     25. Upload firmware for tv tuner card
     26. Setup mythtv
