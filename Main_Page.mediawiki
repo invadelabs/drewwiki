@@ -30,8 +30,6 @@ A collection of randomness I've encountered and configured in Linux.
 *Rsync via SMB::fstab or smb directly
 ====Hardware Related====
 *[[udevinfo]] - gathering system info
-====Virtualization====
-*VirtualBox - Ubuntu8.10/NetworkManager broken/weirdness
 
 ==Media==
 *[[eGalaxyTouchScreen]] - eGalaxy Touch Screen

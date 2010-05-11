@@ -52,10 +52,6 @@ System Administration
 
 -   [udevinfo](udevinfo "wikilink") - gathering system info
 
-#### Virtualization
-
--   VirtualBox - Ubuntu8.10/NetworkManager broken/weirdness
-
 Media
 -----
 
