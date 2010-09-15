@@ -25,10 +25,15 @@ MODE = standalone
        upsmon master</pre>
 
 
-5. Configure /etc/ups/upsmon.conf to monitor drewups as amasteruser, run a script when an action occurs, as well as alert;
-<pre>MONITOR drewups@localhost 1 amasteruser anawesomepassword master
+5. Create a user on the system to monitor;
+<pre> # useradd -s /sbin/nologin -g nut nutmon</pre>
 
-NOTIFYCMD /home/drew/cron/upspager.sh
+Configure /etc/ups/upsmon.conf to monitor drewups as amasteruser, run a script when an action occurs, as well as alert;
+<pre>RUN_AS_USER nutmon
+
+MONITOR drewups@localhost 1 amasteruser anawesomepassword master
+
+NOTIFYCMD /mnt/raid5/backup/cron/upspager.sh
 
 NOTIFYFLAG ONLINE       SYSLOG+EXEC+WALL
 NOTIFYFLAG ONBATT       SYSLOG+EXEC+WALL

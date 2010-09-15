@@ -30,12 +30,18 @@ layout: default
            password = anawesomepassword
            upsmon master
 
-5. Configure /etc/ups/upsmon.conf to monitor drewups as amasteruser, run
-a script when an action occurs, as well as alert;
+5. Create a user on the system to monitor;
+
+     # useradd -s /sbin/nologin -g nut nutmon
+
+Configure /etc/ups/upsmon.conf to monitor drewups as amasteruser, run a
+script when an action occurs, as well as alert;
+
+    RUN_AS_USER nutmon
 
     MONITOR drewups@localhost 1 amasteruser anawesomepassword master
 
-    NOTIFYCMD /home/drew/cron/upspager.sh
+    NOTIFYCMD /mnt/raid5/backup/cron/upspager.sh
 
     NOTIFYFLAG ONLINE       SYSLOG+EXEC+WALL
     NOTIFYFLAG ONBATT       SYSLOG+EXEC+WALL
