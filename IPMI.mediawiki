@@ -1,12 +1,12 @@
 Start IPMI shell;
-<pre># ipmitool -I lanplus -H 1.2.3.4 -U ADMIN shell</pre>
+<pre># ipmitool -I lanplus -H 192.168.1.21 -U ADMIN shell</pre>
 
 
 Use ipmitool to for serial over lan to host;
-<pre># ipmitool -I lanplus -H 1.2.3.4 -U ADMIN sol activate</pre>
+<pre># ipmitool -I lanplus -H 192.168.1.21 -U ADMIN sol activate</pre>
 
 Reset remote host
-<pre># ipmitool -I lanplus -H 1.2.3.4 -U ADMIN chassis power reset</pre>
+<pre># ipmitool -I lanplus -H 192.168.1.21 -U ADMIN chassis power reset</pre>
 
 
 Configure GRUB to work with Serial Device;
@@ -33,12 +33,10 @@ timeout=10
 
 title CentOS (2.6.18-92.1.22.el5)
 	root (hd0,0)
-	kernel /vmlinuz-2.6.18-92.1.22.el5 ro root=/dev/VolGroup00/LogVol00 console=ttyS1,19200n8 console=tty0
+	kernel /vmlinuz-2.6.18-92.1.22.el5 ro root=/dev/VolGroup00/LogVol00 console=tty0 console=ttyS1,19200n8
 	initrd /initrd-2.6.18-92.1.22.el5.img
-title CentOS (2.6.18-92.el5)
-	root (hd0,0)
-	kernel /vmlinuz-2.6.18-92.el5 ro root=/dev/VolGroup00/LogVol00 console=tty0 console=ttyS1,19200n8
-	initrd /initrd-2.6.18-92.el5.img
 title "My bios update"
 	kernel /memdisk
 	initrd /fwdisk.img floppy</pre>
+
+** Fedora 13 - Set console=ttyS1,19200n8 last for udev to automatically configure serial console on boot.
