@@ -3,6 +3,39 @@ title: IPMI
 layout: default
 ---
 
+    http://wiki.alteeve.com/index.php/IPMI
+
+    # service ipmi stop
+
+    SuperMicro Configuration Tool Began to work
+
+    # ./ipmicfg-linux.x86_64.static -m
+    IP=192.168.1.21 MAC=00:30:48:56:A8:14
+
+    # ./ipmicfg-linux.x86_64.static -k
+    Net Mask=255.255.255.0
+
+    # ./ipmicfg-linux.x86_64.static -dhcp
+    DHCP is currently disabled.
+
+    # ./ipmicfg-linux.x86_64.static -g
+    IP=192.168.1.1
+
+    # ./ipmicfg-linux.x86_64.static -ver
+    Firmware Revision: 02.05
+
+    # ./ipmicfg-linux.x86_64.static -vlan
+    VLAN feature is not supported by this firmware.
+
+    # service ipmi start
+
+    Lets use ipmi module and ipmitool instead... more options.
+    # ipmitool -d /dev/ipmi0 shell
+    # ipmitool -I open lan 
+    # ipmitool -d /dev/ipmi0 lan set 1 access on
+
+    https://twiki.cern.ch/twiki/bin/view/FIOgroup/IpmiRefSolSetup
+
 Start IPMI shell;
 
     # ipmitool -I lanplus -H 192.168.1.21 -U ADMIN shell
