@@ -15,7 +15,7 @@ A collection of randomness I've encountered and configured in Linux.
 *etckeeper - Source Control For /etc
 *[[eCryptfs]] - Private Encrypted Folders
 *[[ExternalUSBEncryptedLVM]] - Encrypted LVM for External USB (rsync backup)
-*Samba Unix User / Password
+*[[SambaTdbsamBackend]]
 *[[kdump]] - Crash dump
 *[[PXEiSCSIboot]] - Booting off SAN via PXE and iSCSI target
 *[[NUTUPSMonitor]] - Configure NUT for UPS monitoring and alerts in Fedora 12

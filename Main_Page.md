@@ -29,7 +29,7 @@ System Administration
 -   [eCryptfs](eCryptfs "wikilink") - Private Encrypted Folders
 -   [ExternalUSBEncryptedLVM](ExternalUSBEncryptedLVM "wikilink") -
     Encrypted LVM for External USB (rsync backup)
--   Samba Unix User / Password
+-   [SambaTdbsamBackend](SambaTdbsamBackend "wikilink")
 -   [kdump](kdump "wikilink") - Crash dump
 -   [PXEiSCSIboot](PXEiSCSIboot "wikilink") - Booting off SAN via PXE
     and iSCSI target
