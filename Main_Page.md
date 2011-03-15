@@ -13,10 +13,10 @@ A collection of randomness I've encountered and configured in Linux.
 System Administration
 ---------------------
 
--   Alerts {mdadm, logwatch, tempurature, snmp}: via exim-&gt;
-    myemail+alerts@gmail.com
 -   [SendmailRelayGmailCentos](SendmailRelayGmailCentos "wikilink") -
     Sendmail with gmail relay in CentOS 5
+-   [SendmailRelayISP](SendmailRelayISP "wikilink") - Sendmail using ISP
+    as relay
 -   [IPMI](IPMI "wikilink") - IPMI on SuperMicro AOC-IPMI20 with
     Serial-Over-LAN Console
 -   [UpstartSerialConsole](UpstartSerialConsole "wikilink") -

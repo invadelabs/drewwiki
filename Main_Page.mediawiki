@@ -6,8 +6,8 @@ A collection of randomness I've encountered and configured in Linux.
 *[[PowerDraw]]
 
 ==System Administration==
-*Alerts {mdadm, logwatch, tempurature, snmp}: via exim-> myemail+alerts@gmail.com
 *[[SendmailRelayGmailCentos]] - Sendmail with gmail relay in CentOS 5
+*[[SendmailRelayISP]] - Sendmail using ISP as relay
 *[[IPMI]] - IPMI on SuperMicro AOC-IPMI20 with Serial-Over-LAN Console
 *[[UpstartSerialConsole]] - Configuring Fedora 11 Serial Console with Upstart
 *[[mdadm]] - Linux Software Raid Creation / Optimization
