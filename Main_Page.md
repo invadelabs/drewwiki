@@ -17,13 +17,13 @@ System Administration
 ---------------------
 
 -   [SendmailRelayGmailCentos](SendmailRelayGmailCentos "wikilink") -
-    Sendmail with gmail relay in CentOS 5
+    Sendmail with gmail relay in Fedora 10+
 -   [SendmailRelayISP](SendmailRelayISP "wikilink") - Sendmail using ISP
-    as relay
+    as relay in Fedora 10+
 -   [IPMI](IPMI "wikilink") - IPMI on SuperMicro AOC-IPMI20 with
     Serial-Over-LAN Console
 -   [UpstartSerialConsole](UpstartSerialConsole "wikilink") -
-    Configuring Fedora 11 Serial Console with Upstart
+    Configuring Fedora 11-14 Serial Console with Upstart
 -   [mdadm](mdadm "wikilink") - Linux Software Raid Creation /
     Optimization
 -   [NFS Optimization](NFS_Optimization "wikilink") - NFS Performance
@@ -37,7 +37,7 @@ System Administration
 -   [PXEiSCSIboot](PXEiSCSIboot "wikilink") - Booting off SAN via PXE
     and iSCSI target
 -   [NUTUPSMonitor](NUTUPSMonitor "wikilink") - Configure NUT for UPS
-    monitoring and alerts in Fedora 12
+    monitoring and alerts in Fedora 12-14
 -   SELinux
 -   [PortMirroringDDWRTiptables](PortMirroringDDWRTiptables "wikilink") -
     Port mirroring with iptable in dd-wrt

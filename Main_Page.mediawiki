@@ -7,10 +7,10 @@ A collection of randomness I've encountered and configured in Linux.
 *[[PowerDraw]]
 
 ==System Administration==
-*[[SendmailRelayGmailCentos]] - Sendmail with gmail relay in CentOS 5
-*[[SendmailRelayISP]] - Sendmail using ISP as relay
+*[[SendmailRelayGmailCentos]] - Sendmail with gmail relay in Fedora 10+
+*[[SendmailRelayISP]] - Sendmail using ISP as relay in Fedora 10+
 *[[IPMI]] - IPMI on SuperMicro AOC-IPMI20 with Serial-Over-LAN Console
-*[[UpstartSerialConsole]] - Configuring Fedora 11 Serial Console with Upstart
+*[[UpstartSerialConsole]] - Configuring Fedora 11-14 Serial Console with Upstart
 *[[mdadm]] - Linux Software Raid Creation / Optimization
 *[[NFS Optimization]] - NFS Performance and Optimization
 *etckeeper - Source Control For /etc
@@ -19,7 +19,7 @@ A collection of randomness I've encountered and configured in Linux.
 *[[SambaTdbsamBackend]]
 *[[kdump]] - Crash dump
 *[[PXEiSCSIboot]] - Booting off SAN via PXE and iSCSI target
-*[[NUTUPSMonitor]] - Configure NUT for UPS monitoring and alerts in Fedora 12
+*[[NUTUPSMonitor]] - Configure NUT for UPS monitoring and alerts in Fedora 12-14
 *SELinux
 *[[PortMirroringDDWRTiptables]] - Port mirroring with iptable in dd-wrt
 =====Backup=====
