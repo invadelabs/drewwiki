@@ -7,6 +7,9 @@ A collection of randomness I've encountered and configured in Linux.
 
 ------------------------------------------------------------------------
 
+Misc.
+-----
+
 -   [ServerSetup](ServerSetup "wikilink")
 -   [PowerDraw](PowerDraw "wikilink")
 
