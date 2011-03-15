@@ -37,13 +37,8 @@ A collection of randomness I've encountered and configured in Linux.
 *[[mencoder]] - codecs(x264, lavc, xvid) / de-interlace filters / dvd
 *[[mplayer]] - dvd and dvb playback / xvmc and vdpau gpu decoder offload
 *[[Independant X-server]]
-*[[Compiz Profile Configuration]] (Dual monitor/GiantCube/IceExploding Windows)
-*DVB - channels.conf
 *[[Lirc Config - MythTV / mplayer]]
 *[[Lirc, Pinnacle 800i, and Comcast Remote]] - ir-keymap.c
-*Multiple capture cards changing /dev/video* /dev/dsp* on reboot
 ====Window Manager Related====
-*gnome-sensors - email alerts
-*Compiz - Giant Cube / Fish Bowl / Configuration etc
-*Gnome Do - Pidgin / RhythmBox integration
+*[[Compiz Profile Configuration]] - (Dual monitor/GiantCube/IceExploding Windows)
 *TomBoy notes - WebDav Sync

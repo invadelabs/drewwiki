@@ -64,21 +64,16 @@ Media
 -   [mplayer](mplayer "wikilink") - dvd and dvb playback / xvmc and
     vdpau gpu decoder offload
 -   [Independant X-server](Independant_X-server "wikilink")
--   [Compiz Profile
-    Configuration](Compiz_Profile_Configuration "wikilink") (Dual
-    monitor/GiantCube/IceExploding Windows)
--   DVB - channels.conf
 -   [Lirc Config - MythTV /
     mplayer](Lirc_Config_-_MythTV_/_mplayer "wikilink")
 -   [Lirc, Pinnacle 800i, and Comcast
     Remote](Lirc,_Pinnacle_800i,_and_Comcast_Remote "wikilink") -
     ir-keymap.c
--   Multiple capture cards changing /dev/video\* /dev/dsp\* on reboot
 
 #### Window Manager Related
 
--   gnome-sensors - email alerts
--   Compiz - Giant Cube / Fish Bowl / Configuration etc
--   Gnome Do - Pidgin / RhythmBox integration
+-   [Compiz Profile
+    Configuration](Compiz_Profile_Configuration "wikilink") - (Dual
+    monitor/GiantCube/IceExploding Windows)
 -   TomBoy notes - WebDav Sync
 
