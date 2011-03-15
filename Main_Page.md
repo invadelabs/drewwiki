@@ -64,7 +64,9 @@ Media
 -   [mplayer](mplayer "wikilink") - dvd and dvb playback / xvmc and
     vdpau gpu decoder offload
 -   [Independant X-server](Independant_X-server "wikilink")
--   Compiz Dual Monitor Giant Cube
+-   [Compiz Profile
+    Configuration](Compiz_Profile_Configuration "wikilink") (Dual
+    monitor/GiantCube/IceExploding Windows)
 -   DVB - channels.conf
 -   [Lirc Config - MythTV /
     mplayer](Lirc_Config_-_MythTV_/_mplayer "wikilink")
