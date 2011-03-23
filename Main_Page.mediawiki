@@ -40,6 +40,7 @@ A collection of randomness I've encountered and configured in Linux.
 *[[Independant X-server]]
 *[[Lirc Config - MythTV / mplayer]]
 *[[Lirc, Pinnacle 800i, and Comcast Remote]] - ir-keymap.c
+*[[Convert mp4 or flv To wav]]
 ====Window Manager Related====
 *[[Compiz Profile Configuration]] - (Dual monitor/GiantCube/IceExploding Windows)
 *TomBoy notes - WebDav Sync
