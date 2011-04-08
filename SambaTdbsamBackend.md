@@ -23,13 +23,3 @@ layout: default
             path = /mnt/raid5
             valid users = user,drew
             read only = No
-
-    [iso]
-            path = /mnt/iso
-            guest ok = Yes
-            read only = Yes
-
-    [video]
-            path = /mnt/raid5/drew/video/
-            guest ok = Yes
-            read only = Yes
