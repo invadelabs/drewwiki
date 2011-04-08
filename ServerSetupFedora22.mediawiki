@@ -1,5 +1,6 @@
 # Disable root login via ssh
 # Enable sudo
+# Install fail2ban
 # yum remove unneeded software
 # yum update<br><br>
 # Configure grub serial console redirection
@@ -20,7 +21,6 @@
 # Configure logwatch
 # Setup clamav virus protection for Samba and weekly scan<br><br>
 # Setup cron jobs<br><br>
-# Configure denyhosts or fail2ban
 # ^ Configure Snort passive IDS
 # ^ Transparent Proxy with Squid for bandwidth utilization tally<br><br>
 # Upload firmware for tv tuner card
