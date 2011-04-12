@@ -12,6 +12,11 @@
 # Mount raid array
 # Configure md alerts
 # Enable NFS
+##Add TCP 2049 to iptables
+##Disable NFSv2/3 /etc/sysconfig/nfs
+## $ service rpcbind start ; chkconfig rpcbind on
+## $ service nfslock start ; chkconfig nfslock on
+## $ service nfs start ;  chkconfig nfs on
 # Enable samba
 # Enable iSCSI
 # ^ Configure bacula and web interface<br><br>
