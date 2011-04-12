@@ -35,7 +35,9 @@ layout: default
 19. Setup mail relay
     1.  $ echo drew &gt; /root/.forward
     2.  echo “andrew: drew” &gt;&gt; /etc/aliases; newaliases
-    3.  Add TCP port 25 to IPTables
+    3.  echo “root: drew” &gt;&gt; /etc/aliases; newaliases
+    4.  Remove 127.0.0.1 /etc/mail/sendmail.mc
+    5.  Add TCP port 25 to IPTables
 20. Configure smartd to monitor hard drives
 21. ^ Configure thermal alerts for server
 22. Configure logwatch
