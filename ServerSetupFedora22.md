@@ -14,6 +14,7 @@ layout: default
 8.  Configure kdump for system panics
 9.  Configure NUT for UPS alerts
 10. Configure Time Server for local network access
+    1.  Add UDP 123 to IPTables
 11. Configure syslog for network client writes
     1.  Add UDP 514 to IPTables  
           

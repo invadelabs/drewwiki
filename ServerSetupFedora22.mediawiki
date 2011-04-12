@@ -8,6 +8,7 @@
 # Configure kdump for system panics
 # Configure NUT for UPS alerts
 # Configure Time Server for local network access
+## Add UDP 123 to IPTables
 # Configure syslog for network client writes
 ## Add UDP 514 to IPTables<br><br>
 # Mount raid array
