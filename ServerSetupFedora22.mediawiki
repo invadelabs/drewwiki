@@ -1,3 +1,4 @@
+# Install etckeeper
 # Disable root login via ssh
 # Enable sudo
 # Install fail2ban
