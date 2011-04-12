@@ -15,7 +15,8 @@ layout: default
 9.  Configure NUT for UPS alerts
 10. Configure Time Server for local network access
 11. Configure syslog for network client writes
-    1.  Add UDP 514 in IPTables
+    1.  Add UDP 514 to IPTables  
+          
 12. Mount raid array
 13. Configure md alerts
 14. Enable NFS
