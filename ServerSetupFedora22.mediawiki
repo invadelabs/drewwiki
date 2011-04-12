@@ -29,7 +29,8 @@
 # ^ Configure thermal alerts for server
 # Configure logwatch
 # Setup clamav virus protection for Samba and weekly scan<br><br>
-# Setup cron jobs<br><br>
+# Setup cron jobs
+## Keep anacron from waking me up at night! # vi /etc/anacrontab // START_HOURS_RANGE<br><br>
 # ^ Configure Snort passive IDS
 # ^ Transparent Proxy with Squid for bandwidth utilization tally<br><br>
 # Upload firmware for tv tuner card

@@ -38,8 +38,10 @@ layout: default
 22. Configure logwatch
 23. Setup clamav virus protection for Samba and weekly scan  
       
-24. Setup cron jobs  
-      
+24. Setup cron jobs
+    1.  Keep anacron from waking me up at night! \# vi /etc/anacrontab
+        // START\_HOURS\_RANGE  
+          
 25. ^ Configure Snort passive IDS
 26. ^ Transparent Proxy with Squid for bandwidth utilization tally  
       
