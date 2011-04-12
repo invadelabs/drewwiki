@@ -37,7 +37,6 @@
 ## Add TCP port 443 to IPTables
 # Configure webdav for tomboy notes / foxit marks
 # Configure mod_auth_pam for httpd authentication<br><br>
-# ^ Configure SElinux<br><br>
 # ^ Verify all log files in /var/log are not giving any errors or notifications
 # ^ Check logs for whats growing!
 :* ls -alR /var/log | grep ^- | awk {'print $5" "$8'} | sort -k 2| sort -n

@@ -48,11 +48,9 @@ layout: default
 30. Configure webdav for tomboy notes / foxit marks
 31. Configure mod\_auth\_pam for httpd authentication  
       
-32. ^ Configure SElinux  
-      
-33. ^ Verify all log files in /var/log are not giving any errors or
+32. ^ Verify all log files in /var/log are not giving any errors or
     notifications
-34. ^ Check logs for whats growing!
+33. ^ Check logs for whats growing!
 
 :\* ls -alR /var/log | grep ^- | awk {'print $5" "$8'} | sort -k 2| sort
 -n
