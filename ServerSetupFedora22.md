@@ -34,6 +34,7 @@ layout: default
       
 19. Setup mail relay
     1.  $ echo drew &gt; /root/.forward
+    2.  Add TCP port 25 to IPTables
 20. Configure smartd to monitor hard drives
 21. ^ Configure thermal alerts for server
 22. Configure logwatch

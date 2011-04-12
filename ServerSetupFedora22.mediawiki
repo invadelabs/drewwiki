@@ -26,6 +26,7 @@
 # ^ Configure bacula and web interface<br><br>
 # Setup mail relay
 ## $ echo drew > /root/.forward
+## Add TCP port 25 to IPTables
 # Configure smartd to monitor hard drives
 # ^ Configure thermal alerts for server
 # Configure logwatch
