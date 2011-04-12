@@ -25,6 +25,7 @@
 # Enable iSCSI
 # ^ Configure bacula and web interface<br><br>
 # Setup mail relay
+## $ echo drew > /root.forward
 # Configure smartd to monitor hard drives
 # ^ Configure thermal alerts for server
 # Configure logwatch

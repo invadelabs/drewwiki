@@ -33,6 +33,7 @@ layout: default
 18. ^ Configure bacula and web interface  
       
 19. Setup mail relay
+    1.  $ echo drew &gt; /root.forward
 20. Configure smartd to monitor hard drives
 21. ^ Configure thermal alerts for server
 22. Configure logwatch
