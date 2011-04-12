@@ -6,8 +6,7 @@
 # Install fail2ban
 # yum remove unneeded software
 # yum update<br><br>
-# Configure grub serial console redirection
-# Configure serial console via IPMI
+# Configure GRUB serial console redirection
 # Configure kdump for system panics
 # Configure NUT for UPS alerts
 # Configure Time Server for local network access
