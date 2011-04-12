@@ -14,17 +14,18 @@ layout: default
 8.  Configure kdump for system panics
 9.  Configure NUT for UPS alerts
 10. Configure Time Server for local network access
-11. Configure syslog for network client writes  
-      
+11. Configure syslog for network client writes
+    1.  Add UDP 514 in IPTables
 12. Mount raid array
 13. Configure md alerts
 14. Enable NFS
-    1.  Add TCP 2049 to iptables
+    1.  Add TCP 2049 to IPTables
     2.  Disable NFSv2/3 /etc/sysconfig/nfs
     3.  $ service rpcbind start ; chkconfig rpcbind on
     4.  $ service nfslock start ; chkconfig nfslock on
     5.  $ service nfs start ; chkconfig nfs on
 15. Enable samba
+    1.  Add TCP port 139/445 to IPTables
 16. Enable iSCSI
 17. ^ Configure bacula and web interface  
       
