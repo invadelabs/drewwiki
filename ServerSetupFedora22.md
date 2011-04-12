@@ -43,8 +43,8 @@ layout: default
 26. Upload firmware for tv tuner card
 27. Setup mythtv
 28. Configure MythWeb
-29. Force http to https redirection  
-      
+29. Force http to https redirection
+    1.  Add TCP port 443 to IPTables
 30. Configure webdav for tomboy notes / foxit marks
 31. Configure mod\_auth\_pam for httpd authentication  
       

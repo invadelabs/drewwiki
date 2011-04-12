@@ -33,7 +33,8 @@
 # Upload firmware for tv tuner card
 # Setup mythtv
 # Configure MythWeb
-# Force http to https redirection<br><br>
+# Force http to https redirection
+## Add TCP port 443 to IPTables
 # Configure webdav for tomboy notes / foxit marks
 # Configure mod_auth_pam for httpd authentication<br><br>
 # ^ Configure SElinux<br><br>
