@@ -31,6 +31,22 @@ Lets use ipmi module and ipmitool instead... more options.
 
 https://twiki.cern.ch/twiki/bin/view/FIOgroup/IpmiRefSolSetup</pre>
 
+On localhost after installing;
+<pre># yum install OpenIPMI ipmitool</pre>
+
+<pre># ipmitool -l open shell</pre>
+
+<pre># ipmitool -l open mc reset cold</pre>
+
+<pre># ipmitool -I open lan print</pre>
+
+Set higher baudrate in BIOS, then BMC. * IPMIv2 only uses CTS/RTS (RTS/CTS);
+<pre># ipmitool -l open sol info 1
+# ipmitool -l open sol set help
+# ipmitool -l open sol set volatile-bit-rate 115.2 1
+# ipmitool -l open sol set non-volatile-bit-rate 115.2 1</pre>
+
+<pre># ipmitool -l open session info all</pre>
 
 Start IPMI shell;
 <pre># ipmitool -I lanplus -H 192.168.1.21 -U ADMIN shell</pre>

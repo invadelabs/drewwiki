@@ -36,6 +36,26 @@ layout: default
 
     https://twiki.cern.ch/twiki/bin/view/FIOgroup/IpmiRefSolSetup
 
+On localhost after installing;
+
+    # yum install OpenIPMI ipmitool
+
+    # ipmitool -l open shell
+
+    # ipmitool -l open mc reset cold
+
+    # ipmitool -I open lan print
+
+Set higher baudrate in BIOS, then BMC. \* IPMIv2 only uses CTS/RTS
+(RTS/CTS);
+
+    # ipmitool -l open sol info 1
+    # ipmitool -l open sol set help
+    # ipmitool -l open sol set volatile-bit-rate 115.2 1
+    # ipmitool -l open sol set non-volatile-bit-rate 115.2 1
+
+    # ipmitool -l open session info all
+
 Start IPMI shell;
 
     # ipmitool -I lanplus -H 192.168.1.21 -U ADMIN shell
