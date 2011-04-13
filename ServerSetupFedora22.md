@@ -15,6 +15,7 @@ layout: default
 7.  Configure GRUB serial console redirection
 8.  Configure kdump for system panics
     1.  Append kernel grub.conf crashkernel=128M for F14
+    2.  /etc/sysctl.conf :: kernel.sysrq =1
 9.  Configure NUT for UPS alerts
 10. Configure Time Server for local network access
     1.  Add UDP 123 to IPTables
