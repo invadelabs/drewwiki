@@ -56,6 +56,12 @@ Remote IPMI shell
     # ipmitool -I lanplus -H 192.168.1.21 -U ADMIN sol activate
     # ipmitool -I lanplus -H 192.168.1.21 -U ADMIN chassis power reset
 
+rmcp\_ping
+----------
+
+    # rmcp_ping
+    # rmcp_ping 192.168.1.21
+
 Fedora ??12?? grub.conf
 -----------------------
 
