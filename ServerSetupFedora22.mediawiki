@@ -8,6 +8,7 @@
 # yum update<br><br>
 # Configure GRUB serial console redirection
 # Configure kdump for system panics
+## Append kernel grub.conf crashkernel=128M for F14
 # Configure NUT for UPS alerts
 # Configure Time Server for local network access
 ## Add UDP 123 to IPTables
