@@ -3,7 +3,7 @@ title: ServerSetupFedora22
 layout: default
 ---
 
-`# yum install man screen lm_sensors wget rsync fail2ban mailx sendmail-cf nut clamav clamav-update nfs-utils strace smartmontools logwatch etckeeper OpenIPMI`
+     # yum install man screen lm_sensors wget rsync fail2ban mailx sendmail-cf nut clamav clamav-update nfs-utils strace smartmontools logwatch etckeeper OpenIPMI ipmitool
 
 1.  Install etckeeper
 2.  Disable root login via ssh
