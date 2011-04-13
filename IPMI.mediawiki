@@ -1,3 +1,5 @@
+Useful IPMI commands on SuperMicro AOC-IPMI20 for Serial-Over-LAN Console 
+
 ==SuperMicro ipmitool==
 <pre># service ipmi stop</pre>
 SuperMicro Configuration Tool Began to work

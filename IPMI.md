@@ -3,6 +3,9 @@ title: IPMI
 layout: default
 ---
 
+Useful IPMI commands on SuperMicro AOC-IPMI20 for Serial-Over-LAN
+Console
+
 SuperMicro ipmitool
 -------------------
 
