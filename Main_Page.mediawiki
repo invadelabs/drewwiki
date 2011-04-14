@@ -5,6 +5,7 @@ A collection of randomness I've encountered and configured in Linux.
 ==Misc.==
 *[[ServerSetup]]
 *[[PowerDraw]]
+*[[Scratch]]
 
 ==System Administration==
 *[[SendmailRelayGmailCentos]] - Sendmail with gmail relay in Fedora 10+

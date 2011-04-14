@@ -12,6 +12,7 @@ Misc.
 
 -   [ServerSetup](ServerSetup "wikilink")
 -   [PowerDraw](PowerDraw "wikilink")
+-   [Scratch](Scratch "wikilink")
 
 System Administration
 ---------------------
