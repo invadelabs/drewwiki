@@ -35,7 +35,6 @@ System Administration
 -   [ExternalUSBEncryptedLVM](ExternalUSBEncryptedLVM "wikilink") -
     Encrypted LVM for External USB (rsync backup)
 -   [SambaTdbsamBackend](SambaTdbsamBackend "wikilink")
--   [kdump](kdump "wikilink") - Crash dump
 -   [PXEiSCSIboot](PXEiSCSIboot "wikilink") - Booting off SAN via PXE
     and iSCSI target
 -   [NUTUPSMonitor](NUTUPSMonitor "wikilink") - Configure NUT for UPS
