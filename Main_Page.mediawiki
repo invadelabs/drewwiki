@@ -12,6 +12,7 @@ A collection of randomness I've encountered and configured in Linux.
 *[[SendmailRelayISP]] - Sendmail using ISP as relay in Fedora 10+
 *[[IPMI]] - IPMI on SuperMicro AOC-IPMI20 with Serial-Over-LAN Console
 *[[UpstartSerialConsole]] - Configuring Fedora 11-14 Serial Console with Upstart
+*[[iptables]] - iptables setup
 *[[mdadm]] - Linux Software Raid Creation / Optimization
 *[[NFS Optimization]] - NFS Performance and Optimization
 *etckeeper - Source Control For /etc
