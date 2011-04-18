@@ -30,7 +30,6 @@ System Administration
     Optimization
 -   [NFS Optimization](NFS_Optimization "wikilink") - NFS Performance
     and Optimization
--   etckeeper - Source Control For /etc
 -   [eCryptfs](eCryptfs "wikilink") - Private Encrypted Folders
 -   [ExternalUSBEncryptedLVM](ExternalUSBEncryptedLVM "wikilink") -
     Encrypted LVM for External USB (rsync backup)
@@ -39,13 +38,12 @@ System Administration
     and iSCSI target
 -   [NUTUPSMonitor](NUTUPSMonitor "wikilink") - Configure NUT for UPS
     monitoring and alerts in Fedora 12-14
--   SELinux
 -   [PortMirroringDDWRTiptables](PortMirroringDDWRTiptables "wikilink") -
     Port mirroring with iptable in dd-wrt
+-   SELinux
 
 ##### Backup
 
--   Amanda - Backup Utility
 -   [Backup DD-WRT Config](Backup_DD-WRT_Config "wikilink") (cron)
 -   [ClamAV Weekly Scan](ClamAV_Weekly_Scan "wikilink") (cron)
 -   [MySQL Backup Script](MySQL_Backup_Script "wikilink") (cron)
