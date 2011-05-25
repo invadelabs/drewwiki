@@ -1,0 +1,28 @@
+<pre># apt-get install gpsd gpsd-client
+
+# ls -al /dev/ttyUSB*
+crw-rw---- 1 root dialout 188, 0 2011-04-26 23:26 /dev/ttyUSB0
+
+# gpsd -n -N /dev/ttyUSB0
+
+Testing;
+# gpsmon
+or
+# cgps
+or
+# xgps
+
+# gpsctl /dev/ttyUSB0 
+gpsctl: no gpsd running or network error: can't connect to host/port pair.
+gpsctl: attempting USB device enumeration.
+gpsctl: 1d6b:0002 (bus 1, device 1)
+gpsctl: 1d6b:0001 (bus 2, device 1)
+gpsctl: 05e3:0608 (bus 1, device 3)
+gpsctl: 413c:2003 (bus 2, device 2)
+gpsctl: 0763:2012 (bus 2, device 3)
+gpsctl: 03f0:9207 (bus 1, device 6)
+gpsctl: 067b:2303 (bus 1, device 7)
+gpsctl: 047d:105e (bus 1, device 8)
+gpsctl: 03f0:8307 (bus 1, device 9)
+gpsctl: vendor/product match with 091e:0003 not found
+gpsctl: packet recognition timed out.</pre>
