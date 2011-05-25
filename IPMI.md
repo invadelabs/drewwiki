@@ -183,3 +183,468 @@ Fedora 13
 -   Set console=ttyS1,19200n8 last for udev to automatically configure
     serial console on boot.
 
+Sample Boot
+-----------
+
+    drew@drew-desktop:~$ ipmitool -I lanplus -H 192.168.1.21 -U ADMIN sol activate
+    Password: 
+    [SOL Session operational.  Use ~? for help]
+
+    [root@drewserv ~]# shutdown -r now
+
+    Broadcast message from root@drewserv.drewrents.readytoinvade.com
+        (/dev/ttyS1) at 23:10 ...
+
+    The system is going down for reboot NOW!
+    [root@drewserv ~]# Shutting down smartd: [  OK  ]
+    Shutting down Avahi daemon: [  OK  ]
+    Stopping fail2ban: [  OK  ]
+    Stopping sshd: [  OK  ]
+    Shutting down sm-client: [  OK  ]
+    Shutting down sendmail: [  OK  ]
+    Shutting down SMB services: [  OK  ]
+    Stopping crond: [  OK  ]
+    Shutting down NFS mountd: [  OK  ]
+    Shutting down NFS daemon: [  OK  ]
+    [  150.330672] nfsd: last server has exited, flushing export cache
+    Shutting down NFS services:  [  OK  ]
+    Stopping HAL daemon: [  OK  ]
+    Stopping ipmi drivers: [  OK  ]
+    Stopping lm_sensors: [  OK  ]
+    Shutting down ntpd: [  OK  ]
+    Stopping UPS monitor: [  OK  ]
+    Stopping upsd: [  OK  ]
+    Shutting down UPS driver controller: [  OK  ]
+    Killing mdmonitor: [  OK  ]
+    Stopping system message bus: [  OK  ]
+    Stopping rpcbind: [  OK  ]
+    Stopping auditd: [  151.494041] type=1305 audit(1302671414.945:21): audit_pid=0 old=1132 auid=4294967295 ses=4294967295 subj=system_u:system_r:auditd_t:s0 res=1
+    [  OK  ]
+    Shutting down interface eth1:  [  OK  ]
+    Shutting down loopback interface:  [  OK  ]
+    ip6tables: Flushing firewall rules: [  OK  ]
+    ip6tables: Setting chains to policy ACCEPT: filter [  OK  ]
+    ip6tables: Unloading modules: [  OK  ]
+    iptables: Flushing firewall rules: [  OK  ]
+    iptables: Setting chains to policy ACCEPT: filter [  OK  ]
+    iptables: Unloading modules: [  OK  ]
+    Stopping monitoring for VG vg_drewserv:   3 logical volume(s) in volume group "vg_drewserv" unmonitored
+    [  OK  ]
+    Stopping monitoring for VG vgraid5:   1 logical volume(s) in volume group "vgraid5" unmonitored
+    [  OK  ]
+    Sending all processes the TERM signal... [  OK  ]
+    Sending all processes the KILL signal... [  OK  ]
+    Saving random seed:  [  OK  ]
+    Syncing hardware clock to system time [  156.048033] type=1111 audit(1302671419.499:22): user pid=2435 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:hwclock_t:s0 msg='changing system time: exe="/sbin/hwclock" hostname=? addr=? terminal=? res=success'
+    [  OK  ]
+    Turning off swap:  [  OK  ]
+    Unmounting pipe file systems:  [  OK  ]
+    Unmounting file systems:  [  OK  ]
+    init: Re-executing /sbin/init
+    [  156.385328] EXT4-fs (dm-0): re-mounted. Opts: (null)
+    Please stand by while rebooting the system...
+    [  156.599482] type=1128 audit(1302671420.051:23): user pid=1789 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:initrc_t:s0 msg='init: exe="/lib/upstart/reboot" hostname=? addr=? terminal=console res=success'
+    [  156.619403] md: stopping all md devices.
+    [  157.624224] sd 3:0:1:0: [sde] Synchronizing SCSI cache
+    [  157.629729] sd 3:0:0:0: [sdd] Synchronizing SCSI cache
+    [  157.635251] sd 2:0:1:0: [sdc] Synchronizing SCSI cache
+    [  157.640734] sd 2:0:0:0: [sdb] Synchronizing SCSI cache
+    [  157.646204] sd 0:0:0:0: [sda] Synchronizing SCSI cache
+    [  157.652113] e1000e 0000:0e:00.0: PCI INT A disabled
+    [  157.657305] e1000e 0000:0d:00.0: PCI INT A disabled
+    [  157.662388] Restarting system.
+    [  157.665531] machine restart
+
+    Phoenix cME(tm) TrustedCore(tm) Server                                          
+    Copyright 1985-2004 Phoenix Technologies Ltd.                                   
+    All Rights Reserved                                                             
+                                                                                    
+    Supermicro PDSMi/PDSMA/PDSMi+/PDSMA+ BIOS Rev 1.3                               
+                                                                                    
+    CPU = 1 Processors Detected, Cores per Processor = 2                            
+    Intel(R) Pentium(R) D CPU 3.00GHz                                               
+    FSB at 800MHz                                                                   
+    Intel(R) Extended Memory 64 Technology.                                         
+    DRAM Type : DDR2-667                                                            
+    2047M System RAM Passed                                                         
+    1024K Cache SRAM Passed                                                         
+    System BIOS shadowed                                                            
+    Video BIOS shadowed                                                             
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+
+        GNU GRUB  version 0.97  (632K lower / 2094976K upper memory)
+
+     +-------------------------------------------------------------------------+
+     | Fedora (2.6.35.11-83.fc14.x86_64)                                      Error sending SOL data: FAIL                                                     |
+    SOL session closed by BMC                                                  |
+    drew@drew-desktop:~$ e                                                     |
+    e: command not found                                                       |
+    drew@drew-desktop:~$ clear                                                 |
+     |                                                                         |
+     |                                                                         |
+     |                                                                         |
+     |                                                                         |
+     |                                                                         |
+     |                                                                         |  
+     +-------------------------------------------------------------------------+
+          Use the ^ and v keys to select which entry is highlighted.
+          Press enter to boot the selected OS, 'e' to edit the
+          commands before booting, 'a' to modify the kernel arguments
+          before booting, or 'c' for a command-line.
+
+       The highlighted entry will be booted automatically in 3 seconds.     
+
+
+    drew@drew-desktop:~$ ipmitool -I lanplus -H 192.168.1.21 -U ADMIN sol activate
+    Password: 
+    [SOL Session operational.  Use ~? for help]
+    �
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Phoenix cME(tm) TrustedCore(tm) Server                                          
+    Copyright 1985-2004 Phoenix Technologies Ltd.                                   
+    All Rights Reserved                                                             
+                                                                                    
+    Supermicro PDSMi/PDSMA/PDSMi+/PDSMA+ BIOS Rev 1.3                               
+                                                                                    
+    CPU = 1 Processors Detected, Cores per Processor = 2                            
+    Intel(R) Pentium(R) D CPU 3.00GHz                                               
+    FSB at 800MHz                                                                   
+    Intel(R) Extended Memory 64 Technology.                                         
+    DRAM Type : DDR2-667                                                            
+    2047M System RAM Passed                                                         
+    1024K Cache SRAM Passed                                                         
+    System BIOS shadowed                                                            
+    Video BIOS shadowed                                                             
+                                                                                    
+    Fixed Disk 1: WDC WD5000AAKS-00A7B0                                             
+    Fixed Disk 2: WDC WD5000AAKS-22A7B0                                             
+    Fixed Disk 3: WDC WD5000AAKS-00A7B2                                             
+    Fixed Disk 4: WDC WD5000AAKS-22A7B0                                             
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+
+        GNU GRUB  version 0.97  (632K lower / 2094976K upper memory)
+
+     [ Minimal BASH-like line editing is supported.  For the first word, TAB
+       lists possible command completions.  Anywhere else TAB lists the possible
+       completions of a device/filename.  ESC at any time exits.]
+
+    grub> help                                                                     
+    background RRGGBB                      blocklist FILE                         
+    boot                                   cat FILE                               
+    chainloader [--force] FILE             clear                                  
+    color NORMAL [HIGHLIGHT]               configfile FILE                        
+    displayapm                             displaymem                             
+    find FILENAME                          foreground RRGGBB                      
+    geometry DRIVE [CYLINDER HEAD SECTOR [ halt [--no-apm]                        
+    help [--all] [PATTERN ...]             hide PARTITION                         
+    initrd FILE [ARG ...]                  kernel [--no-mem-option] [--type=TYPE] 
+    makeactive                             map TO_DRIVE FROM_DRIVE                
+    md5crypt                               module FILE [ARG ...]                  
+    modulenounzip FILE [ARG ...]           pager [FLAG]                           
+    partnew PART TYPE START LEN            parttype PART TYPE                     
+    reboot                                 root [DEVICE [HDBIAS]]                 
+    rootnoverify [DEVICE [HDBIAS]]         serial [--unit=UNIT] [--port=PORT] [-- 
+    setkey [TO_KEY FROM_KEY]               setup [--prefix=DIR] [--stage2=STAGE2_ 
+    grub will attempt to avoid printing an splashimage FILE                       
+    terminal [--dumb] [--no-echo] [--no-ed terminfo [--name=NAME --cursor-address 
+    testvbe MODE                           unhide PARTITION                       
+    uppermem KBYTES                        vbeprobe [MODE]                        
+
+    grub> reboot                                                                   
+
+    Phoenix cME(tm) TrustedCore(tm) Server                                          
+    Copyright 1985-2004 Phoenix Technologies Ltd.                                   
+    All Rights Reserved                                                             
+                                                                                    
+    Supermicro PDSMi/PDSMA/PDSMi+/PDSMA+ BIOS Rev 1.3                               
+                                                                                    
+    CPU = 1 Processors Detected, Cores per Processor = 2                            
+    Intel(R) Pentium(R) D CPU 3.00GHz                                               
+    FSB at 800MHz                                                                   
+    Intel(R) Extended Memory 64 Technology.                                         
+    DRAM Type : DDR2-667                                                            
+    2047M System RAM Passed                                                         
+    1024K Cache SRAM Passed                                                         
+    System BIOS shadowed                                                            
+    Video BIOS shadowed                                                             
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+    Entering SETUP ...                                                              
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+    Phoenix cME(tm) TrustedCore(tm) Server                                          
+    Copyright 1985-2004 Phoenix Technologies Ltd.                                   
+    All Rights Reserved                                                             
+                                                                                    
+    Supermicro PDSMi/PDSMA/PDSMi+/PDSMA+ BIOS Rev 1.3                               
+                                                                                    
+    CPU = 1 Processors Detected, Cores per Processor = 2                            
+    Intel(R) Pentium(R) D CPU 3.00GHz                                               
+    FSB at 800MHz                                                                   
+    Intel(R) Extended Memory 64 Technology.                                         
+    DRAM Type : DDR2-667                                                            
+    2047M System RAM Passed                                                         
+    1024K Cache SRAM Passed                                                         
+    System BIOS shadowed                                                            
+    Video BIOS shadowed                                                             
+    Fixed Disk 0: HDT722525DLA380                                                   
+    Fixed Disk 1: WDC WD5000AAKS-00A7B0                                             
+    Fixed Disk 2: WDC WD5000AAKS-22A7B0                                             
+    Fixed Disk 3: WDC WD5000AAKS-00A7B2                                             
+    Fixed Disk 4: WDC WD5000AAKS-22A7B0                                             
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+    [    0.000000] Initializing cgroup subsys cpuset
+    [    0.000000] Initializing cgroup subsys cpu
+    [    0.000000] Linux version 2.6.35.11-83.fc14.x86_64 (mockbuild@x86-01.phx2.fedoraproject.org) (gcc version 4.5.1 20100924 (Red Hat 4.5.1-4) (GCC) ) #1 SMP Mon Feb 7 07:06:44 UTC 2011
+    [    0.000000] Command line: ro root=/dev/mapper/vg_drewserv-lv_root rd_LVM_LV=vg_drewserv/lv_root rd_LVM_LV=vg_drewserv/lv_swap rd_NO_LUKS rd_NO_MD rd_NO_DM console=tty0 console=ttyS1,115200
+    [    0.000000] BIOS-provided physical RAM map:
+    [    0.000000]  BIOS-e820: 0000000000000000 - 000000000009e000 (usable)
+    [    0.000000]  BIOS-e820: 000000000009e000 - 00000000000a0000 (reserved)
+    [    0.000000]  BIOS-e820: 00000000000ca000 - 00000000000cc000 (reserved)
+    [    0.000000]  BIOS-e820: 00000000000e4000 - 0000000000100000 (reserved)
+    [    0.000000]  BIOS-e820: 0000000000100000 - 000000007fee0000 (usable)
+    [    0.000000]  BIOS-e820: 000000007fee0000 - 000000007fee9000 (ACPI data)
+    [    0.000000]  BIOS-e820: 000000007fee9000 - 000000007ff00000 (ACPI NVS)
+    [    0.000000]  BIOS-e820: 000000007ff00000 - 0000000080000000 (reserved)
+    [    0.000000]  BIOS-e820: 00000000f0000000 - 00000000f4000000 (reserved)
+    [    0.000000]  BIOS-e820: 00000000fec00000 - 00000000fec10000 (reserved)
+    [    0.000000]  BIOS-e820: 00000000fee00000 - 00000000fee01000 (reserved)
+    [    0.000000]  BIOS-e820: 00000000ff000000 - 0000000100000000 (reserved)
+    [    0.000000] NX (Execute Disable) protection: active
+    [    0.000000] DMI present.
+    [    0.000000] Phoenix BIOS detected: BIOS may corrupt low RAM, working around it.
+    [    0.000000] No AGP bridge found
+    [    0.000000] last_pfn = 0x7fee0 max_arch_pfn = 0x400000000
+    [    0.000000] x86 PAT enabled: cpu 0, old 0x7040600070406, new 0x7010600070106
+    [    0.000000] total RAM covered: 2047M
+    [    0.000000] Found optimal setting for mtrr clean up
+    [    0.000000]  gran_size: 64K  chunk_size: 2M  num_reg: 2      lose cover RAM: 0G
+    [    0.000000] found SMP MP-table at [ffff8800000f5e80] f5e80
+    [    0.000000] init_memory_mapping: 0000000000000000-000000007fee0000
+    [    0.000000] RAMDISK: 37483000 - 37ff0000
+    [    0.000000] ACPI: RSDP 00000000000f5e00 00014 (v00 PTLTD )
+    [    0.000000] ACPI: RSDT 000000007fee25a4 0003C (v01 PTLTD    RSDT   06040000  LTP 00000000)
+    [    0.000000] ACPI: FACP 000000007fee8e51 00074 (v01 INTEL           06040000 PTL  00000003)
+    [    0.000000] ACPI: DSDT 000000007fee39cc 05485 (v01  INTEL GLENWOOD 06040000 MSFT 0100000E)
+    [    0.000000] ACPI: FACS 000000007fee9fc0 00040
+    [    0.000000] ACPI: MCFG 000000007fee8ec5 0003C (v01 PTLTD    MCFG   06040000  LTP 00000000)
+    [    0.000000] ACPI: APIC 000000007fee8f01 00074 (v01 PTLTD  ? APIC   06040000  LTP 00000000)
+    [    0.000000] ACPI: BOOT 000000007fee8f75 00028 (v01 PTLTD  $SBFTBL$ 06040000  LTP 00000001)
+    [    0.000000] ACPI: ASF! 000000007fee8f9d 00063 (v32   CETP     CETP 06040000 PTL  00000001)
+    [    0.000000] ACPI: SSDT 000000007fee25e0 013EC (v01  PmRef    CpuPm 00003000 INTL 20050228)
+    [    0.000000] No NUMA configuration found
+    [    0.000000] Faking a node at 0000000000000000-000000007fee0000
+    [    0.000000] Initmem setup node 0 0000000000000000-000000007fee0000
+    [    0.000000]   NODE_DATA [0000000001e441c0 - 0000000001e581bf]
+    [    0.000000]   bootmap [0000000001e59000 -  0000000001e68fdf] pages 10
+    [    0.000000] (13/32 early reservations) ==> bootmem [0000000000 - 007fee0000]
+    [    0.000000]   #0 [0001000000 - 0001e43878]    TEXT DATA BSS ==> [0001000000 - 0001e43878]
+    [    0.000000]   #1 [0037483000 - 0037ff0000]          RAMDISK ==> [0037483000 - 0037ff0000]
+    [    0.000000]   #2 [0001e44000 - 0001e441ac]              BRK ==> [0001e44000 - 0001e441ac]
+    [    0.000000]   #3 [00000f5e90 - 0000100000]    BIOS reserved ==> [00000f5e90 - 0000100000]
+    [    0.000000]   #4 [00000f5e80 - 00000f5e90]     MP-table mpf ==> [00000f5e80 - 00000f5e90]
+    [    0.000000]   #5 [000009e000 - 000009e4a1]    BIOS reserved ==> [000009e000 - 000009e4a1]
+    [    0.000000]   #6 [000009e625 - 00000f5e80]    BIOS reserved ==> [000009e625 - 00000f5e80]
+    [    0.000000]   #7 [000009e4a1 - 000009e625]     MP-table mpc ==> [000009e4a1 - 000009e625]
+    [    0.000000]   #8 [0000010000 - 0000012000]       TRAMPOLINE ==> [0000010000 - 0000012000]
+    [    0.000000]   #9 [0000012000 - 0000016000]      ACPI WAKEUP ==> [0000012000 - 0000016000]
+    [    0.000000]   #10 [0000016000 - 0000018000]          PGTABLE ==> [0000016000 - 0000018000]
+    [    0.000000]   #11 [0001e441c0 - 0001e581c0]        NODE_DATA ==> [0001e441c0 - 0001e581c0]
+    [    0.000000]   #12 [0001e59000 - 0001e69000]          BOOTMAP ==> [0001e59000 [    1.382431] Freeing initrd memory: 11700k freed
+    [    1.394058] Simple Boot Flag at 0x38 set to 0x1
+    [    1.399591] audit: initializing netlink socket (disabled)
+    [    1.405243] type=2000 audit(1302672510.404:1): initialized
+    [    1.427027] HugeTLB registered 2 MB page size, pre-allocated 0 pages
+    [    1.436286] VFS: Disk quotas dquot_6.5.2
+    [    1.440506] Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+    [    1.448016] msgmni has been set to 4007
+    [    1.452698] alg: No test for stdrng (krng)
+    [    1.457116] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 253)
+    [    1.464916] io scheduler noop registered
+    [    1.469077] io scheduler deadline registered
+    [    1.473644] io scheduler cfq registered (default)
+    [    1.479606] pci_hotplug: PCI Hot Plug PCI Core version: 0.5
+    [    1.485552] pciehp: PCI Express Hot Plug Controller Driver version: 0.4
+    [    1.492403] acpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5
+    [    1.499422] pci-stub: invalid id string ""
+    [    1.504029] input: Power Button as /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/PNP0C0C:00/input/input0
+    [    1.513757] ACPI: Power Button [PWRB]
+    [    1.517729] input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input1
+    [    1.525533] ACPI: Power Button [PWRF]
+    [    1.532942] ERST: Table is not found!
+    [    1.537146] Non-volatile memory driver v1.3
+    [    1.541561] Linux agpgart interface v0.103
+    [    1.546005] Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
+    [    1.796150] serial8250: ttyS0 at I/O 0x3f8 (irq = 4) is a 16550A
+    �[    2.046149] serial8250: ttyS1 at I/O 0x2f8 (irq = 3) is a 16550A
+    [    2.052808] 00:09: ttyS0 at I/O 0x3f8 (irq = 4) is a 16550A
+    [    2.058792] 00:0a: ttyS1 at I/O 0x2f8 (irq = 3) is a 16550A
+    [    2.066647] brd: module loaded
+    [    2.070920] loop: module loaded
+    [    2.074484] ata_piix 0000:00:1f.1: PCI INT A -> GSI 18 (level, low) -> IRQ 18
+    [    2.082032] scsi0 : ata_piix
+    [    2.085274] scsi1 : ata_piix
+    [    2.089902] ata1: PATA max UDMA/100 cmd 0x1f0 ctl 0x3f6 bmdma 0x30a0 irq 14
+    [    2.097097] ata2: PATA max UDMA/100 cmd 0x170 ctl 0x376 bmdma 0x30a8 irq 15
+    [    2.104343] ata_piix 0000:00:1f.2: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+    [    2.111814] ata_piix 0000:00:1f.2: MAP [ P0 P2 P1 P3 ]
+    [    2.117599] scsi2 : ata_piix
+    [    2.120812] scsi3 : ata_piix
+    [    2.125585] ata3: SATA max UDMA/133 cmd 0x30e8 ctl 0x30dc bmdma 0x30b0 irq 19
+    [    2.132955] ata4: SATA max UDMA/133 cmd 0x30e0 ctl 0x30d8 bmdma 0x30b8 irq 19
+    [    2.140539] Fixed MDIO Bus: probed
+    [    2.144276] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+    [    2.151073] ehci_hcd 0000:00:1d.7: PCI INT A -> GSI 23 (level, low) -> IRQ 23
+    [    2.158473] ehci_hcd 0000:00:1d.7: EHCI Host Controller
+    [    2.164021] ehci_hcd 0000:00:1d.7: new USB bus registered, assigned bus number 1
+    [    2.171848] ehci_hcd 0000:00:1d.7: using broken periodic workaround
+    [    2.178356] ehci_hcd 0000:00:1d.7: debug port 1
+    [    2.187024] ehci_hcd 000[    6.194957] generic-usb 0003:051D:0002.0001: hiddev96,hidraw0: USB HID v1.10 Device [American Power Conversion Smart-UPS 1500 FW:601.3.D USB FW:1.5] on usb-0000:00:1d.0-2/input0
+    [    6.269922] dracut: Scanning devices sda2  for LVM logical volumes vg_drewserv/lv_root vg_drewserv/lv_swap 
+    [    6.325870] dracut: inactive '/dev/vg_drewserv/lv_root' [50.00 GiB] inherit
+    [    6.333273] dracut: inactive '/dev/vg_drewserv/lv_home' [178.44 GiB] inherit
+    [    6.340743] dracut: inactive '/dev/vg_drewserv/lv_swap' [3.94 GiB] inherit
+    [    6.658963] EXT4-fs (dm-0): INFO: recovery required on readonly filesystem
+    [    6.666270] EXT4-fs (dm-0): write access will be enabled during recovery
+    [    6.786320] EXT4-fs (dm-0): recovery complete
+    [    6.791601] EXT4-fs (dm-0): mounted filesystem with ordered data mode. Opts: (null)
+    [    6.859875] dracut: Mounted root filesystem /dev/mapper/vg_drewserv-lv_root
+    [    6.987665] dracut: Loading SELinux policy
+    [    7.230053] type=1404 audit(1302672517.979:2): enforcing=1 old_enforcing=0 auid=4294967295 ses=4294967295
+    [    8.341121] type=1403 audit(1302672519.090:3): policy loaded auid=4294967295 ses=4294967295
+    [    8.984331] dracut: Switching root
+    [   10.448852] udev[403]: starting version 161
+    [   10.803998] intel_rng: FWH not detected
+    [   10.866534] shpchp: Standard Hot Plug PCI Controller Driver version: 0.4
+    [   10.891884] EDAC MC: Ver: 2.1.0 Feb  7 2011
+    [   10.904960] e1000e: Intel(R) PRO/1000 Network Driver - 1.0.2-k4
+    [   10.911461] e1000e: Copyright (c) 1999 - 2009 Intel Corporation.
+    [   10.919038] iTCO_vendor_support: vendor-support=0
+    [   10.933753] e1000e 0000:0d:00.0: Disabling ASPM  L1
+    [   10.958846] e1000e 0000:0d:00.0: PCI INT A -> GSI 16 (level, low) -> IRQ 16
+    [   10.967333] e1000e 0000:0d:00.0: Disabling ASPM L0s 
+    [   10.979986] i801_smbus 0000:00:1f.3: PCI INT B -> GSI 19 (level, low) -> IRQ 19
+    [   11.019016] e1000e 0000:0d:00.0: Warning: detected DSPD enabled in EEPROM
+    [   11.073868] e1000e 0000:0d:00.0: eth0: (PCI Express:2.5GB/s:Width x1) 00:30:48:56:a8:14
+    [   11.082377] e1000e 0000:0d:00.0: eth0: Intel(R) PRO/1000 Network Connection
+    [   11.089816] e1000e 0000:0d:00.0: eth0: MAC: 2, PHY: 2, PBA No: ffffff-0ff
+    [   11.097339] e1000e 0000:0e:00.0: Disabling ASPM  L1
+    [   11.103579] e1000e 0000:0e:00.0: PCI INT A -> GSI 17 (level, low) -> IRQ 17
+    [   11.111251] e1000e 0000:0e:00.0: Disabling ASPM L0s 
+    [   11.118661] EDAC MC0: Giving out device to 'i3000_edac' 'i3000': DEV 0000:00:00.0
+    [   11.127013] EDAC PCI0: Giving out device to module 'i3000_edac' controller 'EDAC PCI controller': DEV '0000:00:00.0' (POLLED)
+    [   11.204562] e1000e 0000:0e:00.0: eth1: (PCI Express:2.5GB/s:Width x1) 00:30:48:56:a8:15
+    [   11.213110] e1000e 0000:0e:00.0: eth1: Intel(R) PRO/1000 Network Connection
+    [   11.220524] e1000e 0000:0e:00.0: eth1: MAC: 2, PHY: 2, PBA No: ffffff-0ff
+    [   11.236770] iTCO_wdt: Intel TCO WatchDog Timer Driver v1.06
+    [   11.243348] iTCO_wdt: Found a ICH7 or ICH7R TCO device (Version=2, TCOBASE=0x1060)
+    [   11.255980] iTCO_wdt: initialized. heartbeat=30 sec (nowayout=0)
+    [   11.293708] leds_ss4200: no LED devices found
+    [   11.421073] Linux video capture interface: v2.00
+    [   11.986585] md: bind<sdd>
+    [   11.991898] md: bind<sde>
+    [   11.997302] md: bind<sdc>
+    [   12.003366] md: bind<sdb>
+    [   12.205094] async_tx: api initialized (async)
+    [   12.214881] xor: automatically using best checksumming function: generic_sse
+    [   12.226255]    generic_sse:  4272.000 MB/sec
+    [   12.230818] xor: using function: generic_sse (4272.000 MB/sec)
+    [   12.350272] raid6: int64x1   1234 MB/s
+    [   12.371279] raid6: int64x2   1308 MB/s
+    [   12.392256] raid6: int64x4   1617 MB/s
+    [   12.413297] raid6: int64x8   1078 MB/s
+    [   12.434264] raid6: sse2x1    2007 MB/s
+    [   12.455258] raid6: sse2x2    2855 MB/s
+    [   12.476263] raid6: sse2x4    2894 MB/s
+    [   12.480269] raid6: using algorithm sse2x4 (2894 MB/s)
+    [   12.514503] md: raid6 personality registered for level 6
+    [   12.520181] md: raid5 personality registered for level 5
+    [   12.525889] md: raid4 personality registered for level 4
+    [   12.531901] md/raid:md127: device sdb operational as raid disk 0
+    [   12.538214] md/raid:md127: device sdc operational as raid disk 2
+    [   12[   17.809814] EXT4-fs (dm-0): re-mounted. Opts: (null)
+    [   18.426160] EXT4-fs (sda1): mounted filesystem with ordered data mode. Opts: (null)
+    [   18.496094] EXT4-fs (dm-3): mounted filesystem with ordered data mode. Opts: (null)
+    [   18.577891] EXT4-fs (dm-2): mounted filesystem with ordered data mode. Opts: (null)
+    [   19.995607] Adding 4128764k swap on /dev/mapper/vg_drewserv-lv_swap.  Priority:-1 extents:1 across:4128764k 
+    [   20.850024] NET: Registered protocol family 10
+    [   20.855168] lo: Disabled Privacy Extensions
+    [   20.871263] ip6_tables: (C) 2000-2006 Netfilter Core Team
+    [   21.570979] ADDRCONF(NETDEV_UP): eth1: link is not ready
+    [   24.351239] e1000e: eth1 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX/TX
+    [   24.368590] ADDRCONF(NETDEV_CHANGE): eth1: link becomes ready
+    [   25.159089] RPC: Registered udp transport module.
+    [   25.164125] RPC: Registered tcp transport module.
+    [   25.169149] RPC: Registered tcp NFSv4.1 backchannel transport module.
+    [   26.927637] ipmi message handler version 39.2
+    [   26.946024] IPMI System Interface driver.
+    [   26.950893] ipmi_si: probing via SMBIOS
+    [   26.955050] ipmi_si: Adding SMBIOS-specified kcs state machine
+    [   26.961392] ipmi_si: Trying SMBIOS-specified kcs state machine at i/o address 0xca8, slave address 0x20, irq 0
+    [   27.417358] ipmi_si ipmi_si.0: Found new BMC (man_id: 0x0015d9, prod_id: 0x1134, dev_id: 0x20)
+    [   27.426517] ipmi_si ipmi_si.0: IPMI kcs interface initialized
+    [   27.442853] ipmi device interface
+    [   27.549403] w83627hf: Found W83627HF chip at 0x290
+    [   29.850494] Installing knfsd (copyright (C) 1996 okir@monad.swb.de).
+    [   29.954561] NFSD: Using /var/lib/nfs/v4recovery as the NFSv4 state recovery directory
+    [   29.963014] NFSD: starting 90-second grace period
+
+    Fedora release 14 (Laughlin)
+    Kernel 2.6.35.11-83.fc14.x86_64 on an x86_64 (/dev/ttyS1)
+
+    drewserv.drewrents.readytoinvade.com login:
