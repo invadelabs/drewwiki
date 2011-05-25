@@ -42,3 +42,6 @@ A collection of randomness I've encountered and configured in Linux.
 ====Window Manager Related====
 *[[Compiz Profile Configuration]] - (Dual monitor/GiantCube/IceExploding Windows)
 *TomBoy notes - WebDav Sync
+
+====Emulators====
+*[[N64Mupen64plus]] - Using mupen64plus (N64 Emulator) in Linux

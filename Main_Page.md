@@ -78,3 +78,8 @@ Media
     monitor/GiantCube/IceExploding Windows)
 -   TomBoy notes - WebDav Sync
 
+#### Emulators
+
+-   [N64Mupen64plus](N64Mupen64plus "wikilink") - Using mupen64plus (N64
+    Emulator) in Linux
+
