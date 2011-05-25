@@ -1,0 +1,65 @@
+<pre>mupen64plus --resolution 1024x768 --audio dummy \
+--set Video-Rice[LoadHiResTextures]=True \
+--gfx /usr/lib/mupen64plus/mupen64plus-video-arachnoid.so \
+Legend\ of\ Zelda\,\ The\ -\ Majora\'s\ Mask\ \(U\)\ \[\!\].z64
+
+mupen64plus --resolution 1024x768 --audio dummy \
+--gfx /usr/lib/mupen64plus/mupen64plus-video-glide64.so \
+Legend\ of\ Zelda\,\ The\ -\ Majora\'s\ Mask\ \(U\)\ \[\!\].z64
+
+mupen64plus --resolution 1024x768 --audio dummy \
+--set Video-Rice[LoadHiResTextures]=True  \
+--set Video-Rice[DoubleSizeForSmallTxtrBuf]=True \
+--set Video-Rice[WinFrameMode]=False \
+--gfx /usr/lib/mupen64plus/mupen64plus-video-rice.so \
+Legend\ of\ Zelda\,\ The\ -\ Majora\'s\ Mask\ \(U\)\ \[\!\].z64
+
+padsp mupen64plus --resolution 1024x768 \
+--set Video-Rice[LoadHiResTextures]=True  \
+Legend\ of\ Zelda\,\ The\ -\ Majora\'s\ Mask\ \(U\)\ \[\!\].z64
+
+/usr/lib/mupen64plus/mupen64plus-audio-sdl.so
+/usr/lib/mupen64plus/mupen64plus-rsp-hle.so
+/usr/lib/mupen64plus/mupen64plus-rsp-z64.so
+/usr/lib/mupen64plus/mupen64plus-video-rice.so
+/usr/lib/mupen64plus/mupen64plus-video-z64.so
+
+/usr/share/mupen64plus/Glide64.ini
+/usr/share/mupen64plus/RiceVideoLinux.ini
+
+ --saveoptions 
+
+[Input-SDL-Control1]
+
+# Specifies whether this controller is 'plugged in' to the simulated N64
+plugged = True
+# Specifies which type of expansion pak is in the controller: 1=None, 2=Mem pak, 5=Rumble pak
+plugin = 2
+# If True, then mouse buttons may be used with this controller
+mouse = False
+# Specifies which joystick is bound to this controller: -2=Keyboard/mouse, -1=Auto config, 0 or more= SDL Joystick number
+device = 0
+# The minimum absolute value of the SDL analog joystick axis to move the N64 controller axis value from 0.  For X, Y axes.
+AnalogDeadzone = "4096,4096"
+# An absolute value of the SDL joystick axis >= AnalogPeak will saturate the N64 controller axis value (at 80).  For X, Y axes. For each axis, this must be greater than the corresponding AnalogDeadzone value
+AnalogPeak = "32768,32768"
+# Digital button configuration mappings
+DPad R = "button(5)"
+DPad L = "button(7)"
+DPad D = "button(6)"
+DPad U = "button(4)"
+Start = "button(3)"
+Z Trig = "button(8)"
+B Button = "button(15)"
+A Button = "button(14)"
+C Button R = "axis(2+)"
+C Button L = "axis(2-)"
+C Button D = "axis(3+)"
+C Button U = "axis(3-)"
+R Trig = "button(11)"
+L Trig = "button(10)"
+Mempak switch = ""
+Rumblepak switch = ""
+# Analog axis configuration mappings
+X Axis = "axis(0-,0+)"
+Y Axis = "axis(1-,1+)"</pre>
