@@ -29,6 +29,7 @@ A collection of randomness I've encountered and configured in Linux.
 *Rsync via SMB::fstab or smb directly
 ====Hardware Related====
 *[[udevinfo]] - gathering system info
+*[[gps]] - GPS Related
 
 ==Media==
 *[[eGalaxyTouchScreen]] - eGalaxy Touch Screen

@@ -51,6 +51,7 @@ System Administration
 #### Hardware Related
 
 -   [udevinfo](udevinfo "wikilink") - gathering system info
+-   [gps](gps "wikilink") - GPS Related
 
 Media
 -----
