@@ -303,3 +303,5 @@ mkfs.ext3 -b 4096 -E stride=16 -E stripe-width=48 -O dir\_index
 You would want to change the stride-width if you added disks to array.
 
 `   tune2fs -E stride=n,stripe-width=m /dev/mdx`
+
+rabble

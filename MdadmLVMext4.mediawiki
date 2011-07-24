@@ -269,3 +269,5 @@ mkfs.ext3 -b 4096 -E stride=16 -E stripe-width=48 -O dir_index /dev/XXXX
 http://www.nickyeates.com/technology/unix/raid_filesystem_lvm
 Note: You would want to change the stride-width if you added disks to array.
     tune2fs -E stride=n,stripe-width=m /dev/mdx
+
+rabble
