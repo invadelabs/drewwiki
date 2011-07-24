@@ -5,7 +5,7 @@ layout: default
 
      # yum install man screen lm_sensors wget rsync fail2ban mailx sendmail-cf \
     nut clamav clamav-update nfs-utils strace smartmontools logwatch etckeeper \
-    OpenIPMI ipmitool php-pecl-apc.x86_64
+    OpenIPMI ipmitool php-pecl-apc.x86_64 sysstat
 
 1.  Install etckeeper
 2.  Disable root login via ssh
@@ -13,7 +13,8 @@ layout: default
 4.  Install fail2ban
 5.  yum remove unneeded software
 6.  yum update
-7.  Enable SElinux  
+7.  Enable SElinux
+8.  Extend days of sysstat logging  
       
 
 <!-- -->

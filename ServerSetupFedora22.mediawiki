@@ -1,6 +1,6 @@
 <pre> # yum install man screen lm_sensors wget rsync fail2ban mailx sendmail-cf \
 nut clamav clamav-update nfs-utils strace smartmontools logwatch etckeeper \
-OpenIPMI ipmitool php-pecl-apc.x86_64</pre>
+OpenIPMI ipmitool php-pecl-apc.x86_64 sysstat</pre>
 
 # Install etckeeper
 # Disable root login via ssh
@@ -8,7 +8,8 @@ OpenIPMI ipmitool php-pecl-apc.x86_64</pre>
 # Install fail2ban
 # yum remove unneeded software
 # yum update
-# Enable SElinux<br><br>
+# Enable SElinux
+# Extend days of sysstat logging<br><br>
 
 # Configure GRUB serial console redirection
 # Configure kdump for system panics
