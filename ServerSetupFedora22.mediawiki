@@ -7,7 +7,9 @@ OpenIPMI ipmitool php-pecl-apc.x86_64</pre>
 # Enable sudo
 # Install fail2ban
 # yum remove unneeded software
-# yum update<br><br>
+# yum update
+# Enable SElinux<br><br>
+
 # Configure GRUB serial console redirection
 # Configure kdump for system panics
 ## Append kernel grub.conf crashkernel=128M for F14
@@ -17,6 +19,7 @@ OpenIPMI ipmitool php-pecl-apc.x86_64</pre>
 ## Add UDP 123 to IPTables
 # Configure syslog for network client writes
 ## Add UDP 514 to IPTables<br><br>
+
 # Mount raid array
 # Configure md alerts
 # Enable NFS
@@ -39,6 +42,7 @@ OpenIPMI ipmitool php-pecl-apc.x86_64</pre>
 # ^ Configure thermal alerts for server
 # Configure logwatch
 # Setup clamav virus protection for Samba and weekly scan<br><br>
+
 # Setup cron jobs
 ## Keep anacron from waking me up at night! # vi /etc/anacrontab // START_HOURS_RANGE<br><br>
 # ^ Configure Snort passive IDS
@@ -51,6 +55,7 @@ OpenIPMI ipmitool php-pecl-apc.x86_64</pre>
 # Configure MediaWiki
 # Configure webdav for tomboy notes / foxit marks
 # Configure mod_auth_pam for httpd authentication<br><br>
+
 # ^ Verify all log files in /var/log are not giving any errors or notifications
 # ^ Check logs for whats growing!
 :* ls -alR /var/log | grep ^- | awk {'print $5" "$8'} | sort -k 2| sort -n

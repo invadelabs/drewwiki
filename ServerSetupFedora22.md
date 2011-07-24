@@ -12,61 +12,74 @@ layout: default
 3.  Enable sudo
 4.  Install fail2ban
 5.  yum remove unneeded software
-6.  yum update  
+6.  yum update
+7.  Enable SElinux  
       
-7.  Configure GRUB serial console redirection
-8.  Configure kdump for system panics
+
+<!-- -->
+
+1.  Configure GRUB serial console redirection
+2.  Configure kdump for system panics
     1.  Append kernel grub.conf crashkernel=128M for F14
     2.  /etc/sysctl.conf :: kernel.sysrq =1
-9.  Configure NUT for UPS alerts
-10. Configure Time Server for local network access
+3.  Configure NUT for UPS alerts
+4.  Configure Time Server for local network access
     1.  Add UDP 123 to IPTables
-11. Configure syslog for network client writes
+5.  Configure syslog for network client writes
     1.  Add UDP 514 to IPTables  
           
-12. Mount raid array
-13. Configure md alerts
-14. Enable NFS
+
+<!-- -->
+
+1.  Mount raid array
+2.  Configure md alerts
+3.  Enable NFS
     1.  Add TCP 2049 to IPTables
     2.  Disable NFSv2/3 /etc/sysconfig/nfs
     3.  $ service rpcbind start ; chkconfig rpcbind on
     4.  $ service nfslock start ; chkconfig nfslock on
     5.  $ service nfs start ; chkconfig nfs on
-15. Enable samba
+4.  Enable samba
     1.  Add TCP port 139/445 to IPTables
-16. Enable iSCSI
-17. ^ Configure bacula and web interface  
+5.  Enable iSCSI
+6.  ^ Configure bacula and web interface  
       
-18. Setup mail relay
+7.  Setup mail relay
     1.  $ echo drew &gt; /root/.forward
     2.  echo “andrew: drew” &gt;&gt; /etc/aliases; newaliases
     3.  echo “root: drew” &gt;&gt; /etc/aliases; newaliases
     4.  Remove 127.0.0.1 /etc/mail/sendmail.mc
     5.  Add TCP port 25 to IPTables
-19. Configure smartd to monitor hard drives
-20. ^ Configure thermal alerts for server
-21. Configure logwatch
-22. Setup clamav virus protection for Samba and weekly scan  
+8.  Configure smartd to monitor hard drives
+9.  ^ Configure thermal alerts for server
+10. Configure logwatch
+11. Setup clamav virus protection for Samba and weekly scan  
       
-23. Setup cron jobs
+
+<!-- -->
+
+1.  Setup cron jobs
     1.  Keep anacron from waking me up at night! \# vi /etc/anacrontab
         // START\_HOURS\_RANGE  
           
-24. ^ Configure Snort passive IDS
-25. ^ Transparent Proxy with Squid for bandwidth utilization tally  
+2.  ^ Configure Snort passive IDS
+3.  ^ Transparent Proxy with Squid for bandwidth utilization tally  
       
-26. Upload firmware for tv tuner card
-27. Setup mythtv
-28. Configure MythWeb
-29. Force http to https redirection
+4.  Upload firmware for tv tuner card
+5.  Setup mythtv
+6.  Configure MythWeb
+7.  Force http to https redirection
     1.  Add TCP port 443 to IPTables
-30. Configure MediaWiki
-31. Configure webdav for tomboy notes / foxit marks
-32. Configure mod\_auth\_pam for httpd authentication  
+8.  Configure MediaWiki
+9.  Configure webdav for tomboy notes / foxit marks
+10. Configure mod\_auth\_pam for httpd authentication  
       
-33. ^ Verify all log files in /var/log are not giving any errors or
+
+<!-- -->
+
+1.  ^ Verify all log files in /var/log are not giving any errors or
     notifications
-34. ^ Check logs for whats growing!
+2.  ^ Check logs for whats growing!
 
 :\* ls -alR /var/log | grep ^- | awk {'print $5" "$8'} | sort -k 2| sort
 -n
