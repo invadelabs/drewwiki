@@ -60,12 +60,13 @@ layout: default
 28. Configure MythWeb
 29. Force http to https redirection
     1.  Add TCP port 443 to IPTables
-30. Configure webdav for tomboy notes / foxit marks
-31. Configure mod\_auth\_pam for httpd authentication  
+30. Configure MediaWiki
+31. Configure webdav for tomboy notes / foxit marks
+32. Configure mod\_auth\_pam for httpd authentication  
       
-32. ^ Verify all log files in /var/log are not giving any errors or
+33. ^ Verify all log files in /var/log are not giving any errors or
     notifications
-33. ^ Check logs for whats growing!
+34. ^ Check logs for whats growing!
 
 :\* ls -alR /var/log | grep ^- | awk {'print $5" "$8'} | sort -k 2| sort
 -n

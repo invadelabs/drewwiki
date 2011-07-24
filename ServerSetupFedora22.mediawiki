@@ -48,6 +48,7 @@ OpenIPMI ipmitool php-pecl-apc.x86_64</pre>
 # Configure MythWeb
 # Force http to https redirection
 ## Add TCP port 443 to IPTables
+# Configure MediaWiki
 # Configure webdav for tomboy notes / foxit marks
 # Configure mod_auth_pam for httpd authentication<br><br>
 # ^ Verify all log files in /var/log are not giving any errors or notifications
