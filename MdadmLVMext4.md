@@ -8,7 +8,7 @@ Preliminaries
 
 For faster rebuild
 
-    # cat dev.raid.speed_limit_min=100000 # set higher raid rebuild limit >> /etc/sysctl.conf
+    # echo "dev.raid.speed_limit_min=100000 # set higher raid rebuild limit" >> /etc/sysctl.conf
 
 For Faster Writes Add this to a script on boot ( rc.local )
 
