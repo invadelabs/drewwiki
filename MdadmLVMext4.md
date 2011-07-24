@@ -14,7 +14,8 @@ For Faster Writes Add this to a script on boot ( rc.local )
 
     # echo 16384 > /sys/block/md127/md/stripe_cache_size
 
-`   ^----- **Beware of RAM usage: Value in pages per device, i.e. on 4 devices at 8192 comes out to 128MB`
+**Beware of RAM usage: Value in pages per device, i.e. on 4 devices at
+8192 comes out to 128MB**
 
 Build the array
 ---------------
@@ -55,17 +56,21 @@ Build the array
 
 ### MD RAID5 Perf Tests
 
-\[root@drewserv ~\]\# dd if=/dev/md127 of=/dev/null count=10000 bs=1M
-10000+0 records in 10000+0 records out 10485760000 bytes (10 GB) copied,
-63.5414 s, 165 MB/s
+    [root@drewserv ~]# dd if=/dev/md127 of=/dev/null count=10000 bs=1M
+    10000+0 records in
+    10000+0 records out
+    10485760000 bytes (10 GB) copied, 63.5414 s, 165 MB/s
 
-Write Test \[root@drewserv ~\]\# cat
-/sys/block/md127/md/stripe\_cache\_size 256 \[root@drewserv ~\]\# echo
-16384 &gt; /sys/block/md127/md/stripe\_cache\_size \[root@drewserv ~\]\#
-cat /sys/block/md127/md/stripe\_cache\_size 16384 \[root@drewserv ~\]\#
-dd if=/dev/zero of=/dev/md127 count=10000 bs=1M 10000+0 records in
-10000+0 records out 10485760000 bytes (10 GB) copied, 74.9109 s, 140
-MB/s
+    Write Test
+    [root@drewserv ~]# cat /sys/block/md127/md/stripe_cache_size 
+    256
+    [root@drewserv ~]# echo 16384 > /sys/block/md127/md/stripe_cache_size 
+    [root@drewserv ~]# cat /sys/block/md127/md/stripe_cache_size 
+    16384
+    [root@drewserv ~]# dd if=/dev/zero of=/dev/md127 count=10000 bs=1M
+    10000+0 records in
+    10000+0 records out
+    10485760000 bytes (10 GB) copied, 74.9109 s, 140 MB/s
 
 Create LVM VG/PV/LV
 -------------------
