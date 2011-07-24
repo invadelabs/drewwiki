@@ -213,11 +213,14 @@ test2 after rebuild
 == Restore data from backup==
 Copy data back:
 <pre>[root@drewserv ~]# rsync -aqv --log-file=/root/bkup-raid5 /mnt/backup/backup/ /mnt/raid5/
+2011/07/23 17:28:17 [8373] building file list
+2011/07/23 17:28:17 [8373] .d..t...... ./
 .
 .
 .
-sent 428464277809 bytes  received 1589811 bytes  27656341.30 bytes/sec
-total size is 428406181021  speedup is 1.00</pre>
+2011/07/23 21:49:09 [8373] .d..t...... lost+found/
+2011/07/23 21:49:09 [8373] sent 428464277809 bytes  received 1589811 bytes  27373637.92 bytes/sec
+2011/07/23 21:49:09 [8373] total size is 428406181021  speedup is 1.00</pre>
 
 
 
