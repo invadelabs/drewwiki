@@ -31,6 +31,7 @@ OpenIPMI ipmitool php-pecl-apc.x86_64</pre>
 # Enable samba
 ## Add TCP port 139/445 to IPTables
 # Enable iSCSI
+## Add TCP port 3260
 # ^ Configure bacula and web interface<br><br>
 # Setup mail relay
 ## $ echo drew > /root/.forward

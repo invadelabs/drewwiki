@@ -42,6 +42,7 @@ layout: default
 4.  Enable samba
     1.  Add TCP port 139/445 to IPTables
 5.  Enable iSCSI
+    1.  Add TCP port 3260
 6.  ^ Configure bacula and web interface  
       
 7.  Setup mail relay
