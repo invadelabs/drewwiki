@@ -17,6 +17,13 @@ For Faster Writes Add this to a script on boot ( rc.local )
 **Beware of RAM usage: Value in pages per device, i.e. on 4 devices at
 8192 comes out to 128MB**
 
+After enabling SATA AHCI in BIOS!
+
+    [root@drewserv ~]# dd if=/dev/md127 of=/dev/null bs=4M count=2500
+    2500+0 records in
+    2500+0 records out
+    10485760000 bytes (10 GB) copied, 57.1676 s, 183 MB/s
+
 Build the array
 ---------------
 
