@@ -28,6 +28,8 @@ System Administration
     Optimization
     -   [mdadmLVMext4](mdadmLVMext4 "wikilink") - Best practices using
         md raid5 / LVM / ext4
+    -   [BackupViaDDsnapshot](BackupViaDDsnapshot "wikilink") - Using
+        LVM snapshotting to copy an LV
 -   [NFS Optimization](NFS_Optimization "wikilink") - NFS Performance
     and Optimization
 -   [eCryptfs](eCryptfs "wikilink") - Private Encrypted Folders
