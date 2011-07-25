@@ -3,6 +3,9 @@ title: BackupViaDDsnapshot
 layout: default
 ---
 
+Creating / copying snapshot
+---------------------------
+
     [drew@drewserv ~]$ sudo lvcreate -L10G -s -n tmpbkup /dev/vg-raid5/lv-raid5 
       Logical volume "tmpbkup" created
 
@@ -44,3 +47,23 @@ layout: default
       lv_home   vg_drewserv -wi-ao 178.44g                                      
       lv_root   vg_drewserv -wi-ao  50.00g                                      
       lv_swap   vg_drewserv -wi-ao   3.94g                                      
+
+USB Hard Drive Perf Tests
+-------------------------
+
+    [root@drewserv backup]# dd if=dell-desktop7.22.2010.tar.gz of=/dev/null bs=4M
+    6321+1 records in
+    6321+1 records out
+    26512197033 bytes (27 GB) copied, 677.563 s, 39.1 MB/s
+    [root@drewserv backup]# cd
+
+    [root@drewserv backup]# dd if=/dev/zero of=/mnt/backup/10Gtest bs=4M count=2500
+    2500+0 records in
+    2500+0 records out
+    10485760000 bytes (10 GB) copied, 316.476 s, 33.1 MB/s
+
+    [root@drewserv ~]# umount /mnt/backup/
+    [root@drewserv ~]# dd if=/dev/vg-backup/lv-backup of=/dev/null bs=4M count=2500
+    2500+0 records in
+    2500+0 records out
+    10485760000 bytes (10 GB) copied, 264.512 s, 39.6 MB/s
