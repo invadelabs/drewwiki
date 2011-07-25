@@ -6,7 +6,12 @@ layout: default
 Speedup USB HD
 --------------
 
-Apped to /etc/sysctl.conf
+Apped to /etc/sysctl.conf per;
+
+-   <http://www.linux-usb.org/FAQ.html#i5>
+-   <http://marc-abramowitz.com/archives/2007/02/17/getting-good-performance-out-of-usb-hard-drives-in-linux/>
+
+<!-- -->
 
     # Speed up writes on USB HD
     echo 1024 > /sys/block/sdf/device/max_sectors;
