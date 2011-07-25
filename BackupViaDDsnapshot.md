@@ -3,6 +3,14 @@ title: BackupViaDDsnapshot
 layout: default
 ---
 
+Speedup USB HD
+--------------
+
+Apped to /etc/sysctl.conf
+
+    # Speed up writes on USB HD
+    echo 1024 > /sys/block/sdf/device/max_sectors;
+
 Creating / copying snapshot
 ---------------------------
 

@@ -1,3 +1,8 @@
+==Speedup USB HD==
+Apped to /etc/sysctl.conf
+<pre># Speed up writes on USB HD
+echo 1024 > /sys/block/sdf/device/max_sectors;</pre>
+
 == Creating / copying snapshot ==
 <pre>[drew@drewserv ~]$ sudo lvcreate -L10G -s -n tmpbkup /dev/vg-raid5/lv-raid5 
   Logical volume "tmpbkup" created
