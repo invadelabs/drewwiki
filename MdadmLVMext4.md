@@ -131,13 +131,15 @@ Create LVM VG/PV/LV
 
 ### LVM Performance Tests
 
-\[root@drewserv ~\]\# dd if=/dev/vg-raid5/lv-raid5 of=/dev/null
-count=10000 bs=1M 10000+0 records in 10000+0 records out 10485760000
-bytes (10 GB) copied, 67.0551 s, 156 MB/s
+    [root@drewserv ~]# dd if=/dev/vg-raid5/lv-raid5 of=/dev/null count=10000 bs=1M
+    10000+0 records in
+    10000+0 records out
+    10485760000 bytes (10 GB) copied, 67.0551 s, 156 MB/s
 
-\[root@drewserv ~\]\# dd if=/dev/zero of=/dev/md127 count=10000 bs=1M
-10000+0 records in 10000+0 records out 10485760000 bytes (10 GB) copied,
-71.3196 s, 147 MB/s
+    [root@drewserv ~]# dd if=/dev/zero of=/dev/md127 count=10000 bs=1M
+    10000+0 records in
+    10000+0 records out
+    10485760000 bytes (10 GB) copied, 71.3196 s, 147 MB/s
 
 Create the filesystem (EXT4)
 ----------------------------
