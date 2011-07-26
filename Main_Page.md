@@ -36,8 +36,11 @@ System Administration
 -   [ExternalUSBEncryptedLVM](ExternalUSBEncryptedLVM "wikilink") -
     Encrypted LVM for External USB (rsync backup)
 -   [SambaTdbsamBackend](SambaTdbsamBackend "wikilink")
--   [PXEiSCSIboot](PXEiSCSIboot "wikilink") - Booting off SAN via PXE
-    and iSCSI target
+-   DD-WRT
+    -   [ddwrtdnsmasq](ddwrtdnsmasq "wikilink") - dnsmasq stuff for
+        DD-WRT
+    -   [PXEiSCSIboot](PXEiSCSIboot "wikilink") - Booting off SAN via
+        PXE and iSCSI target
 -   [NUTUPSMonitor](NUTUPSMonitor "wikilink") - Configure NUT for UPS
     monitoring and alerts in Fedora 12-14
 -   [PortMirroringDDWRTiptables](PortMirroringDDWRTiptables "wikilink") -
