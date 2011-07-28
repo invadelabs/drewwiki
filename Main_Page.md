@@ -32,6 +32,8 @@ System Administration
         md raid5 / LVM / ext4
     -   [BackupViaDDsnapshot](BackupViaDDsnapshot "wikilink") - Using
         LVM snapshotting to copy an LV
+    -   [smartdMonitoring](smartdMonitoring "wikilink") - Monitor disks
+        with smartmontools
 -   [NFS Optimization](NFS_Optimization "wikilink") - NFS Performance
     and Optimization
 -   [eCryptfs](eCryptfs "wikilink") - Private Encrypted Folders
