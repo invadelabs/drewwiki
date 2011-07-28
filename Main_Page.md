@@ -56,8 +56,8 @@ System Administration
 -   [Backup DD-WRT Config](Backup_DD-WRT_Config "wikilink") (cron)
 -   [ClamAV Weekly Scan](ClamAV_Weekly_Scan "wikilink") (cron)
 -   [MySQL Backup Script](MySQL_Backup_Script "wikilink") (cron)
--   Rsync over SSH - Different port / SSH Keys
--   Rsync via <SMB::fstab> or smb directly
+-   [rsyncSSHkeys](rsyncSSHkeys "wikilink") - Rsync over SSH - Different
+    port / SSH Keys
 
 #### Hardware Related
 

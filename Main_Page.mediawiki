@@ -31,8 +31,8 @@ A collection of randomness I've encountered and configured in Linux.
 *[[Backup DD-WRT Config]] (cron)
 *[[ClamAV Weekly Scan]] (cron)
 *[[MySQL Backup Script]] (cron)
-*Rsync over SSH - Different port / SSH Keys
-*Rsync via SMB::fstab or smb directly
+*[[rsyncSSHkeys]] - Rsync over SSH - Different port / SSH Keys
+
 ====Hardware Related====
 *[[udevinfo]] - gathering system info
 *[[gps]] - GPS Related
