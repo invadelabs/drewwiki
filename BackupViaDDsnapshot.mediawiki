@@ -5,6 +5,16 @@ Apped to /etc/sysctl.conf per;
 <pre># Speed up writes on USB HD
 echo 1024 > /sys/block/sdf/device/max_sectors;</pre>
 
+==Check Bus Speed USB Peripherals==
+<pre>[root@drewserv devices]# grep "" /sys/bus/usb/devices/*/speed
+/sys/bus/usb/devices/1-1/speed:480
+/sys/bus/usb/devices/3-2/speed:1.5
+/sys/bus/usb/devices/usb1/speed:480
+/sys/bus/usb/devices/usb2/speed:12
+/sys/bus/usb/devices/usb3/speed:12
+/sys/bus/usb/devices/usb4/speed:12
+/sys/bus/usb/devices/usb5/speed:12</pre>
+
 == Creating / copying snapshot ==
 <pre>[drew@drewserv ~]$ sudo lvcreate -L10G -s -n tmpbkup /dev/vg-raid5/lv-raid5 
   Logical volume "tmpbkup" created

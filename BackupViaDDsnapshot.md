@@ -16,6 +16,18 @@ Apped to /etc/sysctl.conf per;
     # Speed up writes on USB HD
     echo 1024 > /sys/block/sdf/device/max_sectors;
 
+Check Bus Speed USB Peripherals
+-------------------------------
+
+    [root@drewserv devices]# grep "" /sys/bus/usb/devices/*/speed
+    /sys/bus/usb/devices/1-1/speed:480
+    /sys/bus/usb/devices/3-2/speed:1.5
+    /sys/bus/usb/devices/usb1/speed:480
+    /sys/bus/usb/devices/usb2/speed:12
+    /sys/bus/usb/devices/usb3/speed:12
+    /sys/bus/usb/devices/usb4/speed:12
+    /sys/bus/usb/devices/usb5/speed:12
+
 Creating / copying snapshot
 ---------------------------
 
