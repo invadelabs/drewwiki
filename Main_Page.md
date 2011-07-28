@@ -34,6 +34,7 @@ System Administration
         LVM snapshotting to copy an LV
     -   [smartdMonitoring](smartdMonitoring "wikilink") - Monitor disks
         with smartmontools
+-   [ResizePV](ResizePV "wikilink") - Steps to resize PV
 -   [NFS Optimization](NFS_Optimization "wikilink") - NFS Performance
     and Optimization
 -   [eCryptfs](eCryptfs "wikilink") - Private Encrypted Folders

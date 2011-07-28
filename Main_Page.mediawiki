@@ -17,6 +17,7 @@ A collection of randomness I've encountered and configured in Linux.
 ** [[mdadmLVMext4]] - Best practices using md raid5 / LVM / ext4
 ** [[BackupViaDDsnapshot]] - Using LVM snapshotting to copy an LV
 ** [[smartdMonitoring]] - Monitor disks with smartmontools
+* [[ResizePV]] - Steps to resize PV
 *[[NFS Optimization]] - NFS Performance and Optimization
 *[[eCryptfs]] - Private Encrypted Folders
 *[[ExternalUSBEncryptedLVM]] - Encrypted LVM for External USB (rsync backup)
