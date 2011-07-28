@@ -5,7 +5,8 @@ layout: default
 
      # yum install man screen lm_sensors hddtemp wget rsync fail2ban mailx \
     sendmail-cf nut clamav clamav-update nfs-utils strace smartmontools logwatch \
-    etckeeper OpenIPMI ipmitool php-pecl-apc.x86_64 sysstat
+    etckeeper OpenIPMI ipmitool php-pecl-apc.x86_64 sysstat \
+    # java-1.6.0-openjdk.x86_64 
 
 1.  Install etckeeper
 2.  Disable root login via ssh
