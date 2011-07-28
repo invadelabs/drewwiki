@@ -17,6 +17,8 @@ Misc.
 System Administration
 ---------------------
 
+-   [ApachePAMunixAuth](ApachePAMunixAuth "wikilink") - Apache
+    authentication against /etc/passwd
 -   [SendmailRelayGmailCentos](SendmailRelayGmailCentos "wikilink") -
     Sendmail with gmail relay in Fedora 10+
 -   [SendmailRelayISP](SendmailRelayISP "wikilink") - Sendmail using ISP

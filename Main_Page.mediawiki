@@ -8,6 +8,7 @@ A collection of randomness I've encountered and configured in Linux.
 *[[Scratch]]
 
 ==System Administration==
+*[[ApachePAMunixAuth]] - Apache authentication against /etc/passwd
 *[[SendmailRelayGmailCentos]] - Sendmail with gmail relay in Fedora 10+
 *[[SendmailRelayISP]] - Sendmail using ISP as relay in Fedora 10+
 *[[IPMI]] - IPMI on SuperMicro AOC-IPMI20 with Serial-Over-LAN Console
