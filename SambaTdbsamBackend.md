@@ -3,21 +3,20 @@ title: SambaTdbsamBackend
 layout: default
 ---
 
-/etc/samba/smb.conf
-
+    [root@drewserv ~]# cat /etc/samba/smb.conf
     [global]
-            workgroup = LOCALNET
-            server string = dr3w s3rv
+            workgroup = WORKGROUP
+            server string = drewserv
+        security = user
             passdb backend = tdbsam
             log file = /var/log/samba/log.%m
             max log size = 50
-            load printers = no
-            printcap name = /etc/printcap
 
-    [raid5]
-            path = /mnt/raid5/drew
-            valid users = drew
-            read only = No
+    ;   Get samba to stop complaining about cups
+            load printers = no
+        show add printer wizard = no
+        printcap name = /dev/null
+        disable spoolss = yes
 
     [share]
             path = /mnt/raid5
