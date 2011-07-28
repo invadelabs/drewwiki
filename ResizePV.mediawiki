@@ -1,0 +1,23 @@
+
+
+<pre># lvm pvs --units s
+  PV         VG          Fmt  Attr PSize       PFree     
+  /dev/md127 vg-raid5    lvm2 a-   1953538048S 488398848S
+  /dev/sde2  vg_drewserv lvm2 a-    209649664S 104792064S
+  /dev/sdf   vg-backup   lvm2 a-   1465139200S         0S
+
+# parted /dev/sde unit s print
+Model: ATA HDT722525DLA380 (scsi)
+Disk /dev/sde: 488397168s
+Sector size (logical/physical): 512B/512B
+Partition Table: msdos
+
+Number  Start     End         Size        Type     File system  Flags
+ 1      2048s     1026047s    1024000s    primary  ext4         boot
+ 2      1026048s  488396799s  487370752s  primary               lvm
+
+# parted /dev/sde rm 2
+# parted /dev/sde mkpart primary 1026048s 210806784s
+# partprobe
+# parted /dev/sde set 2 lvm on
+# pvresize /dev/sde2</pre>
