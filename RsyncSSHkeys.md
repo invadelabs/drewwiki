@@ -1,0 +1,8 @@
+---
+title: RsyncSSHkeys
+layout: default
+---
+
+    #!/bin/sh
+
+    rsync -avq --delete --exclude 'public_ftp/.ftpquota' --exclude 'tmp/' --log-file=/home/drew/cron/hfy_rsync.log -e 'ssh' hardcore@hardcoreforya.net:/home/hardcore/ /mnt/raid5/drew/backup/hardcoreforya.net
