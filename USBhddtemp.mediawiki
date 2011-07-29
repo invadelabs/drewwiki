@@ -1,1 +1,1 @@
-<pre>hddtemp SATA:/dev/sdf</pre>
+<pre># hddtemp SATA:/dev/sdf</pre>

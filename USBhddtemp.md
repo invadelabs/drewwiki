@@ -3,4 +3,4 @@ title: USBhddtemp
 layout: default
 ---
 
-    hddtemp SATA:/dev/sdf
+    # hddtemp SATA:/dev/sdf
