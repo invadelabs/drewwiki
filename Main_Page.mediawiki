@@ -8,7 +8,8 @@ A collection of randomness I've encountered and configured in Linux.
 *[[Scratch]]
 
 ==System Administration==
-*[[BootOptimization]] = Speed up F15 boot
+*[[MirrorWikipedia]] - Attempts to mirror wikipedia.org dumps
+*[[BootOptimization]] - Speed up F15 boot
 *[[ApachePAMunixAuth]] - Apache authentication against /etc/passwd
 *[[SendmailRelayGmailCentos]] - Sendmail with gmail relay in Fedora 10+
 *[[SendmailRelayISP]] - Sendmail using ISP as relay in Fedora 10+
