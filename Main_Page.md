@@ -17,6 +17,7 @@ Misc.
 System Administration
 ---------------------
 
+-   [BootOptimization](BootOptimization "wikilink") = Speed up F15 boot
 -   [ApachePAMunixAuth](ApachePAMunixAuth "wikilink") - Apache
     authentication against /etc/passwd
 -   [SendmailRelayGmailCentos](SendmailRelayGmailCentos "wikilink") -
