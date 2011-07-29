@@ -35,6 +35,8 @@ System Administration
         LVM snapshotting to copy an LV
     -   [smartdMonitoring](smartdMonitoring "wikilink") - Monitor disks
         with smartmontools
+    -   [USBhddtemp](USBhddtemp "wikilink") - Check hard drive temp for
+        USB HD (Western Digital)
 -   [ResizePV](ResizePV "wikilink") - Steps to resize PV
 -   [NFS Optimization](NFS_Optimization "wikilink") - NFS Performance
     and Optimization
