@@ -36,23 +36,31 @@ layout: default
 
 Configure /etc/ups/upsmon.conf to monitor drewups as amasteruser, run a
 script when an action occurs, as well as alert;
-
-    RUN_AS_USER nutmon
-
-    MONITOR drewups@localhost 1 amasteruser anawesomepassword master
-
-    NOTIFYCMD /mnt/raid5/backup/cron/upspager.sh
-
-    NOTIFYFLAG ONLINE       SYSLOG+EXEC+WALL
-    NOTIFYFLAG ONBATT       SYSLOG+EXEC+WALL
-    NOTIFYFLAG LOWBATT      SYSLOG+EXEC+WALL
-    NOTIFYFLAG FSD          SYSLOG+EXEC+WALL
-    NOTIFYFLAG COMMOK       SYSLOG+EXEC+WALL
-    NOTIFYFLAG COMMBAD      SYSLOG+EXEC+WALL
-    NOTIFYFLAG SHUTDOWN     SYSLOG+EXEC+WALL
-    NOTIFYFLAG REPLBATT     SYSLOG+EXEC+WALL
-    NOTIFYFLAG NOCOMM       SYSLOG+EXEC+WALL
-    NOTIFYFLAG NOPARENT     SYSLOG+EXEC+WALL
+<pre[root@drewserv ~]# grep -v ^$ /etc/ups/upsmon.conf | grep -v ^#
+MINSUPPLIES 1
+SHUTDOWNCMD "/sbin/shutdown -h +0"
+POLLFREQ 5
+POLLFREQALERT 5
+HOSTSYNC 15
+DEADTIME 15
+POWERDOWNFLAG /etc/killpower
+RBWARNTIME 43200
+NOCOMMWARNTIME 300
+FINALDELAY 5
+RUN_AS_USER nutmon
+MONITOR drewups 1 drew mypassword master
+NOTIFYCMD /mnt/raid5/drew/backup/cron/upspager.sh
+NOTIFYFLAG ONLINE       SYSLOG+EXEC+WALL
+NOTIFYFLAG ONBATT       SYSLOG+EXEC+WALL
+NOTIFYFLAG LOWBATT      SYSLOG+EXEC+WALL
+NOTIFYFLAG FSD          SYSLOG+EXEC+WALL
+NOTIFYFLAG COMMOK       SYSLOG+EXEC+WALL
+NOTIFYFLAG COMMBAD      SYSLOG+EXEC+WALL
+NOTIFYFLAG SHUTDOWN     SYSLOG+EXEC+WALL
+NOTIFYFLAG REPLBATT     SYSLOG+EXEC+WALL
+NOTIFYFLAG NOCOMM       SYSLOG+EXEC+WALL
+NOTIFYFLAG NOPARENT     SYSLOG+EXEC+WALL
+</pre>
 
 6. upspager.sh script;
 
