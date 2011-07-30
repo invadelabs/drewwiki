@@ -29,7 +29,7 @@ MODE = standalone
 <pre> # useradd -s /sbin/nologin -g nut nutmon</pre>
 
 Configure /etc/ups/upsmon.conf to monitor drewups as amasteruser, run a script when an action occurs, as well as alert;
-<pre[root@drewserv ~]# grep -v ^$ /etc/ups/upsmon.conf | grep -v ^#
+<pre>[root@drewserv ~]# grep -v ^$ /etc/ups/upsmon.conf | grep -v ^#
 MINSUPPLIES 1
 SHUTDOWNCMD "/sbin/shutdown -h +0"
 POLLFREQ 5
