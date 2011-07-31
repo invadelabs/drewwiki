@@ -44,6 +44,8 @@ layout: default
     5.  $ service nfs start ; chkconfig nfs on
 4.  Enable samba
     1.  Add TCP port 139/445 to IPTables
+    2.  1.  chkconfig smb on; chkconfig nmb on;
+
 5.  Enable iSCSI
     1.  Add TCP port 3260
 6.  ^ Configure bacula and web interface  

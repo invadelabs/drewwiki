@@ -33,6 +33,7 @@ fdupes
 ## $ service nfs start ;  chkconfig nfs on
 # Enable samba
 ## Add TCP port 139/445 to IPTables
+## # chkconfig smb on; chkconfig nmb on;
 # Enable iSCSI
 ## Add TCP port 3260
 # ^ Configure bacula and web interface<br><br>
