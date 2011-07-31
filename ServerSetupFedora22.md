@@ -7,7 +7,7 @@ layout: default
     sendmail-cf nut clamav clamav-update nfs-utils strace smartmontools logwatch \
     etckeeper OpenIPMI ipmitool php-pecl-apc.x86_64 sysstat gitweb.noarch mutt \
     fdupes
-    # java-1.6.0-openjdk.x86_64 
+    # java-1.6.0-openjdk.x86_64 nss-mdns
 
 1.  Install etckeeper
 2.  Disable root login via ssh
