@@ -25,7 +25,7 @@ layout: default
 2.  Configure kdump for system panics
     1.  Append kernel grub.conf crashkernel=128M for F14
     2.  /etc/sysctl.conf :: kernel.sysrq =1
-3.  Configure NUT for UPS alerts
+3.  Configure apcupsd for UPS alerts
 4.  Configure Time Server for local network access
     1.  Add UDP 123 to IPTables
 5.  Configure syslog for network client writes
