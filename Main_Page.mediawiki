@@ -52,6 +52,7 @@ A collection of randomness I've encountered and configured in Linux.
 *[[Convert mp4 or flv To wav]]
 ====Window Manager Related====
 *[[Compiz Profile Configuration]] - (Dual monitor/GiantCube/IceExploding Windows)
+*[[Fedora15Gnome3Tweaks]] - Fedora 15 / GNOME3 Tweaks
 *TomBoy notes - WebDav Sync
 
 ====Emulators====

@@ -94,6 +94,8 @@ Media
 -   [Compiz Profile
     Configuration](Compiz_Profile_Configuration "wikilink") - (Dual
     monitor/GiantCube/IceExploding Windows)
+-   [Fedora15Gnome3Tweaks](Fedora15Gnome3Tweaks "wikilink") - Fedora 15
+    / GNOME3 Tweaks
 -   TomBoy notes - WebDav Sync
 
 #### Emulators
