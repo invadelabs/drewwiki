@@ -28,13 +28,17 @@ VLAN feature is not supported by this firmware.
 # ipmitool -l open session info all</pre>
 
 
-==Set higher baudrate on BMC==
+==Faster SOL==
 * IPMIv2 only uses CTS/RTS (RTS/CTS);
 <pre># ipmitool -l open sol info 1
-# ipmitool -l open sol set help
-# ipmitool -l open sol set volatile-bit-rate 115.2 1
-# ipmitool -l open sol set non-volatile-bit-rate 115.2 1</pre>
 
+sol set character-accumulate-level 1
+sol set character-send-threshold 220
+sol set retry-count 0
+sol set retry-interval 0
+sol set non-volatile-bit-rate 115.2
+sol set volatile-bit-rate 115.2
+</pre>
 
 ==Remote IPMI shell==
 <pre># ipmitool -I lanplus -H 192.168.1.21 -U ADMIN shell

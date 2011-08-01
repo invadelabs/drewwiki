@@ -37,17 +37,21 @@ Common ipmitool commands
     # ipmitool -I open lan print
     # ipmitool -l open session info all
 
-Set higher baudrate on BMC
---------------------------
+Faster SOL
+----------
 
 -   IPMIv2 only uses CTS/RTS (RTS/CTS);
 
 <!-- -->
 
     # ipmitool -l open sol info 1
-    # ipmitool -l open sol set help
-    # ipmitool -l open sol set volatile-bit-rate 115.2 1
-    # ipmitool -l open sol set non-volatile-bit-rate 115.2 1
+
+    sol set character-accumulate-level 1
+    sol set character-send-threshold 220
+    sol set retry-count 0
+    sol set retry-interval 0
+    sol set non-volatile-bit-rate 115.2
+    sol set volatile-bit-rate 115.2
 
 Remote IPMI shell
 -----------------
