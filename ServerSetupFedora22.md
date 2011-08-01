@@ -4,8 +4,8 @@ layout: default
 ---
 
      # yum install man screen lm_sensors hddtemp wget rsync fail2ban mailx \
-    sendmail-cf nut clamav clamav-update nfs-utils strace smartmontools logwatch \
-    etckeeper OpenIPMI ipmitool php-pecl-apc.x86_64 sysstat gitweb.noarch mutt \
+    sendmail-cf apcupsd apcupsd-cgi clamav clamav-update nfs-utils strace smartmontools \
+    logwatch etckeeper OpenIPMI ipmitool php-pecl-apc.x86_64 sysstat gitweb.noarch mutt \
     fdupes
     # java-1.6.0-openjdk.x86_64 nss-mdns
 
