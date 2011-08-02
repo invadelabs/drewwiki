@@ -17,51 +17,44 @@ mod_auth_pam mod_auth_shadow php-pecl-apc
 
 # Configure GRUB serial console redirection
 # Configure kdump for system panics
-## Append kernel grub.conf crashkernel=128M for F14
-## /etc/sysctl.conf :: kernel.sysrq =1
 # Configure apcupsd for UPS alerts
 # Configure Time Server for local network access
-## Add UDP 123 to IPTables
-# Configure syslog for network client writes
-## Add UDP 514 to IPTables<br><br>
+## Add UDP123/24 to IPTables
+# Configure rsyslog for network clients
+## Add UDP514/24 to IPTables<br><br>
 
 # Mount raid array
 # Configure md alerts
 # Enable NFS
-##Add TCP 2049 to IPTables
+##Add TCP2049/24 to IPTables
 ##Disable NFSv2/3 /etc/sysconfig/nfs
-## $ service rpcbind start ; chkconfig rpcbind on
-## $ service nfslock start ; chkconfig nfslock on
-## $ service nfs start ;  chkconfig nfs on
 # Enable samba
-## Add TCP port 139/445 to IPTables
+## Add TCP139,445/24 to IPTables
 ## # chkconfig smb on; chkconfig nmb on;
 # Enable iSCSI
-## Add TCP port 3260
+## Add TCP3260/24
 # ^ Configure bacula and web interface<br><br>
 # Setup mail relay
 ## $ echo drew > /root/.forward
 ## echo "andrew: drew" >> /etc/aliases; newaliases
 ## echo "root: drew" >> /etc/aliases; newaliases
 ## Remove 127.0.0.1 /etc/mail/sendmail.mc
-## Add TCP port 25 to IPTables
-# Configure smartd to monitor hard drives
+## Add TCP25/0 to IPTables
+# Configure smartd/hddtemp for disk monitoring
 # ^ Configure thermal alerts for server
 # Configure logwatch
 # Setup clamav virus protection for Samba and weekly scan<br><br>
 
 # Setup cron jobs
-## Keep anacron from waking me up at night! # vi /etc/anacrontab // START_HOURS_RANGE<br><br>
-# ^ Configure Snort passive IDS
-# ^ Transparent Proxy with Squid for bandwidth utilization tally<br><br>
-# Upload firmware for tv tuner card
+## Keep anacron from waking me up at night! <pre># vi /etc/anacrontab // START_HOURS_RANGE</pre>
+
 # Setup mythtv
 # Configure MythWeb
 # Force http to https redirection
-## Add TCP port 443 to IPTables
-# Configure MediaWiki
-# Configure webdav for tomboy notes / foxit marks
-# Configure mod_auth_pam for httpd authentication<br><br>
+## Add TCP443/0 to IPTables
+# Configure mod_auth_pam / mod_auth_shadow / pecl-php-apc / phpMyAdmin
+# Configure DrewaWiki / WebDAV
+
 
 # ^ Verify all log files in /var/log are not giving any errors or notifications
 # ^ Check logs for whats growing!
