@@ -14,7 +14,8 @@ mod_auth_pam mod_auth_shadow php-pecl-apc
 # yum remove unneeded software
 # yum update
 # Enable SElinux
-# Extend days of sysstat logging<br><br>
+# Extend days of sysstat logging
+
 
 # Configure GRUB serial console redirection
 # Configure kdump for system panics
@@ -22,7 +23,16 @@ mod_auth_pam mod_auth_shadow php-pecl-apc
 # Configure Time Server for local network access
 ## Add UDP123/24 to IPTables
 # Configure rsyslog for network clients
-## Add UDP514/24 to IPTables<br><br>
+## Add UDP514/24 to IPTables
+# Setup mail relay
+## Remove 127.0.0.1 /etc/mail/sendmail.mc
+## <pre># echo drew > /root/.forward; echo "andrew: drew" >> /etc/aliases; newaliases; echo "root: drew" >> /etc/aliases; newaliases</pre>
+## Add TCP25/0 to IPTables
+# Configure smartd/hddtemp for disk monitoring
+# ^ Configure thermal alerts for server
+# Configure logwatch
+# Setup clamav virus protection for Samba and weekly scan
+
 
 # Mount raid array
 # Configure md alerts
@@ -31,20 +41,11 @@ mod_auth_pam mod_auth_shadow php-pecl-apc
 ##Disable NFSv2/3 /etc/sysconfig/nfs
 # Enable samba
 ## Add TCP139,445/24 to IPTables
-## # chkconfig smb on; chkconfig nmb on;
+## <pre>chkconfig smb on; chkconfig nmb on;</pre>
 # Enable iSCSI
 ## Add TCP3260/24
-# ^ Configure bacula and web interface<br><br>
-# Setup mail relay
-## $ echo drew > /root/.forward
-## echo "andrew: drew" >> /etc/aliases; newaliases
-## echo "root: drew" >> /etc/aliases; newaliases
-## Remove 127.0.0.1 /etc/mail/sendmail.mc
-## Add TCP25/0 to IPTables
-# Configure smartd/hddtemp for disk monitoring
-# ^ Configure thermal alerts for server
-# Configure logwatch
-# Setup clamav virus protection for Samba and weekly scan<br><br>
+# ^ Configure bacula and web interface
+
 
 # Setup cron jobs
 ## Keep anacron from waking me up at night! <pre># vi /etc/anacrontab // START_HOURS_RANGE</pre>
@@ -56,6 +57,5 @@ mod_auth_pam mod_auth_shadow php-pecl-apc
 # Configure DrewaWiki / WebDAV
 
 
-# ^ Verify all log files in /var/log are not giving any errors or notifications
-# ^ Check logs for whats growing!
-:* ls -alR /var/log | grep ^- | awk {'print $5" "$8'} | sort -k 2| sort -n
+# Verify all log files in /var/log are not giving any errors or notifications
+# Check logs for whats growing! <pre>ls -alR /var/log | grep ^- | awk {'print $5" "$8'} | sort -k 2| sort -n</pre>

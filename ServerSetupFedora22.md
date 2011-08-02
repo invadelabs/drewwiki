@@ -17,8 +17,7 @@ layout: default
 5.  yum remove unneeded software
 6.  yum update
 7.  Enable SElinux
-8.  Extend days of sysstat logging  
-      
+8.  Extend days of sysstat logging
 
 <!-- -->
 
@@ -28,8 +27,17 @@ layout: default
 4.  Configure Time Server for local network access
     1.  Add UDP123/24 to IPTables
 5.  Configure rsyslog for network clients
-    1.  Add UDP514/24 to IPTables  
-          
+    1.  Add UDP514/24 to IPTables
+6.  Setup mail relay
+    1.  Remove 127.0.0.1 /etc/mail/sendmail.mc
+    2.  # echo drew > /root/.forward; echo "andrew: drew" >> /etc/aliases; newaliases; echo "root: drew" >> /etc/aliases; newaliases
+
+    3.  Add TCP25/0 to IPTables
+
+7.  Configure smartd/hddtemp for disk monitoring
+8.  ^ Configure thermal alerts for server
+9.  Configure logwatch
+10. Setup clamav virus protection for Samba and weekly scan
 
 <!-- -->
 
@@ -40,23 +48,11 @@ layout: default
     2.  Disable NFSv2/3 /etc/sysconfig/nfs
 4.  Enable samba
     1.  Add TCP139,445/24 to IPTables
-    2.  1.  chkconfig smb on; chkconfig nmb on;
+    2.  chkconfig smb on; chkconfig nmb on;
 
 5.  Enable iSCSI
     1.  Add TCP3260/24
-6.  ^ Configure bacula and web interface  
-      
-7.  Setup mail relay
-    1.  $ echo drew &gt; /root/.forward
-    2.  echo “andrew: drew” &gt;&gt; /etc/aliases; newaliases
-    3.  echo “root: drew” &gt;&gt; /etc/aliases; newaliases
-    4.  Remove 127.0.0.1 /etc/mail/sendmail.mc
-    5.  Add TCP25/0 to IPTables
-8.  Configure smartd/hddtemp for disk monitoring
-9.  ^ Configure thermal alerts for server
-10. Configure logwatch
-11. Setup clamav virus protection for Samba and weekly scan  
-      
+6.  ^ Configure bacula and web interface
 
 <!-- -->
 
@@ -74,9 +70,9 @@ layout: default
 
 <!-- -->
 
-1.  ^ Verify all log files in /var/log are not giving any errors or
+1.  Verify all log files in /var/log are not giving any errors or
     notifications
-2.  ^ Check logs for whats growing!
+2.  Check logs for whats growing!
+        ls -alR /var/log | grep ^- | awk {'print $5" "$8'} | sort -k 2| sort -n
 
-:\* ls -alR /var/log | grep ^- | awk {'print $5" "$8'} | sort -k 2| sort
--n
+
