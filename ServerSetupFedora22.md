@@ -3,10 +3,10 @@ title: ServerSetupFedora22
 layout: default
 ---
 
-     # yum install man screen lm_sensors hddtemp wget rsync fail2ban mailx \
-    sendmail-cf apcupsd apcupsd-cgi clamav clamav-update nfs-utils strace smartmontools \
-    logwatch etckeeper OpenIPMI ipmitool php-pecl-apc.x86_64 sysstat gitweb.noarch mutt \
-    fdupes
+    # yum install man screen wget rsync fail2ban mailx fdupes sendmail-cf strace \
+    lm_sensors hddtemp apcupsd apcupsd-cgi smartmontools clamav clamav-update nfs-utils \
+    logwatch etckeeper OpenIPMI ipmitool sysstat mutt \
+    mod_auth_pam mod_auth_shadow php-pecl-apc  gitweb
     # java-1.6.0-openjdk.x86_64 nss-mdns
 
 1.  Install etckeeper
