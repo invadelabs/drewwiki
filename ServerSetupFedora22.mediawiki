@@ -41,7 +41,7 @@ mod_auth_pam mod_auth_shadow php-pecl-apc
 ##Disable NFSv2/3 /etc/sysconfig/nfs
 # Enable samba
 ## Add TCP139,445/24 to IPTables
-## <pre>chkconfig smb on; chkconfig nmb on;</pre>
+## <pre># chkconfig smb on; chkconfig nmb on;</pre>
 # Enable iSCSI
 ## Add TCP3260/24
 # ^ Configure bacula and web interface
@@ -58,4 +58,4 @@ mod_auth_pam mod_auth_shadow php-pecl-apc
 
 
 # Verify all log files in /var/log are not giving any errors or notifications
-# Check logs for whats growing! <pre>ls -alR /var/log | grep ^- | awk {'print $5" "$8'} | sort -k 2| sort -n</pre>
+# Check logs for whats growing! <pre># ls -alR /var/log | grep ^- | awk {'print $5" "$8'} | sort -k 2| sort -n</pre>

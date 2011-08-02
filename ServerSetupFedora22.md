@@ -48,7 +48,7 @@ layout: default
     2.  Disable NFSv2/3 /etc/sysconfig/nfs
 4.  Enable samba
     1.  Add TCP139,445/24 to IPTables
-    2.  chkconfig smb on; chkconfig nmb on;
+    2.  # chkconfig smb on; chkconfig nmb on;
 
 5.  Enable iSCSI
     1.  Add TCP3260/24
@@ -73,6 +73,6 @@ layout: default
 1.  Verify all log files in /var/log are not giving any errors or
     notifications
 2.  Check logs for whats growing!
-        ls -alR /var/log | grep ^- | awk {'print $5" "$8'} | sort -k 2| sort -n
+        # ls -alR /var/log | grep ^- | awk {'print $5" "$8'} | sort -k 2| sort -n
 
 
