@@ -11,6 +11,7 @@ layout: default
 
 1.  Install etckeeper
 2.  Disable root login via ssh
+    1.  Add TCP22/0 to IPTables
 3.  Enable sudo
 4.  Install fail2ban
 5.  yum remove unneeded software

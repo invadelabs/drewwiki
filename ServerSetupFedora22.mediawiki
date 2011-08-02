@@ -8,6 +8,7 @@ mod_auth_pam mod_auth_shadow php-pecl-apc
 
 # Install etckeeper
 # Disable root login via ssh
+## Add TCP22/0 to IPTables
 # Enable sudo
 # Install fail2ban
 # yum remove unneeded software
