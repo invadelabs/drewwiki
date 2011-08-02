@@ -65,13 +65,11 @@ layout: default
 
 <!-- -->
 
-1.  Setup mythtv
-2.  Configure MythWeb
-3.  Force http to https redirection
+1.  Configure MythTV / MythWeb
     1.  Add TCP443/0 to IPTables
-4.  Configure mod\_auth\_pam / mod\_auth\_shadow / pecl-php-apc /
+2.  Configure mod\_auth\_pam / mod\_auth\_shadow / pecl-php-apc /
     phpMyAdmin
-5.  Configure DrewaWiki / WebDAV
+3.  Configure DrewaWiki / WebDAV
 
 <!-- -->
 

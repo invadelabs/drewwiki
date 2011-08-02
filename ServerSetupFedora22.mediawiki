@@ -48,9 +48,8 @@ mod_auth_pam mod_auth_shadow php-pecl-apc
 # Setup cron jobs
 ## Keep anacron from waking me up at night! <pre># vi /etc/anacrontab // START_HOURS_RANGE</pre>
 
-# Setup mythtv
-# Configure MythWeb
-# Force http to https redirection
+
+# Configure MythTV / MythWeb
 ## Add TCP443/0 to IPTables
 # Configure mod_auth_pam / mod_auth_shadow / pecl-php-apc / phpMyAdmin
 # Configure DrewaWiki / WebDAV
