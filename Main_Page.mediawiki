@@ -14,6 +14,8 @@ A collection of randomness I've encountered and configured in Linux.
 *[[SendmailRelayGmailCentos]] - Sendmail with gmail relay in Fedora 10+
 *[[SendmailRelayISP]] - Sendmail using ISP as relay in Fedora 10+
 *[[IPMI]] - IPMI on SuperMicro AOC-IPMI20 with Serial-Over-LAN Console
+*lm_sensors
+** [[lm_sensorsPDMSi]] - /etc/sensors.d/pdsmi
 *[[iptables]] - iptables setup
 *[[mdadm]] - Linux Software Raid Creation / Optimization
 ** [[mdadmLVMext4]] - Best practices using md raid5 / LVM / ext4

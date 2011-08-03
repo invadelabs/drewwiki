@@ -28,6 +28,9 @@ System Administration
     as relay in Fedora 10+
 -   [IPMI](IPMI "wikilink") - IPMI on SuperMicro AOC-IPMI20 with
     Serial-Over-LAN Console
+-   lm\_sensors
+    -   [lm\_sensorsPDMSi](lm_sensorsPDMSi "wikilink") -
+        /etc/sensors.d/pdsmi
 -   [iptables](iptables "wikilink") - iptables setup
 -   [mdadm](mdadm "wikilink") - Linux Software Raid Creation /
     Optimization
