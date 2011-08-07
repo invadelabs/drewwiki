@@ -67,7 +67,7 @@ layout: default
     1.  Add TCP443/0 to IPTables
 2.  Configure mod\_auth\_pam / mod\_auth\_shadow / pecl-php-apc /
     phpMyAdmin
-3.  Configure DrewaWiki / WebDAV
+3.  Configure DrewWiki / WebDAV
 
 <!-- -->
 
