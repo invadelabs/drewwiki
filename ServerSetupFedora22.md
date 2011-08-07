@@ -23,21 +23,22 @@ layout: default
 
 1.  Configure GRUB serial console redirection
 2.  Configure kdump for system panics
-3.  Configure apcupsd for UPS alerts
-4.  Configure Time Server for local network access
+3.  Configure lm-sensors, hddtemp, and SMARTmon for temperature alerts.
+4.  Configure apcupsd for UPS alerts
+5.  Configure Time Server for local network access
     1.  Add UDP123/24 to IPTables
-5.  Configure rsyslog for network clients
+6.  Configure rsyslog for network clients
     1.  Add UDP514/24 to IPTables
-6.  Setup mail relay
+7.  Setup mail relay
     1.  Remove 127.0.0.1 /etc/mail/sendmail.mc
     2.  # echo drew > /root/.forward; echo "andrew: drew" >> /etc/aliases; newaliases; echo "root: drew" >> /etc/aliases; newaliases
 
     3.  Add TCP25/0 to IPTables
 
-7.  Configure smartd/hddtemp for disk monitoring
-8.  ^ Configure thermal alerts for server
-9.  Configure logwatch
-10. Setup clamav virus protection for Samba and weekly scan
+8.  Configure smartd/hddtemp for disk monitoring
+9.  ^ Configure thermal alerts for server
+10. Configure logwatch
+11. Setup clamav virus protection for Samba and weekly scan
 
 <!-- -->
 
