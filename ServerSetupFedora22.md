@@ -6,7 +6,7 @@ layout: default
     # yum install man screen wget rsync fail2ban mailx fdupes sendmail-cf strace \
     logwatch etckeeper OpenIPMI ipmitool sysstat mutt clamav clamav-update nfs-utils \
     mod_auth_pam mod_auth_shadow php-pecl-apc phpMyAdmin \
-    lm_sensors hddtemp apcupsd apcupsd-cgi smartmontools \
+    lm_sensors hddtemp apcupsd apcupsd-cgi smartmontools
     # java-1.6.0-openjdk.x86_64 nss-mdns
 
 1.  Install etckeeper
