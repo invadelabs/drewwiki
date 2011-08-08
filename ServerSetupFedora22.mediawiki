@@ -59,4 +59,5 @@ lm_sensors hddtemp smartmontools apcupsd apcupsd-cgi
 
 
 # Verify all log files in /var/log are not giving any errors or notifications
-# Check logs for whats growing! <pre># ls -alR /var/log | grep ^- | awk {'print $5" "$8'} | sort -k 2| sort -n</pre>
+# Check logs for whats growing! <pre># ls -alR /var/log | grep ^- | awk {'print $5" "$8'} | sort -k 2| sort -n
+# Create MondoRescue restore image</pre>

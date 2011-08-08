@@ -73,7 +73,8 @@ layout: default
 
 1.  Verify all log files in /var/log are not giving any errors or
     notifications
-2.  Check logs for whats growing!
-        # ls -alR /var/log | grep ^- | awk {'print $5" "$8'} | sort -k 2| sort -n
 
+\# Check logs for whats growing!
 
+    # ls -alR /var/log | grep ^- | awk {'print $5" "$8'} | sort -k 2| sort -n
+    # Create MondoRescue restore image
