@@ -4,8 +4,8 @@ layout: default
 ---
 
     # yum install man screen wget strace rsync fail2ban mailx mutt fdupes sendmail-cf logwatch etckeeper \
-    OpenIPMI ipmitool sysstat clamav clamav-update nfs-utils iscsi-initiator-utils samba \
-    mod_auth_pam mod_auth_shadow php-pecl-apc phpMyAdmin openvpn \
+    OpenIPMI ipmitool sysstat clamav clamav-update nfs-utils iscsi-initiator-utils samba openvpn \
+    mod_auth_pam mod_auth_shadow php-pecl-apc phpMyAdmin \
     lm_sensors hddtemp smartmontools apcupsd apcupsd-cgi 
     # java-1.6.0-openjdk.x86_64 nss-mdns
 
