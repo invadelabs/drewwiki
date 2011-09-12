@@ -17,6 +17,7 @@ Misc.
 System Administration
 ---------------------
 
+-   [OpenVPN](OpenVPN "wikilink") - OpenVPN Server Setup
 -   [MirrorWikipedia](MirrorWikipedia "wikilink") - Attempts to mirror
     wikipedia.org dumps
 -   [BootOptimization](BootOptimization "wikilink") - Speed up F15 boot

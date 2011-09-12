@@ -8,6 +8,7 @@ A collection of randomness I've encountered and configured in Linux.
 *[[Scratch]]
 
 ==System Administration==
+*[[OpenVPN]] - OpenVPN Server Setup
 *[[MirrorWikipedia]] - Attempts to mirror wikipedia.org dumps
 *[[BootOptimization]] - Speed up F15 boot
 *[[ApachePAMunixAuth]] - Apache authentication against /etc/passwd
