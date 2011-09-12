@@ -1,0 +1,29 @@
+---
+title: OpenVPN
+layout: default
+---
+
+    $ grep -v ^$ /etc/openvpn/server.conf  | grep -v ^# | grep -v ^\;
+    port 1194
+    proto tcp
+    dev tun
+    ca keys/ca.crt
+    cert keys/server.crt
+    key keys/server.key  # This file should be kept secret
+    dh keys/dh1024.pem
+    server 10.8.0.0 255.255.255.0
+    ifconfig-pool-persist ipp.txt
+    push "route 192.168.1.0 255.255.255.0"
+    push "route 12.0.0.0 255.0.0.0"
+    push "route 63.0.0.0 255.0.0.0"
+    push "dhcp-option DNS 192.168.1.1"
+    client-to-client
+    keepalive 10 120
+    comp-lzo
+    user nobody
+    group nobody
+    persist-key
+    persist-tun
+    status openvpn-status.log
+    verb 3
+    mute 7
