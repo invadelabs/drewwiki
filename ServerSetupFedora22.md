@@ -5,7 +5,7 @@ layout: default
 
     # yum install man screen wget strace rsync fail2ban mailx mutt fdupes sendmail-cf logwatch etckeeper \
     OpenIPMI ipmitool sysstat clamav clamav-update nfs-utils iscsi-initiator-utils samba \
-    mod_auth_pam mod_auth_shadow php-pecl-apc phpMyAdmin \
+    mod_auth_pam mod_auth_shadow php-pecl-apc phpMyAdmin openvpn \
     lm_sensors hddtemp smartmontools apcupsd apcupsd-cgi 
     # java-1.6.0-openjdk.x86_64 nss-mdns
 
@@ -39,6 +39,7 @@ layout: default
 9.  ^ Configure thermal alerts for server
 10. Configure logwatch
 11. Setup clamav virus protection for Samba and weekly scan
+12. Configure OpenVPN
 
 <!-- -->
 
