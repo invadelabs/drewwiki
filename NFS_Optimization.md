@@ -34,8 +34,16 @@ This will take off some of the tcp overhead if your card supports it..
 
 ##### /etc/fstab
 
+NFSv4 Client:
+
+    192.168.15.20:/mnt/raid5 /mnt/raid5 nfs defaults 0 0
+
+NFSv3 Client:
+
     192.168.15.20:/mnt/raid5 /mnt/raid5 nfs rsize=32768,wsize=32768,intr,hard 0 0
 
-\[rw\]size=32768 - NFSv3 maximum read write size intr - if the mount
-drops, you'll still be able to ^C out of whatever operation your running
-hard - hm?
+\[rw\]size=32768 - NFSv3 maximum read write size  
+intr - if the mount drops, you'll still be able to ^C out of whatever
+operation your running  
+hard - hm?  
+
