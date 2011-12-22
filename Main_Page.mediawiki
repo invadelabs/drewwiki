@@ -1,8 +1,65 @@
-'''MediaWiki has been successfully installed.'''
+A collection of randomness I've encountered and configured in Linux.
 
-Consult the [//meta.wikimedia.org/wiki/Help:Contents User's Guide] for information on using the wiki software.
+----
 
-== Getting started ==
-* [//www.mediawiki.org/wiki/Manual:Configuration_settings Configuration settings list]
-* [//www.mediawiki.org/wiki/Manual:FAQ MediaWiki FAQ]
-* [https://lists.wikimedia.org/mailman/listinfo/mediawiki-announce MediaWiki release mailing list]
+==Misc.==
+*[[ServerSetup]]
+*[[PowerDraw]]
+*[[Scratch]]
+
+==System Administration==
+*[[CustomKernelDebian]] - Compile a custom kernel from source in Debian / Ubuntu
+*[[OpenVPN]] - OpenVPN Server Setup
+*[[MirrorWikipedia]] - Attempts to mirror wikipedia.org dumps
+*[[BootOptimization]] - Speed up F15 boot
+*[[ApachePAMunixAuth]] - Apache authentication against /etc/passwd
+*[[SendmailRelayGmailCentos]] - Sendmail with gmail relay in Fedora 10+
+*[[SendmailRelayISP]] - Sendmail using ISP as relay in Fedora 10+
+*[[IPMI]] - IPMI on SuperMicro AOC-IPMI20 with Serial-Over-LAN Console
+*lm_sensors
+** [[lm_sensorsPDMSi]] - /etc/sensors.d/pdsmi
+*[[iptables]] - iptables setup
+*[[mdadm]] - Linux Software Raid Creation / Optimization
+** [[mdadmLVMext4]] - Best practices using md raid5 / LVM / ext4
+** [[BackupViaDDsnapshot]] - Using LVM snapshotting to copy an LV
+** [[smartdMonitoring]] - Monitor disks with smartmontools
+** [[USBhddtemp]] - Check hard drive temp for USB HD (Western Digital)
+* [[ResizePV]] - Steps to resize PV
+*[[NFS Optimization]] - NFS Performance and Optimization
+*[[eCryptfs]] - Private Encrypted Folders
+*[[ExternalUSBEncryptedLVM]] - Encrypted LVM for External USB (rsync backup)
+*[[SambaTdbsamBackend]]
+* DD-WRT
+** [[ddwrtdnsmasq]] - dnsmasq stuff for DD-WRT
+**[[PXEiSCSIboot]] - Booting off SAN via PXE and iSCSI target
+*[[NUTUPSMonitor]] - Configure NUT for UPS monitoring and alerts in Fedora 12-14
+*[[PortMirroringDDWRTiptables]] - Port mirroring with iptable in dd-wrt
+*SELinux
+=====Backup=====
+*[[Backup DD-WRT Config]] (cron)
+*[[ClamAV Weekly Scan]] (cron)
+*[[MySQL Backup Script]] (cron)
+*[[rsyncSSHkeys]] - Rsync over SSH - Different port / SSH Keys
+
+====Hardware Related====
+*[[udevinfo]] - gathering system info
+*[[gps]] - GPS Related
+*[[ssd]] - Solid State Drives (LVM Mirroring)
+
+==Media==
+*[[eGalaxyTouchScreen]] - eGalaxy Touch Screen
+*[[LinuxGPS]] - Linux GPS with sirfmon, gpsd, and more
+*[[mencoder]] - codecs(x264, lavc, xvid) / de-interlace filters / dvd
+*[[mplayer]] - dvd and dvb playback / xvmc and vdpau gpu decoder offload
+*[[Independant X-server]]
+*[[Lirc Config - MythTV / mplayer]]
+*[[Lirc, Pinnacle 800i, and Comcast Remote]] - ir-keymap.c
+*[[Convert mp4 or flv To wav]]
+*[[bluray]] - Playing and backing up Blu-ray discs in Linux
+====Window Manager Related====
+*[[Compiz Profile Configuration]] - (Dual monitor/GiantCube/IceExploding Windows)
+*[[Fedora15Gnome3Tweaks]] - Fedora 15 / GNOME3 Tweaks
+*TomBoy notes - WebDav Sync
+
+====Emulators====
+*[[N64Mupen64plus]] - Using mupen64plus (N64 Emulator) in Linux
