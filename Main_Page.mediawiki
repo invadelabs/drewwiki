@@ -8,7 +8,7 @@ A collection of randomness I've encountered and configured in Linux.
 *[[Scratch]]
 
 ==System Administration==
-*[[customerkerneldebian]] - Compile a custom kernel from source in Debian / Ubuntu
+*[[CustomerKernelDebian]] - Compile a custom kernel from source in Debian / Ubuntu
 *[[OpenVPN]] - OpenVPN Server Setup
 *[[MirrorWikipedia]] - Attempts to mirror wikipedia.org dumps
 *[[BootOptimization]] - Speed up F15 boot
