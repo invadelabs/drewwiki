@@ -17,6 +17,8 @@ Misc.
 System Administration
 ---------------------
 
+-   [customerkerneldebian](customerkerneldebian "wikilink") - Compile a
+    custom kernel from source in Debian / Ubuntu
 -   [OpenVPN](OpenVPN "wikilink") - OpenVPN Server Setup
 -   [MirrorWikipedia](MirrorWikipedia "wikilink") - Attempts to mirror
     wikipedia.org dumps
