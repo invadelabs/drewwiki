@@ -1,0 +1,14 @@
+*With dumphd
+**http://forum.doom9.org/showthread.php?t=123111
+**Keys http://forum.doom9.org/showthread.php?t=120611
+**Need KEYDB.cfg
+
+*With makemkv
+**www.makemkv.com
+
+*With lxbdplayer
+**http://lxbdplayer.sourceforge.net/english.html
+**Install lxbdplayer
+**Install lxbdaacs
+**Install showkeys (mv'ed to /usr/lib)
+**http://forum.doom9.org/showthread.php?t=155110
