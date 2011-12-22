@@ -7,6 +7,8 @@ net:2 ---&gt; 3 = gateway
 
 net:2 ---&gt; 6 = DNS
 
+net:2 ---&gt; 42 = NTP
+
     dhcp-option=net:2,3,192.168.1.5
     dhcp-option=net:2,6,192.168.1.5
     dhcp-host=00:1d:92:61:a1:6f,net:2,192.168.1.70,infinite
