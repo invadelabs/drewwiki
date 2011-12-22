@@ -79,3 +79,4 @@ layout: default
 
 3.  Create MondoRescue restore image
 
+.
