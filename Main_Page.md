@@ -35,6 +35,20 @@ System Administration
     -   [lm\_sensorsPDMSi](lm_sensorsPDMSi "wikilink") -
         /etc/sensors.d/pdsmi
 -   [iptables](iptables "wikilink") - iptables setup
+-   DD-WRT
+    -   [ddwrtdnsmasq](ddwrtdnsmasq "wikilink") - dnsmasq stuff for
+        DD-WRT
+    -   [PXEiSCSIboot](PXEiSCSIboot "wikilink") - Booting off SAN via
+        PXE and iSCSI target
+-   [NUTUPSMonitor](NUTUPSMonitor "wikilink") - Configure NUT for UPS
+    monitoring and alerts in Fedora 12-14
+-   [PortMirroringDDWRTiptables](PortMirroringDDWRTiptables "wikilink") -
+    Port mirroring with iptable in dd-wrt
+
+##### File Server
+
+-   [NFS Optimization](NFS_Optimization "wikilink") - NFS Performance
+    and Optimization
 -   [mdadm](mdadm "wikilink") - Linux Software Raid Creation /
     Optimization
     -   [mdadmLVMext4](mdadmLVMext4 "wikilink") - Best practices using
@@ -46,21 +60,8 @@ System Administration
     -   [USBhddtemp](USBhddtemp "wikilink") - Check hard drive temp for
         USB HD (Western Digital)
 -   [ResizePV](ResizePV "wikilink") - Steps to resize PV
--   [NFS Optimization](NFS_Optimization "wikilink") - NFS Performance
-    and Optimization
 -   [eCryptfs](eCryptfs "wikilink") - Private Encrypted Folders
--   [ExternalUSBEncryptedLVM](ExternalUSBEncryptedLVM "wikilink") -
-    Encrypted LVM for External USB (rsync backup)
 -   [SambaTdbsamBackend](SambaTdbsamBackend "wikilink")
--   DD-WRT
-    -   [ddwrtdnsmasq](ddwrtdnsmasq "wikilink") - dnsmasq stuff for
-        DD-WRT
-    -   [PXEiSCSIboot](PXEiSCSIboot "wikilink") - Booting off SAN via
-        PXE and iSCSI target
--   [NUTUPSMonitor](NUTUPSMonitor "wikilink") - Configure NUT for UPS
-    monitoring and alerts in Fedora 12-14
--   [PortMirroringDDWRTiptables](PortMirroringDDWRTiptables "wikilink") -
-    Port mirroring with iptable in dd-wrt
 -   SELinux
 
 ##### Backup
@@ -70,6 +71,8 @@ System Administration
 -   [MySQL Backup Script](MySQL_Backup_Script "wikilink") (cron)
 -   [rsyncSSHkeys](rsyncSSHkeys "wikilink") - Rsync over SSH - Different
     port / SSH Keys
+-   [ExternalUSBEncryptedLVM](ExternalUSBEncryptedLVM "wikilink") -
+    Encrypted LVM for External USB (rsync backup)
 
 #### Hardware Related
 

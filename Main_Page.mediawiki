@@ -19,27 +19,30 @@ A collection of randomness I've encountered and configured in Linux.
 *lm_sensors
 ** [[lm_sensorsPDMSi]] - /etc/sensors.d/pdsmi
 *[[iptables]] - iptables setup
+* DD-WRT
+** [[ddwrtdnsmasq]] - dnsmasq stuff for DD-WRT
+**[[PXEiSCSIboot]] - Booting off SAN via PXE and iSCSI target
+*[[NUTUPSMonitor]] - Configure NUT for UPS monitoring and alerts in Fedora 12-14
+*[[PortMirroringDDWRTiptables]] - Port mirroring with iptable in dd-wrt
+
+=====File Server=====
+*[[NFS Optimization]] - NFS Performance and Optimization
 *[[mdadm]] - Linux Software Raid Creation / Optimization
 ** [[mdadmLVMext4]] - Best practices using md raid5 / LVM / ext4
 ** [[BackupViaDDsnapshot]] - Using LVM snapshotting to copy an LV
 ** [[smartdMonitoring]] - Monitor disks with smartmontools
 ** [[USBhddtemp]] - Check hard drive temp for USB HD (Western Digital)
 * [[ResizePV]] - Steps to resize PV
-*[[NFS Optimization]] - NFS Performance and Optimization
 *[[eCryptfs]] - Private Encrypted Folders
-*[[ExternalUSBEncryptedLVM]] - Encrypted LVM for External USB (rsync backup)
 *[[SambaTdbsamBackend]]
-* DD-WRT
-** [[ddwrtdnsmasq]] - dnsmasq stuff for DD-WRT
-**[[PXEiSCSIboot]] - Booting off SAN via PXE and iSCSI target
-*[[NUTUPSMonitor]] - Configure NUT for UPS monitoring and alerts in Fedora 12-14
-*[[PortMirroringDDWRTiptables]] - Port mirroring with iptable in dd-wrt
 *SELinux
+
 =====Backup=====
 *[[Backup DD-WRT Config]] (cron)
 *[[ClamAV Weekly Scan]] (cron)
 *[[MySQL Backup Script]] (cron)
 *[[rsyncSSHkeys]] - Rsync over SSH - Different port / SSH Keys
+*[[ExternalUSBEncryptedLVM]] - Encrypted LVM for External USB (rsync backup)
 
 ====Hardware Related====
 *[[udevinfo]] - gathering system info
