@@ -8,7 +8,7 @@ Ubuntu RAID0 SSD no root w/o boot partition
 <pre># fdisk /dev/sda
 /dev/sda1          2048   175836159    87668224   8e  Linux LVM</pre>
 
-=== Create PV's LVM striping ===
+=== Create PV's with aligned metadata ===
 <pre># pvcreate --metadatasize 250k /dev/sda1
 # pvcreate --metadatasize 250k /dev/sdb1</pre>
 

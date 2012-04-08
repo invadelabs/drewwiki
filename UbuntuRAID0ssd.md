@@ -17,7 +17,7 @@ During install
     # fdisk /dev/sda
     /dev/sda1          2048   175836159    87668224   8e  Linux LVM
 
-### Create PV's LVM striping
+### Create PV's with aligned metadata
 
     # pvcreate --metadatasize 250k /dev/sda1
     # pvcreate --metadatasize 250k /dev/sdb1
