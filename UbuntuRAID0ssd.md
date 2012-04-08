@@ -5,8 +5,8 @@ layout: default
 
 Ubuntu RAID0 SSD no root w/o boot partition
 
-During install
---------------
+Start install media
+-------------------
 
 ### Jump over to another tty
 
@@ -53,10 +53,20 @@ During install
     # mkfs.ext4 -v -O ^has_journal -m 0.1 -E stride=32,stripe-width=64 /dev/vgssd/lvssd
     # tune2fs -c 0 /dev/vgssd/lvssd
 
-Post Install Before Reboot
---------------------------
+### Back to installer
+
+-   When partitioner comes up, use the already created /dev/vgssd/lvssd
+    as / \*\*do not format, ruins the purpose of removing the journal
+    and adding stride/stripe-width for alignment purposes.
+
+After install is finished, but before Reboot
+--------------------------------------------
 
 ### Add bits for lvm and nfs on next boot
+
+-   Jump back to a tty
+
+<!-- -->
 
     # mount -o bind /dev /target/dev
     # mount -o bind /sys /target/sys
