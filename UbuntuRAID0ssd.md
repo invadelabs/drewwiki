@@ -45,8 +45,9 @@ Post Install Before Reboot
     # chroot /target
     # sudo apt-get install lvm2 nfs-common
 
-    === /etc/fstab modifications ===
-    <pre>UUID="6239bc41-8816-47b6-b7d5-2be592f8b69b" /               ext4    noatime,discard,errors=remount-ro 0 1
+### /etc/fstab modifications
+
+    UUID="6239bc41-8816-47b6-b7d5-2be592f8b69b" /               ext4    noatime,discard,errors=remount-ro 0 1
 
     # Keep excessive writes in /tmp, and I use a remote syslog server
     none        /tmp        tmpfs   size=300M   0 0
@@ -78,8 +79,12 @@ Post Install Before Reboot
     # grub-install /dev/sda
     # grub-install /dev/sdb
 
-Move Firefox cache off ssd
---------------------------
+Reboot from Installer
+---------------------
+
+Once in OS lets stop a few things from wearing out the SSD's.
+
+### Move Firefox cache off ssd
 
 -   firefox-&gt; <about:config> -&gt; new string -&gt;
     browser.cache.disk.parent\_directory to /tmp/drewff

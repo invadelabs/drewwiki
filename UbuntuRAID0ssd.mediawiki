@@ -28,7 +28,7 @@ Ubuntu RAID0 SSD no root w/o boot partition
 # mount -o bind /sys /target/sys
 # mount -o bind /proc /target/proc
 # chroot /target
-# sudo apt-get install lvm2 nfs-common
+# sudo apt-get install lvm2 nfs-common</pre>
 
 === /etc/fstab modifications ===
 <pre>UUID="6239bc41-8816-47b6-b7d5-2be592f8b69b" /               ext4    noatime,discard,errors=remount-ro 0 1
@@ -57,7 +57,10 @@ find /sys/devices -name nr_requests -exec sh -c 'echo 4096 > {}' \;</pre>
 # grub-install /dev/sda
 # grub-install /dev/sdb</pre>
 
-== Move Firefox cache off ssd ==
+== Reboot from Installer ==
+Once in OS lets stop a few things from wearing out the SSD's.
+
+=== Move Firefox cache off ssd ===
 * firefox-> about:config -> new string -> browser.cache.disk.parent_directory to /tmp/drewff
 
 == Sources ==
