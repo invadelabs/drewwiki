@@ -10,12 +10,31 @@ During install
 
 ### Jump over to another tty
 
-    # apt-get install lvm2
+    # apt-get -y install lvm2
 
 ### Make sure partition starts on 2048
 
-    # fdisk /dev/sda
-    /dev/sda1          2048   175836159    87668224   8e  Linux LVM
+    # fdisk -l
+
+    Disk /dev/sda: 32.0 GB, 32017047552 bytes
+    132 heads, 63 sectors/track, 7519 cylinders, total 62533296 sectors
+    Units = sectors of 1 * 512 = 512 bytes
+    Sector size (logical/physical): 512 bytes / 512 bytes
+    I/O size (minimum/optimal): 512 bytes / 512 bytes
+    Disk identifier: 0x000a5046
+
+       Device Boot      Start         End      Blocks   Id  System
+    /dev/sda1            2048    62533295    31265624   8e  Linux LVM
+
+    Disk /dev/sdb: 32.0 GB, 32017047552 bytes
+    132 heads, 63 sectors/track, 7519 cylinders, total 62533296 sectors
+    Units = sectors of 1 * 512 = 512 bytes
+    Sector size (logical/physical): 512 bytes / 512 bytes
+    I/O size (minimum/optimal): 512 bytes / 512 bytes
+    Disk identifier: 0xd67db81c
+
+       Device Boot      Start         End      Blocks   Id  System
+    /dev/sdb1            2048    62533295    31265624   8e  Linux LVM
 
 ### Create PV's with aligned metadata
 
@@ -43,7 +62,7 @@ Post Install Before Reboot
     # mount -o bind /sys /target/sys
     # mount -o bind /proc /target/proc
     # chroot /target
-    # sudo apt-get install lvm2 nfs-common
+    # sudo apt-get -y install lvm2 nfs-common
 
 ### /etc/fstab modifications
 
