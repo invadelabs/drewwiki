@@ -81,7 +81,7 @@ find /sys/devices -name nr_requests -exec sh -c 'echo 4096 > {}' \;</pre>
 # grub-install /dev/sda
 # grub-install /dev/sdb</pre>
 
-== Reboot from Installer ==
+== First boot into installed OS ==
 Once in OS lets stop a few things from wearing out the SSD's.
 
 === Move Firefox cache off ssd ===

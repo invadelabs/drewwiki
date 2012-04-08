@@ -108,8 +108,8 @@ After install is finished, but before Reboot
     # grub-install /dev/sda
     # grub-install /dev/sdb
 
-Reboot from Installer
----------------------
+First boot into installed OS
+----------------------------
 
 Once in OS lets stop a few things from wearing out the SSD's.
 
