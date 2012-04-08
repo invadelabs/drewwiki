@@ -47,7 +47,8 @@ A collection of randomness I've encountered and configured in Linux.
 ====Hardware Related====
 *[[udevinfo]] - gathering system info
 *[[gps]] - GPS Related
-*[[ssd]] - Solid State Drives (LVM Mirroring)
+*[[ssd]] - Solid State Drives
+**[[UbuntuRAID0SSDonroot]] -- Ubuntu RAID0 LLV on SSD on root no boot partition
 
 ==Media==
 *[[eGalaxyTouchScreen]] - eGalaxy Touch Screen
