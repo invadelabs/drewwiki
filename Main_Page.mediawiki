@@ -3,7 +3,8 @@ A collection of randomness I've encountered and configured in Linux.
 ----
 
 ==Misc.==
-*[[ServerSetup]]
+*[[ServerSetup]] - Server setup for drewserv
+*[[UbuntuRAID0ssd]] - Desktop Setup For Ubuntu
 *[[PowerDraw]]
 *[[Scratch]]
 

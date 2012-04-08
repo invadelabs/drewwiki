@@ -10,7 +10,9 @@ A collection of randomness I've encountered and configured in Linux.
 Misc.
 -----
 
--   [ServerSetup](ServerSetup "wikilink")
+-   [ServerSetup](ServerSetup "wikilink") - Server setup for drewserv
+-   [UbuntuRAID0ssd](UbuntuRAID0ssd "wikilink") - Desktop Setup For
+    Ubuntu
 -   [PowerDraw](PowerDraw "wikilink")
 -   [Scratch](Scratch "wikilink")
 
