@@ -11,6 +11,7 @@ Misc.
 -----
 
 -   [ServerSetup](ServerSetup "wikilink") - Server setup for drewserv
+-   [DesktopSetup](DesktopSetup "wikilink") - Server setup for drewserv
 -   [UbuntuRAID0ssd](UbuntuRAID0ssd "wikilink") - Desktop Setup For
     Ubuntu
 -   [PowerDraw](PowerDraw "wikilink")
