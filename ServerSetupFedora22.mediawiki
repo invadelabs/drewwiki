@@ -49,7 +49,6 @@ lm_sensors hddtemp smartmontools apcupsd apcupsd-cgi
 ## Add TCP3260/24
 # ^ Configure bacula and web interface
 
-
 = Setup cron jobs =
 # Keep anacron from waking me up at night! 
 <pre># vi /etc/anacrontab // START_HOURS_RANGE</pre>
