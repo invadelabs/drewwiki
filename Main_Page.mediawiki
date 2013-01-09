@@ -10,6 +10,7 @@ A collection of randomness I've encountered and configured in Linux.
 *[[OSX Setup]] - Laptop software config
 *[[PowerDraw]]
 *[[Scratch]]
+*[[Research]]
 
 ==System Administration==
 *[[CustomKernelDebian]] - Compile a custom kernel from source in Debian / Ubuntu
