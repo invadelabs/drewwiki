@@ -7,6 +7,7 @@ A collection of randomness I've encountered and configured in Linux.
 *[[DesktopSetup]] - Server setup for drewserv
 *[[KVM/qemu CentOS6]] - KVM notes
 *[[UbuntuRAID0ssd]] - Desktop Setup For Ubuntu
+*[[OSX Setup]] - Laptop software config
 *[[PowerDraw]]
 *[[Scratch]]
 

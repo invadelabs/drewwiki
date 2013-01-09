@@ -15,6 +15,7 @@ Misc.
 -   [KVM/qemu CentOS6](KVM/qemu_CentOS6 "wikilink") - KVM notes
 -   [UbuntuRAID0ssd](UbuntuRAID0ssd "wikilink") - Desktop Setup For
     Ubuntu
+-   [OSX Setup](OSX_Setup "wikilink") - Laptop software config
 -   [PowerDraw](PowerDraw "wikilink")
 -   [Scratch](Scratch "wikilink")
 
