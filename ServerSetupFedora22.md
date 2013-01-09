@@ -3,23 +3,30 @@ title: ServerSetupFedora22
 layout: default
 ---
 
-    # yum install man screen wget strace rsync fail2ban mailx mutt fdupes sendmail-cf logwatch etckeeper \
+Immediate post install steps
+============================
+
+1.  sudo yum install etckeeper fail2ban
+
+2.  Disable root login via ssh
+    1.  Add TCP22/0 to IPTables
+3.  Enable sudo
+4.  yum remove unneeded software
+5.  yum update
+6.  Enable SElinux
+7.  Extend days of sysstat logging
+
+Install rest of software
+========================
+
+    # yum install man screen wget strace rsync mailx mutt fdupes sendmail-cf logwatch \
     OpenIPMI ipmitool sysstat clamav clamav-update nfs-utils iscsi-initiator-utils samba openvpn \
     mod_auth_pam mod_auth_shadow php-pecl-apc phpMyAdmin \
     lm_sensors hddtemp smartmontools apcupsd apcupsd-cgi 
     # java-1.6.0-openjdk.x86_64 nss-mdns
 
-1.  Install etckeeper
-2.  Disable root login via ssh
-    1.  Add TCP22/0 to IPTables
-3.  Enable sudo
-4.  Install fail2ban
-5.  yum remove unneeded software
-6.  yum update
-7.  Enable SElinux
-8.  Extend days of sysstat logging
-
-<!-- -->
+Configure system, monitoring, mail, AV, and VPN
+===============================================
 
 1.  Configure GRUB serial console redirection
 2.  Configure kdump for system panics
@@ -41,7 +48,8 @@ layout: default
 11. Setup clamav virus protection for Samba and weekly scan
 12. Configure OpenVPN
 
-<!-- -->
+Configure RAID and filesharing
+==============================
 
 1.  Mount raid array
 2.  Configure md alerts
@@ -56,13 +64,17 @@ layout: default
     1.  Add TCP3260/24
 6.  ^ Configure bacula and web interface
 
+Setup cron jobs
+===============
+
+1.  Keep anacron from waking me up at night!
+
 <!-- -->
 
-1.  Setup cron jobs
-    1.  Keep anacron from waking me up at night!
-            # vi /etc/anacrontab // START_HOURS_RANGE
+    # vi /etc/anacrontab // START_HOURS_RANGE
 
-<!-- -->
+Configure Web Services
+======================
 
 1.  Configure MythTV / MythWeb
     1.  Add TCP443/0 to IPTables
@@ -70,7 +82,8 @@ layout: default
     phpMyAdmin
 3.  Configure DrewWiki / WebDAV
 
-<!-- -->
+Completing / Wrap-up
+====================
 
 1.  Verify all log files in /var/log are not giving any errors or
     notifications
@@ -79,4 +92,3 @@ layout: default
 
 3.  Create MondoRescue restore image
 
-.

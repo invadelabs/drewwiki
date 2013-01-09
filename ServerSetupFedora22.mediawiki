@@ -1,22 +1,23 @@
+= Immediate post install steps =
+# <pre>sudo yum install etckeeper fail2ban</pre>
+# Disable root login via ssh
+## Add TCP22/0 to IPTables
+# Enable sudo
+# yum remove unneeded software
+# yum update
+# Enable SElinux
+# Extend days of sysstat logging
+
+= Install rest of software =
 <pre>
-# yum install man screen wget strace rsync fail2ban mailx mutt fdupes sendmail-cf logwatch etckeeper \
+# yum install man screen wget strace rsync mailx mutt fdupes sendmail-cf logwatch \
 OpenIPMI ipmitool sysstat clamav clamav-update nfs-utils iscsi-initiator-utils samba openvpn \
 mod_auth_pam mod_auth_shadow php-pecl-apc phpMyAdmin \
 lm_sensors hddtemp smartmontools apcupsd apcupsd-cgi 
 # java-1.6.0-openjdk.x86_64 nss-mdns
 </pre>
 
-# Install etckeeper
-# Disable root login via ssh
-## Add TCP22/0 to IPTables
-# Enable sudo
-# Install fail2ban
-# yum remove unneeded software
-# yum update
-# Enable SElinux
-# Extend days of sysstat logging
-
-
+= Configure system, monitoring, mail, AV, and VPN =
 # Configure GRUB serial console redirection
 # Configure kdump for system panics
 # Configure lm-sensors, hddtemp, and SMARTmon for temperature alerts.
@@ -35,7 +36,7 @@ lm_sensors hddtemp smartmontools apcupsd apcupsd-cgi
 # Setup clamav virus protection for Samba and weekly scan
 # Configure OpenVPN
 
-
+= Configure RAID and filesharing =
 # Mount raid array
 # Configure md alerts
 # Enable NFS
@@ -49,17 +50,17 @@ lm_sensors hddtemp smartmontools apcupsd apcupsd-cgi
 # ^ Configure bacula and web interface
 
 
-# Setup cron jobs
-## Keep anacron from waking me up at night! <pre># vi /etc/anacrontab // START_HOURS_RANGE</pre>
+= Setup cron jobs =
+# Keep anacron from waking me up at night! 
+<pre># vi /etc/anacrontab // START_HOURS_RANGE</pre>
 
-
+= Configure Web Services =
 # Configure MythTV / MythWeb
 ## Add TCP443/0 to IPTables
 # Configure mod_auth_pam / mod_auth_shadow / pecl-php-apc / phpMyAdmin
 # Configure DrewWiki / WebDAV
 
-
+= Completing / Wrap-up =
 # Verify all log files in /var/log are not giving any errors or notifications
 # Check logs for whats growing! <pre># ls -alR /var/log | grep ^- | awk {'print $5" "$8'} | sort -k 2| sort -n</pre>
 # Create MondoRescue restore image
-.
