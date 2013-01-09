@@ -12,6 +12,7 @@ Misc.
 
 -   [ServerSetup](ServerSetup "wikilink") - Server setup for drewserv
 -   [DesktopSetup](DesktopSetup "wikilink") - Server setup for drewserv
+-   [KVM/qemu CentOS6](KVM/qemu_CentOS6 "wikilink") - KVM notes
 -   [UbuntuRAID0ssd](UbuntuRAID0ssd "wikilink") - Desktop Setup For
     Ubuntu
 -   [PowerDraw](PowerDraw "wikilink")
