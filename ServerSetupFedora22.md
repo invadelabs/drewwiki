@@ -20,7 +20,7 @@ Install rest of software
 ========================
 
     # yum install man screen wget strace rsync mailx mutt fdupes sendmail-cf logwatch grep nfs-utils screen binutils tar \
-    OpenIPMI ipmitool sysstat clamav clamav-update nfs-utils iscsi-initiator-utils samba openvpn \
+    OpenIPMI ipmitool sysstat clamav clamav-update nfs-utils iscsi-initiator-utils samba openvpn lldpad \
     mod_auth_pam mod_auth_shadow php-pecl-apc lm_sensors hddtemp smartmontools apcupsd apcupsd-cgi 
 
 Configure system, monitoring, mail, AV, and VPN
