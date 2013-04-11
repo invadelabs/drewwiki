@@ -28,7 +28,8 @@ Configure system, monitoring, mail, AV, and VPN
 
 1.  Configure GRUB serial console redirection
 2.  Configure kdump for system panics
-3.  Configure lm-sensors, hddtemp, and SMARTmon for temperature alerts.
+3.  Configure lm-sensors, hddtemp, lldpad, and SMARTmon for temperature
+    alerts.
 4.  Configure apcupsd for UPS alerts
 5.  Configure Time Server for local network access
     1.  Add UDP123/24 to IPTables
