@@ -11,7 +11,7 @@
 = Install rest of software =
 <pre>
 # yum install man screen wget strace rsync mailx mutt fdupes sendmail-cf logwatch grep nfs-utils screen binutils tar \
-mcelog OpenIPMI ipmitool sysstat clamav clamav-update nfs-utils iscsi-initiator-utils samba openvpn lldpad \
+mcelog OpenIPMI ipmitool sysstat clamav clamav-update nfs-utils iscsi-initiator-utils samba openvpn lldpad ntp \
 php-pecl-apc lm_sensors hddtemp smartmontools apcupsd apcupsd-cgi 
 </pre>
 
