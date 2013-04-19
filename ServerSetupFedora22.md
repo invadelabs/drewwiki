@@ -19,8 +19,8 @@ Immediate post install steps
 Install rest of software
 ========================
 
-    # yum install man screen wget strace rsync mailx mutt fdupes sendmail-cf logwatch grep nfs-utils screen binutils tar \
-    mcelog OpenIPMI ipmitool sysstat clamav clamav-update nfs-utils iscsi-initiator-utils samba openvpn lldpad ntp \
+    # yum install man screen wget strace rsync mailx fdupes logwatch grep lsof screen binutils tar mcelog nfs-utils \
+    OpenIPMI ipmitool sysstat clamav clamav-update nfs-utils iscsi-initiator-utils samba openvpn lldpad ntp \
     php-pecl-apc lm_sensors hddtemp smartmontools apcupsd apcupsd-cgi 
 
 Configure system, monitoring, mail, AV, and VPN
@@ -75,11 +75,9 @@ Setup cron jobs
 Configure Web Services
 ======================
 
-1.  Configure MythTV / MythWeb
+1.  Configure MythTV / MythWeb / minidlna
     1.  Add TCP443/0 to IPTables
-2.  Configure mod\_auth\_pam / mod\_auth\_shadow / pecl-php-apc /
-    phpMyAdmin
-3.  Configure DrewWiki / WebDAV
+2.  Configure pecl-php-apc / DrewWiki / WebDAV
 
 Completing / Wrap-up
 ====================

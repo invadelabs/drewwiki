@@ -10,8 +10,8 @@
 
 = Install rest of software =
 <pre>
-# yum install man screen wget strace rsync mailx mutt fdupes sendmail-cf logwatch grep nfs-utils screen binutils tar \
-mcelog OpenIPMI ipmitool sysstat clamav clamav-update nfs-utils iscsi-initiator-utils samba openvpn lldpad ntp \
+# yum install man screen wget strace rsync mailx fdupes logwatch grep lsof screen binutils tar mcelog nfs-utils \
+OpenIPMI ipmitool sysstat clamav clamav-update nfs-utils iscsi-initiator-utils samba openvpn lldpad ntp \
 php-pecl-apc lm_sensors hddtemp smartmontools apcupsd apcupsd-cgi 
 </pre>
 
@@ -52,10 +52,9 @@ php-pecl-apc lm_sensors hddtemp smartmontools apcupsd apcupsd-cgi
 <pre># vi /etc/anacrontab // START_HOURS_RANGE</pre>
 
 = Configure Web Services =
-# Configure MythTV / MythWeb
+# Configure MythTV / MythWeb / minidlna
 ## Add TCP443/0 to IPTables
-# Configure mod_auth_pam / mod_auth_shadow / pecl-php-apc / phpMyAdmin
-# Configure DrewWiki / WebDAV
+# Configure pecl-php-apc / DrewWiki / WebDAV
 
 = Completing / Wrap-up =
 # Verify all log files in /var/log are not giving any errors or notifications
