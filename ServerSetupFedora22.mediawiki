@@ -11,14 +11,22 @@
 = Install rest of software =
 <pre>
 # yum install man screen wget strace rsync mailx fdupes logwatch grep lsof screen binutils tar mcelog nfs-utils \
-OpenIPMI ipmitool sysstat clamav clamav-update nfs-utils iscsi-initiator-utils samba openvpn lldpad ntp \
+OpenIPMI ipmitool sysstat clamav clamav-update iscsi-initiator-utils samba openvpn lldpad ntp \
 php-pecl-apc lm_sensors hddtemp smartmontools apcupsd apcupsd-cgi 
 </pre>
 
 = Configure system, monitoring, mail, AV, and VPN =
 # Configure GRUB serial console redirection
 # Configure kdump for system panics
-# Configure lm-sensors, hddtemp, lldpad, mcelog, and SMARTmon for temperature alerts.
+# Configure lm-sensors, smartd/hddtemp+thermal alerts, lldpad, mcelog, and SMARTmon for temperature alerts.
+### 
+<pre> DEVICESCAN -H -m root -M exec /usr/libexec/smartmontools/smartdnotify -n standby,10,q
+/dev/sda -H -m root -M daily -M exec /home/drew/cron/smartmon.sh -M daily -f -l error -o on -S on -s (S/../.././02|L/../../6/03) -W 0,0,45 -d sat
+/dev/sdb -H -m root -M daily -M exec /home/drew/cron/smartmon.sh -M daily -f -l error -o on -S on -s (S/../.././02|L/../../6/03) -W 0,0,45 -d sat
+/dev/sdc -H -m root -M daily -M exec /home/drew/cron/smartmon.sh -M daily -f -l error -o on -S on -s (S/../.././02|L/../../6/03) -W 0,0,45 -d sat
+/dev/sdd -H -m root -M daily -M exec /home/drew/cron/smartmon.sh -M daily -f -l error -o on -S on -s (S/../.././02|L/../../6/03) -W 0,0,45 -d sat
+/dev/sde -H -m root -M daily -M exec /home/drew/cron/smartmon.sh -M daily -f -l error -o on -S on -s (S/../.././02|L/../../6/03) -W 0,0,47 -d sat
+</pre>
 # Configure apcupsd for UPS alerts
 # Configure Time Server for local network access
 ## Add UDP123/24 to IPTables
@@ -28,8 +36,6 @@ php-pecl-apc lm_sensors hddtemp smartmontools apcupsd apcupsd-cgi
 ## Remove 127.0.0.1 /etc/mail/sendmail.mc
 ## <pre># echo drew > /root/.forward; echo "andrew: drew" >> /etc/aliases; newaliases; echo "root: drew" >> /etc/aliases; newaliases</pre>
 ## Add TCP25/0 to IPTables
-# Configure smartd/hddtemp for disk monitoring
-# ^ Configure thermal alerts for server
 # Configure logwatch
 # Setup clamav virus protection for Samba and weekly scan
 # Configure OpenVPN
@@ -37,12 +43,29 @@ php-pecl-apc lm_sensors hddtemp smartmontools apcupsd apcupsd-cgi
 = Configure RAID and filesharing =
 # Mount raid array
 # Configure md alerts
-# Enable NFS
-##Add TCP2049/24 to IPTables
-##Disable NFSv2/3 /etc/sysconfig/nfs
 # Enable samba
 ## Add TCP139,445/24 to IPTables
-## <pre># chkconfig smb on; chkconfig nmb on;</pre>
+## <pre># systemctl enable smb; systemctl start smb</pre>
+### 
+<pre> 
+[global]
+        workgroup = WORKGROUP
+        server string = drewserv
+        security = user
+        passdb backend = tdbsam
+        log file = /var/log/samba/log.%m
+        max log size = 50
+        load printers = no
+        show add printer wizard = no
+        printcap name = /dev/null
+        disable spoolss = yes
+[share]
+        path = /mnt/raid5
+        valid users = drew pbr
+        read only = No
+	create mode = 0665
+	directory mode = 0775
+</pre>
 # Enable iSCSI
 ## Add TCP3260/24
 # ^ Configure bacula and web interface
@@ -52,8 +75,24 @@ php-pecl-apc lm_sensors hddtemp smartmontools apcupsd apcupsd-cgi
 <pre># vi /etc/anacrontab // START_HOURS_RANGE</pre>
 
 = Configure Web Services =
+# ddclient for dynamicdns updates
 # Configure MythTV / MythWeb / minidlna
-## Add TCP443/0 to IPTables
+## Add TCP443/0 to IPTables for bla, TCP1900/0 TCP8200/0, TCP 34531 for minidlna
+### 
+<pre> 
+port=8200
+media_dir=/mnt/raid5/media
+db_dir=/var/cache/minidlna
+log_dir=/var/log/minidlna
+album_art_names=Cover.jpg/cover.jpg/AlbumArtSmall.jpg/albumartsmall.jpg/AlbumArt.jpg/albumart.jpg/Album.jpg/album.jpg/Folder.jpg/folder.jpg/Thumb.jpg/thumb.jpg
+inotify=yes
+enable_tivo=no
+strict_dlna=no
+notify_interval=900
+serial=12345678
+model_number=1
+root_container=B
+</pre>
 # Configure pecl-php-apc / DrewWiki / WebDAV
 
 = Completing / Wrap-up =
