@@ -114,8 +114,8 @@ Configure Web Services
 
 1.  ddclient for dynamicdns updates
 2.  Configure MythTV / MythWeb / minidlna
-    1.  Add TCP443/0 to IPTables for bla, TCP1900/0 TCP8200/0, TCP 34531
-        for minidlna
+    1.  Add TCP80/24 and TCP443/0 for web services, TCP1900/0 TCP8200/0,
+        TCP34531/0 for minidlna
         1.  
 
 <!-- -->

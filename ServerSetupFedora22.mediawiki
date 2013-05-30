@@ -83,7 +83,7 @@ php-pecl-apc lm_sensors hddtemp smartmontools apcupsd apcupsd-cgi
 = Configure Web Services =
 # ddclient for dynamicdns updates
 # Configure MythTV / MythWeb / minidlna
-## Add TCP443/0 to IPTables for bla, TCP1900/0 TCP8200/0, TCP 34531 for minidlna
+## Add TCP80/24 and TCP443/0 for web services, TCP1900/0 TCP8200/0, TCP34531/0 for minidlna
 ### 
 <pre> 
 port=8200
