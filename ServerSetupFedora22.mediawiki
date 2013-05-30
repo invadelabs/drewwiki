@@ -7,6 +7,12 @@
 # yum update
 # Enable SElinux
 # Extend days of sysstat logging
+## 
+<pre>grep -vE '^($|#)' /etc/sysconfig/sysstat
+HISTORY=365
+COMPRESSAFTER=10
+SADC_OPTIONS=""
+</pre>
 
 = Install rest of software =
 <pre>

@@ -15,6 +15,14 @@ Immediate post install steps
 5.  yum update
 6.  Enable SElinux
 7.  Extend days of sysstat logging
+    1.  
+
+<!-- -->
+
+    grep -vE '^($|#)' /etc/sysconfig/sysstat
+    HISTORY=365
+    COMPRESSAFTER=10
+    SADC_OPTIONS=""
 
 Install rest of software
 ========================
