@@ -9,6 +9,7 @@ A collection of randomness I've encountered and configured in Linux.
 *[[KVM/qemu CentOS6]] - KVM notes
 *[[UbuntuRAID0ssd]] - Desktop Setup For Ubuntu
 *[[OSX Setup]] - Laptop software config
+*[[Windows Setup]] - Extras for Windows 7 / 8
 *[[PowerDraw]]
 *[[Research]]
 

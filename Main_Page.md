@@ -19,6 +19,7 @@ Misc.
 -   [UbuntuRAID0ssd](UbuntuRAID0ssd "wikilink") - Desktop Setup For
     Ubuntu
 -   [OSX Setup](OSX_Setup "wikilink") - Laptop software config
+-   [Windows Setup](Windows_Setup "wikilink") - Extras for Windows 7 / 8
 -   [PowerDraw](PowerDraw "wikilink")
 -   [Research](Research "wikilink")
 
