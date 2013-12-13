@@ -26,6 +26,8 @@ Misc.
 System Administration
 ---------------------
 
+-   [ddwrt-ddns-namecheap](ddwrt-ddns-namecheap "wikilink") - Setup DDNS
+    on DD-WRT for Namecheap
 -   [CustomKernelDebian](CustomKernelDebian "wikilink") - Compile a
     custom kernel from source in Debian / Ubuntu
 -   [OpenVPN](OpenVPN "wikilink") - OpenVPN Server Setup
