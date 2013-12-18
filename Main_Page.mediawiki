@@ -27,8 +27,9 @@ A collection of randomness I've encountered and configured in Linux.
 ** [[lm_sensorsPDMSi]] - /etc/sensors.d/pdsmi
 *[[iptables]] - iptables setup
 * DD-WRT
-** [[ddwrtdnsmasq]] - dnsmasq stuff for DD-WRT
+**[[ddwrtdnsmasq]] - dnsmasq stuff for DD-WRT
 **[[PXEiSCSIboot]] - Booting off SAN via PXE and iSCSI target
+**[[ddwrtopsware]] - opsware
 *[[NUTUPSMonitor]] - Configure NUT for UPS monitoring and alerts in Fedora 12-14
 *[[PortMirroringDDWRTiptables]] - Port mirroring with iptable in dd-wrt
 
