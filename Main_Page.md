@@ -88,6 +88,7 @@ System Administration
 
 #### Hardware Related
 
+-   [RaspberryPi](RaspberryPi "wikilink") - Information for RPi
 -   [udevinfo](udevinfo "wikilink") - gathering system info
 -   [gps](gps "wikilink") - GPS Related
 -   [ssd](ssd "wikilink") - Solid State Drives

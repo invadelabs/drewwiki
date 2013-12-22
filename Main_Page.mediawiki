@@ -53,6 +53,7 @@ A collection of randomness I've encountered and configured in Linux.
 *[[ExternalUSBEncryptedLVM]] - Encrypted LVM for External USB (rsync backup)
 
 ====Hardware Related====
+*[[RaspberryPi]] - Information for RPi
 *[[udevinfo]] - gathering system info
 *[[gps]] - GPS Related
 *[[ssd]] - Solid State Drives
