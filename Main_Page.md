@@ -24,6 +24,7 @@ Misc.
 System Administration
 ---------------------
 
+-   [lxc](lxc "wikilink") - LXC (Linux Containers) and Docker
 -   [ddwrt-ddns-namecheap](ddwrt-ddns-namecheap "wikilink") - Setup DDNS
     on DD-WRT for Namecheap
 -   [CustomKernelDebian](CustomKernelDebian "wikilink") - Compile a
