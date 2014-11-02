@@ -6,7 +6,7 @@ layout: default
 Create container
 ----------------
 
-     drew@drew-itx:~$ sudo sudo lxc-create -n test-container -t ubuntu
+     drew@drew-itx:~$ sudo lxc-create -n test-container -t ubuntu
     Checking cache download in /var/cache/lxc/trusty/rootfs-amd64 ...
     Installing packages in template: ssh,vim,language-pack-en
     Downloading ubuntu trusty minimal ...
