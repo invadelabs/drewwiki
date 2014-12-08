@@ -18,6 +18,8 @@ OS X Software to Install
 -   Synergy
 -   Google Chrome
 -   VLC
+-   SoundFlower
+-   32 Lives
 
 To-do
 =====
