@@ -55,7 +55,7 @@ A collection of randomness I've encountered and configured in Linux.
 *[[RaspberryPi]] - Information for RPi
 *[[udevinfo]] - gathering system info
 *[[gps]] - GPS Related
-*ssd - Solid State Drives
+*ssd - Solid State Drive articles
 **[[UbuntuRAID0ssd]] -- Ubuntu RAID0 LVM on SSD on root no boot partition
 
 ==Media==
