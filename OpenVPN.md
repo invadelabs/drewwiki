@@ -3,7 +3,7 @@ title: OpenVPN
 layout: default
 ---
 
-    $ grep -v ^$ /etc/openvpn/server.conf  | grep -v ^# | grep -v ^\;
+    $ grep -vE '^(#|$)' /etc/openvpn/server.conf
     port 1194
     proto tcp
     dev tun
