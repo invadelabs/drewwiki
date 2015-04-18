@@ -90,7 +90,7 @@ System Administration
 -   [RaspberryPi](RaspberryPi "wikilink") - Information for RPi
 -   [udevinfo](udevinfo "wikilink") - gathering system info
 -   [gps](gps "wikilink") - GPS Related
--   [ssd](ssd "wikilink") - Solid State Drives
+-   ssd - Solid State Drives
     -   [UbuntuRAID0ssd](UbuntuRAID0ssd "wikilink") -- Ubuntu RAID0 LVM
         on SSD on root no boot partition
 
