@@ -26,6 +26,7 @@ Misc.
 System Administration
 ---------------------
 
+-   [nmcli](nmcli "wikilink") - Joining wifi from nmcli
 -   [lxc](lxc "wikilink") - LXC (Linux Containers) and Docker
 -   [ddwrt-ddns-namecheap](ddwrt-ddns-namecheap "wikilink") - Setup DDNS
     on DD-WRT for Namecheap
