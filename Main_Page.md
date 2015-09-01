@@ -114,7 +114,7 @@ Media
 -   [Lirc, Pinnacle 800i, and Comcast
     Remote](Lirc,_Pinnacle_800i,_and_Comcast_Remote "wikilink") -
     ir-keymap.c
--   [Convert mp4 or flv To wav](Convert_mp4_or_flv_To_wav "wikilink")
+-   \[\[ConvertVideoToM4a\] - Convert video to m4a with ffmpeg copy
 -   [bluray](bluray "wikilink") - Playing and backing up Blu-ray discs
     in Linux
 
