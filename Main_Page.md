@@ -11,6 +11,8 @@ Misc.
 -   [ServerSetup](ServerSetup "wikilink") - Server setup for drewserv
 -   [DesktopSetup](DesktopSetup "wikilink") - Desktop setup for
     drew-desktop
+-   [RaspberryPISetup](RaspberryPISetup "wikilink") - RaspberryPi setup
+    for drewpi
 -   [RikoAndroidMiniPC](RikoAndroidMiniPC "wikilink") - Rikomagic MK802
     III setup + picuntu
 -   [KVM/qemu CentOS6](KVM/qemu_CentOS6 "wikilink") - KVM notes
