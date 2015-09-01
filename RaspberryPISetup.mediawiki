@@ -1,0 +1,44 @@
+<pre>
+Setup wireless:
+https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md
+
+Setup touch screen:
+https://learn.adafruit.com/adafruit-5-800x480-tft-hdmi-monitor-touchscreen-backpack?view=all
+
+To-do
+	??? Backlight control, disable backlight after not used for awhile???
+	!!! Calibrate touch screen !!!
+		https://learn.adafruit.com/ar1100-resistive-touch-screen-controller-guide?view=all
+
+Start X as different user:
+# raspi-config #select option for Gui
+# vi /etc/lightdm/lightdm.conf
+autologin-user=drew
+
+Disable Mouse Cursor for touchscreen:
+# sudo apt-get install unclutter
+# unclutter -idle 0
+	!!! launch this at boot
+
+Start Programs Full Screen
+sudo apt-get install maximus
+	!!! launch this at boot
+	!!! maybe use devilspie
+
+Start screen with xterm
+# echo "startup_message off" >> ~/.screenrc
+# export DISPLAY=":0.0"
+# x-terminal-emulator --display :0.0 -e screen &
+# screen -x 
+
+Virtual Keyboard:
+http://ozzmaker.com/2014/06/30/virtual-keyboard-for-the-raspberry-pi/?utm_source=feedly
+
+pyobd
+# sudo apt-get install screen
+# sudo apt-get install python-serial
+# sudo apt-get install bluetooth bluez-utils blueman
+# sudo apt-get install python-wxgtk2.8 python-wxtools wx2.8-i18n libwxgtk2.8-dev
+# sudo apt-get install git-core
+wget from http://www.obdtester.com/pyobd-install
+</pre>
