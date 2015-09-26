@@ -5,6 +5,8 @@ layout: default
 
 A collection of randomness I've encountered and configured in Linux.
 
+[http\_trackers](http_trackers "wikilink")
+
 Misc.
 -----
 

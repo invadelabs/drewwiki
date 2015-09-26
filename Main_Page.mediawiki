@@ -1,5 +1,7 @@
 A collection of randomness I've encountered and configured in Linux.
 
+[[http_trackers]]
+
 ==Misc.==
 *[[ServerSetup]] - Server setup for drewserv
 *[[DesktopSetup]] - Desktop setup for drew-desktop
