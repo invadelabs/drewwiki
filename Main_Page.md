@@ -20,9 +20,9 @@ System Setup
 -   [UbuntuRAID0ssd](UbuntuRAID0ssd "wikilink") - Desktop Setup For
     Ubuntu
 -   [OSX Setup](OSX_Setup "wikilink") - Laptop software config
--   [ChromebookSetup](ChromebookSetup "wikilink") - Chromebook setup
--   [Windows10Setup](Windows10Setup "wikilink") - Windows 10
--   [Windows Setup](Windows_Setup "wikilink") - Extras for Windows 7 / 8
+-   [ChromebookSetup](ChromebookSetup "wikilink") - Chromebook Setup
+-   [Windows Setup](Windows_Setup "wikilink") - Windows 8 / Windows 10
+    Setup
 
 System Administration
 ---------------------

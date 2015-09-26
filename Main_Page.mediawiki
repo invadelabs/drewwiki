@@ -9,9 +9,8 @@ A collection of randomness I've encountered and configured in Linux.
 *[[RikoAndroidMiniPC]] - Rikomagic MK802 III setup + picuntu
 *[[UbuntuRAID0ssd]] - Desktop Setup For Ubuntu
 *[[OSX Setup]] - Laptop software config
-*[[ChromebookSetup]] - Chromebook setup
-*[[Windows10Setup]] - Windows 10
-*[[Windows Setup]] - Extras for Windows 7 / 8
+*[[ChromebookSetup]] - Chromebook Setup
+*[[Windows Setup]] - Windows 8 / Windows 10 Setup
 
 
 ==System Administration==
