@@ -3,12 +3,23 @@ title: Windows10Setup
 layout: default
 ---
 
+Windows 10
+
+    disable wifi sharing
+
+    disable local and internet update sharing
+
+    enable system protection
+
+    Window 10 Privacy Settings - "Start" click on "Settings" then choose "Privacy." To view more of the settings, simply click each entry found in the left side of the window
+
+    setup windows cortana
+
     Fast_Track_Pro_Installer_6_0_7_77137.zip
 
 
     7z920-x64.msi
     audacity-win-2.0.3.exe
-    avg_free_stb_all_2013_3349_grid2.exe or avast_free_antivirus_setup.exe
     ccleaner
     ?firefox
     googlechrome
