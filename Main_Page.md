@@ -7,8 +7,8 @@ A collection of randomness I've encountered and configured in Linux.
 
 [http\_trackers](http_trackers "wikilink")
 
-Misc.
------
+System Setup
+------------
 
 -   [ServerSetup](ServerSetup "wikilink") - Server setup for drewserv
 -   [DesktopSetup](DesktopSetup "wikilink") - Desktop setup for
@@ -17,18 +17,17 @@ Misc.
     for drewpi
 -   [RikoAndroidMiniPC](RikoAndroidMiniPC "wikilink") - Rikomagic MK802
     III setup + picuntu
--   [KVM/qemu CentOS6](KVM/qemu_CentOS6 "wikilink") - KVM notes
 -   [UbuntuRAID0ssd](UbuntuRAID0ssd "wikilink") - Desktop Setup For
     Ubuntu
 -   [OSX Setup](OSX_Setup "wikilink") - Laptop software config
+-   [ChromebookSetup](ChromebookSetup "wikilink") - Chromebook setup
 -   [Windows10Setup](Windows10Setup "wikilink") - Windows 10
 -   [Windows Setup](Windows_Setup "wikilink") - Extras for Windows 7 / 8
--   [PowerDraw](PowerDraw "wikilink")
--   [Research](Research "wikilink")
 
 System Administration
 ---------------------
 
+-   [KVM/qemu CentOS6](KVM/qemu_CentOS6 "wikilink") - KVM notes
 -   [nmcli](nmcli "wikilink") - Joining wifi from nmcli
 -   [lxc](lxc "wikilink") - LXC (Linux Containers) and Docker
 -   [ddwrt-ddns-namecheap](ddwrt-ddns-namecheap "wikilink") - Setup DDNS
@@ -135,4 +134,10 @@ Media
 
 -   [N64Mupen64plus](N64Mupen64plus "wikilink") - Using mupen64plus (N64
     Emulator) in Linux
+
+Misc.
+-----
+
+-   [PowerDraw](PowerDraw "wikilink")
+-   [Research](Research "wikilink")
 

@@ -2,20 +2,20 @@ A collection of randomness I've encountered and configured in Linux.
 
 [[http_trackers]]
 
-==Misc.==
+== System Setup ==
 *[[ServerSetup]] - Server setup for drewserv
 *[[DesktopSetup]] - Desktop setup for drew-desktop
 *[[RaspberryPISetup]] - RaspberryPi setup for drewpi
 *[[RikoAndroidMiniPC]] - Rikomagic MK802 III setup + picuntu
-*[[KVM/qemu CentOS6]] - KVM notes
 *[[UbuntuRAID0ssd]] - Desktop Setup For Ubuntu
 *[[OSX Setup]] - Laptop software config
+*[[ChromebookSetup]] - Chromebook setup
 *[[Windows10Setup]] - Windows 10
 *[[Windows Setup]] - Extras for Windows 7 / 8
-*[[PowerDraw]]
-*[[Research]]
+
 
 ==System Administration==
+*[[KVM/qemu CentOS6]] - KVM notes
 *[[nmcli]] - Joining wifi from nmcli
 *[[lxc]] - LXC (Linux Containers) and Docker
 *[[ddwrt-ddns-namecheap]] - Setup DDNS on DD-WRT for Namecheap
@@ -80,3 +80,7 @@ A collection of randomness I've encountered and configured in Linux.
 
 ====Emulators====
 *[[N64Mupen64plus]] - Using mupen64plus (N64 Emulator) in Linux
+
+==Misc.==
+*[[PowerDraw]]
+*[[Research]]
