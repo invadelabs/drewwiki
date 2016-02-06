@@ -29,7 +29,7 @@ Apps to install
     LibreOffice_4.0.4_Win_x86.msi
     npp.6.4.1.Installer.exe
     putty-0.62-installer.exe
-    python-2.7, then update pip, then pip install youtube-dl, then downlaod ffmpeg (add to C:\bin and add path)
+    python-2.7, then update pip, then pip install youtube-dl, then downlaod ffmpeg to c:\python27\scripts, then atomicparsley in samedir
     sandboxie
     SkypeForDesktop
     utorrent.exe
