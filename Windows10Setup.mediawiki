@@ -1,15 +1,14 @@
 == Windows 10 Config ==
-<pre>
-disable wifi sharing
 
-disable local and internet update sharing
+* disable wifi sharing
 
-enable system protection
+* disable local and internet update sharing
 
-Window 10 Privacy Settings - "Start" click on "Settings" then choose "Privacy." To view more of the settings, simply click each entry found in the left side of the window
+* enable system protection
 
-setup windows cortana
-</pre>
+* Window 10 Privacy Settings - "Start" click on "Settings" then choose "Privacy." To view more of the settings, simply click each entry found in the left side of the window
+
+*setup windows cortana
 
 == Apps to install ==
 <pre>

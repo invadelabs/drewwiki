@@ -6,15 +6,25 @@ layout: default
 Windows 10 Config
 -----------------
 
-    disable wifi sharing
+-   disable wifi sharing
 
-    disable local and internet update sharing
+<!-- -->
 
-    enable system protection
+-   disable local and internet update sharing
 
-    Window 10 Privacy Settings - "Start" click on "Settings" then choose "Privacy." To view more of the settings, simply click each entry found in the left side of the window
+<!-- -->
 
-    setup windows cortana
+-   enable system protection
+
+<!-- -->
+
+-   Window 10 Privacy Settings - “Start” click on “Settings” then choose
+    “Privacy.” To view more of the settings, simply click each entry
+    found in the left side of the window
+
+<!-- -->
+
+-   setup windows cortana
 
 Apps to install
 ---------------
