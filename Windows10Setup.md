@@ -48,6 +48,8 @@ Apps to install
     vlc-2.0.7-win64.exe
     windirstat1_1_2_setup.exe
     Wireshark-win32-1.10.1.exe
+    foxitpdfreader
+    Private Internet Access
 
     not really using anymore:
     JBidWatcher
@@ -59,11 +61,7 @@ Apps to install
     sdksetup.exe (only debug tools Windows Driver SDK for usbview)
     networx_setup (bandwidth utilization) 
 
-    foxitpdfreader
-    Private Internet Access
     freepdfcompressor_setup.exe
-    sip phone client
-    openssl
 
 Music Production
 ----------------

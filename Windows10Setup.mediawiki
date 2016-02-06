@@ -31,6 +31,8 @@ Voicemeeter
 vlc-2.0.7-win64.exe
 windirstat1_1_2_setup.exe
 Wireshark-win32-1.10.1.exe
+foxitpdfreader
+Private Internet Access
 
 not really using anymore:
 JBidWatcher
@@ -42,11 +44,7 @@ winamp564_full_emusic-7plus_en-us.exe
 sdksetup.exe (only debug tools Windows Driver SDK for usbview)
 networx_setup (bandwidth utilization) 
 
-foxitpdfreader
-Private Internet Access
 freepdfcompressor_setup.exe
-sip phone client
-openssl
 </pre>
 
 == Music Production == 
