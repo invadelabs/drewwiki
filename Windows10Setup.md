@@ -20,38 +20,34 @@ Apps to install
 ---------------
 
     Fast_Track_Pro_Installer_6_0_7_77137.zip
-    sdksetup.exe (only debug tools Windows Driver SDK for usbview)
-    networx_setup (bandwidth utilization) 
-
     7z920-x64.msi
-    audacity-win-2.0.3.exe
-    ffmpeg + youtube-dl
-    FileTypesMan
+    audacity-win-2.0.3.exe then Lame_v3.99.3_for_Windows.exe
     googlechrome
     googledrivesync.exe
-    googletalk (google voice)
     HxDSetupEN (hex editor)
-    JBidWatcher
     KeePass-2.22-Setup.exe
-    Lame_v3.99.3_for_Windows.exe
     LibreOffice_4.0.4_Win_x86.msi
     npp.6.4.1.Installer.exe
-    openvpn-2.0.9-gui-1.0.3-install.exe
     putty-0.62-installer.exe
-    python-2.7.amd64
+    python-2.7, then update pip, then pip install youtube-dl, then downlaod ffmpeg (add to C:\bin and add path)
     sandboxie
-    SkypeSetup.exe
-    synergy
+    SkypeForDesktop
     utorrent.exe
     VirtualBox-4.2.16-86992-Win.exe
     Voicemeeter
     vlc-2.0.7-win64.exe
+    windirstat1_1_2_setup.exe
+    Wireshark-win32-1.10.1.exe
+
+    not really using anymore:
+    JBidWatcher
+    openvpn-2.0.9-gui-1.0.3-install.exe
+    synergy
     tightvnc-2.7.10-setup-32bit.msi
     tor
     winamp564_full_emusic-7plus_en-us.exe
-    winscp
-    windirstat1_1_2_setup.exe
-    Wireshark-win32-1.10.1.exe
+    sdksetup.exe (only debug tools Windows Driver SDK for usbview)
+    networx_setup (bandwidth utilization) 
 
     foxitpdfreader
     Private Internet Access
