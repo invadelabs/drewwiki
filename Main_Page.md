@@ -20,8 +20,8 @@ System Setup
     for drewpi
 -   [RikoAndroidMiniPC](RikoAndroidMiniPC "wikilink") - Rikomagic MK802
     III setup + picuntu
--   [UbuntuRAID0ssd](UbuntuRAID0ssd "wikilink") - Desktop Setup For
-    Ubuntu
+-   [UbuntuRAID0ssd](UbuntuRAID0ssd "wikilink") - OLD running two 32GB
+    SSD in RAID0 as / for Ubuntu Desktop
 -   [OSX Setup](OSX_Setup "wikilink") - Laptop software config
 -   [ChromebookSetup](ChromebookSetup "wikilink") - Chromebook Setup
 -   [Windows Setup](Windows_Setup "wikilink") - Windows 8 / Windows 10

@@ -8,7 +8,7 @@ A collection of randomness I've encountered and configured in Linux.
 *[[DesktopSetup]] - Desktop setup for drew-desktop
 *[[RaspberryPISetup]] - RaspberryPi setup for drewpi
 *[[RikoAndroidMiniPC]] - Rikomagic MK802 III setup + picuntu
-*[[UbuntuRAID0ssd]] - Desktop Setup For Ubuntu
+*[[UbuntuRAID0ssd]] - OLD running two 32GB SSD in RAID0 as / for Ubuntu Desktop
 *[[OSX Setup]] - Laptop software config
 *[[ChromebookSetup]] - Chromebook Setup
 *[[Windows Setup]] - Windows 8 / Windows 10 Setup
