@@ -10,8 +10,10 @@ A collection of randomness I've encountered and configured in Linux.
 System Setup
 ------------
 
--   [ServerSetupFedora22](ServerSetupFedora22 "wikilink") - Server setup
-    for drewserv
+-   [ServerSetupCentOS7](ServerSetupCentOS7 "wikilink") - New Server
+    setup for drewserv
+-   [ServerSetupFedora22](ServerSetupFedora22 "wikilink") - OLD Server
+    setup for drewserv
 -   [DesktopSetup](DesktopSetup "wikilink") - Desktop setup for
     drew-desktop
 -   [RaspberryPISetup](RaspberryPISetup "wikilink") - RaspberryPi setup
