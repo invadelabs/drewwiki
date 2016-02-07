@@ -3,7 +3,7 @@ A collection of randomness I've encountered and configured in Linux.
 [[http_trackers]]
 
 == System Setup ==
-*[[ServerSetup]] - Server setup for drewserv
+*[[ServerSetupFedora22]] - Server setup for drewserv
 *[[DesktopSetup]] - Desktop setup for drew-desktop
 *[[RaspberryPISetup]] - RaspberryPi setup for drewpi
 *[[RikoAndroidMiniPC]] - Rikomagic MK802 III setup + picuntu
