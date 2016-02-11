@@ -9,6 +9,9 @@ drewderivative@gmail.com
 System Setup
 ------------
 
+-   [MultiMachineVagrantPuppetJenkinsNexus](MultiMachineVagrantPuppetJenkinsNexus "wikilink") -
+    Setting up a multi machine vagrant with 1 Pupper Server, 1 Puppet
+    Client, and 1 Jenkins/Nexus VM
 -   [ServerSetupCentOS7](ServerSetupCentOS7 "wikilink") - New Server
     setup for drewserv
 -   [ServerSetupFedora22](ServerSetupFedora22 "wikilink") - OLD Server
