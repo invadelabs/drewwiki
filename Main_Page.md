@@ -13,7 +13,8 @@ System Setup
     Setting up a multi machine vagrant with 1 Pupper Server, 1 Puppet
     Client, and 1 Jenkins/Nexus VM
 -   [ServerSetupCentOS7](ServerSetupCentOS7 "wikilink") - New Server
-    setup for drewserv
+    setup for drewserv with CentOS7 + NFS/rsyslog/chrony/hw\_mon
+    services + qemu+kvm libvirt + Foreman
 -   [ServerSetupFedora22](ServerSetupFedora22 "wikilink") - OLD Server
     setup for drewserv
 -   [DesktopSetup](DesktopSetup "wikilink") - Desktop setup for
