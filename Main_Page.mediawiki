@@ -13,6 +13,7 @@ A collection of randomness I've encountered and configured in Linux.
 *[[Windows Setup]] - Windows 8 / Windows 10 Setup
 
 ==System Administration==
+*[[backuppartitionsddandsfdisk]] - Backup boot and system partitions with dd and sfdisk
 *[[KVM/qemu CentOS6]] - KVM notes
 *[[nmcli]] - Joining wifi from nmcli
 *[[lxc]] - LXC (Linux Containers) and Docker

@@ -31,6 +31,8 @@ System Setup
 System Administration
 ---------------------
 
+-   [backuppartitionsddandsfdisk](backuppartitionsddandsfdisk "wikilink") -
+    Backup boot and system partitions with dd and sfdisk
 -   [KVM/qemu CentOS6](KVM/qemu_CentOS6 "wikilink") - KVM notes
 -   [nmcli](nmcli "wikilink") - Joining wifi from nmcli
 -   [lxc](lxc "wikilink") - LXC (Linux Containers) and Docker
