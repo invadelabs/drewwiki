@@ -3,6 +3,9 @@ title: DockerOnUbuntu
 layout: default
 ---
 
+Installation
+============
+
     # curl -fsSL https://get.docker.com/ | sh
     ...
     + sudo -E sh -c docker version
@@ -29,6 +32,19 @@ layout: default
 
     Remember that you will have to log out and back in for this to take effect!
 
+Install a container
+===================
+
 Download a container and run bash (-i interactive, -t tty)
 
     $ docker run -it ubuntu bash
+
+Enable Rest API
+===============
+
+<http://www.campalus.com/enable-remote-tcp-connections-to-docker-host-running-ubuntu-15-04/>
+
+Advanced Rest Client Application (Chrome)
+=========================================
+
+    http://drew-desktop:4243/images/json

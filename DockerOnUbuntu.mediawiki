@@ -1,3 +1,4 @@
+= Installation =
 <pre>
 # curl -fsSL https://get.docker.com/ | sh
 ...
@@ -26,7 +27,16 @@ adding your user to the "docker" group with something like:
 Remember that you will have to log out and back in for this to take effect!
 </pre>
 
+= Install a container =
 Download a container and run bash (-i interactive, -t tty)
 <pre>
 $ docker run -it ubuntu bash
+</pre>
+
+= Enable Rest API =
+http://www.campalus.com/enable-remote-tcp-connections-to-docker-host-running-ubuntu-15-04/
+
+= Advanced Rest Client Application (Chrome) =
+<pre>
+http://drew-desktop:4243/images/json
 </pre>
