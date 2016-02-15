@@ -35,7 +35,7 @@ System Administration
     Backup boot and system partitions with dd and sfdisk
 -   [KVM/qemu CentOS6](KVM/qemu_CentOS6 "wikilink") - KVM notes
 -   [nmcli](nmcli "wikilink") - Joining wifi from nmcli
--   [lxc](lxc "wikilink") - LXC (Linux Containers) and Docker
+-   [lxc](lxc "wikilink") - LXC (Linux Containers)
 -   [ddwrt-ddns-namecheap](ddwrt-ddns-namecheap "wikilink") - Setup DDNS
     on DD-WRT for Namecheap
 -   [CustomKernelDebian](CustomKernelDebian "wikilink") - Compile a
