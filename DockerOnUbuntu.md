@@ -32,8 +32,8 @@ Installation
 
     Remember that you will have to log out and back in for this to take effect!
 
-Install a container
-===================
+Download a container
+====================
 
 Download a container and run bash (-i interactive, -t tty)
 

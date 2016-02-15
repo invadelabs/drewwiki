@@ -27,7 +27,7 @@ adding your user to the "docker" group with something like:
 Remember that you will have to log out and back in for this to take effect!
 </pre>
 
-= Install a container =
+= Download a container =
 Download a container and run bash (-i interactive, -t tty)
 <pre>
 $ docker run -it ubuntu bash
