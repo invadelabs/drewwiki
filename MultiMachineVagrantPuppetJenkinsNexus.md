@@ -367,8 +367,8 @@ Tomcat
 
     http://localhost:8080/spring-petclinic/
 
-pom.xml
-=======
+petclinic pom.xml
+=================
 
 /var/lib/jenkins/jobs/petclinic-simple-auto-1/workspace/pom.xml
 
@@ -388,3 +388,8 @@ pom.xml
 
         <url>demopetclinic</url>
     </project>
+
+To-do
+=====
+
+configure pom.xml to use Nexus artifacts instead of maven central

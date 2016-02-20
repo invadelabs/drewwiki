@@ -346,7 +346,7 @@ Notice: Installing -- do not interrupt ...
 http://localhost:8080/spring-petclinic/
 </pre>
 
-= pom.xml =
+= petclinic pom.xml =
 /var/lib/jenkins/jobs/petclinic-simple-auto-1/workspace/pom.xml
 <pre>
 ..
@@ -366,3 +366,6 @@ http://localhost:8080/spring-petclinic/
     <url>demopetclinic</url>
 </project>
 </pre>
+
+= To-do =
+configure pom.xml to use Nexus artifacts instead of maven central
