@@ -366,3 +366,25 @@ Tomcat
     [root@puppetmaster ~]# sudo yum -y install tomcat-webapps tomcat-admin-webapps
 
     http://localhost:8080/spring-petclinic/
+
+pom.xml
+=======
+
+/var/lib/jenkins/jobs/petclinic-simple-auto-1/workspace/pom.xml
+
+    ..
+    ..
+       </profiles>
+     <distributionManagement>
+       <snapshotRepository>
+          <id>deployment</id>
+          <url>http://localhost:8081/nexus/content/repositories/snapshots</url>
+       </snapshotRepository>
+        <repository>
+            <id>deployment</id>
+            <url>http://localhost:8081/nexus/content/repositories/releases/</url>
+        </repository>
+    </distributionManagement>
+
+        <url>demopetclinic</url>
+    </project>

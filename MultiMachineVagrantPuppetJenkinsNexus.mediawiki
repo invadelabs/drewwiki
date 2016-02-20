@@ -345,3 +345,24 @@ Notice: Installing -- do not interrupt ...
 
 http://localhost:8080/spring-petclinic/
 </pre>
+
+= pom.xml =
+/var/lib/jenkins/jobs/petclinic-simple-auto-1/workspace/pom.xml
+<pre>
+..
+..
+   </profiles>
+ <distributionManagement>
+   <snapshotRepository>
+      <id>deployment</id>
+      <url>http://localhost:8081/nexus/content/repositories/snapshots</url>
+   </snapshotRepository>
+    <repository>
+        <id>deployment</id>
+        <url>http://localhost:8081/nexus/content/repositories/releases/</url>
+    </repository>
+</distributionManagement>
+
+    <url>demopetclinic</url>
+</project>
+</pre>
