@@ -84,6 +84,9 @@ System Administration
         with smartmontools
     -   [USBhddtemp](USBhddtemp "wikilink") - Check hard drive temp for
         USB HD (Western Digital)
+    -   [LoopBackSoftwareRaidMount](LoopBackSoftwareRaidMount "wikilink") -
+        Imaging 2 of 3 RAID5 drives and loop back mounting for data
+        extraction
 -   [ResizePV](ResizePV "wikilink") - Steps to resize PV
 -   [eCryptfs](eCryptfs "wikilink") - Private Encrypted Folders
 -   [SambaTdbsamBackend](SambaTdbsamBackend "wikilink")

@@ -45,6 +45,7 @@ A collection of randomness I've encountered and configured in Linux.
 ** [[BackupViaDDsnapshot]] - Using LVM snapshotting to copy an LV
 ** [[smartdMonitoring]] - Monitor disks with smartmontools
 ** [[USBhddtemp]] - Check hard drive temp for USB HD (Western Digital)
+** [[LoopBackSoftwareRaidMount]] - Imaging 2 of 3 RAID5 drives and loop back mounting for data extraction
 * [[ResizePV]] - Steps to resize PV
 *[[eCryptfs]] - Private Encrypted Folders
 *[[SambaTdbsamBackend]]
