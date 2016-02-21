@@ -1,0 +1,46 @@
+<pre>
+root@drew-8570w:~# ddrescue -S -b 8M /dev/sdd /mnt/hdd/drive_1_of_3.raw
+GNU ddrescue 1.19
+Press Ctrl-C to interrupt
+rescued:   500107 MB,  errsize:       0 B,  current rate:   27862 kB/s
+   ipos:   500104 MB,   errors:       0,    average rate:   67092 kB/s
+   opos:   500104 MB, run time:    2.07 h,  successful read:       0 s ago
+Finished                                     
+
+root@drew-8570w:~# ddrescue -S -b 8M /dev/sdd /mnt/hdd/drive_2_of_3.raw
+GNU ddrescue 1.19
+Press Ctrl-C to interrupt
+rescued:   500107 MB,  errsize:       0 B,  current rate:   43862 kB/s
+   ipos:   500104 MB,   errors:       0,    average rate:   68264 kB/s
+   opos:   500104 MB, run time:    2.03 h,  successful read:       0 s ago
+
+drew@drew-8570w:/mnt/hdd$ file *
+drive_1_of_3.raw: Linux Software RAID version 1.2 (1) UUID=e9355597:7a4ff30b:21b71007:42443f63 name=127 level=5 disks=3
+drive_2_of_3.raw: Linux Software RAID version 1.2 (1) UUID=e9355597:7a4ff30b:21b71007:42443f63 name=127 level=5 disks=3
+
+root@drew-8570w:~# losetup -f /mnt/hdd/drive_1_of_3.raw 
+root@drew-8570w:~# losetup -f /mnt/hdd/drive_2_of_3.raw 
+root@drew-8570w:~# losetup -l
+NAME       SIZELIMIT OFFSET AUTOCLEAR RO BACK-FILE
+/dev/loop0         0      0         0  0 /mnt/hdd/drive_1_of_3.raw
+/dev/loop1         0      0         0  0 /mnt/hdd/drive_2_of_3.raw
+
+
+
+root@drew-8570w:~# mdadm -Af /dev/md127 -Af /dev/loop0 /dev/loop1
+mdadm: /dev/md127 has been started with 2 drives (out of 3).
+
+root@drew-8570w:~# vgs
+  VG       #PV #LV #SN Attr   VSize   VFree  
+  vg_hdd     1   1   0 wz--n-   1.82t      0 
+  vg_raid5   1   1   0 wz--n- 931.52g 558.91g
+
+root@drew-8570w:~# lvs
+  LV       VG       Attr       LSize   Pool Origin Data%  Meta%  Move Log Cpy%Sync Convert
+  lv_hdd   vg_hdd   -wi-ao----   1.82t                                                    
+  lv_raid5 vg_raid5 -wi-ao---- 372.61g                                                    
+
+
+
+# mount /dev/vg_raid5/lv_raid5 /mnt/raid5
+</pre>
