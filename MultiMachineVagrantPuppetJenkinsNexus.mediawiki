@@ -367,5 +367,29 @@ http://localhost:8080/spring-petclinic/
 </project>
 </pre>
 
+= ~/.m2/settings.xml
+<pre>
+[vagrant@localhost conf]$ cat ~/.m2/settings.xml 
+<settings>
+  <mirrors>
+  	<mirror>
+  		<id>archiva.default</id>
+  		<name>Proxy Cache - Internal Repository</name>
+  		<url>http://localhost:8081/archiva/repository/internal</url>
+  		<mirrorOf>*</mirrorOf>
+  	</mirror>
+  </mirrors>
+
+#  <servers>
+#    <server>
+#      <id>repository-1</id>
+#      <username>{archiva-user}</username>
+#      <password>{archiva-pwd}</password>
+#    </server>
+#  </servers>
+
+</settings>
+</pre>
+
 = To-do =
 configure pom.xml to use Nexus artifacts instead of maven central

@@ -389,6 +389,29 @@ petclinic pom.xml
         <url>demopetclinic</url>
     </project>
 
+= ~/.m2/settings.xml
+
+    [vagrant@localhost conf]$ cat ~/.m2/settings.xml 
+    <settings>
+      <mirrors>
+        <mirror>
+            <id>archiva.default</id>
+            <name>Proxy Cache - Internal Repository</name>
+            <url>http://localhost:8081/archiva/repository/internal</url>
+            <mirrorOf>*</mirrorOf>
+        </mirror>
+      </mirrors>
+
+    #  <servers>
+    #    <server>
+    #      <id>repository-1</id>
+    #      <username>{archiva-user}</username>
+    #      <password>{archiva-pwd}</password>
+    #    </server>
+    #  </servers>
+
+    </settings>
+
 To-do
 =====
 
