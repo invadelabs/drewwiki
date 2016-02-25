@@ -398,7 +398,7 @@ petclinic pom.xml
         <mirror>
             <id>archiva.default</id>
             <name>Proxy Cache - Internal Repository</name>
-            <url>http://localhost:8081/archiva/repository/internal</url>
+            <url>http://localhost:8081/repository/internal</url>
             <mirrorOf>*</mirrorOf>
         </mirror>
       </mirrors>
