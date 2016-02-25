@@ -394,7 +394,7 @@ petclinic pom.xml for archiva
 
         <repository>
           <id>repository-1</id>
-          <url>http://repo.mycompany.com:8081/repository/internal/</url>
+          <url>http://localhost:8081/repository/internal/</url>
           <releases>
             <enabled>true</enabled>
           </releases>
