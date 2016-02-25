@@ -389,7 +389,8 @@ petclinic pom.xml
         <url>demopetclinic</url>
     </project>
 
-= ~/.m2/settings.xml
+~/.m2/settings.xml
+==================
 
     [vagrant@localhost conf]$ cat ~/.m2/settings.xml 
     <settings>

@@ -367,7 +367,7 @@ http://localhost:8080/spring-petclinic/
 </project>
 </pre>
 
-= ~/.m2/settings.xml
+= ~/.m2/settings.xml =
 <pre>
 [vagrant@localhost conf]$ cat ~/.m2/settings.xml 
 <settings>
