@@ -346,7 +346,7 @@ Notice: Installing -- do not interrupt ...
 http://localhost:8080/spring-petclinic/
 </pre>
 
-= petclinic pom.xml =
+= petclinic pom.xml for nexus =
 /var/lib/jenkins/jobs/petclinic-simple-auto-1/workspace/pom.xml
 <pre>
 ..
@@ -365,6 +365,20 @@ http://localhost:8080/spring-petclinic/
 
     <url>demopetclinic</url>
 </project>
+</pre>
+
+= petclinic pom.xml for archiva =
+<pre>
+    <repository>
+      <id>repository-1</id>
+      <url>http://repo.mycompany.com:8081/repository/internal/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
 </pre>
 
 = ~/.m2/settings.xml =

@@ -367,8 +367,8 @@ Tomcat
 
     http://localhost:8080/spring-petclinic/
 
-petclinic pom.xml
-=================
+petclinic pom.xml for nexus
+===========================
 
 /var/lib/jenkins/jobs/petclinic-simple-auto-1/workspace/pom.xml
 
@@ -388,6 +388,20 @@ petclinic pom.xml
 
         <url>demopetclinic</url>
     </project>
+
+petclinic pom.xml for archiva
+=============================
+
+        <repository>
+          <id>repository-1</id>
+          <url>http://repo.mycompany.com:8081/repository/internal/</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+        </repository>
 
 ~/.m2/settings.xml
 ==================
