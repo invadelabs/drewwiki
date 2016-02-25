@@ -397,8 +397,8 @@ http://localhost:8080/spring-petclinic/
   <servers>
     <server>
       <id>repository-1</id>
-      <username>admin</username>
-      <password>Password1</password>
+      <username>deploy</username>
+      <password>deploy1</password>
     </server>
   </servers>
 

@@ -420,8 +420,8 @@ petclinic pom.xml for archiva
       <servers>
         <server>
           <id>repository-1</id>
-          <username>admin</username>
-          <password>Password1</password>
+          <username>deploy</username>
+          <password>deploy1</password>
         </server>
       </servers>
 
