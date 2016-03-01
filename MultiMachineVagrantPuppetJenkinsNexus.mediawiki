@@ -369,6 +369,7 @@ http://localhost:8080/spring-petclinic/
 
 = petclinic pom.xml for archiva =
 <pre>
+<distributionManagement>
     <repository>
       <id>repository-1</id>
       <url>http://localhost:8081/repository/internal/</url>
@@ -379,6 +380,7 @@ http://localhost:8080/spring-petclinic/
         <enabled>true</enabled>
       </snapshots>
     </repository>
+</distributionManagement>
 </pre>
 
 = ~/.m2/settings.xml =

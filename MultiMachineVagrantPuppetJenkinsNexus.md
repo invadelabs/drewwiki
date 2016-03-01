@@ -392,6 +392,7 @@ petclinic pom.xml for nexus
 petclinic pom.xml for archiva
 =============================
 
+    <distributionManagement>
         <repository>
           <id>repository-1</id>
           <url>http://localhost:8081/repository/internal/</url>
@@ -402,6 +403,7 @@ petclinic pom.xml for archiva
             <enabled>true</enabled>
           </snapshots>
         </repository>
+    </distributionManagement>
 
 ~/.m2/settings.xml
 ==================
