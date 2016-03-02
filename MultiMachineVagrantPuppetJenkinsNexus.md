@@ -422,6 +422,7 @@ or
 ==================
 
     [vagrant@localhost conf]$ cat /var/lib/jenkins/.m2/settings.xml 
+    <distributionManagement>
     <settings>
       <mirrors>
             <mirror>
@@ -436,16 +437,17 @@ or
         <server>
           <id>deployment</id>
           <username>deploy</username>
-          <password>deploy1</password>
+          <password>password1</password>
         </server>
         <server>
           <id>snapshots</id>
           <username>snapshots</username>
-          <password>snapshots</password>
+          <password>password1</password>
         </server>
       </servers>
 
     </settings>
+    </distributionManagement>
 
 To-do
 =====
