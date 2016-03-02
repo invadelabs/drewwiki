@@ -421,7 +421,7 @@ or
 ~/.m2/settings.xml
 ==================
 
-    [vagrant@localhost conf]$ cat ~/.m2/settings.xml 
+    [vagrant@localhost conf]$ cat /var/lib/jenkins/.m2/settings.xml 
     <settings>
       <mirrors>
             <mirror>
