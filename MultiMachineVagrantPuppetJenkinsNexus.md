@@ -427,16 +427,21 @@ or
             <mirror>
                     <id>archiva.default</id>
                     <name>Proxy Cache - Internal Repository</name>
-                    <url>http://localhost:8081/repository/internal</url>
+                    <url>http://192.168.100.30:8080/repository/internal</url>
                     <mirrorOf>*</mirrorOf>
             </mirror>
       </mirrors>
 
       <servers>
         <server>
-          <id>repository-1</id>
+          <id>deployment</id>
           <username>deploy</username>
           <password>deploy1</password>
+        </server>
+        <server>
+          <id>snapshots</id>
+          <username>snapshots</username>
+          <password>snapshots</password>
         </server>
       </servers>
 
