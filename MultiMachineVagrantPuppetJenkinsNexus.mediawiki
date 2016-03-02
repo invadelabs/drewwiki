@@ -368,6 +368,22 @@ http://localhost:8080/spring-petclinic/
 </pre>
 
 = petclinic pom.xml for archiva =
+
+<pre>
+ <distributionManagement>
+   <snapshotRepository>
+      <id>deployment</id>
+      <url>http://localhost:8081/repository/internal/</url>
+   </snapshotRepository>
+    <repository>
+        <id>deployment</id>
+        <url>http://localhost:8081/repository/snapshots/</url>
+    </repository>
+</distributionManagement>
+</pre>
+
+or 
+
 <pre>
 <distributionManagement>
     <repository>
