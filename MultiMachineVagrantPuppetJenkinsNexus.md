@@ -422,7 +422,6 @@ or
 ==================
 
     [vagrant@localhost conf]$ cat /var/lib/jenkins/.m2/settings.xml 
-    <distributionManagement>
     <settings>
       <mirrors>
             <mirror>
@@ -447,7 +446,6 @@ or
       </servers>
 
     </settings>
-    </distributionManagement>
 
 To-do
 =====
