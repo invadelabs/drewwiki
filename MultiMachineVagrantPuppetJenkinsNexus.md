@@ -437,12 +437,12 @@ or
         <server>
           <id>deployment</id>
           <username>deploy</username>
-          <password>password1</password>
+          <password>deploy1</password>
         </server>
         <server>
           <id>snapshots</id>
           <username>snapshots</username>
-          <password>password1</password>
+          <password>snapshots1</password>
         </server>
       </servers>
 
