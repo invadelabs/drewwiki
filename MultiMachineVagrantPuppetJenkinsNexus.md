@@ -395,11 +395,11 @@ petclinic pom.xml for archiva
      <distributionManagement>
        <snapshotRepository>
           <id>deploy</id>
-          <url>http://localhost:8081/repository/internal/</url>
+          <url>http://192.168.100.30:8080/repository/internal/</url>
        </snapshotRepository>
         <repository>
             <id>snapshots</id>
-            <url>http://localhost:8081/repository/snapshots/</url>
+            <url>http://192.168.100.30:8080/repository/snapshots/</url>
         </repository>
     </distributionManagement>
 
