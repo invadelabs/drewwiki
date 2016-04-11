@@ -18,3 +18,16 @@ layout: default
 
        Donating to ISRG / Let's Encrypt:   https://letsencrypt.org/donate
        Donating to EFF:                    https://eff.org/donate-le
+
+Per domain:
+
+    ./letsencrypt-auto run --apache -d drew-bg.invadelabs.com
+
+     - Congratulations! Your certificate and chain have been saved at
+       /etc/letsencrypt/live/drew-bg.invadelabs.com/fullchain.pem. Your
+       cert will expire on 2016-07-09. To obtain a new version of the
+       certificate in the future, simply run Let's Encrypt again.
+
+    SSLCertificateFile /etc/letsencrypt/live/drew-bg.invadelabs.com/fullchain.pem
+    SSLCertificateKeyFile /etc/letsencrypt/live/drew-bg.invadelabs.com/privkey.pem
+    Include /etc/letsencrypt/options-ssl-apache.conf
