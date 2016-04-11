@@ -31,6 +31,8 @@ System Setup
 System Administration
 ---------------------
 
+-   [xDripNightScout](xDripNightScout "wikilink") - Configuration for
+    Dexcom G5, xDrip, xDripPebble, and NightScout
 -   [DockerOnUbuntu](DockerOnUbuntu "wikilink") - Docker on Ubuntu +
     Foreman Integration
 -   [LetsEncrypt](LetsEncrypt "wikilink") - letsencrypt.org config
