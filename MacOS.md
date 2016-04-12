@@ -6,11 +6,8 @@ layout: default
 OS X Software to Install
 ========================
 
--   jre (doesn't work with Chrome)
+-   homebrew
 -   git
--   Flash Player for Safari (already there for Chrome)
--   Google Voice and Video
--   join.me
 -   KeePassX
 -   Tunnelblick
 -   Adium
