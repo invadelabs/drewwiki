@@ -31,6 +31,7 @@ System Setup
 System Administration
 ---------------------
 
+-   [GoogleCloud](GoogleCloud "wikilink") -
 -   [xDripNightScout](xDripNightScout "wikilink") - Configuration for
     Dexcom G5, xDrip, xDripPebble, and NightScout
 -   [DockerOnUbuntu](DockerOnUbuntu "wikilink") - Docker on Ubuntu +

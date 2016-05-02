@@ -13,6 +13,7 @@ A collection of randomness I've encountered and configured in Linux.
 *[[Windows Setup]] - Windows 8 / Windows 10 Setup
 
 ==System Administration==
+*[[GoogleCloud]] - 
 *[[xDripNightScout]] - Configuration for Dexcom G5, xDrip, xDripPebble, and NightScout
 *[[DockerOnUbuntu]] - Docker on Ubuntu + Foreman Integration
 *[[LetsEncrypt]] - letsencrypt.org config
