@@ -3,8 +3,14 @@ title: OctoPrint
 layout: default
 ---
 
+Using a Raspberry Pi3 running Rasbian 8
+
 Setup OctoPrint
 ===============
+
+Add your user to the dialout group;
+
+    $ usermod -a -G dialout drew
 
 Build
 -----
@@ -17,7 +23,8 @@ Build
 Run
 ---
 
-$ cd ~/OctoPrint $ venv/local/bin/octoprint
+    $ cd ~/OctoPrint
+    $ venv/local/bin/octoprint 
 
 Browse
 ------
@@ -43,6 +50,10 @@ Add plugins
 Setup mjpg-streamer
 ===================
 
+Add your user to the video group;
+
+    $ usermod -a -G video drew
+
 Build
 -----
 
@@ -53,7 +64,7 @@ Build
 Run
 ---
 
-    $ sudo ./mjpg_streamer -i "./input_uvc.so -r 1280x720" -o "./output_http.so"
+    $  ./mjpg_streamer -i "./input_uvc.so -r 1280x720" -o "./output_http.so"
 
 Browse
 ------

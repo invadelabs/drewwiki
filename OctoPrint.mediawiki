@@ -1,4 +1,11 @@
+Using a Raspberry Pi3 running Rasbian 8
+
 = Setup OctoPrint =
+Add your user to the dialout group;
+<pre>
+$ usermod -a -G dialout drew
+</pre>
+
 == Build ==
 <pre>
 $ git clone https://github.com/foosel/OctoPrint.git
@@ -8,8 +15,10 @@ $ ./venv/bin/python setup.py install
 </pre>
 
 == Run ==
+<pre>
 $ cd ~/OctoPrint
 $ venv/local/bin/octoprint 
+</pre>
 
 == Browse ==
 * http://192.168.1.121:5000/
@@ -29,6 +38,11 @@ $ venv/local/bin/octoprint
 ** StatusLine
 
 = Setup mjpg-streamer =
+Add your user to the video group;
+<pre>
+$ usermod -a -G video drew
+</pre>
+
 == Build ==
 <pre>
 $ git clone https://github.com/jacksonliam/mjpg-streamer.git
@@ -38,7 +52,7 @@ $ make
 
 == Run == 
 <pre>
-$ sudo ./mjpg_streamer -i "./input_uvc.so -r 1280x720" -o "./output_http.so"
+$  ./mjpg_streamer -i "./input_uvc.so -r 1280x720" -o "./output_http.so"
 </pre>
 
 == Browse ==
