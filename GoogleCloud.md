@@ -21,3 +21,11 @@ Setup sendgrid email relay
 --------------------------
 
     https://cloud.google.com/compute/docs/tutorials/sending-mail/using-sendgrid
+
+Install heirloom-mailx
+----------------------
+
+Needed to attach files via mailx, i.e.
+
+    $ sudo apt-get install heirloom-mailx
+    $ echo "sqlite db drew.invadelabs.com" | mailx -a drew_wiki.sqlite.xz -s "sqlite db drew.invadelabs.com" drewderivative@gmail.com
