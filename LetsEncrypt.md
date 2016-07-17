@@ -20,7 +20,17 @@ I had to add the testing repo temporarily.
 
 ### Obtain / Renew certs
 
+Dry-run:
+
     $ sudo certbot renew --dry-run
+
+Update:
+
+    $ sudo certbot renew
+
+Add to root's cron and check twice daily:
+
+    0 3,15 * * * certbot renew --quiet 
 
 Old method &lt; 2016-06
 -----------------------
