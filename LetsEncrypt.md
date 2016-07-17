@@ -3,6 +3,17 @@ title: LetsEncrypt
 layout: default
 ---
 
+certbot
+-------
+
+-   <https://certbot.eff.org/#debianjessie-apache>
+
+$ echo “deb <http://ftp.debian.org/debian> jessie-backports main”
+&gt;&gt; /etc/apt/sources.list
+
+Old method &lt; 2016-06
+-----------------------
+
 <https://letsencrypt.org/howitworks/>
 
     $ git clone https://github.com/letsencrypt/letsencrypt

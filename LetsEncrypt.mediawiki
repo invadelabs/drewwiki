@@ -1,3 +1,8 @@
+== certbot ==
+* https://certbot.eff.org/#debianjessie-apache
+$ echo "deb http://ftp.debian.org/debian jessie-backports main" >> /etc/apt/sources.list
+
+== Old method < 2016-06 ==
 https://letsencrypt.org/howitworks/
 <pre>
 $ git clone https://github.com/letsencrypt/letsencrypt
