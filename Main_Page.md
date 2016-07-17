@@ -15,7 +15,7 @@ System Setup
 -   [ServerSetupCentOS7](ServerSetupCentOS7 "wikilink") - New Server
     setup for drewserv with CentOS7 + NFS/rsyslog/chrony/hw\_mon
     services + qemu+kvm libvirt + Foreman
--   [ServerSetupFedora22](ServerSetupFedora22 "wikilink") - OLD Server
+-   [ServerSetupFedora22](ServerSetupFedora22 "wikilink") - Old Server
     setup for drewserv
 -   [DesktopSetup](DesktopSetup "wikilink") - Desktop setup for
     drew-desktop
@@ -31,6 +31,7 @@ System Setup
 System Administration
 ---------------------
 
+-   [OctoPrint](OctoPrint "wikilink") - 3D printer interface
 -   [GoogleCloud](GoogleCloud "wikilink") -
 -   [xDripNightScout](xDripNightScout "wikilink") - Configuration for
     Dexcom G5, xDrip, xDripPebble, and NightScout
