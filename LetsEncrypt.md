@@ -8,8 +8,19 @@ certbot
 
 -   <https://certbot.eff.org/#debianjessie-apache>
 
-$ echo “deb <http://ftp.debian.org/debian> jessie-backports main”
-&gt;&gt; /etc/apt/sources.list
+### Enable jessie-backports
+
+    $ echo "deb http://ftp.debian.org/debian jessie-backports main" >> /etc/apt/sources.list
+
+I had to add the testing repo temporarily.
+
+### Install certbot
+
+    $ sudo apt-get install python-certbot-apache -t jessie-backports
+
+### Obtain / Renew certs
+
+    $ sudo certbot renew --dry-run
 
 Old method &lt; 2016-06
 -----------------------

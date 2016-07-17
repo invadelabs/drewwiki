@@ -1,6 +1,23 @@
 == certbot ==
 * https://certbot.eff.org/#debianjessie-apache
+
+=== Enable jessie-backports ===
+<pre>
 $ echo "deb http://ftp.debian.org/debian jessie-backports main" >> /etc/apt/sources.list
+</pre>
+
+I had to add the testing repo temporarily.
+
+=== Install certbot ===
+<pre>
+$ sudo apt-get install python-certbot-apache -t jessie-backports
+</pre>
+
+=== Obtain / Renew certs ===
+<pre>
+$ sudo certbot renew --dry-run
+</pre>
+
 
 == Old method < 2016-06 ==
 https://letsencrypt.org/howitworks/
