@@ -19,6 +19,7 @@ System Setup
     setup for drewserv
 -   [DesktopSetup](DesktopSetup "wikilink") - Desktop setup for
     drew-desktop
+-   [Pine64](Pine64 "wikilink") -
 -   [RaspberryPISetup](RaspberryPISetup "wikilink") - RaspberryPi setup
     for drewpi
 -   [RikoAndroidMiniPC](RikoAndroidMiniPC "wikilink") - Rikomagic MK802

@@ -6,6 +6,7 @@ A collection of randomness I've encountered and configured in Linux.
 *[[ServerSetupCentOS7]] - New Server setup for drewserv with CentOS7 + NFS/rsyslog/chrony/hw_mon services + qemu+kvm libvirt + Foreman
 *[[ServerSetupFedora22]] - Old Server setup for drewserv
 *[[DesktopSetup]] - Desktop setup for drew-desktop
+*[[Pine64]] - 
 *[[RaspberryPISetup]] - RaspberryPi setup for drewpi
 *[[RikoAndroidMiniPC]] - Rikomagic MK802 III setup + picuntu
 *[[OSX Setup]] - Laptop software config
