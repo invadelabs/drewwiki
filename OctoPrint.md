@@ -68,6 +68,9 @@ Run
     $  ./mjpg_streamer -i "./input_uvc.so -r 1280x720" -o "./output_http.so"
     $ uvcdynctrl -s "Focus, Auto" 1
 
+-   Reference
+    -   <http://www.sphaero.org/blog:2012:0727_control_your_webcam_from_the_command_line>
+
 Browse
 ------
 
