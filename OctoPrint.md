@@ -66,6 +66,7 @@ Run
 
     $ cd ~/mjpg-streamer/mjpg-streamer-experimental/
     $  ./mjpg_streamer -i "./input_uvc.so -r 1280x720" -o "./output_http.so"
+    $ uvcdynctrl -s "Focus, Auto" 1
 
 Browse
 ------
