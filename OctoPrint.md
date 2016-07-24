@@ -79,7 +79,7 @@ Need to tune:
 
     # Set PIDs for Extruder
     M301 P12.33 I0.51 D74.50 # default  from Configuration.h
-    M301 P35.02 I1.83 D167.82 # tuned   for the heated bed: 
+    M301 P33.58 I1.75 D160.93 # tuned   for the heated bed: 
 
     # Set PID for Heatbed
     M304 P234.88 I42.79 D322.28 # default from Configuration.h
