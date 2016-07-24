@@ -50,11 +50,23 @@ Add plugins
 Tune Extruder and Heatbed PID
 -----------------------------
 
-     M105 # get extruder temp
+Issue
+
+    Recv: Error:Thermal Runaway, system stopped! Heater_ID:
+    Changing monitoring state from 'Printing' to 'Error: Thermal Runaway, system stopped! Heater_ID: 
+    '
+    Recv: 9
+    Changing monitoring state from 'Error: Thermal Runaway, system stopped! Heater_ID: 
+    ' to 'Closed'
+
+Need to tune:
+
+     
+    M105 # get extruder temp
     M303 # tunes to 150C
     M303 S180 # tunes to 180C
     M303 S180 C10 # tunes to 180 for 10 times
-    M303 E-1 S65 C10 # Use to tune the bed at 70C
+    M303 E-1 S70 C10 # Use to tune the bed at 70C
     Recv:  Ku: 57.76 Tu: 38.50
     Recv:  Classic PID
     Recv:  Kp: 35.02
@@ -65,12 +77,16 @@ Tune Extruder and Heatbed PID
     Recv:  Ki: 1.70
     Recv:  Kd: 169.89
 
+    # Set PIDs for Extruder
+    M301 P12.33 I0.51 D74.50 # default  from Configuration.h
+    M301 P35.02 I1.83 D167.82 # tuned   for the heated bed: 
 
-    Enter that information into your Start Gcode in Slic3r using the following format, with your values substituted appropriately:
-    M301 P12.33 I0.51 D74.50 # default M301 P35.02 I1.83 D167.82 # tuned  or for the heated bed: 
-    M304 P234.88 I42.79 D322.28 #default
-    M304 P114.54 I4.76 D689.66 #tuned
-    Enter the following command to save the PID settings to EEPROM.  M500
+    # Set PID for Heatbed
+    M304 P234.88 I42.79 D322.28 # default from Configuration.h
+    M304 P519.74 I72.10 D936.70 #tuned
+    Enter the following command to save the PID settings to EEPROM. 
+
+     M500
 
 -   <https://www.lulzbot.com/fine-tune-your-marlin-pid-settings>
 
