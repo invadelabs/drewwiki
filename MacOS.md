@@ -17,6 +17,116 @@ OS X Software to Install
 -   VLC
 -   SoundFlower
 -   32 Lives
+-   kdiff3
+-   3T MongoChef
+-   Android File Transer
+-   Android Studio
+-   Arduino
+-   Blender
+-   Cura
+-   IntelliJ IDEA CE
+-   OminGraffle
+-   qBitTorrent
+-   Slack
+-   Slic3r
+-   Synergy
+-   VLC
+-   VirtualBox
+-   Wireshark
+-   Xcode
+-   ChefDK
+-   Firefox
+-   SketchUp
+-   LibreOffice
+-   HipChat
+-   Gitter
+
+from brew
+---------
+
+    Drews-MacBook-Pro:~ drew$ brew list | sort
+    aalib
+    ansible
+    atk
+    autoconf
+    automake
+    babl
+    boost
+    boost-python
+    cairo
+    dbus
+    fontconfig
+    fortune
+    freetype
+    gd
+    gdbm
+    gdk-pixbuf
+    gettext
+    gimp
+    git-lfs
+    glib
+    gmp
+    gnutls
+    gobject-introspection
+    gradle24
+    gsettings-desktop-schemas
+    gtk+
+    gtk+3
+    gtk-mac-integration
+    harfbuzz
+    hicolor-icon-theme
+    icu4c
+    imagemagick
+    jpeg
+    kdiff3
+    libcroco
+    libelf
+    libepoxy
+    libffi
+    libgpg-error
+    libksba
+    libmpc
+    libpng
+    librsvg
+    libtasn1
+    libtiff
+    libtool
+    libwmf
+    libyaml
+    maven
+    mongodb
+    mpfr
+    nettle
+    nmap
+    node
+    nvm
+    openconnect
+    openssl
+    p7zip
+    pango
+    pebble-qemu
+    pebble-sdk
+    pebble-toolchain
+    pixman
+    pkg-config
+    pstree
+    py2cairo
+    pygobject
+    pygtk
+    python
+    qt
+    readline
+    sqlite
+    texinfo
+    watch
+    webp
+    wget
+    xz
+
+Maybe
+-----
+
+-   Adobe Reader
 
 To-do
 =====
