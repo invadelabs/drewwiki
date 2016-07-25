@@ -79,11 +79,11 @@ Need to tune:
 
     # Set PIDs for Extruder
     M301 P12.33 I0.51 D74.50 # default  from Configuration.h
-    M301 P33.58 I1.75 D160.93 # tuned   for the heated bed: 
+    M301 P33.58 I1.75 D160.93 # tuned   for extruder
 
     # Set PID for Heatbed
     M304 P234.88 I42.79 D322.28 # default from Configuration.h
-    M304 P519.74 I72.10 D936.70 #tuned
+    M304 P519.74 I72.10 D936.70 #tuned for heated bed
     Enter the following command to save the PID settings to EEPROM. 
 
      M500
