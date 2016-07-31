@@ -10,7 +10,7 @@ OS X Software to Install
 -   git
 -   KeePassX
 -   Tunnelblick
--   Adium
+-   ~~Adium~~
 -   Skype
 -   Synergy
 -   Google Chrome
@@ -44,9 +44,28 @@ OS X Software to Install
 from brew
 ---------
 
+    ansible
+    gradle24
+    imagemagick
+    kdiff3
+    maven
+    mongodb
+    nmap
+    node
+    nvm
+    openconnect
+    openssl
+    p7zip
+    pstree
+    watch
+    sqlite
+    wget
+    xz
+
+extra deps?
+
     Drews-MacBook-Pro:~ drew$ brew list | sort
     aalib
-    ansible
     atk
     autoconf
     automake
@@ -68,7 +87,6 @@ from brew
     gmp
     gnutls
     gobject-introspection
-    gradle24
     gsettings-desktop-schemas
     gtk+
     gtk+3
@@ -76,9 +94,7 @@ from brew
     harfbuzz
     hicolor-icon-theme
     icu4c
-    imagemagick
     jpeg
-    kdiff3
     libcroco
     libelf
     libepoxy
@@ -93,35 +109,22 @@ from brew
     libtool
     libwmf
     libyaml
-    maven
-    mongodb
     mpfr
     nettle
-    nmap
-    node
-    nvm
-    openconnect
-    openssl
-    p7zip
     pango
     pebble-qemu
     pebble-sdk
     pebble-toolchain
     pixman
     pkg-config
-    pstree
     py2cairo
     pygobject
     pygtk
     python
     qt
     readline
-    sqlite
     texinfo
-    watch
     webp
-    wget
-    xz
 
 Maybe
 -----
