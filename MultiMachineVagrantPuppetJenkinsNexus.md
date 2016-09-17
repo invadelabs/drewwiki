@@ -9,12 +9,14 @@ Vagrant Setup
 Add initial box
 ---------------
 
-    drew@drew-8570w:~$ vagrant box add liatrio/jenkinsnexus
-    ==> box: Loading metadata for box 'liatrio/jenkinsnexus'
-        box: URL: https://atlas.hashicorp.com/liatrio/jenkinsnexus
-    ==> box: Adding box 'liatrio/jenkinsnexus' (v0.0.1) for provider: virtualbox
-        box: Downloading: https://atlas.hashicorp.com/liatrio/boxes/jenkinsnexus/versions/0.0.1/providers/virtualbox.box
-    ==> box: Successfully added box 'liatrio/jenkinsnexus' (v0.0.1) for 'virtualbox'!
+``` bash
+drew@drew-8570w:~$ vagrant box add liatrio/jenkinsnexus
+==> box: Loading metadata for box 'liatrio/jenkinsnexus'
+    box: URL: https://atlas.hashicorp.com/liatrio/jenkinsnexus
+==> box: Adding box 'liatrio/jenkinsnexus' (v0.0.1) for provider: virtualbox
+    box: Downloading: https://atlas.hashicorp.com/liatrio/boxes/jenkinsnexus/versions/0.0.1/providers/virtualbox.box
+==> box: Successfully added box 'liatrio/jenkinsnexus' (v0.0.1) for 'virtualbox'!
+```
 
 Initialize box
 --------------
