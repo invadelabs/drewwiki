@@ -23,20 +23,26 @@ Initialize box
 
 Builds the ~/Vagrant files
 
-    $ vagrant init liatrio/jenkinsnexus
+``` bash
+$ vagrant init liatrio/jenkinsnexus
+```
 
 Forward ports
 =============
 
-    drew@drew-8570w:~$ diff Vagrantfile Vagrantfile.orig
-    26,27d25
-    <    config.vm.network "forwarded_port", guest: 8080, host: 18080
-    <    config.vm.network "forwarded_port", guest: 8081, host: 18080
+``` bash
+drew@drew-8570w:~$ diff Vagrantfile Vagrantfile.orig
+26,27d25
+<    config.vm.network "forwarded_port", guest: 8080, host: 18080
+<    config.vm.network "forwarded_port", guest: 8081, host: 18080
+```
 
 Validate ssh keys
 -----------------
 
-    $ ssh vagrant@localhost -p 2222 -i ~/.vagrant.d/boxes/liatrio-VAGRANTSLASH-jenkinsnexus/0.0.1/virtualbox/vagrant_private_key
+``` bash
+$ ssh vagrant@localhost -p 2222 -i ~/.vagrant.d/boxes/liatrio-VAGRANTSLASH-jenkinsnexus/0.0.1/virtualbox/vagrant_private_key
+```
 
 Multi machine vagrant with a private and a nat NIC Vagrantfile
 ==============================================================
@@ -48,62 +54,64 @@ puppet server and client configured. Their puppet runs use the modules
 puppetlabs/tomcat and an something/epel to deploy tomcat with a WAR of
 spring-samples/petclinic from a Nexus artifact built my Jenkins.
 
-    drew@drew-8570w:~$ cat Vagrantfile
+``` bash
+drew@drew-8570w:~$ cat Vagrantfile
 
-    Vagrant.configure("2") do |config|
+Vagrant.configure("2") do |config|
 
-      config.vm.define "jenkinsnexus" do |jenknex|
-        jenknex.vm.box = "drew-jenkinsnexus"
-        jenknex.vm.hostname = 'jenkinsnexus.xyz.local'
-        jenknex.vm.box_url = "~/drew-jenkinsnexus.box"
+  config.vm.define "jenkinsnexus" do |jenknex|
+    jenknex.vm.box = "drew-jenkinsnexus"
+    jenknex.vm.hostname = 'jenkinsnexus.xyz.local'
+    jenknex.vm.box_url = "~/drew-jenkinsnexus.box"
 
-        jenknex.vm.network :private_network, ip: "192.168.100.20"
-        jenknex.vm.network :forwarded_port, guest: 22, host: 2220, id: "ssh"
-        jenknex.vm.network :forwarded_port, guest: 8080, host: 18080
-        jenknex.vm.network :forwarded_port, guest: 8081, host: 18081
+    jenknex.vm.network :private_network, ip: "192.168.100.20"
+    jenknex.vm.network :forwarded_port, guest: 22, host: 2220, id: "ssh"
+    jenknex.vm.network :forwarded_port, guest: 8080, host: 18080
+    jenknex.vm.network :forwarded_port, guest: 8081, host: 18081
 
-        jenknex.vm.provider :virtualbox do |v|
-          v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
-          v.customize ["modifyvm", :id, "--cpus", 4]
-          v.customize ["modifyvm", :id, "--memory", 4096]
-          v.customize ["modifyvm", :id, "--name", "drew-jenkinsnexus"]
-        end
-      end
-
-      config.vm.define "puppetmaster" do |master|
-        master.vm.box = "puppetmaster"
-        master.vm.hostname = 'puppetmaster.xyz.local'
-        master.vm.box_url = "~/puppetmaster.box"
-
-        master.vm.network :private_network, ip: "192.168.100.30"
-        master.vm.network :forwarded_port, guest: 22, host: 2230, id: "ssh"
-
-        master.vm.provider :virtualbox do |v|
-          v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
-          v.customize ["modifyvm", :id, "--cpus", 2]
-          v.customize ["modifyvm", :id, "--memory", 4096]
-          v.customize ["modifyvm", :id, "--name", "puppetmaster"]
-        end
-      end
-
-      config.vm.define "puppetclient" do |client|
-        client.vm.box = "puppetclient"
-        client.vm.hostname = 'puppetclient.xyz.local'
-        client.vm.box_url = "~/puppetclient.box"
-
-        client.vm.network :private_network, ip: "192.168.100.31"
-        client.vm.network :forwarded_port, guest: 22, host: 2231, id: "ssh"
-        client.vm.network :forwarded_port, guest: 8080, host: 8080, id: "http"
-
-        client.vm.provider :virtualbox do |v|
-          v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
-          v.customize ["modifyvm", :id, "--cpus", 2]
-          v.customize ["modifyvm", :id, "--memory", 2048]
-          v.customize ["modifyvm", :id, "--name", "puppetclient"]
-        end
-      end
-
+    jenknex.vm.provider :virtualbox do |v|
+      v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+      v.customize ["modifyvm", :id, "--cpus", 4]
+      v.customize ["modifyvm", :id, "--memory", 4096]
+      v.customize ["modifyvm", :id, "--name", "drew-jenkinsnexus"]
     end
+  end
+
+  config.vm.define "puppetmaster" do |master|
+    master.vm.box = "puppetmaster"
+    master.vm.hostname = 'puppetmaster.xyz.local'
+    master.vm.box_url = "~/puppetmaster.box"
+
+    master.vm.network :private_network, ip: "192.168.100.30"
+    master.vm.network :forwarded_port, guest: 22, host: 2230, id: "ssh"
+
+    master.vm.provider :virtualbox do |v|
+      v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+      v.customize ["modifyvm", :id, "--cpus", 2]
+      v.customize ["modifyvm", :id, "--memory", 4096]
+      v.customize ["modifyvm", :id, "--name", "puppetmaster"]
+    end
+  end
+
+  config.vm.define "puppetclient" do |client|
+    client.vm.box = "puppetclient"
+    client.vm.hostname = 'puppetclient.xyz.local'
+    client.vm.box_url = "~/puppetclient.box"
+
+    client.vm.network :private_network, ip: "192.168.100.31"
+    client.vm.network :forwarded_port, guest: 22, host: 2231, id: "ssh"
+    client.vm.network :forwarded_port, guest: 8080, host: 8080, id: "http"
+
+    client.vm.provider :virtualbox do |v|
+      v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+      v.customize ["modifyvm", :id, "--cpus", 2]
+      v.customize ["modifyvm", :id, "--memory", 2048]
+      v.customize ["modifyvm", :id, "--name", "puppetclient"]
+    end
+  end
+
+end
+```
 
 Sample multi machine vagrant up
 ===============================
@@ -112,222 +120,238 @@ Sample successful \`vagrant up\` output from only having the
 drew-jenkinsnexus.box, puppetclient.box, puppetmaster.box, and
 Vagrantfile.
 
-    drew@drew-8570w:~$ vagrant up
-    Bringing machine 'jenkinsnexus' up with 'virtualbox' provider...
-    Bringing machine 'puppetmaster' up with 'virtualbox' provider...
-    Bringing machine 'puppetclient' up with 'virtualbox' provider...
-    ==> jenkinsnexus: Box 'drew-jenkinsnexus' could not be found. Attempting to find and install...
-        jenkinsnexus: Box Provider: virtualbox
-        jenkinsnexus: Box Version: >= 0
-    ==> jenkinsnexus: Box file was not detected as metadata. Adding it directly...
-    ==> jenkinsnexus: Adding box 'drew-jenkinsnexus' (v0) for provider: virtualbox
-        jenkinsnexus: Unpacking necessary files from: file:///home/drew/drew-jenkinsnexus.box
-        jenkinsnexus: Progress: 51% (Rate: 1580M/s, Estimated time remaining: 0:00:0==> jenkinsnexus: Successfully added box 'drew-jenkinsnexus' (v0) for 'virtualbox'!
-    ==> jenkinsnexus: Importing base box 'drew-jenkinsnexus'...
-    ==> jenkinsnexus: Matching MAC address for NAT networking...
-    ==> jenkinsnexus: Setting the name of the VM: drew_jenkinsnexus_1455246067848_9962
-    ==> jenkinsnexus: Clearing any syntaxhighlightviously set network interfaces...
-    ==> jenkinsnexus: syntaxhighlightparing network interfaces based on configuration...
-        jenkinsnexus: Adapter 1: nat
-        jenkinsnexus: Adapter 2: hostonly
-    ==> jenkinsnexus: Forwarding ports...
-        jenkinsnexus: 22 (guest) => 2220 (host) (adapter 1)
-        jenkinsnexus: 8080 (guest) => 18080 (host) (adapter 1)
-        jenkinsnexus: 8081 (guest) => 18081 (host) (adapter 1)
-    ==> jenkinsnexus: Running 'syntaxhighlight-boot' VM customizations...
-    ==> jenkinsnexus: Booting VM...
-    ==> jenkinsnexus: Waiting for machine to boot. This may take a few minutes...
-        jenkinsnexus: SSH address: 127.0.0.1:2220
-        jenkinsnexus: SSH username: vagrant
-        jenkinsnexus: SSH auth method: private key
-        jenkinsnexus: Warning: Remote connection disconnect. Retrying...
-    ==> jenkinsnexus: Machine booted and ready!
-    ==> jenkinsnexus: Checking for guest additions in VM...
-    ==> jenkinsnexus: Setting hostname...
-    ==> jenkinsnexus: Configuring and enabling network interfaces...
-    ==> jenkinsnexus: Mounting shared folders...
-        jenkinsnexus: /vagrant => /home/drew
-    ==> puppetmaster: Box 'puppetmaster' could not be found. Attempting to find and install...
-        puppetmaster: Box Provider: virtualbox
-        puppetmaster: Box Version: >= 0
-    ==> puppetmaster: Box file was not detected as metadata. Adding it directly...
-    ==> puppetmaster: Adding box 'puppetmaster' (v0) for provider: virtualbox
-        puppetmaster: Unpacking necessary files from: file:///home/drew/puppetmaster.box
-    ==> puppetmaster: Successfully added box 'puppetmaster' (v0) for 'virtualbox'!
-    ==> puppetmaster: Importing base box 'puppetmaster'...
-    ==> puppetmaster: Matching MAC address for NAT networking...
-    ==> puppetmaster: Setting the name of the VM: drew_puppetmaster_1455246121351_2019
-    ==> puppetmaster: Clearing any syntaxhighlightviously set network interfaces...
-    ==> puppetmaster: syntaxhighlightparing network interfaces based on configuration...
-        puppetmaster: Adapter 1: nat
-        puppetmaster: Adapter 2: hostonly
-    ==> puppetmaster: Forwarding ports...
-        puppetmaster: 22 (guest) => 2230 (host) (adapter 1)
-    ==> puppetmaster: Running 'syntaxhighlight-boot' VM customizations...
-    ==> puppetmaster: Booting VM...
-    ==> puppetmaster: Waiting for machine to boot. This may take a few minutes...
-        puppetmaster: SSH address: 127.0.0.1:2230
-        puppetmaster: SSH username: vagrant
-        puppetmaster: SSH auth method: private key
-        puppetmaster: Warning: Remote connection disconnect. Retrying...
-        puppetmaster:
-        puppetmaster: Vagrant insecure key detected. Vagrant will automatically replace
-        puppetmaster: this with a newly generated keypair for better security.
-        puppetmaster:
-        puppetmaster: Inserting generated public key within guest...
-        puppetmaster: Removing insecure key from the guest if it's syntaxhighlightsent...
-        puppetmaster: Key inserted! Disconnecting and reconnecting using new SSH key...
-    ==> puppetmaster: Machine booted and ready!
-    ==> puppetmaster: Checking for guest additions in VM...
-    ==> puppetmaster: Setting hostname...
-    ==> puppetmaster: Configuring and enabling network interfaces...
-    ==> puppetmaster: Mounting shared folders...
-        puppetmaster: /vagrant => /home/drew
-    ==> puppetclient: Box 'puppetclient' could not be found. Attempting to find and install...
-        puppetclient: Box Provider: virtualbox
-        puppetclient: Box Version: >= 0
-    ==> puppetclient: Box file was not detected as metadata. Adding it directly...
-    ==> puppetclient: Adding box 'puppetclient' (v0) for provider: virtualbox
-        puppetclient: Unpacking necessary files from: file:///home/drew/puppetclient.box
-        puppetclient: Progress: 29% (Rate: 1245M/s, Estimated time remaining: --:--:==> puppetclient: Successfully added box 'puppetclient' (v0) for 'virtualbox'!
-    ==> puppetclient: Importing base box 'puppetclient'...
-    ==> puppetclient: Matching MAC address for NAT networking...
-    ==> puppetclient: Setting the name of the VM: drew_puppetclient_1455246176072_64531
-    ==> puppetclient: Clearing any syntaxhighlightviously set network interfaces...
-    ==> puppetclient: syntaxhighlightparing network interfaces based on configuration...
-        puppetclient: Adapter 1: nat
-        puppetclient: Adapter 2: hostonly
-    ==> puppetclient: Forwarding ports...
-        puppetclient: 22 (guest) => 2231 (host) (adapter 1)
-        puppetclient: 8080 (guest) => 8080 (host) (adapter 1)
-    ==> puppetclient: Running 'syntaxhighlight-boot' VM customizations...
-    ==> puppetclient: Booting VM...
-    ==> puppetclient: Waiting for machine to boot. This may take a few minutes...
-        puppetclient: SSH address: 127.0.0.1:2231
-        puppetclient: SSH username: vagrant
-        puppetclient: SSH auth method: private key
-        puppetclient: Warning: Remote connection disconnect. Retrying...
-        puppetclient:
-        puppetclient: Vagrant insecure key detected. Vagrant will automatically replace
-        puppetclient: this with a newly generated keypair for better security.
-        puppetclient:
-        puppetclient: Inserting generated public key within guest...
-        puppetclient: Removing insecure key from the guest if it's syntaxhighlightsent...
-        puppetclient: Key inserted! Disconnecting and reconnecting using new SSH key...
-    ==> puppetclient: Machine booted and ready!
-    ==> puppetclient: Checking for guest additions in VM...
-    ==> puppetclient: Setting hostname...
-    ==> puppetclient: Configuring and enabling network interfaces...
-    ==> puppetclient: Mounting shared folders...
-        puppetclient: /vagrant => /home/drew
+``` bash
+drew@drew-8570w:~$ vagrant up
+Bringing machine 'jenkinsnexus' up with 'virtualbox' provider...
+Bringing machine 'puppetmaster' up with 'virtualbox' provider...
+Bringing machine 'puppetclient' up with 'virtualbox' provider...
+==> jenkinsnexus: Box 'drew-jenkinsnexus' could not be found. Attempting to find and install...
+    jenkinsnexus: Box Provider: virtualbox
+    jenkinsnexus: Box Version: >= 0
+==> jenkinsnexus: Box file was not detected as metadata. Adding it directly...
+==> jenkinsnexus: Adding box 'drew-jenkinsnexus' (v0) for provider: virtualbox
+    jenkinsnexus: Unpacking necessary files from: file:///home/drew/drew-jenkinsnexus.box
+    jenkinsnexus: Progress: 51% (Rate: 1580M/s, Estimated time remaining: 0:00:0==> jenkinsnexus: Successfully added box 'drew-jenkinsnexus' (v0) for 'virtualbox'!
+==> jenkinsnexus: Importing base box 'drew-jenkinsnexus'...
+==> jenkinsnexus: Matching MAC address for NAT networking...
+==> jenkinsnexus: Setting the name of the VM: drew_jenkinsnexus_1455246067848_9962
+==> jenkinsnexus: Clearing any syntaxhighlightviously set network interfaces...
+==> jenkinsnexus: syntaxhighlightparing network interfaces based on configuration...
+    jenkinsnexus: Adapter 1: nat
+    jenkinsnexus: Adapter 2: hostonly
+==> jenkinsnexus: Forwarding ports...
+    jenkinsnexus: 22 (guest) => 2220 (host) (adapter 1)
+    jenkinsnexus: 8080 (guest) => 18080 (host) (adapter 1)
+    jenkinsnexus: 8081 (guest) => 18081 (host) (adapter 1)
+==> jenkinsnexus: Running 'syntaxhighlight-boot' VM customizations...
+==> jenkinsnexus: Booting VM...
+==> jenkinsnexus: Waiting for machine to boot. This may take a few minutes...
+    jenkinsnexus: SSH address: 127.0.0.1:2220
+    jenkinsnexus: SSH username: vagrant
+    jenkinsnexus: SSH auth method: private key
+    jenkinsnexus: Warning: Remote connection disconnect. Retrying...
+==> jenkinsnexus: Machine booted and ready!
+==> jenkinsnexus: Checking for guest additions in VM...
+==> jenkinsnexus: Setting hostname...
+==> jenkinsnexus: Configuring and enabling network interfaces...
+==> jenkinsnexus: Mounting shared folders...
+    jenkinsnexus: /vagrant => /home/drew
+==> puppetmaster: Box 'puppetmaster' could not be found. Attempting to find and install...
+    puppetmaster: Box Provider: virtualbox
+    puppetmaster: Box Version: >= 0
+==> puppetmaster: Box file was not detected as metadata. Adding it directly...
+==> puppetmaster: Adding box 'puppetmaster' (v0) for provider: virtualbox
+    puppetmaster: Unpacking necessary files from: file:///home/drew/puppetmaster.box
+==> puppetmaster: Successfully added box 'puppetmaster' (v0) for 'virtualbox'!
+==> puppetmaster: Importing base box 'puppetmaster'...
+==> puppetmaster: Matching MAC address for NAT networking...
+==> puppetmaster: Setting the name of the VM: drew_puppetmaster_1455246121351_2019
+==> puppetmaster: Clearing any syntaxhighlightviously set network interfaces...
+==> puppetmaster: syntaxhighlightparing network interfaces based on configuration...
+    puppetmaster: Adapter 1: nat
+    puppetmaster: Adapter 2: hostonly
+==> puppetmaster: Forwarding ports...
+    puppetmaster: 22 (guest) => 2230 (host) (adapter 1)
+==> puppetmaster: Running 'syntaxhighlight-boot' VM customizations...
+==> puppetmaster: Booting VM...
+==> puppetmaster: Waiting for machine to boot. This may take a few minutes...
+    puppetmaster: SSH address: 127.0.0.1:2230
+    puppetmaster: SSH username: vagrant
+    puppetmaster: SSH auth method: private key
+    puppetmaster: Warning: Remote connection disconnect. Retrying...
+    puppetmaster:
+    puppetmaster: Vagrant insecure key detected. Vagrant will automatically replace
+    puppetmaster: this with a newly generated keypair for better security.
+    puppetmaster:
+    puppetmaster: Inserting generated public key within guest...
+    puppetmaster: Removing insecure key from the guest if it's syntaxhighlightsent...
+    puppetmaster: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> puppetmaster: Machine booted and ready!
+==> puppetmaster: Checking for guest additions in VM...
+==> puppetmaster: Setting hostname...
+==> puppetmaster: Configuring and enabling network interfaces...
+==> puppetmaster: Mounting shared folders...
+    puppetmaster: /vagrant => /home/drew
+==> puppetclient: Box 'puppetclient' could not be found. Attempting to find and install...
+    puppetclient: Box Provider: virtualbox
+    puppetclient: Box Version: >= 0
+==> puppetclient: Box file was not detected as metadata. Adding it directly...
+==> puppetclient: Adding box 'puppetclient' (v0) for provider: virtualbox
+    puppetclient: Unpacking necessary files from: file:///home/drew/puppetclient.box
+    puppetclient: Progress: 29% (Rate: 1245M/s, Estimated time remaining: --:--:==> puppetclient: Successfully added box 'puppetclient' (v0) for 'virtualbox'!
+==> puppetclient: Importing base box 'puppetclient'...
+==> puppetclient: Matching MAC address for NAT networking...
+==> puppetclient: Setting the name of the VM: drew_puppetclient_1455246176072_64531
+==> puppetclient: Clearing any syntaxhighlightviously set network interfaces...
+==> puppetclient: syntaxhighlightparing network interfaces based on configuration...
+    puppetclient: Adapter 1: nat
+    puppetclient: Adapter 2: hostonly
+==> puppetclient: Forwarding ports...
+    puppetclient: 22 (guest) => 2231 (host) (adapter 1)
+    puppetclient: 8080 (guest) => 8080 (host) (adapter 1)
+==> puppetclient: Running 'syntaxhighlight-boot' VM customizations...
+==> puppetclient: Booting VM...
+==> puppetclient: Waiting for machine to boot. This may take a few minutes...
+    puppetclient: SSH address: 127.0.0.1:2231
+    puppetclient: SSH username: vagrant
+    puppetclient: SSH auth method: private key
+    puppetclient: Warning: Remote connection disconnect. Retrying...
+    puppetclient:
+    puppetclient: Vagrant insecure key detected. Vagrant will automatically replace
+    puppetclient: this with a newly generated keypair for better security.
+    puppetclient:
+    puppetclient: Inserting generated public key within guest...
+    puppetclient: Removing insecure key from the guest if it's syntaxhighlightsent...
+    puppetclient: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> puppetclient: Machine booted and ready!
+==> puppetclient: Checking for guest additions in VM...
+==> puppetclient: Setting hostname...
+==> puppetclient: Configuring and enabling network interfaces...
+==> puppetclient: Mounting shared folders...
+    puppetclient: /vagrant => /home/drew
+```
 
 Setup Jenkins
 =============
 
 <http://localhost:18080/>
 
-    > Install GitHub Plugin
-    > Credentials > Global Credentials > added my github key
+``` bash
+> Install GitHub Plugin
+> Credentials > Global Credentials > added my github key
 
-    > Manage > Plugins > Installed GitHub Plugin
+> Manage > Plugins > Installed GitHub Plugin
 
-    > petclinic-simple-auto-1 > Configure >
-            > GitHub Project > https URL of my forked spring-petclinic
-            > Git > git@github.com:spring-projects/spring-petclinic.git > Credentials > drewderivative
-            > Build when a change is pushed to GitHub
+> petclinic-simple-auto-1 > Configure >
+        > GitHub Project > https URL of my forked spring-petclinic
+        > Git > git@github.com:spring-projects/spring-petclinic.git > Credentials > drewderivative
+        > Build when a change is pushed to GitHub
+```
 
 Setup Nexus
 ===========
 
-    http://localhost:18081/nexus/
-    admin :: admin123
-    * http://localhost:18081/nexus/content/repositories/releases/
+``` bash
+http://localhost:18081/nexus/
+admin :: admin123
+* http://localhost:18081/nexus/content/repositories/releases/
+```
 
 Setup Puppetserver
 ==================
 
-    # yum -y install chrony; systemctl start chronyd
-    # firewall-cmd --permanent --zone=public --add-port=8140/tcp
-    # firewall-cmd --reload
-    # sudo rpm -ivh https://yum.puppetlabs.com/puppetlabs-release-el-7.noarch.rpm
-    # sudo yum install puppetserver
-    # sudo puppet master --verbose --no-daemonize
-    ^C after its successful or it will run forever.
+``` bash
+# yum -y install chrony; systemctl start chronyd
+# firewall-cmd --permanent --zone=public --add-port=8140/tcp
+# firewall-cmd --reload
+# sudo rpm -ivh https://yum.puppetlabs.com/puppetlabs-release-el-7.noarch.rpm
+# sudo yum install puppetserver
+# sudo puppet master --verbose --no-daemonize
+^C after its successful or it will run forever.
+```
 
 /etc/puppet/puppet.conf
 
-    [main]
-        certname = puppetmaster.xyz.local
-        servername = puppetmaster.xyz.local
-        logdir = /var/log/puppet
-        rundir = /var/run/puppet
+``` bash
+[main]
+    certname = puppetmaster.xyz.local
+    servername = puppetmaster.xyz.local
+    logdir = /var/log/puppet
+    rundir = /var/run/puppet
 
-    [master]
-        certname = puppetmaster.xyz.local
-        dns_alt_names = puppetmaster,puppetmaster.xyz.local
-        autosign = true
+[master]
+    certname = puppetmaster.xyz.local
+    dns_alt_names = puppetmaster,puppetmaster.xyz.local
+    autosign = true
 
-    [agent]
-        classfile = $vardir/classes.txt
-        localconfig = $vardir/localconfig
+[agent]
+    classfile = $vardir/classes.txt
+    localconfig = $vardir/localconfig
+```
 
 Enable/Start Puppetserver
 =========================
 
-    sudo ssystemctl enable puppetserver; sudo systemctl start puppetserver
+``` bash
+sudo ssystemctl enable puppetserver; sudo systemctl start puppetserver
+```
 
 Client puppet.conf
 ==================
 
-    [root@puppetclient ~]# grep -vE '^($|    #)' /etc/puppet/puppet.conf
-    [main]
-        logdir = /var/log/puppet
-        rundir = /var/run/puppet
-        ssldir = $vardir/ssl
-    [agent]
-        classfile = $vardir/classes.txt
-        localconfig = $vardir/localconfig
-        ca_server = puppetmaster.xyz.local
-        server = puppetmaster.xyz.local
-        runinterval = 600
+``` bash
+[root@puppetclient ~]# grep -vE '^($|    #)' /etc/puppet/puppet.conf
+[main]
+    logdir = /var/log/puppet
+    rundir = /var/run/puppet
+    ssldir = $vardir/ssl
+[agent]
+    classfile = $vardir/classes.txt
+    localconfig = $vardir/localconfig
+    ca_server = puppetmaster.xyz.local
+    server = puppetmaster.xyz.local
+    runinterval = 600
+```
 
 Configure site.pp and node.pp
 =============================
 
-    [root@puppetmaster ~]# cat /etc/puppet/manifests/site.pp
-    import 'nodes.pp'
+``` bash
+[root@puppetmaster ~]# cat /etc/puppet/manifests/site.pp
+import 'nodes.pp'
 
-    $puppetmaster = 'puppetmaster.xyz.local'
+$puppetmaster = 'puppetmaster.xyz.local'
+```
 
 -   Note - Usually install modules first then adapt nodes.pp
 
-<!-- -->
+``` bash
+[vagrant@puppetmaster ~]$ cat /etc/puppet/manifests/nodes.pp
+node 'puppetclient.xyz.local' {
+  include motd
 
-    [vagrant@puppetmaster ~]$ cat /etc/puppet/manifests/nodes.pp
-    node 'puppetclient.xyz.local' {
-      include motd
+  class { 'epel': }->
+    tomcat::instance{ 'default':
+    package_name => 'tomcat',
+  }
 
-      class { 'epel': }->
-        tomcat::instance{ 'default':
-        package_name => 'tomcat',
-      }
+  class { 'tomcat':
+    install_from_source => false,
+  }
 
-      class { 'tomcat':
-        install_from_source => false,
-      }
+  tomcat::service { 'default':
+    use_jsvc     => false,
+    use_init     => true,
+    service_name => 'tomcat',
+  }
 
-      tomcat::service { 'default':
-        use_jsvc     => false,
-        use_init     => true,
-        service_name => 'tomcat',
-      }
+  tomcat::war { 'spring-petclinic.war':
+    catalina_base => '/usr/share/tomcat',
+    war_source => 'http://192.168.100.20:8081/nexus/content/repositories/snapshots/org/springframework/samples/spring-petclinic/4.2.4-SNAPSHOT/spring-petclinic-4.2.4-20160211.001608-8.war',
+  }
 
-      tomcat::war { 'spring-petclinic.war':
-        catalina_base => '/usr/share/tomcat',
-        war_source => 'http://192.168.100.20:8081/nexus/content/repositories/snapshots/org/springframework/samples/spring-petclinic/4.2.4-SNAPSHOT/spring-petclinic-4.2.4-20160211.001608-8.war',
-      }
-
-    }
+}
+```
 
 Add puppet modules
 ==================
@@ -338,116 +362,130 @@ Motd
 Used simple puppetlabs/motd to ensure puppet runs were working. Added to
 node.pp \`import motd\`.
 
-    [root@puppetmaster manifests]# puppet module install puppetlabs/motd
+``` bash
+[root@puppetmaster manifests]# puppet module install puppetlabs/motd
+```
 
 EPEL
 ----
 
-    [root@puppetmaster manifests]# puppet module install stahnma-epel
-    Notice: syntaxhighlightparing to install into /etc/puppet/modules ...
-    Notice: Downloading from https://forgeapi.puppetlabs.com ...
-    Notice: Installing -- do not interrupt ...
-    /etc/puppet/modules
-    └─┬ stahnma-epel (v1.2.2)
-      └── puppetlabs-stdlib (v4.11.0)
+``` bash
+[root@puppetmaster manifests]# puppet module install stahnma-epel
+Notice: syntaxhighlightparing to install into /etc/puppet/modules ...
+Notice: Downloading from https://forgeapi.puppetlabs.com ...
+Notice: Installing -- do not interrupt ...
+/etc/puppet/modules
+└─┬ stahnma-epel (v1.2.2)
+  └── puppetlabs-stdlib (v4.11.0)
+```
 
 Tomcat
 ------
 
-    [root@puppetmaster ~]# puppet module install puppetlabs-tomcat
-    Notice: syntaxhighlightparing to install into /etc/puppet/modules ...
-    Notice: Downloading from https://forgeapi.puppetlabs.com ...
-    Notice: Installing -- do not interrupt ...
-    /etc/puppet/modules
-    └─┬ puppetlabs-tomcat (v1.4.1)
-      ├── nanliu-staging (v1.0.3)
-      ├── puppetlabs-concat (v1.2.5)
-      └── puppetlabs-stdlib (v4.11.0)
-    [root@puppetmaster ~]# firewall-cmd --permanent --zone=public --add-port=8080/tcp
-    [root@puppetmaster ~]# firewall-cmd --reload
-    [root@puppetmaster ~]# sudo yum -y install tomcat-webapps tomcat-admin-webapps
+``` bash
+[root@puppetmaster ~]# puppet module install puppetlabs-tomcat
+Notice: syntaxhighlightparing to install into /etc/puppet/modules ...
+Notice: Downloading from https://forgeapi.puppetlabs.com ...
+Notice: Installing -- do not interrupt ...
+/etc/puppet/modules
+└─┬ puppetlabs-tomcat (v1.4.1)
+  ├── nanliu-staging (v1.0.3)
+  ├── puppetlabs-concat (v1.2.5)
+  └── puppetlabs-stdlib (v4.11.0)
+[root@puppetmaster ~]# firewall-cmd --permanent --zone=public --add-port=8080/tcp
+[root@puppetmaster ~]# firewall-cmd --reload
+[root@puppetmaster ~]# sudo yum -y install tomcat-webapps tomcat-admin-webapps
 
-    http://localhost:8080/spring-petclinic/
+http://localhost:8080/spring-petclinic/
+```
 
 petclinic pom.xml for nexus
 ===========================
 
 /var/lib/jenkins/jobs/petclinic-simple-auto-1/workspace/pom.xml
 
-    ..
-    ..
-       </profiles>
-     <distributionManagement>
-       <snapshotRepository>
-          <id>deployment</id>
-          <url>http://localhost:8081/nexus/content/repositories/snapshots</url>
-       </snapshotRepository>
-        <repository>
-            <id>deployment</id>
-            <url>http://localhost:8081/nexus/content/repositories/releases/</url>
-        </repository>
-    </distributionManagement>
+``` bash
+..
+..
+   </profiles>
+ <distributionManagement>
+   <snapshotRepository>
+      <id>deployment</id>
+      <url>http://localhost:8081/nexus/content/repositories/snapshots</url>
+   </snapshotRepository>
+    <repository>
+        <id>deployment</id>
+        <url>http://localhost:8081/nexus/content/repositories/releases/</url>
+    </repository>
+</distributionManagement>
 
-        <url>demopetclinic</url>
-    </project>
+    <url>demopetclinic</url>
+</project>
+```
 
 petclinic pom.xml for archiva
 =============================
 
-     <distributionManagement>
-       <snapshotRepository>
-          <id>deploy</id>
-          <url>http://192.168.100.30:8080/repository/internal/</url>
-       </snapshotRepository>
-        <repository>
-            <id>snapshots</id>
-            <url>http://192.168.100.30:8080/repository/snapshots/</url>
-        </repository>
-    </distributionManagement>
+``` bash
+ <distributionManagement>
+   <snapshotRepository>
+      <id>deploy</id>
+      <url>http://192.168.100.30:8080/repository/internal/</url>
+   </snapshotRepository>
+    <repository>
+        <id>snapshots</id>
+        <url>http://192.168.100.30:8080/repository/snapshots/</url>
+    </repository>
+</distributionManagement>
+```
 
 or
 
-    <distributionManagement>
-        <repository>
-          <id>repository-1</id>
-          <url>http://localhost:8081/repository/internal/</url>
-          <releases>
-            <enabled>true</enabled>
-          </releases>
-          <snapshots>
-            <enabled>true</enabled>
-          </snapshots>
-        </repository>
-    </distributionManagement>
+``` bash
+<distributionManagement>
+    <repository>
+      <id>repository-1</id>
+      <url>http://localhost:8081/repository/internal/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+</distributionManagement>
+```
 
 ~/.m2/settings.xml
 ==================
 
-    [vagrant@localhost conf]$ cat /var/lib/jenkins/.m2/settings.xml 
-    <settings>
-      <mirrors>
-            <mirror>
-                    <id>archiva.default</id>
-                    <name>Proxy Cache - Internal Repository</name>
-                    <url>http://192.168.100.30:8080/repository/internal</url>
-                    <mirrorOf>*</mirrorOf>
-            </mirror>
-      </mirrors>
+``` bash
+[vagrant@localhost conf]$ cat /var/lib/jenkins/.m2/settings.xml 
+<settings>
+  <mirrors>
+        <mirror>
+                <id>archiva.default</id>
+                <name>Proxy Cache - Internal Repository</name>
+                <url>http://192.168.100.30:8080/repository/internal</url>
+                <mirrorOf>*</mirrorOf>
+        </mirror>
+  </mirrors>
 
-      <servers>
-        <server>
-          <id>deployment</id>
-          <username>deploy</username>
-          <password>deploy1</password>
-        </server>
-        <server>
-          <id>snapshots</id>
-          <username>snapshots</username>
-          <password>snapshots1</password>
-        </server>
-      </servers>
+  <servers>
+    <server>
+      <id>deployment</id>
+      <username>deploy</username>
+      <password>deploy1</password>
+    </server>
+    <server>
+      <id>snapshots</id>
+      <username>snapshots</username>
+      <password>snapshots1</password>
+    </server>
+  </servers>
 
-    </settings>
+</settings>
+```
 
 To-do
 =====

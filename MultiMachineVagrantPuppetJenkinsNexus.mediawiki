@@ -11,12 +11,12 @@ drew@drew-8570w:~$ vagrant box add liatrio/jenkinsnexus
 
 == Initialize box ==
 Builds the ~/Vagrant files
-<syntaxhighlight>
+<syntaxhighlight lang="bash">
 $ vagrant init liatrio/jenkinsnexus
 </syntaxhighlight>
 
 = Forward ports =
-<syntaxhighlight>
+<syntaxhighlight lang="bash">
 drew@drew-8570w:~$ diff Vagrantfile Vagrantfile.orig
 26,27d25
 <    config.vm.network "forwarded_port", guest: 8080, host: 18080
@@ -24,13 +24,13 @@ drew@drew-8570w:~$ diff Vagrantfile Vagrantfile.orig
 </syntaxhighlight>
 
 == Validate ssh keys ==
-<syntaxhighlight>
+<syntaxhighlight lang="bash">
 $ ssh vagrant@localhost -p 2222 -i ~/.vagrant.d/boxes/liatrio-VAGRANTSLASH-jenkinsnexus/0.0.1/virtualbox/vagrant_private_key
 </syntaxhighlight>
 
 = Multi machine vagrant with a private and a nat NIC Vagrantfile =
 I used the above jenkins nexus box and repackaged it as drew-jenkinsnexus. The puppetmaster and puppetclient boxes were adapted from vagrant public pozgo/centos7 (virtualbox, 2016.02.05) and have puppet server and client configured. Their puppet runs use the modules puppetlabs/tomcat and an something/epel to deploy tomcat with a WAR of spring-samples/petclinic from a Nexus artifact built my Jenkins.
-<syntaxhighlight>
+<syntaxhighlight lang="bash">
 drew@drew-8570w:~$ cat Vagrantfile
 
 Vagrant.configure("2") do |config|
@@ -91,7 +91,7 @@ end
 
 = Sample multi machine vagrant up =
 Sample successful `vagrant up` output from only having the drew-jenkinsnexus.box, puppetclient.box, puppetmaster.box, and Vagrantfile.
-<syntaxhighlight>
+<syntaxhighlight lang="bash">
 drew@drew-8570w:~$ vagrant up
 Bringing machine 'jenkinsnexus' up with 'virtualbox' provider...
 Bringing machine 'puppetmaster' up with 'virtualbox' provider...
@@ -204,7 +204,7 @@ Bringing machine 'puppetclient' up with 'virtualbox' provider...
 
 = Setup Jenkins =
 http://localhost:18080/
-<syntaxhighlight>
+<syntaxhighlight lang="bash">
 > Install GitHub Plugin
 > Credentials > Global Credentials > added my github key
 
@@ -217,7 +217,7 @@ http://localhost:18080/
 </syntaxhighlight>
 
 = Setup Nexus =
-<syntaxhighlight>
+<syntaxhighlight lang="bash">
 http://localhost:18081/nexus/
 admin :: admin123
 * http://localhost:18081/nexus/content/repositories/releases/
@@ -225,7 +225,7 @@ admin :: admin123
 
 
 = Setup Puppetserver =
-<syntaxhighlight>
+<syntaxhighlight lang="bash">
 # yum -y install chrony; systemctl start chronyd
 # firewall-cmd --permanent --zone=public --add-port=8140/tcp
 # firewall-cmd --reload
@@ -236,7 +236,7 @@ admin :: admin123
 </syntaxhighlight>
 
 /etc/puppet/puppet.conf
-<syntaxhighlight>
+<syntaxhighlight lang="bash">
 [main]
     certname = puppetmaster.xyz.local
     servername = puppetmaster.xyz.local
@@ -254,12 +254,12 @@ admin :: admin123
 </syntaxhighlight>
 
 = Enable/Start Puppetserver =
-<syntaxhighlight>
+<syntaxhighlight lang="bash">
 sudo ssystemctl enable puppetserver; sudo systemctl start puppetserver
 </syntaxhighlight>
 
 = Client puppet.conf =
-<syntaxhighlight>
+<syntaxhighlight lang="bash">
 [root@puppetclient ~]# grep -vE '^($|    #)' /etc/puppet/puppet.conf
 [main]
     logdir = /var/log/puppet
@@ -274,7 +274,7 @@ sudo ssystemctl enable puppetserver; sudo systemctl start puppetserver
 </syntaxhighlight>
 
 = Configure site.pp and node.pp =
-<syntaxhighlight>
+<syntaxhighlight lang="bash">
 [root@puppetmaster ~]# cat /etc/puppet/manifests/site.pp
 import 'nodes.pp'
 
@@ -282,7 +282,7 @@ $puppetmaster = 'puppetmaster.xyz.local'
 </syntaxhighlight>
 
 * Note - Usually install modules first then adapt nodes.pp
-<syntaxhighlight>
+<syntaxhighlight lang="bash">
 [vagrant@puppetmaster ~]$ cat /etc/puppet/manifests/nodes.pp
 node 'puppetclient.xyz.local' {
   include motd
@@ -313,12 +313,12 @@ node 'puppetclient.xyz.local' {
 = Add puppet modules =
 == Motd ==
 Used simple puppetlabs/motd to ensure puppet runs were working. Added to node.pp `import motd`.
-<syntaxhighlight>
+<syntaxhighlight lang="bash">
 [root@puppetmaster manifests]# puppet module install puppetlabs/motd
 </syntaxhighlight>
 
 == EPEL ==
-<syntaxhighlight>
+<syntaxhighlight lang="bash">
 [root@puppetmaster manifests]# puppet module install stahnma-epel
 Notice: syntaxhighlightparing to install into /etc/puppet/modules ...
 Notice: Downloading from https://forgeapi.puppetlabs.com ...
@@ -329,7 +329,7 @@ Notice: Installing -- do not interrupt ...
 </syntaxhighlight>
 
 == Tomcat ==
-<syntaxhighlight>
+<syntaxhighlight lang="bash">
 [root@puppetmaster ~]# puppet module install puppetlabs-tomcat
 Notice: syntaxhighlightparing to install into /etc/puppet/modules ...
 Notice: Downloading from https://forgeapi.puppetlabs.com ...
@@ -348,7 +348,7 @@ http://localhost:8080/spring-petclinic/
 
 = petclinic pom.xml for nexus =
 /var/lib/jenkins/jobs/petclinic-simple-auto-1/workspace/pom.xml
-<syntaxhighlight>
+<syntaxhighlight lang="bash">
 ..
 ..
    </profiles>
@@ -369,7 +369,7 @@ http://localhost:8080/spring-petclinic/
 
 = petclinic pom.xml for archiva =
 
-<syntaxhighlight>
+<syntaxhighlight lang="bash">
  <distributionManagement>
    <snapshotRepository>
       <id>deploy</id>
@@ -384,7 +384,7 @@ http://localhost:8080/spring-petclinic/
 
 or 
 
-<syntaxhighlight>
+<syntaxhighlight lang="bash">
 <distributionManagement>
     <repository>
       <id>repository-1</id>
@@ -400,7 +400,7 @@ or
 </syntaxhighlight>
 
 = ~/.m2/settings.xml =
-<syntaxhighlight>
+<syntaxhighlight lang="bash">
 [vagrant@localhost conf]$ cat /var/lib/jenkins/.m2/settings.xml 
 <settings>
   <mirrors>
