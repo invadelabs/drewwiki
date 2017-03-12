@@ -5,3 +5,8 @@
     8  sudo apt-get install keepass2
 apt-get install ssh
 apt-get install ubuntu-restricted-extras
+   31  sudo apt-get dist-upgrade
+   32  ls
+   33  sudo apt install tlp tlp-rdw
+   34  sudo tlp start
+apt-get install vlc
