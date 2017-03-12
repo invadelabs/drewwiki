@@ -3,18 +3,11 @@ title: Ubuntu17.10Setup
 layout: default
 ---
 
--   -   Chrome
-    -   Insynq
-
-`   1  sudo apt-get update`  
-`   2  sudo apt-get upgrade -y`  
-`   8  sudo apt-get install keepass2`
-
-apt-get install ssh apt-get install ubuntu-restricted-extras
-
-`  31  sudo apt-get dist-upgrade`  
-`  32  ls`  
-`  33  sudo apt install tlp tlp-rdw`  
-`  34  sudo tlp start`
-
-apt-get install vlc
+    ** Chrome
+    ** Insynq
+    sudo apt-get update
+    sudo apt-get upgrade -y
+    sudo apt-get dist-upgrade
+    sudo apt-get install keepass2 ssh ubuntu-restricted-extras vlc qbittorrent pidgin
+    sudo apt install tlp tlp-rdw # maximize battery life
+    sudo tlp start
