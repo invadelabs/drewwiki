@@ -28,6 +28,8 @@ System Setup
 -   [ChromebookSetup](ChromebookSetup "wikilink") - Chromebook Setup
 -   [Windows Setup](Windows_Setup "wikilink") - Windows 8 / Windows 10
     Setup
+-   [Ubuntu 16.10 Setup](Ubuntu_16.10_Setup "wikilink") - Setup for
+    Ubuntu 16.10 laptop
 
 System Administration
 ---------------------

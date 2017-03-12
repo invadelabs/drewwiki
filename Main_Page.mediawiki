@@ -12,6 +12,7 @@ A collection of randomness I've encountered and configured in Linux.
 *[[OSX Setup]] - Laptop software config
 *[[ChromebookSetup]] - Chromebook Setup
 *[[Windows Setup]] - Windows 8 / Windows 10 Setup
+*[[Ubuntu 16.10 Setup]] - Setup for Ubuntu 16.10 laptop
 
 ==System Administration==
 *[[OctoPrint]] - 3D printer interface
