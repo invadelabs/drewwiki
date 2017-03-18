@@ -12,3 +12,19 @@ layout: default
     # libreoffice brings in openjdk8
     sudo apt install tlp tlp-rdw # maximize battery life
     sudo tlp start
+    Disable guest
+    sudo sh -c "echo 'allow-guest=false' >> /usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf"
+
+    Show username
+    gsettings set com.canonical.indicator.session show-real-name-on-panel true
+
+    enable canonical extras
+
+    sudo apt-get install unity-tweak-tool
+
+    sudo apt-get install vim
+
+    sudo update-alternatives --config editor
+
+    visudo:
+    username ALL=(ALL) NOPASSWD: ALL
