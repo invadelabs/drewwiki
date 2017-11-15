@@ -11,8 +11,11 @@ Download gcloud sdk
 Running gcloud
 --------------
 
+    # if needed $ export PATH=$PATH:~/google-cloud-sdk/bin
+
     $ gcloud auth list
     $ gcloud auth login
+    $ gcloud config set project drew-1298
     $ gcloud compute instances list
     $ gcloud compute ssh
     $ gcloud compute ssh drewderivative@instance-1 --zone us-central1-a
