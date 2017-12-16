@@ -159,7 +159,3 @@ Client Setup
 
 Misc.
 -----
-
--   [PowerDraw](PowerDraw "wikilink")
--   [Research](Research "wikilink")
-

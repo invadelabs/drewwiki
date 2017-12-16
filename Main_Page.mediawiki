@@ -90,5 +90,3 @@ A collection of randomness I've encountered and configured in Linux.
 *[[ChromebookSetup]] - Chromebook Setup
 
 ==Misc.==
-*[[PowerDraw]]
-*[[Research]]
