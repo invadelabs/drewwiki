@@ -3,8 +3,7 @@ title: Main Page
 layout: default
 ---
 
-A collection of randomness I've encountered and configured in Linux. -
-drewderivative@gmail.com
+A collection of randomness I've encountered and configured in Linux.
 
 System Setup
 ------------

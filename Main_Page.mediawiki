@@ -1,5 +1,4 @@
 A collection of randomness I've encountered and configured in Linux.
-- drewderivative@gmail.com
 
 == System Setup ==
 *[[MultiMachineVagrantPuppetJenkinsNexus]] - Setting up a multi machine vagrant with 1 Pupper Server, 1 Puppet Client, and 1 Jenkins/Nexus VM
