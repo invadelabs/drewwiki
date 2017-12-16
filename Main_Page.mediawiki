@@ -1,30 +1,22 @@
 A collection of randomness I've encountered and configured in Linux.
 
 == System Setup ==
-*[[MultiMachineVagrantPuppetJenkinsNexus]] - Setting up a multi machine vagrant with 1 Pupper Server, 1 Puppet Client, and 1 Jenkins/Nexus VM
-*[[ServerSetupCentOS7]] - New Server setup for drewserv with CentOS7 + NFS/rsyslog/chrony/hw_mon services + qemu+kvm libvirt + Foreman
-*[[ServerSetupFedora22]] - Old Server setup for drewserv
-*[[DesktopSetup]] - Desktop setup for drew-desktop
-*[[Pine64]] - 
-*[[RaspberryPISetup]] - RaspberryPi setup for drewpi
-*[[RikoAndroidMiniPC]] - Rikomagic MK802 III setup + picuntu
-*[[OSX Setup]] - Laptop software config
-*[[ChromebookSetup]] - Chromebook Setup
-*[[Windows Setup]] - Windows 8 / Windows 10 Setup
-*[[Ubuntu 16.10 Setup]] - Setup for Ubuntu 16.10 laptop
+*[[MultiMachineVagrantPuppetJenkinsNexus]] - Setup multimachine Vagrant boxes with 1 Pupper Server, 1 Puppet Client, and 1 Jenkins/Nexus VM
+*[[ServerSetupCentOS7]] - CentOS7 Server setup for drewserv with NFS/rsyslog/chrony/hw_mon services + qemu+kvm libvirt + Foreman + Docker
+*[[ServerSetupFedora22]] - Fedora 22 Setup for old server
 
 ==System Administration==
-*[[OctoPrint]] - 3D printer interface
-*[[GoogleCloud]] - 
-*[[xDripNightScout]] - Configuration for Dexcom G5, xDrip, xDripPebble, and NightScout
+*[[GoogleCloud]] - Quick setup on gcloud
 *[[DockerOnUbuntu]] - Docker on Ubuntu + Foreman Integration
 *[[LetsEncrypt]] - letsencrypt.org config
 *[[backuppartitionsddandsfdisk]] - Backup boot and system partitions with dd and sfdisk
 *[[KVM/qemu CentOS6]] - KVM notes
-*[[nmcli]] - Joining wifi from nmcli
 *[[lxc]] - LXC (Linux Containers)
-*[[ddwrt-ddns-namecheap]] - Setup DDNS on DD-WRT for Namecheap
 *[[CustomKernelDebian]] - Compile a custom kernel from source in Debian / Ubuntu
+*[[OctoPrint]] - 3D printer interface
+*[[xDripNightScout]] - Configuration for Dexcom G5, xDrip, xDripPebble, and NightScout
+*[[nmcli]] - Joining wifi from nmcli
+*[[ddwrt-ddns-namecheap]] - Setup DDNS on DD-WRT for Namecheap
 *[[OpenVPN]] - OpenVPN Server Setup
 *[[MirrorWikipedia]] - Attempts to mirror wikipedia.org dumps
 *[[BootOptimization]] - Speed up F15 boot
@@ -86,6 +78,16 @@ A collection of randomness I've encountered and configured in Linux.
 
 ====Emulators====
 *[[N64Mupen64plus]] - Using mupen64plus (N64 Emulator) in Linux
+
+== Client Setup ==
+*[[DesktopSetup]] - Ubuntu 17.10 setup for drew-itx
+*[[Ubuntu 16.10 Setup]] - Ubuntu 17.10 Setup for laptop
+*[[OSX Setup]] - macOS 10.11 MBP Sierra setup
+*[[RaspberryPISetup]] - RaspberryPi setup for drew-pi
+*[[Pine64]] - Pine64 Armbian Notes
+*[[RikoAndroidMiniPC]] - Rikomagic MK802 III setup + picuntu
+*[[Windows Setup]] - Windows 8 / Windows 10 Setup
+*[[ChromebookSetup]] - Chromebook Setup
 
 ==Misc.==
 *[[PowerDraw]]

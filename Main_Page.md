@@ -9,46 +9,33 @@ System Setup
 ------------
 
 -   [MultiMachineVagrantPuppetJenkinsNexus](MultiMachineVagrantPuppetJenkinsNexus "wikilink") -
-    Setting up a multi machine vagrant with 1 Pupper Server, 1 Puppet
+    Setup multimachine Vagrant boxes with 1 Pupper Server, 1 Puppet
     Client, and 1 Jenkins/Nexus VM
--   [ServerSetupCentOS7](ServerSetupCentOS7 "wikilink") - New Server
-    setup for drewserv with CentOS7 + NFS/rsyslog/chrony/hw\_mon
-    services + qemu+kvm libvirt + Foreman
--   [ServerSetupFedora22](ServerSetupFedora22 "wikilink") - Old Server
-    setup for drewserv
--   [DesktopSetup](DesktopSetup "wikilink") - Desktop setup for
-    drew-desktop
--   [Pine64](Pine64 "wikilink") -
--   [RaspberryPISetup](RaspberryPISetup "wikilink") - RaspberryPi setup
-    for drewpi
--   [RikoAndroidMiniPC](RikoAndroidMiniPC "wikilink") - Rikomagic MK802
-    III setup + picuntu
--   [OSX Setup](OSX_Setup "wikilink") - Laptop software config
--   [ChromebookSetup](ChromebookSetup "wikilink") - Chromebook Setup
--   [Windows Setup](Windows_Setup "wikilink") - Windows 8 / Windows 10
-    Setup
--   [Ubuntu 16.10 Setup](Ubuntu_16.10_Setup "wikilink") - Setup for
-    Ubuntu 16.10 laptop
+-   [ServerSetupCentOS7](ServerSetupCentOS7 "wikilink") - CentOS7 Server
+    setup for drewserv with NFS/rsyslog/chrony/hw\_mon services +
+    qemu+kvm libvirt + Foreman + Docker
+-   [ServerSetupFedora22](ServerSetupFedora22 "wikilink") - Fedora 22
+    Setup for old server
 
 System Administration
 ---------------------
 
--   [OctoPrint](OctoPrint "wikilink") - 3D printer interface
--   [GoogleCloud](GoogleCloud "wikilink") -
--   [xDripNightScout](xDripNightScout "wikilink") - Configuration for
-    Dexcom G5, xDrip, xDripPebble, and NightScout
+-   [GoogleCloud](GoogleCloud "wikilink") - Quick setup on gcloud
 -   [DockerOnUbuntu](DockerOnUbuntu "wikilink") - Docker on Ubuntu +
     Foreman Integration
 -   [LetsEncrypt](LetsEncrypt "wikilink") - letsencrypt.org config
 -   [backuppartitionsddandsfdisk](backuppartitionsddandsfdisk "wikilink") -
     Backup boot and system partitions with dd and sfdisk
 -   [KVM/qemu CentOS6](KVM/qemu_CentOS6 "wikilink") - KVM notes
--   [nmcli](nmcli "wikilink") - Joining wifi from nmcli
 -   [lxc](lxc "wikilink") - LXC (Linux Containers)
--   [ddwrt-ddns-namecheap](ddwrt-ddns-namecheap "wikilink") - Setup DDNS
-    on DD-WRT for Namecheap
 -   [CustomKernelDebian](CustomKernelDebian "wikilink") - Compile a
     custom kernel from source in Debian / Ubuntu
+-   [OctoPrint](OctoPrint "wikilink") - 3D printer interface
+-   [xDripNightScout](xDripNightScout "wikilink") - Configuration for
+    Dexcom G5, xDrip, xDripPebble, and NightScout
+-   [nmcli](nmcli "wikilink") - Joining wifi from nmcli
+-   [ddwrt-ddns-namecheap](ddwrt-ddns-namecheap "wikilink") - Setup DDNS
+    on DD-WRT for Namecheap
 -   [OpenVPN](OpenVPN "wikilink") - OpenVPN Server Setup
 -   [MirrorWikipedia](MirrorWikipedia "wikilink") - Attempts to mirror
     wikipedia.org dumps
@@ -152,6 +139,23 @@ Media
 
 -   [N64Mupen64plus](N64Mupen64plus "wikilink") - Using mupen64plus (N64
     Emulator) in Linux
+
+Client Setup
+------------
+
+-   [DesktopSetup](DesktopSetup "wikilink") - Ubuntu 17.10 setup for
+    drew-itx
+-   [Ubuntu 16.10 Setup](Ubuntu_16.10_Setup "wikilink") - Ubuntu 17.10
+    Setup for laptop
+-   [OSX Setup](OSX_Setup "wikilink") - macOS 10.11 MBP Sierra setup
+-   [RaspberryPISetup](RaspberryPISetup "wikilink") - RaspberryPi setup
+    for drew-pi
+-   [Pine64](Pine64 "wikilink") - Pine64 Armbian Notes
+-   [RikoAndroidMiniPC](RikoAndroidMiniPC "wikilink") - Rikomagic MK802
+    III setup + picuntu
+-   [Windows Setup](Windows_Setup "wikilink") - Windows 8 / Windows 10
+    Setup
+-   [ChromebookSetup](ChromebookSetup "wikilink") - Chromebook Setup
 
 Misc.
 -----
