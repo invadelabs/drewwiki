@@ -1,0 +1,1513 @@
+---
+title: ServerSetupCentOS7
+layout: default
+---
+
+This is the rebuilt lab configuration. The end goal is to use the old
+server (16GB RAM / 4x500GBHD RAID5 / Core2Quad) as a KVM hypervisor
+running a Foreman VM for provisioning services, test, and production
+VMs. It will also run DNS/mail/NFS/yum repos/hw monitoring at the
+hypervisor level. Foreman will have control over other compute resource
+on the network via qemu+ssh (other node 32GB RAM /
+<nfs://drewserv/raid5> / core i7). This node will be used to stand up
+additional compute instances and docker containers when needed to house
+projects such as Jenkins farms, Chef, Salt, Ansible, and misc.
+
+Initial Setup
+=============
+
+Download CentOS7 DVD torrent
+----------------------------
+
+    $ wget http://mirrors.rit.edu/centos/7/isos/x86_64/CentOS-7-x86_64-DVD-1511.torrent
+    $ sudo mkdir /var/www/html/centos
+    $ ctorrent CentOS-7-x86_64-DVD-1511.torrent
+
+Loop back mount ISO to serve http
+---------------------------------
+
+``` bash
+$ mount CentOS-7-x86_64-DVD-1511/CentOS-7-x86_64-DVD-1511.iso /var/www/html/centos
+```
+
+Download CentOS7 NetInstall ISO torrent
+---------------------------------------
+
+``` bash
+$ wget http://mirrors.rit.edu/centos/7/isos/x86_64/CentOS-7-x86_64-NetInstall-1511.torrent
+$ ctorrent CentOS-7-x86_64-NetInstall-1511.torrent
+```
+
+Write the NetInstall ISO to a thumbdrive
+----------------------------------------
+
+``` bash
+$ dd if=CentOS-7-x86_64-NetInstall-1511/CentOS-7-x86_64-NetInstall-1511.iso of=/dev/sdc bs=1M
+```
+
+Write out the Kickstart for drewserv
+------------------------------------
+
+cat /var/www/html/drewserv.cfg
+
+``` bash
+#version=DEVEL
+# System authorization information
+auth --enableshadow --passalgo=sha512
+# Use network installation
+url --url="http://192.168.1.124/centos/"
+
+# Use graphical install - lame
+graphical
+
+# Run the Setup Agent on first boot to ensure it's not going to install over a disk in the array
+firstboot --enable
+
+ignoredisk --only-use=sda
+# Keyboard layouts
+keyboard --vckeymap=us --xlayouts='us'
+# System language
+lang en_US.UTF-8
+
+# Network information
+network  --bootproto=static --device=enp3s0 --ip=192.168.1.120 --netmask=255.255.255.0 --gateway=192.168.1.1 --nameserver=192.168.1.1 --activate
+network  --hostname=drewserv.invadelabs.com
+
+# Root password
+rootpw --iscrypted $mycryptedpassword
+# System services
+services --enabled="chronyd"
+# System timezone
+timezone America/Denver
+user --groups=wheel --name=drew --password=$mycryptedpassword --iscrypted --gecos="drew"
+
+# video=1024x768 fixes lantronix spider
+bootloader --append=" crashkernel=auto video=1024x768" --location=mbr --boot-drive=sda
+
+autopart --type=lvm
+# Partition clearing information
+clearpart --none --initlabel
+
+%packages
+@^minimal
+@core
+chrony
+kexec-tools
+screen
+wget
+strace
+tcpdump
+rsync
+mailx
+logwatch
+lsof
+binutils
+mcelog
+sysstat
+lldpad
+lm_sensors
+smartmontools
+cyrus-sasl-plain
+vim-enhanced
+%end
+
+%addon com_redhat_kdump --enable --reserve-mb='auto'
+
+%end
+```
+
+Run the install
+---------------
+
+-   Boot the system with the with thumb drive.
+-   Arrow down to Install and hit tab on the keyboard
+-   Append to the line ks=<http://192.168.1.124/drewserv.cfg>
+-   Reboot when prompted
+
+``` bash
+```
+
+Fix Lantronix Spider KVM for 1024x768 resolution
+================================================
+
+While plugged into the VGA port, the Lantronix Spider KVM sets the
+console resolution to 1600x1200. This can be annoying on a 1920x1080
+panel. To resolve append video=1024x768 to the GRUM\_CMDLINE\_LINUX,
+update grub, and reboot.
+
+    $ vi /etc/sysconfig/grub
+    GRUB_CMDLINE_LINUX="rd.md=0 rd.dm=0  KEYTABLE=us SYSFONT=True rd.luks=0 rd.lvm.lv=vg_drewserv/lv_drewserv LANG=en_US.UTF-8 rhgb quiet video=1024x768"
+
+Update grub:
+
+``` bash
+# grub2-mkconfig -o /boot/grub2/grub.cfg
+```
+
+Set Hostname
+============
+
+``` bash
+nmcli general hostname drewserv.invadelabs.com
+```
+
+Syncrhonize Time and Allow clients from 192.168/24
+==================================================
+
+Add port
+
+``` bash
+firewall-cmd --permanent --add-service=ntp
+firewall-cmd --reload
+```
+
+Allow clients in /etc/chrony.conf;
+
+``` bash
+allow 192.168/16
+```
+
+Restart service
+
+``` bash
+systemctl restartchronyd
+```
+
+Verify on client (equiv ntpq -c)
+
+``` bash
+$ chronyc sources -v
+```
+
+Setup Postfix
+=============
+
+Per:
+<https://charlesauer.net/tutorials/centos/postfix-as-gmail-relay-centos.php>
+
+Also gmail needs to be configured to allow less secure apps:
+<https://support.google.com/accounts/answer/6010255>
+
+Open port
+
+``` bash
+# firewall-cmd --permanent --add-port=25/tcp
+# firewall-cmd --reload
+```
+
+Append to /etc/postfix/main.cf:
+
+``` bash
+relayhost = [smtp.gmail.com]:587
+smtp_use_tls = yes
+smtp_sasl_auth_enable = yes
+smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
+smtp_tls_CAfile = /etc/ssl/certs/ca-bundle.crt
+smtp_sasl_security_options = noanonymous
+smtp_sasl_tls_security_options = noanonymous
+
+mynetworks = 192.168.1.0/24, 127.0.0.0/8
+inet_interfaces = all
+```
+
+Create /etc/postfix/sasl\_passwd
+
+``` bash
+# echo "[smtp.gmail.com]:587 drewderivative:password" > /etc/postfix sasl_passwd
+# postmap /etc/postfix sasl_passwd
+```
+
+Restart postfix
+
+``` bash
+systemctl restart postfix
+```
+
+Setup DNS
+=========
+
+Quick guide:
+<http://www.yoyoclouds.com/2015/01/quick-start-setup-centos-7-as-dns-server.html>
+
+Install bits;
+
+``` bash
+yum install bind bind-utils
+```
+
+/etc/named.conf
+---------------
+
+``` bash
+options {
+    listen-on port 53 { 127.0.0.1; 192.168.1.120;};
+    listen-on-v6 port 53 { ::1; };
+    directory   "/var/named";
+    dump-file   "/var/named/data/cache_dump.db";
+    statistics-file "/var/named/data/named_stats.txt";
+    memstatistics-file "/var/named/data/named_mem_stats.txt";
+    allow-query     { localhost; 192.168.1.0/24;};
+....
+zone "invadelabs.com" IN {
+type master;
+file "forward.invadelabs";
+allow-update { none; };
+};
+zone "1.168.192.in-addr.arpa" IN {
+type master;
+file "reverse.invadelabs";
+allow-update { none; };
+};
+
+include "/etc/named.rfc1912.zones";
+include "/etc/named.root.key";
+```
+
+/var/named/forward.invadelabs
+-----------------------------
+
+``` bash
+$TTL 86400
+@ IN SOA drewserv.invadelabs.com. root.invadelabs.com. (
+             2011071001 ;Serial
+             3600 ;Refresh
+             1800 ;Retry
+             604800 ;Expire
+             86400 ;Minimum TTL
+       )
+@    IN     NS     drewserv.invadelabs.com.
+drewserv       IN       A       192.168.1.120
+drew-desktop       IN       A       192.168.1.125
+foreman       IN       A       192.168.1.200
+inv-vm01       IN       A       192.168.1.201
+inv-vm02       IN       A       192.168.1.202
+inv-vm03       IN       A       192.168.1.203
+inv-vm04       IN       A       192.168.1.204
+inv-vm05       IN       A       192.168.1.205
+inv-vm06       IN       A       192.168.1.206
+```
+
+/var/named/reverse.invadelabs
+-----------------------------
+
+``` bash
+$TTL 86400
+@ IN SOA drewserv.invadelabs.com. root.invadelabs.com. (
+             2011071001 ;Serial
+             3600 ;Refresh
+             1800 ;Retry
+             604800 ;Expire
+             86400 ;Minimum TTL
+       )
+@    IN     NS     drewserv.invadelabs.com.
+@    IN     PTR   invadelabs.com
+drewserv       IN       A       192.168.1.120
+drew-desktop       IN       A       192.168.1.125
+foreman       IN       A       192.168.1.200
+inv-vm01       IN       A       192.168.1.201
+inv-vm02       IN       A       192.168.1.202
+inv-vm03       IN       A       192.168.1.203
+inv-vm04       IN       A       192.168.1.204
+inv-vm05       IN       A       192.168.1.205
+inv-vm06       IN       A       192.168.1.206
+120       IN     PTR   drewserv.invadelabs.com
+125       IN     PTR   drew-desktop.invadelabs.com
+200     IN     PTR   foreman.invadelabs.com
+201     IN     PTR   inv-vm01.invadelabs.com
+202     IN     PTR   inv-vm02.invadelabs.com
+203     IN     PTR   inv-vm03.invadelabs.com
+204     IN     PTR   inv-vm04.invadelabs.com
+205     IN     PTR   inv-vm05.invadelabs.com
+206     IN     PTR   inv-vm06.invadelabs.com
+```
+
+Add firewall and start named
+----------------------------
+
+``` bash
+# firewall-cmd --permanent --add-port=53/udp
+# firewall-cmd --reload
+# systemctl enable named
+# systemctl start named
+```
+
+Setup rsyslog
+=============
+
+In /etc/rsyslog.conf, make sure these are uncommented;
+
+``` bash
+# Provides UDP syslog reception
+$ModLoad imudp
+$UDPServerRun 514
+
+# Provides TCP syslog reception
+$ModLoad imtcp
+$InputTCPServerRun 514
+```
+
+Open firewall ports;
+
+``` bash
+# firewall-cmd --permanent --add-port=514/tcp
+# firewall-cmd --permanent --add-port=514/udp
+# firewall-cmd --reload
+```
+
+Setup smartmontools
+===================
+
+smartmontools installed via kickstart, default configuration is okay and
+the daemon automatically starts.
+
+Setup mcelog
+============
+
+Only needed to \`yum install mcelog\` (handled by kickstart) and the
+service will be up and running.
+
+Setup lm\_sensors
+=================
+
+Just run;
+
+``` bash
+# sensors-detect
+```
+
+Setup lldpad
+============
+
+Already installed via kickstart, just need to enable and start the
+daemon;
+
+``` bash
+# systemctl enable lldpad; systemctl start lldpad
+```
+
+Setup logwatch
+==============
+
+Default logwatch automatically sends to root. I've added a
+/root/.forward containing my email address to get the messages.
+
+Setup NFS
+=========
+
+Can't afford a NAS, so we'll share this raid array with other white box
+hardware hypervisors.
+
+``` bash
+server centos7 https://www.howtoforge.com/nfs-server-and-client-on-centos-7
+sudo yum install nfs-utils
+systemctl enable rpcbind
+systemctl enable nfs-server
+systemctl start rpcbind
+systemctl start nfs-server
+systemctl start nfs-lock
+systemctl start nfs-idmap
+firewall-cmd --permanent --zone=public --add-service=nfs
+firewall-cmd --reload
+
+vi /etc/exports
+/mnt/raid5    192.168.1.*(rw,sync,no_root_squash,no_all_squash)
+
+ubuntu 15.10 client http://www.ubuntugeek.com/how-to-configure-nfs-server-and-client-configuration-on-ubuntu-15-04.html
+sudo apt-get install portmap nfs-common
+/etc/fstab
+192.168.1.120:/mnt/raid5 /mnt/raid5 nfs rsize=8192,wsize=8192,timeo=14,intr
+mount -a
+```
+
+Setup Samba
+===========
+
+Setup the personal file share.
+
+``` bash
+[root@drewserv ~]# yum -y install samba
+```
+
+/etc/samba/smb.conf
+
+``` bash
+[global]
+        workgroup = WORKGROUP
+        server string = drewserv
+    hosts allow = 127. 192.168.1.
+        security = user
+        passdb backend = tdbsam
+        log file = /var/log/samba/log.%m
+        max log size = 50
+        load printers = no
+        show add printer wizard = no
+        printcap name = /dev/null
+        disable spoolss = yes
+[raid5]
+        path = /mnt/raid5
+        valid users = drew pbr
+        read only = No
+    create mode = 0665
+    directory mode = 0775
+```
+
+Add to firewall
+
+``` bash
+# firewall-cmd --permanent --add-port=137/tcp --add-port=138/tcp --add-port=139/tcp --add-port=445/tcp
+# firewall-cmd --reload
+```
+
+Enable and start service
+
+``` bash
+# systemctl enable smb; systemctl start smb
+```
+
+Add my user
+
+``` bash
+# smbpasswd -a drew
+# smbpasswd -e drew
+```
+
+Setup selinux
+
+``` bash
+# ls -ldZ /mnt/raid5
+# chcon -R -t public_content_rw_t /mnt/raid5
+# restorecon -R -v /mnt/raid5
+# setsebool -P samba_export_all_rw on
+# getsebool -a | grep samba
+```
+
+^fix this
+
+Install basic webserver to host repos/misc
+==========================================
+
+``` bash
+yum -t install httpd
+mv /etc/httpd/conf.d/welcome.conf /etc/httpd/conf.d/welcome.conf.old
+firewall-cmd --permanent --add-port=80/tcp 
+firewall-cmd --reload
+systemctl enable httpd
+systemctl start httpd
+```
+
+Setup CentOS7 DVD Repo
+======================
+
+There is probably a cleaner way to do this, but will look into it later.
+
+``` bash
+# mkdir /var/www/html/centos7
+# echo "/mnt/raid5/iso/CentOS-7-x86_64-DVD-1511.iso     /var/www/html/centos7   iso9660 loop 0 0" >> /etc/fstab
+# mount -a
+```
+
+Setup libvirt / qemu-kvm
+========================
+
+Stolen from <http://www.server-world.info/en/note?os=CentOS_7&p=kvm>
+
+Install bits
+
+``` bash
+yum -y install qemu-kvm libvirt virt-install bridge-utils libguestfs-tools
+```
+
+Setup network bridge. Replace enp3s0 with device name. While connecting
+the bridge I lost network and had to go in through the kvm to finish the
+steps... Probably a cleaner way to do this, but trying to finish this
+today.
+
+``` bash
+nmcli c add type bridge autoconnect yes con-name br0 ifname br0
+nmcli c modify br0 ipv4.method auto
+nmcli c delete enp3s0
+nmcli c add type bridge-slave autoconnect yes con-name enp3s0 ifname enp3s0 master br0
+systemctl stop NetworkManager
+systemctl start NetworkManager 
+```
+
+Allow VNC
+---------
+
+/etc/libvirt/qemu.conf
+
+``` bash
+diff qemu.conf.orig qemu.conf
+12c12
+< #vnc_listen = "0.0.0.0"
+---
+> vnc_listen = "0.0.0.0"
+32c32
+< #vnc_tls = 1
+---
+> vnc_tls = 0
+517a518,519
+> 
+> secure_driver = "none"
+```
+
+Enable remote VNC fw rules
+--------------------------
+
+Per <http://www.freeipa.org/page/Libvirt_with_VNC_Consoles>
+
+``` bash
+firewall-cmd --permanent --add-service=libvirt
+firewall-cmd --permanent --add-port=5900-5999/tcp
+firewall-cmd --reload
+```
+
+Provision a VM
+==============
+
+I'm going to be running the rest of my services as VMs provisioned
+through foreman and configured via puppet. The first VM was provisioned
+via virt-install with the instructions below and kickstart following.
+
+Kickstart file for foreman vm
+-----------------------------
+
+Kickstart file used to create inv-foreman01.cfg on hypervisor drewserv:
+
+    #version=DEVEL
+    # System authorization information
+    auth --enableshadow --passalgo=sha512
+    # Use network installation
+    url --url="http://192.168.1.124/centos/"
+    # Use graphical install
+    graphical
+    # Run the Setup Agent on first boot
+    firstboot --enable
+    ignoredisk --only-use=sda
+    # Keyboard layouts
+    keyboard --vckeymap=us --xlayouts='us'
+    # System language
+    lang en_US.UTF-8
+
+    # Network information
+    network  --bootproto=dhcp --device=enp3s0 --ipv6=auto --activate
+    network  --hostname=localhost.localdomain
+
+    # Root password
+    rootpw --iscrypted $mycryptedpassword
+    # System services
+    services --enabled="chronyd"
+    # System timezone
+    timezone America/Denver --isUtc
+    user --groups=wheel --name=drew --password=$mycryptedpassword --iscrypted --gecos="drew"
+    # System bootloader configuration
+    bootloader --append=" crashkernel=auto" --location=mbr --boot-drive=sda
+    autopart --type=lvm
+    # Partition clearing information
+    clearpart --none --initlabel
+
+    %packages
+    @^minimal
+    @core
+    chrony
+    kexec-tools
+    sysstat
+    logwatch
+    mailx
+    rsync
+    strace
+    wget
+    tcpdump
+    deltarpm
+    screen
+    vim-enhanced
+    bind-utils
+    ntpdate
+    %end
+
+    %addon com_redhat_kdump --enable --reserve-mb='auto'
+
+    %end
+
+    reboot
+
+Run virt-install
+----------------
+
+Adapted from
+<https://raymii.org/s/articles/virt-install_introduction_and_copy_paste_distro_install_commands.html>
+- the --location flag worked very well for this case.
+
+-   Note provisioning CentOS7 only 512MB RAM would fail at disk
+    partitioning in the kickstart.
+
+### Basic Instance with DHCP
+
+Basic adaptation
+
+    virt-install --name inv-foreman01 --ram 768 --vcpus=1 --arch=x86_64 --hvm --os-type=linux --nographics --disk path=/mnt/raid5/vm/inv-foreman01.img,size=15,sparse=true --network bridge=virbr0,model=virtio --location 'http://192.168.1.120/centos7/' --extra-args 'ks=http://192.168.1.120/inv-foreman01.cfg console=ttyS0,115200n8 serial'
+
+### Instance with Static IP
+
+What I ended up going with on my network. ksdevice=eth0 had to be
+specified along with the network line modified in the kickstart for a
+static IP to be set in /etc/sysconfig/network-scripts/ifcfg-eth0:
+
+    virt-install --name inv-foreman01 --ram 1024 --vcpus=2 --arch=x86_64 --hvm --os-type=linux --nographics --disk path=/mnt/raid5/vm/inv-foreman01.img,size=15,sparse=true --network bridge=br0,model=virtio --location 'http://192.168.1.120/centos7/' --extra-args 'ks=http://192.168.1.120/inv-foreman01.cfg --ip=192.168.1.200 --gateway=192.168.1.1 --netmask=255.255.255.0 --nameserver=192.168.1.1 --hostname=foreman ksdevice=eth0 console=ttyS0,115200n8 serial'
+
+### Alias to quickly destroy then re-run
+
+I had to run through this about 20 times trying to figure out the 512MB
+ram issue. I wrote a quick alias to destroy, undefine, and remove the
+VM's disk image.
+
+``` bash
+# alias bla="virsh destroy inv-foreman01; virsh undefine inv-foreman01; rm -f /mnt/raid5/vm/inv-foreman01.img"
+```
+
+Setup Foreman
+=============
+
+Foreman and puppet go great together. I will be using it to provision
+the rest of my services on small instances configured by puppet.
+
+Setup firewall
+--------------
+
+Ports needed are 80, 443 for web ui. I believe 8443 is API. 8140 is
+puppet. tftp and 53/udp if doing pxeboot.
+
+``` bash
+# firewall-cmd --permanent --add-port=80/tcp
+# firewall-cmd --permanent --add-port=443/tcp
+# firewall-cmd --permanent --add-port=8443/tcp
+# firewall-cmd --permanent --add-port=8140/tcp
+# firewall-cmd --permanent --add-service=tftp
+# firewall-cmd --permanent --add-port=53/udp
+# firewall-cmd --reload
+```
+
+Setup repos and install
+-----------------------
+
+For EL7 we need EPEL and foreman's repo:
+
+``` bash
+rpm -ivh http://yum.puppetlabs.com/puppetlabs-release-el-7.noarch.rpm
+yum -y install epel-release http://yum.theforeman.org/releases/1.10/el7/x86_64/foreman-release.rpm
+yum -y install foreman-installer
+```
+
+Needed to do this for libvirt compute resource to work. If I rebuild
+I'll do this before running \`foreman-install\`, but after \`yum -y
+install foreman-installer\`.
+
+``` bash
+# yum install libvirt-client foreman-libvirt
+```
+
+Maybe these:
+
+``` bash
+yum install tfm-rubygem-foreman_cockpit
+```
+
+-   OpenSCAP?
+
+Run foreman-install
+-------------------
+
+The flags I ended up running with after a couple iterations.
+
+``` bash
+foreman-installer \
+  --enable-foreman-proxy \
+  --foreman-proxy-tftp=true \
+  --foreman-proxy-tftp-servername=192.168.1.200 \
+  --foreman-proxy-dhcp=false \
+#  --foreman-proxy-dhcp-interface=eth0 \
+#  --foreman-proxy-dhcp-gateway=192.168.1.1 \
+#  --foreman-proxy-dhcp-range="192.168.1.210 192.168.1.220" \
+#  --foreman-proxy-dhcp-nameservers="192.168.1.200" \
+  --foreman-proxy-dns=true \
+  --foreman-proxy-dns-interface=eth0 \
+  --foreman-proxy-dns-zone=invadelabs.com \
+  --foreman-proxy-dns-reverse=1.168.192.in-addr.arpa \
+  --foreman-proxy-dns-forwarders=192.168.1.120 \
+  --foreman-proxy-foreman-base-url=https://foreman.invadelabs.com \
+  --enable-foreman-compute-ec2 \
+  --enable-foreman-compute-libvirt \
+  --enable-foreman-compute-openstack \
+  --foreman-compute-libvirt-version \
+  --foreman-compute-ec2-version \
+  --foreman-admin-password myawesomepassword \
+  --enable-foreman-plugin-bootdisk \
+  --enable-foreman-plugin-dhcp-browser \
+  --enable-foreman-plugin-discovery \
+  --enable-foreman-plugin-docker \
+  --enable-foreman-plugin-tasks
+#--foreman-server-ssl-ca
+#--foreman-server-ssl-cert
+#--foreman-server-ssl-chain
+#--foreman-server-ssl-crl
+#--foreman-server-ssl-key
+```
+
+Automate this?
+--------------
+
+auto associate provisioning templates / partition tables, create
+subnets, domains, installation media, operating system, hostgroup,
+environment, classes, config group, compute resource, and compute
+profile --- in a series of hammer commands / api calls?
+
+Enable qemu+ssh to kvm system
+-----------------------------
+
+The system needs to be able to access the kvm/qemu hypervisor at
+qemu+ssh://192.168.1.120/system - SSH keys were used for this:
+
+``` bash
+root# mkdir /usr/share/foreman/.ssh
+root# chmod 700 /usr/share/foreman/.ssh
+root# chown foreman:foreman /usr/share/foreman/.ssh
+
+root# su foreman -s /bin/bash
+foreman$ ssh-keygen
+foreman$ ssh-copy-id root@hostname.com
+foreman$ ssh root@hostname.com
+```
+
+Drew1 Kickstart Default Template
+--------------------------------
+
+Cloned the “Kickstart Default Template” since it would break failing to
+add epel and trying to download puppet. Cloning it to “Drew1 Kickstart
+Default Template” and ripping out some stuff add, added a %package list
+I wanted and setup EPEL in %post to rpm -Uvh the epl rpm then yum
+install uppet.
+
+-   Todo **Need to create an epel and centos-updates mirror to reduce
+    bandwidth, also uncomment \#yum -y update**
+
+<!-- -->
+
+    <%#
+    kind: provision
+    name: Kickstart default
+    oses:
+    - CentOS 4
+    - CentOS 5
+    - CentOS 6
+    - CentOS 7
+    - Fedora 16
+    - Fedora 17
+    - Fedora 18
+    - Fedora 19
+    - Fedora 20
+    %>
+    <%#
+    This template accepts the following parameters:
+    - lang: string (default="en_US.UTF-8")
+    - selinux: string (default="enforcing")
+    - keyboard: string (default="us")
+    - time-zone: string (default="UTC")
+    - http-proxy: string (default="")
+    - http-proxy-port: string (default="")
+    - force-puppet: boolean (default=false)
+    - enable-puppetlabs-repo: boolean (default=false)
+    - salt_master: string (default=undef)
+    - ntp-server: string (default="0.fedora.pool.ntp.org")
+    - bootloader-append: string (default="nofb quiet splash=quiet")
+    %>
+    <%
+      rhel_compatible = @host.operatingsystem.family == 'Redhat' && @host.operatingsystem.name != 'Fedora'
+      os_major = @host.operatingsystem.major.to_i
+      realm_compatible = (@host.operatingsystem.name == 'Fedora' && os_major >= 20) || (rhel_compatible && os_major >= 7)
+      # safemode renderer does not support unary negation
+      pm_set = @host.puppetmaster.empty? ? false : true
+      proxy_uri = @host.params['http-proxy'] ? "http://#{@host.params['http-proxy']}:#{@host.params['http-proxy-port']}" : nil
+      proxy_string = proxy_uri ? " --proxy=#{proxy_uri}" : ''
+      puppet_enabled = pm_set || @host.params['force-puppet'] && @host.params['force-puppet'] == 'true'
+      salt_enabled = @host.params['salt_master'] ? true : false
+      chef_enabled = @host.respond_to?(:chef_proxy) && @host.chef_proxy
+      section_end = (rhel_compatible && os_major <= 5) ? '' : '%end'
+    %>
+    install
+    <%= @mediapath %><%= proxy_string %>
+    lang <%= @host.params['lang'] || 'en_US.UTF-8' %>
+    selinux --<%= @host.params['selinux'] || 'enforcing' %>
+    keyboard <%= @host.params['keyboard'] || 'us' %>
+    skipx
+
+    <% subnet = @host.subnet -%>
+    <% if subnet.respond_to?(:dhcp_boot_mode?) -%>
+    <% dhcp = subnet.dhcp_boot_mode? && !@static -%>
+    <% else -%>
+    <% dhcp = !@static -%>
+    <% end -%>
+
+    network --bootproto <%= dhcp ? 'dhcp' : "static --ip=#{@host.ip} --netmask=#{subnet.mask} --gateway=#{subnet.gateway} --nameserver=#{[subnet.dns_primary, subnet.dns_secondary].select(&:syntaxhighlightsent?).join(',')}" %> --hostname <%= @host %><%= os_major >= 6 ? " --device=#{@host.mac}" : '' -%>
+
+    rootpw --iscrypted <%= root_pass %>
+    firewall --<%= os_major >= 6 ? 'service=' : '' %>ssh
+    authconfig --useshadow --passalgo=sha256 --kickstart
+    timezone --utc <%= @host.params['time-zone'] || 'UTC' %>
+    services --enabled=<%= os_major <= 6 ? 'ntpd' : 'chronyd' %>
+
+    bootloader --location=mbr --append="<%= @host.params['bootloader-append'] || 'nofb quiet splash=quiet' %>" <%= grub_pass %>
+
+    <% if @dynamic -%>
+    %include /tmp/diskpart.cfg
+    <% else -%>
+    <%= @host.diskLayout %>
+    <% end -%>
+
+    text
+    reboot
+
+    %packages
+    @core
+    <% if os_major <= 6 -%>
+    ntp
+    <% else -%>
+    chrony
+    <% end -%>
+    sysstat
+    logwatch
+    mailx
+    rsync
+    strace
+    wget
+    tcpdump
+    deltarpm
+    screen
+    vim-enhanced
+    bind-utils
+    ntpdate
+    %end
+
+    <% if @dynamic -%>
+    %syntaxhighlight
+    <%= @host.diskLayout %>
+    <%= section_end -%>
+    <% end -%>
+
+    %post --nochroot
+    exec < /dev/tty3 > /dev/tty3
+    #changing to VT 3 so that we can see whats going on....
+    /usr/bin/chvt 3
+    (
+    cp -va /etc/resolv.conf /mnt/sysimage/etc/resolv.conf
+    /usr/bin/chvt 1
+    ) 2>&1 | tee /mnt/sysimage/root/install.postnochroot.log
+    <%= section_end -%>
+
+    %post
+    logger "Starting anaconda <%= @host %> postinstall"
+    exec < /dev/tty3 > /dev/tty3
+    #changing to VT 3 so that we can see whats going on....
+    /usr/bin/chvt 3
+    (
+    <% if subnet.respond_to?(:dhcp_boot_mode?) -%>
+    <%= snippet 'kickstart_networking_setup' %>
+    <% end -%>
+
+    #update local time
+    echo "updating system time"
+    /usr/sbin/ntpdate -sub <%= @host.params['ntp-server'] || '0.fedora.pool.ntp.org' %>
+    /usr/sbin/hwclock --systohc
+
+    # update all the base packages from the updates repository
+    #yum -t -y -e 0 update
+
+    # setup puppet
+    <% if puppet_enabled %>
+    echo "Configuring puppet"
+    su -c 'rpm -Uvh <%= @host.os.medium_uri(@host, "http://dl.fedoraproject.org/pub/epel/epel-release-latest-#{@host.operatingsystem.major}.noarch.rpm") %>'
+    yum -y --nogpgcheck install puppet
+    cat > /etc/puppet/puppet.conf << EOF
+    <%= snippet 'puppet.conf' %>
+    EOF
+
+    # Setup puppet to run on system reboot
+    /sbin/chkconfig --level 345 puppet on
+
+    /usr/bin/puppet agent --config /etc/puppet/puppet.conf -o --tags no_such_tag <%= @host.puppetmaster.blank? ? '' : "--server #{@host.puppetmaster}" %> --no-daemonize
+    <% end -%>
+
+
+    sync
+
+    # Inform the build system that we are done.
+    echo "Informing Foreman that we are built"
+    wget -q -O /dev/null --no-check-certificate <%= foreman_url %>
+    ) 2>&1 | tee /root/install.post.log
+    exit 0
+
+    <%= section_end -%>
+
+### Added to puppet.conf snippet
+
+append to /etc/puppet/puppet.conf:
+
+``` bash
+runinterval     = 600
+disable_warnings = desyntaxhighlightcations
+show_diff       = true
+```
+
+Issue with Foreman + VNC on KVM
+-------------------------------
+
+It would be nice to get this working in the web ui, but it's not a
+nescity as you can just go to the console page, get the password, and
+VNC to the system with that password.
+
+``` bash
+noVNC ready: native WebSockets, canvas rendering 
+Connect timeout
+WebSock error: [object Event]
+```
+
+Questions / things to hack on
+-----------------------------
+
+Feature request: Instead of using VNC or SPICE, why not add in a
+mechnaism that will do something similar to virsh edit <vm> like in
+“Provision KVM without DHCP”?
+
+Provisioning VMs with Foreman
+=============================
+
+If I didn't already have a dhcp server on the network and left
+enable-dhcp on foreman-install, when going to create a new host it would
+automatically PXE boot and install. This worked well until my foreman
+dhcp and router dhcp servers started clashing. I didn't want to think of
+fancy ways to firewall off dhcp traffic or vlan my lab from the home
+network.
+
+Provision KVM without DHCP
+--------------------------
+
+Following “Provision KVM without DHCP” from
+<http://projects.theforeman.org/projects/foreman/wiki/Provision_KVM_VM_without_DHCP>
+- now I create the new host powered off and then do a
+
+1.  virsh edit inv-vm01.invadelabs.com
+
+replacing the os lines with something similar to, noting the location of
+the vmlinuz & initrd.img. Looks the same as using --location in
+virt-install ;)
+
+``` bash
+  <os>
+    <type arch='x86_64' machine='pc-i440fx-rhel7.0.0'>hvm</type>
+    <kernel>/var/www/html/centos7/images/pxeboot/vmlinuz</kernel>
+    <initrd>/var/www/html/centos7/images/pxeboot/initrd.img</initrd>
+    <cmdline>ks=http://foreman.invadelabs.com/unattended/provision?static=yes ksdevice=bootif network kssendmac ip=192.168.1.201 netmask=255.255.255.0 gateway=192.168.1.1 dns=192.168.1.120</cmdline>
+    <boot dev='hd'/>
+  </os>
+```
+
+After the machine is provisioned, shut it down,do a \`virsh edit
+inv-vm01.invadelabs.com\`, and remove these lines
+
+``` bash
+    <kernel>/var/www/html/centos7/images/pxeboot/vmlinuz</kernel>
+    <initrd>/var/www/html/centos7/images/pxeboot/initrd.img</initrd>
+    <cmdline>ks=http://foreman.invadelabs.com/unattended/provision?static=yes ksdevice=bootif network kssendmac ip=192.168.1.201 netmask=255.255.255.0 gateway=192.168.1.1 dns=192.168.1.120</cmdline>
+```
+
+Template Debugging
+------------------
+
+You can see what the fully rendered kickstart template looks like by
+going to a URL similar to the following, replacing spoof=192.168.1.204
+with the hosts IP:
+<https://192.168.1.200/unattended/provision?spoof=192.168.1.204>
+
+Sample Output:
+
+``` bash
+install
+url --url http://192.168.1.120/centos7
+lang en_US.UTF-8
+selinux --enforcing
+keyboard us
+skipx
+
+network --bootproto static --ip=192.168.1.204 --netmask=255.255.255.0 --gateway=192.168.1.1 --nameserver=192.168.1.120,192.168.1.1 --hostname inv-vm04.invadelabs.com --device=52:54:00:88:cb:7f
+rootpw --iscrypted $5$enIGOzxN$.hP1.rVeGTuV1pdGkyFrlxbwynzTr1LvHVtZcB7uPS6
+firewall --service=ssh
+authconfig --useshadow --passalgo=sha256 --kickstart
+timezone --utc UTC
+services --enabled="chronyd"
+
+bootloader --location=mbr --append="nofb quiet splash=quiet" 
+
+zerombr
+clearpart --all --initlabel
+autopart
+
+text
+reboot
+
+%packages
+@^minimal
+@core
+chrony
+sysstat
+logwatch
+mailx
+rsync
+strace
+wget
+tcpdump
+deltarpm
+screen
+vim-enhanced
+bind-utils
+ntpdate
+%end
+
+%post --nochroot
+exec < /dev/tty3 > /dev/tty3
+#changing to VT 3 so that we can see whats going on....
+/usr/bin/chvt 3
+(
+cp -va /etc/resolv.conf /mnt/sysimage/etc/resolv.conf
+/usr/bin/chvt 1
+) 2>&1 | tee /mnt/sysimage/root/install.postnochroot.log
+%end
+%post
+logger "Starting anaconda inv-vm04.invadelabs.com postinstall"
+exec < /dev/tty3 > /dev/tty3
+#changing to VT 3 so that we can see whats going on....
+/usr/bin/chvt 3
+(
+#  interface
+real=`ip -o link | grep 52:54:00:88:cb:7f | awk '{print $2;}' | sed s/:$//`
+
+# ifcfg files are ignored by NM if their name contains colons so we convert colons to underscore
+sanitized_real=$real
+
+cat << EOF > /etc/sysconfig/network-scripts/ifcfg-$sanitized_real
+BOOTPROTO="none"
+IPADDR="192.168.1.204"
+NETMASK="255.255.255.0"
+GATEWAY="192.168.1.1"
+DEVICE="$real"
+HWADDR="52:54:00:88:cb:7f"
+ONBOOT=yes
+PEERDNS=yes
+PEERROUTES=yes
+EOF
+
+#update local time
+echo "updating system time"
+/usr/sbin/ntpdate -sub 0.fedora.pool.ntp.org
+/usr/sbin/hwclock --systohc
+
+# update all the base packages from the updates repository
+#yum -t -y -e 0 update
+
+# setup puppet
+
+echo "Configuring puppet"
+su -c 'rpm -Uvh http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm'
+yum -y --nogpgcheck install puppet
+cat > /etc/puppet/puppet.conf << EOF
+
+[main]
+vardir = /var/lib/puppet
+logdir = /var/log/puppet
+rundir = /var/run/puppet
+ssldir = \$vardir/ssl
+
+[agent]
+pluginsync      = true
+report          = true
+ignoreschedules = true
+daemon          = false
+ca_server       = foreman.invadelabs.com
+certname        = inv-vm04.invadelabs.com
+environment     = production
+server          = foreman.invadelabs.com
+runinterval     = 600
+disable_warnings = desyntaxhighlightcations
+
+EOF
+
+# Setup puppet to run on system reboot
+/sbin/chkconfig --level 345 puppet on
+
+/usr/bin/puppet agent --config /etc/puppet/puppet.conf -o --tags no_such_tag --server foreman.invadelabs.com --no-daemonize
+
+sync
+
+# Inform the build system that we are done.
+echo "Informing Foreman that we are built"
+wget -q -O /dev/null --no-check-certificate http://foreman.invadelabs.com:80/unattended/built?token=632dca5e-5693-4b6a-bac9-36fe64a41519
+) 2>&1 | tee /root/install.post.log
+exit 0
+
+%end
+```
+
+Puppet Modules
+==============
+
+Puppet modules I've added to my “production” config group and host
+groups.
+
+puppetlabs/motd
+---------------
+
+Install motd:
+
+``` bash
+[drew@foreman ~]$ sudo puppet module install -i /etc/puppet/environments/production/modules puppetlabs/motd
+[sudo] password for drew:
+Notice: syntaxhighlightparing to install into /etc/puppet/environments/production/modules ...
+Notice: Downloading from https://forgeapi.puppetlabs.com ...
+Notice: Installing -- do not interrupt ...
+/etc/puppet/environments/production/modules
+└─┬ puppetlabs-motd (v1.4.0)
+  └─┬ puppetlabs-registry (v1.1.3)
+    └── puppetlabs-stdlib (v4.11.0)
+```
+
+Modify motd.erb:
+
+``` bash
+[root@foreman templates]# vi /etc/puppet/environments/production/modules/motd/templates/motd.erb
+-------------------------------------------------------------------------
+This system is managed by puppet master <%= puppetmaster %>.
+-------------------------------------------------------------------------
+Name: <%= hostname %>.invadelabs.com
+IP: <%= ipaddress %>
+Netmask: <%= netmask %>
+MAC: <%= macaddress %>
+Location: <%= location %>
+Built By: <%= owner_email %>
+
+<%= productname %>
+Architecture: <%= architecture %>
+UUID: <%= uuid %>
+Serial#: <%= serialnumber %>
+CPU: <%= physicalprocessorcount %>x <%= processor0 %> Socket(s)
+OS: <%= operatingsystem %> Enterprise Linux <%= operatingsystemmajrelease %>
+RAM: <%= memorytotal %>
+SElinux: <%= selinux_current_mode %>
+Timezone: <%= timezone %>
+-------------------------------------------------------------------------
+```
+
+ringingliberty/chrony
+---------------------
+
+For EL7, set smart parameter in foreman ui “servers” to Array and
+\['192.168.1.120'\]
+
+``` bash
+[root@foreman modules]# sudo puppet module install -i /etc/puppet/environments/production/modules ringingliberty/chrony
+Notice: syntaxhighlightparing to install into /etc/puppet/environments/production/modules ...
+Notice: Downloading from https://forgeapi.puppetlabs.com ...
+Notice: Installing -- do not interrupt ...
+/etc/puppet/environments/production/modules
+└─┬ ringingliberty-chrony (v0.2.1)
+  └── puppetlabs-stdlib (v4.11.0)
+```
+
+puppetlabs/ntp
+--------------
+
+For EL6, set smart parameter in foreman ui “servers” to Array and
+\['192.168.1.120'\]
+
+``` bash
+[root@foreman ~]# sudo puppet module install -i /etc/puppet/environments/production/modules puppetlabs-ntp
+Notice: syntaxhighlightparing to install into /etc/puppet/environments/production/modules ...
+Notice: Downloading from https://forgeapi.puppetlabs.com ...
+Notice: Installing -- do not interrupt ...
+/etc/puppet/environments/production/modules
+└─┬ puppetlabs-ntp (v4.1.2)
+  └── puppetlabs-stdlib (v4.11.0)
+```
+
+deric/accounts
+--------------
+
+Set JSON paramter in foreman UI for accounts::users
+
+    {  
+      "drew":{  
+        "uid":1001,
+        "gid":1001,
+        "shell":"/bin/bash",
+        "groups":"wheel",
+        "pwhash":"$6$6387KljVTcBSUe6U$pfLTBdCJsFsM.XrkH68yNmvxJkDJtycnjrPi2NJAoxbtjS3fMNT/COgX0nn6y6XOgpAB8LizsFTSKkHjX3UqR1",
+        "comment":"Drew User",
+        "ssh_key":{  
+          "type":"ssh-rsa",
+          "key":"AAAAB3NzaC1yc2EAAAABJQAAAQEAsZeKEXj+5Is6OXLDEWDhRb51lNZj2hQRUCCMIcYtjzEbkgpEH7b5x6d5vg2uZy5uc0INrTW4Fy5Z/A5t+cTf+SfT5oGjMjQQ5f5ShA+RsOuB5gI+2b1eyyGBOcgJxjqgDKakc10OKssPJS1qk/NvWQoDOzBRGO0Vgy5a9fizyDcR0rRD0dqmV/Fly3SEHLHkMZDENYL2h5icHoZ9j/r8qqkMCKBpKY9ysVRIQERmDZT+qKoShNUj5b4dBv5csk3TJnMyoFIBL9P7wBJUEFSir3O2whNc+OtcqTVxqrCqdOAcGheFFxW4O907ncckfTxRKB+6WfWcb80BLn+6Avfetw==",
+          "comment":"drewderivative@gmail.com"
+        }
+      }
+    }
+
+Module install notes:
+
+``` bash
+[root@foreman modules]# sudo puppet module install -i /etc/puppet/environments/production/modules deric/accounts
+Notice: syntaxhighlightparing to install into /etc/puppet/environments/production/modules ...
+Notice: Downloading from https://forgeapi.puppetlabs.com ...
+Notice: Installing -- do not interrupt ...
+/etc/puppet/environments/production/modules
+└─┬ deric-accounts (v1.2.0)
+  └── puppetlabs-stdlib (v4.11.0)
+```
+
+nrvale0/postfix
+---------------
+
+Set paramters postfix::relayhost = drewserv.invadelabs.com
+
+Module install notes:
+
+``` bash
+[root@foreman modules]# sudo puppet module install -i /etc/puppet/environments/production/modules nrvale0/postfix
+Notice: syntaxhighlightparing to install into /etc/puppet/environments/production/modules ...
+Notice: Downloading from https://forgeapi.puppetlabs.com ...
+Notice: Installing -- do not interrupt ...
+/etc/puppet/environments/production/modules
+└─┬ nrvale0-postfix (v2.1.0)
+  ├── nrvale0-multi_validate_re (v0.1.1)
+  └── puppetlabs-stdlib (v4.11.0)
+```
+
+saz/resolv\_conf
+----------------
+
+Set paramaters:
+
+``` bash
+resolv_conf::searchpath array ['invadelabs.com']
+resolv_conf::nameservers array ['192.168.1.120']
+```
+
+Installed module with
+
+``` bash
+[root@foreman modules]# sudo puppet module install -i /etc/puppet/environments/production/modules saz/resolv_conf
+Notice: syntaxhighlightparing to install into /etc/puppet/environments/production/modules ...
+Notice: Downloading from https://forgeapi.puppetlabs.com ...
+Notice: Installing -- do not interrupt ...
+/etc/puppet/environments/production/modules
+└─┬ saz-resolv_conf (v3.0.5)
+  └── puppetlabs-stdlib (v4.11.0)
+```
+
+drewderivative/dotforward
+-------------------------
+
+Quick module I wrote to add an entry to /root/.forward to be available
+as parameter in Foreman.
+
+Set dotforward::forwardemail to 'drewderivative@gmail.com'
+
+Create module from scratch;
+
+``` bash
+# cd /etc/puppet/environments/production/modules
+# puppet module generate drewderivative-dotforward
+# mv drewderivative-dotfoward dotforward
+```
+
+mainfests/init.pp
+
+``` bash
+# == Class: dotforward
+#
+# Full description of class dotforward here.
+#
+class dotforward (
+  $forwardemail = undef,
+) {
+
+  if $forwardemail {
+    file { '/root/.forward':
+      ensure => file,
+      content => $forwardemail,
+    }
+  }
+
+}
+```
+
+ghoneycutt/ssh
+--------------
+
+Set smart parameter “permit root login” = “no”
+
+Module install notes:
+
+``` bash
+[root@foreman modules]#  sudo puppet module install -i /etc/puppet/environments/production/modules ghoneycutt/ssh
+Notice: syntaxhighlightparing to install into /etc/puppet/environments/production/modules ...
+Notice: Downloading from https://forgeapi.puppetlabs.com ...
+Notice: Installing -- do not interrupt ...
+/etc/puppet/environments/production/modules
+└─┬ ghoneycutt-ssh (v3.34.0)
+  ├── ghoneycutt-common (v1.5.0)
+  ├── puppetlabs-firewall (v1.7.2)
+  └── puppetlabs-stdlib (v4.11.0)
+```
+
+ghoneycutt/rsyslog
+------------------
+
+Smart Parameters set as JSON, but just grabbing yaml for refrence:
+
+``` bash
+  rsyslog:
+    kernel_target: /dev/console
+    log_server:
+    - drewserv.invadelabs.com
+    remote_logging: true
+```
+
+Module install:
+
+``` bash
+[root@foreman modules]# sudo puppet module install -i /etc/puppet/environments/production/modules ghoneycutt/rsyslog
+Notice: syntaxhighlightparing to install into /etc/puppet/environments/production/modules ...
+Notice: Downloading from https://forgeapi.puppetlabs.com ...
+Notice: Installing -- do not interrupt ...
+/etc/puppet/environments/production/modules
+└─┬ ghoneycutt-rsyslog (v0.23.0)
+  ├── ghoneycutt-common (v1.5.0)
+  ├── ghoneycutt-sysklogd (v1.0.1)
+  └── puppetlabs-stdlib (v4.11.0)
+```
+
+saz/timezone
+------------
+
+Smart parameter timezone=&gt;America/Denver
+
+``` bash
+[root@foreman ~]#  puppet module install -i /etc/puppet/environments/production/modules saz/timezone
+Notice: syntaxhighlightparing to install into /etc/puppet/environments/production/modules ...
+Notice: Downloading from https://forgeapi.puppetlabs.com ...
+Notice: Installing -- do not interrupt ...
+/etc/puppet/environments/production/modules
+└─┬ saz-timezone (v3.3.0)
+  └── puppetlabs-stdlib (v4.11.0)
+```
+
+sgnl05/colorprompt
+------------------
+
+Easy way to color root and per individual bash prompts. Liked the
+defaults.
+
+``` bash
+[root@foreman modules]# puppet module install -i /etc/puppet/environments/production/modules sgnl05/colorprompt
+Notice: syntaxhighlightparing to install into /etc/puppet/environments/production/modules ...
+Notice: Downloading from https://forgeapi.puppetlabs.com ...
+Notice: Installing -- do not interrupt ...
+/etc/puppet/environments/production/modules
+└─┬ sgnl05-colorprompt (v2.1.1)
+  └── puppetlabs-stdlib (v4.11.0)
+```
+
+LDAP Login Module configuration
+-------------------------------
+
+These three modules work well together in Foreman to setup SSSD with
+just parameters, provided lines 363-369 are commented out in
+yguenane/authconfig.
+
+``` bash
+walkamongus/sssd-1.2.0
+yguenane/authconfig-0.6.0
+trlinkin/nsswitch-1.2.0
+```
+
+Other Foreman Friendly Modules
+------------------------------
+
+These have worked well for some of my client use cases, but I'm not
+using snmp or setting ulimits at home.
+
+``` bash
+razorsedge-snmp-3.5.0
+erwbgy-limits-0.3.1
+```
+
+YAML
+----
+
+Putting it all together:
+
+``` bash
+---
+classes:
+  accounts:
+    users:
+      drew:
+        uid: 1001
+        gid: 1001
+        shell: /bin/bash
+        groups: wheel
+        pwhash: $6longprivatehashedpassword
+        comment: Drew User
+        ssh_key:
+          type: ssh-rsa
+          key: AAAAB.....longprivatekey
+          comment: drewderivative@gmail.com
+  chrony:
+    servers:
+    - drewserv.invadelabs.com
+  colorprompt: 
+  dotforward:
+    forwardemail: drewderivative@gmail.com
+  motd: 
+  postfix:
+    relayhost: drewserv.invadelabs.com
+  rsyslog:
+    kernel_target: /dev/null
+    log_server:
+    - drewserv.invadelabs.com
+    remote_logging: true
+  ssh:
+    permit_root_login: 'no'
+  timezone:
+    timezone: America/Denver
+```
+
+Further interests
+-----------------
+
+-   Deploying jenkins farm
+-   Write module to create /mnt/raid5 directory, mount nfs.
+-   Monitor + auto registration / deregistration with something like
+    zabbix/icinga/nagios
+-   Cassandra
+-   collectd
+-   /etc/hosts
+-   selenium
+-   gitlab
+-   pam
+
+To-do
+=====
+
+-   Setup hiera and switch from Foreman ENC
+-   Setup mcollective
+-   Setup r10k <https://docs.puppetlabs.com/pe/latest/r10k.html>
+
+How to unregister from services (like monitoring) when destroying? \*\*
+Researching plugin foreman hooks
