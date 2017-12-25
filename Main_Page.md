@@ -20,6 +20,9 @@ System Setup
 System Administration
 ---------------------
 
+-   [VirtualBoxPassSMBIOS](VirtualBoxPassSMBIOS "wikilink") - Passing
+    SMBios data to a Virtual Box guest to appear more hardware like
+    (Mainly for Windows licensing on EFI machines)
 -   [EmailViaNCorTelnet](EmailViaNCorTelnet "wikilink") - Send an email
     via nc or telnet
 -   [GoogleCloud](GoogleCloud "wikilink") - Quick setup on Google Cloud

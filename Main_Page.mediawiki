@@ -6,6 +6,7 @@ A collection of randomness I've encountered and configured in Linux.
 *[[ServerSetupFedora22]] - Fedora 22 Server Setup
 
 ==System Administration==
+*[[VirtualBoxPassSMBIOS]] - Passing SMBios data to a Virtual Box guest to appear more hardware like (Mainly for Windows licensing on EFI machines)
 *[[EmailViaNCorTelnet]] - Send an email via nc or telnet
 *[[GoogleCloud]] - Quick setup on Google Cloud
 *[[DockerOnUbuntu]] - Docker on Ubuntu + Foreman Integration
