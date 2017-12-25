@@ -18,12 +18,15 @@ A collection of randomness I've encountered and configured in Linux.
 ===Ansible===
 [https://github.com/drew-holt/ansible-invadelabs] - Invade Labs test environment for Ansible and VirtualBox on GitHub
 ===Docker===
-[[CentOS7Docker]] - Install and configure Docker on CentOS7
-[[DockerFile]] - Example Dockerfile 
-[[DockerCompose]] - Example docker-compose.yml
-[[DockerSwarm]] - Docker Swarm Usage
-[[CleanUpDocker]] - Clean up (delete) docker containers and images on local machine
-[[RemoveDockerCache]] - Prune Docker Cache
+* [[CentOS7Docker]] - Install and configure Docker on CentOS7
+* [[DockerFile]] - Example Dockerfile 
+* [[DockerCompose]] - Example docker-compose.yml
+* [[DockerSwarm]] - Docker Swarm Usage
+* [[CleanUpDocker]] - Clean up (delete) docker containers and images on local machine
+* [[RemoveDockerCache]] - Prune Docker Cache
+===Kubernetes===
+* Place holder
+* [[KubernetesInstallConfigure]] - Install and configure Kubernetes
 
 ==System Administration==
 *[[VirtualBoxPassSMBIOS]] - Passing SMBios data to a Virtual Box guest to appear more hardware like (Mainly for Windows licensing on EFI machines)
