@@ -1,25 +1,24 @@
 A collection of randomness I've encountered and configured in Linux.
 
 == System Setup ==
-*[[MultiMachineVagrantPuppetJenkinsNexus]] - Setup multimachine Vagrant boxes with 1 Pupper Server, 1 Puppet Client, and 1 Jenkins/Nexus VM
-*[[ServerSetupCentOS7]] - CentOS7 Server setup for drewserv with NFS/rsyslog/chrony/hw_mon services + qemu+kvm libvirt + Foreman + Docker
-*[[ServerSetupFedora22]] - Fedora 22 Setup for old server
+*[[MultiMachineVagrantPuppetJenkinsNexus]] - Multimachine Vagrant boxes with 1 Pupper Server, 1 Puppet Client, and 1 Jenkins/Nexus VM to deploy Tomcat via Puppet
+*[[ServerSetupCentOS7]] - CentOS7 Server setup  with NFS/rsyslog/chrony/hw_mon services + qemu+kvm libvirt + Foreman + Docker
+*[[ServerSetupFedora22]] - Fedora 22 Server Setup
 
 ==System Administration==
-*[[GoogleCloud]] - Quick setup on gcloud
+*[[EmailViaNCorTelnet]] - Send an email via nc or telnet
+*[[GoogleCloud]] - Quick setup on Google Cloud
 *[[DockerOnUbuntu]] - Docker on Ubuntu + Foreman Integration
 *[[LetsEncrypt]] - letsencrypt.org config
 *[[backuppartitionsddandsfdisk]] - Backup boot and system partitions with dd and sfdisk
-*[[KVM/qemu CentOS6]] - KVM notes
-*[[lxc]] - LXC (Linux Containers)
+*[[KVM/qemu CentOS6]] - KVM notes for CentOS6
+*[[lxc]] - LXC Setup and Usage(Linux Containers)
 *[[CustomKernelDebian]] - Compile a custom kernel from source in Debian / Ubuntu
 *[[OctoPrint]] - 3D printer interface
 *[[xDripNightScout]] - Configuration for Dexcom G5, xDrip, xDripPebble, and NightScout
 *[[nmcli]] - Joining wifi from nmcli
 *[[ddwrt-ddns-namecheap]] - Setup DDNS on DD-WRT for Namecheap
 *[[OpenVPN]] - OpenVPN Server Setup
-*[[MirrorWikipedia]] - Attempts to mirror wikipedia.org dumps
-*[[BootOptimization]] - Speed up F15 boot
 *[[ApachePAMunixAuth]] - Apache authentication against /etc/passwd
 *[[SendmailRelayGmailCentos]] - Sendmail with gmail relay in Fedora 10+
 *[[SendmailRelayISP]] - Sendmail using ISP as relay in Fedora 10+
@@ -27,11 +26,10 @@ A collection of randomness I've encountered and configured in Linux.
 *lm_sensors
 ** [[lm_sensorsPDMSi]] - /etc/sensors.d/pdsmi
 *[[iptables]] - iptables setup
-* DD-WRT
-**[[ddwrtdnsmasq]] - dnsmasq stuff for DD-WRT
+* DD-WRT - all things dd-wwrt
+**[[ddwrtdnsmasq]] - dnsmasq for DD-WRT
 **[[PXEiSCSIboot]] - Booting off SAN via PXE and iSCSI target
 **[[ddwrtopsware]] - opsware
-*[[NUTUPSMonitor]] - Configure NUT for UPS monitoring and alerts in Fedora 12-14
 *[[PortMirroringDDWRTiptables]] - Port mirroring with iptable in dd-wrt
 
 =====File Server=====
@@ -44,13 +42,12 @@ A collection of randomness I've encountered and configured in Linux.
 ** [[LoopBackSoftwareRaidMount]] - Imaging 2 of 3 RAID5 drives and loop back mounting for data extraction
 * [[ResizePV]] - Steps to resize PV
 *[[eCryptfs]] - Private Encrypted Folders
-*[[SambaTdbsamBackend]]
-*SELinux
+*[[SambaTdbsamBackend]] - Using Samba Tdbsam backend with unix login
 
 =====Backup=====
-*[[Backup DD-WRT Config]] (cron)
-*[[ClamAV Weekly Scan]] (cron)
-*[[MySQL Backup Script]] (cron)
+*[[Backup DD-WRT Config]] - DD-WRT backup script (cron)
+*[[ClamAV Weekly Scan]] - ClamAV script (cron)
+*[[MySQL Backup Script]] - MySQL Backup Script - (cron)
 *[[rsyncSSHkeys]] - Rsync over SSH - Different port / SSH Keys
 *[[ExternalUSBEncryptedLVM]] - Encrypted LVM for External USB (rsync backup)
 
@@ -66,14 +63,13 @@ A collection of randomness I've encountered and configured in Linux.
 *[[LinuxGPS]] - Linux GPS with sirfmon, gpsd, and more
 *[[mencoder]] - codecs(x264, lavc, xvid) / de-interlace filters / dvd
 *[[mplayer]] - dvd and dvb playback / xvmc and vdpau gpu decoder offload
-*[[Independant X-server]]
+*[[Independant X-server]] - Multi seat configuration for 2 seperate X servers on the same system
 *[[Lirc Config - MythTV / mplayer]]
-*[[Lirc, Pinnacle 800i, and Comcast Remote]] - ir-keymap.c
+*[[Lirc, Pinnacle 800i, and Comcast Remote]] - Remapping Comcast remote IR in ir-keymap.c kernel module
 *[[ConvertVideoToM4a]] - Convert video to m4a with ffmpeg copy
 *[[bluray]] - Playing and backing up Blu-ray discs in Linux
 ====Window Manager Related====
-*[[Compiz Profile Configuration]] - (Dual monitor/GiantCube/IceExploding Windows)
-*[[Fedora15Gnome3Tweaks]] - Fedora 15 / GNOME3 Tweaks
+*[[Compiz Profile Configuration]] - Dual monitor / GiantCube / Ice Exploding Windows
 *TomBoy notes - WebDav Sync
 
 ====Emulators====
@@ -88,5 +84,10 @@ A collection of randomness I've encountered and configured in Linux.
 *[[RikoAndroidMiniPC]] - Rikomagic MK802 III setup + picuntu
 *[[Windows Setup]] - Windows 8 / Windows 10 Setup
 *[[ChromebookSetup]] - Chromebook Setup
+
+==Outdated==
+*[[BootOptimization]] - Speed up Fedora15 boot
+*[[NUTUPSMonitor]] - Configure NUT for UPS monitoring and alerts in Fedora 12-14
+*[[Fedora15Gnome3Tweaks]] - Fedora 15 / GNOME3 Tweaks
 
 ==Misc.==

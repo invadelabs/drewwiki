@@ -9,25 +9,28 @@ System Setup
 ------------
 
 -   [MultiMachineVagrantPuppetJenkinsNexus](MultiMachineVagrantPuppetJenkinsNexus "wikilink") -
-    Setup multimachine Vagrant boxes with 1 Pupper Server, 1 Puppet
-    Client, and 1 Jenkins/Nexus VM
+    Multimachine Vagrant boxes with 1 Pupper Server, 1 Puppet Client,
+    and 1 Jenkins/Nexus VM to deploy Tomcat via Puppet
 -   [ServerSetupCentOS7](ServerSetupCentOS7 "wikilink") - CentOS7 Server
-    setup for drewserv with NFS/rsyslog/chrony/hw\_mon services +
-    qemu+kvm libvirt + Foreman + Docker
+    setup with NFS/rsyslog/chrony/hw\_mon services + qemu+kvm libvirt +
+    Foreman + Docker
 -   [ServerSetupFedora22](ServerSetupFedora22 "wikilink") - Fedora 22
-    Setup for old server
+    Server Setup
 
 System Administration
 ---------------------
 
--   [GoogleCloud](GoogleCloud "wikilink") - Quick setup on gcloud
+-   [EmailViaNCorTelnet](EmailViaNCorTelnet "wikilink") - Send an email
+    via nc or telnet
+-   [GoogleCloud](GoogleCloud "wikilink") - Quick setup on Google Cloud
 -   [DockerOnUbuntu](DockerOnUbuntu "wikilink") - Docker on Ubuntu +
     Foreman Integration
 -   [LetsEncrypt](LetsEncrypt "wikilink") - letsencrypt.org config
 -   [backuppartitionsddandsfdisk](backuppartitionsddandsfdisk "wikilink") -
     Backup boot and system partitions with dd and sfdisk
--   [KVM/qemu CentOS6](KVM/qemu_CentOS6 "wikilink") - KVM notes
--   [lxc](lxc "wikilink") - LXC (Linux Containers)
+-   [KVM/qemu CentOS6](KVM/qemu_CentOS6 "wikilink") - KVM notes for
+    CentOS6
+-   [lxc](lxc "wikilink") - LXC Setup and Usage(Linux Containers)
 -   [CustomKernelDebian](CustomKernelDebian "wikilink") - Compile a
     custom kernel from source in Debian / Ubuntu
 -   [OctoPrint](OctoPrint "wikilink") - 3D printer interface
@@ -37,9 +40,6 @@ System Administration
 -   [ddwrt-ddns-namecheap](ddwrt-ddns-namecheap "wikilink") - Setup DDNS
     on DD-WRT for Namecheap
 -   [OpenVPN](OpenVPN "wikilink") - OpenVPN Server Setup
--   [MirrorWikipedia](MirrorWikipedia "wikilink") - Attempts to mirror
-    wikipedia.org dumps
--   [BootOptimization](BootOptimization "wikilink") - Speed up F15 boot
 -   [ApachePAMunixAuth](ApachePAMunixAuth "wikilink") - Apache
     authentication against /etc/passwd
 -   [SendmailRelayGmailCentos](SendmailRelayGmailCentos "wikilink") -
@@ -52,14 +52,11 @@ System Administration
     -   [lm\_sensorsPDMSi](lm_sensorsPDMSi "wikilink") -
         /etc/sensors.d/pdsmi
 -   [iptables](iptables "wikilink") - iptables setup
--   DD-WRT
-    -   [ddwrtdnsmasq](ddwrtdnsmasq "wikilink") - dnsmasq stuff for
-        DD-WRT
+-   DD-WRT - all things dd-wwrt
+    -   [ddwrtdnsmasq](ddwrtdnsmasq "wikilink") - dnsmasq for DD-WRT
     -   [PXEiSCSIboot](PXEiSCSIboot "wikilink") - Booting off SAN via
         PXE and iSCSI target
     -   [ddwrtopsware](ddwrtopsware "wikilink") - opsware
--   [NUTUPSMonitor](NUTUPSMonitor "wikilink") - Configure NUT for UPS
-    monitoring and alerts in Fedora 12-14
 -   [PortMirroringDDWRTiptables](PortMirroringDDWRTiptables "wikilink") -
     Port mirroring with iptable in dd-wrt
 
@@ -82,14 +79,17 @@ System Administration
         extraction
 -   [ResizePV](ResizePV "wikilink") - Steps to resize PV
 -   [eCryptfs](eCryptfs "wikilink") - Private Encrypted Folders
--   [SambaTdbsamBackend](SambaTdbsamBackend "wikilink")
--   SELinux
+-   [SambaTdbsamBackend](SambaTdbsamBackend "wikilink") - Using Samba
+    Tdbsam backend with unix login
 
 ##### Backup
 
--   [Backup DD-WRT Config](Backup_DD-WRT_Config "wikilink") (cron)
--   [ClamAV Weekly Scan](ClamAV_Weekly_Scan "wikilink") (cron)
--   [MySQL Backup Script](MySQL_Backup_Script "wikilink") (cron)
+-   [Backup DD-WRT Config](Backup_DD-WRT_Config "wikilink") - DD-WRT
+    backup script (cron)
+-   [ClamAV Weekly Scan](ClamAV_Weekly_Scan "wikilink") - ClamAV script
+    (cron)
+-   [MySQL Backup Script](MySQL_Backup_Script "wikilink") - MySQL Backup
+    Script - (cron)
 -   [rsyncSSHkeys](rsyncSSHkeys "wikilink") - Rsync over SSH - Different
     port / SSH Keys
 -   [ExternalUSBEncryptedLVM](ExternalUSBEncryptedLVM "wikilink") -
@@ -115,12 +115,13 @@ Media
     de-interlace filters / dvd
 -   [mplayer](mplayer "wikilink") - dvd and dvb playback / xvmc and
     vdpau gpu decoder offload
--   [Independant X-server](Independant_X-server "wikilink")
+-   [Independant X-server](Independant_X-server "wikilink") - Multi seat
+    configuration for 2 seperate X servers on the same system
 -   [Lirc Config - MythTV /
     mplayer](Lirc_Config_-_MythTV_/_mplayer "wikilink")
 -   [Lirc, Pinnacle 800i, and Comcast
     Remote](Lirc,_Pinnacle_800i,_and_Comcast_Remote "wikilink") -
-    ir-keymap.c
+    Remapping Comcast remote IR in ir-keymap.c kernel module
 -   [ConvertVideoToM4a](ConvertVideoToM4a "wikilink") - Convert video to
     m4a with ffmpeg copy
 -   [bluray](bluray "wikilink") - Playing and backing up Blu-ray discs
@@ -129,10 +130,8 @@ Media
 #### Window Manager Related
 
 -   [Compiz Profile
-    Configuration](Compiz_Profile_Configuration "wikilink") - (Dual
-    monitor/GiantCube/IceExploding Windows)
--   [Fedora15Gnome3Tweaks](Fedora15Gnome3Tweaks "wikilink") - Fedora 15
-    / GNOME3 Tweaks
+    Configuration](Compiz_Profile_Configuration "wikilink") - Dual
+    monitor / GiantCube / Ice Exploding Windows
 -   TomBoy notes - WebDav Sync
 
 #### Emulators
@@ -156,6 +155,16 @@ Client Setup
 -   [Windows Setup](Windows_Setup "wikilink") - Windows 8 / Windows 10
     Setup
 -   [ChromebookSetup](ChromebookSetup "wikilink") - Chromebook Setup
+
+Outdated
+--------
+
+-   [BootOptimization](BootOptimization "wikilink") - Speed up Fedora15
+    boot
+-   [NUTUPSMonitor](NUTUPSMonitor "wikilink") - Configure NUT for UPS
+    monitoring and alerts in Fedora 12-14
+-   [Fedora15Gnome3Tweaks](Fedora15Gnome3Tweaks "wikilink") - Fedora 15
+    / GNOME3 Tweaks
 
 Misc.
 -----
