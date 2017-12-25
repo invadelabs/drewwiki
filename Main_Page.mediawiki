@@ -91,7 +91,7 @@ A collection of randomness I've encountered and configured in Linux.
 
 == Client Setup ==
 *[[DesktopSetup]] - Ubuntu 17.10 setup for drew-itx
-*[[Ubuntu 16.10 Setup]] - Ubuntu 17.10 Setup for laptop
+*[[Ubuntu 17.10 Setup]] - Ubuntu 17.10 Setup for laptop
 *[[OSX Setup]] - macOS 10.11 MBP Sierra setup
 *[[RaspberryPISetup]] - RaspberryPi setup for drew-pi
 *[[Pine64]] - Pine64 Armbian Notes

@@ -175,7 +175,7 @@ Client Setup
 
 -   [DesktopSetup](DesktopSetup "wikilink") - Ubuntu 17.10 setup for
     drew-itx
--   [Ubuntu 16.10 Setup](Ubuntu_16.10_Setup "wikilink") - Ubuntu 17.10
+-   [Ubuntu 17.10 Setup](Ubuntu_17.10_Setup "wikilink") - Ubuntu 17.10
     Setup for laptop
 -   [OSX Setup](OSX_Setup "wikilink") - macOS 10.11 MBP Sierra setup
 -   [RaspberryPISetup](RaspberryPISetup "wikilink") - RaspberryPi setup
