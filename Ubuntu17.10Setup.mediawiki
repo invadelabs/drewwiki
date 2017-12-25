@@ -1,27 +1,46 @@
 <pre>
-** Chrome
-** Insynq
+
 sudo apt-get update
 sudo apt-get upgrade -y
 sudo apt-get dist-upgrade
-sudo apt-get install keepass2 ssh ubuntu-restricted-extras vlc qbittorrent pidgin libreoffice icedtea-8-plugin
-# libreoffice brings in openjdk8
-sudo apt install tlp tlp-rdw # maximize battery life
-sudo tlp start
+
+sudo apt-get install -y etckeeper
+cd /etc
+sudo etckeeper init
+sudo vi .gitignore # remove sensitive files
+
 Disable guest
 sudo sh -c "echo 'allow-guest=false' >> /usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf"
 
 Show username
 gsettings set com.canonical.indicator.session show-real-name-on-panel true
 
-enable canonical extras
-
-sudo apt-get install unity-tweak-tool
-
-sudo apt-get install vim
-
-sudo update-alternatives --config editor
+sudo update-alternatives --set editor /usr/bin/vim.basic
 
 visudo:
 username ALL=(ALL) NOPASSWD: ALL
+
+sudo apt-get install \
+keepass2 rdesktop \
+lm-sensors p7zip-full exfat-utils exfat-fuse \
+vim ssh git \
+ubuntu-restricted-extras qbittorrent gimp \ 
+icedtea-8-plugin \
+wireshark  nmap \
+vlc vlc-plugin-fluidsynth ffmpeg atomicparsley \
+chrome-gnome-shell \
+gnome-tweaks
+
+** VirtualBox
+** Chrome
+** Insynq
+** Atom
+
+oracle-java8-installer
+cairo-dock
+adobe-flashplugin
+encfs youtube-dl nikto exiftool chkrootkit apache2-utils pidgin wavemon xd docker.io virtualenv python2.7-examples mailutils ansible namebench python-pip
+xchat
+pip (via apt)
+youtube-dl
 </pre>
