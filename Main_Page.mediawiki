@@ -16,7 +16,7 @@ A collection of randomness I've encountered and configured in Linux.
 ===Puppet===
 *[[MultiMachineVagrantPuppetJenkinsNexus]] - Multimachine Vagrant boxes with 1 Pupper Server, 1 Puppet Client, and 1 Jenkins/Nexus VM to deploy Tomcat via Puppet
 ===Ansible===
-[https://github.com/drew-holt/ansible-invadelabs] - Invade Labs test environment for Ansible and VirtualBox on GitHub
+* [https://github.com/drew-holt/ansible-invadelabs] - Invade Labs test environment for Ansible and VirtualBox on GitHub
 ===Docker===
 * [[CentOS7Docker]] - Install and configure Docker on CentOS7
 * [[DockerFile]] - Example Dockerfile 

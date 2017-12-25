@@ -42,8 +42,8 @@ Infrastructure Automation
 
 ### Ansible
 
-[1](https://github.com/drew-holt/ansible-invadelabs) - Invade Labs test
-environment for Ansible and VirtualBox on GitHub
+-   [1](https://github.com/drew-holt/ansible-invadelabs) - Invade Labs
+    test environment for Ansible and VirtualBox on GitHub
 
 ### Docker
 
