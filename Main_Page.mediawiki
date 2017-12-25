@@ -1,9 +1,22 @@
 A collection of randomness I've encountered and configured in Linux.
 
 == System Setup ==
-*[[MultiMachineVagrantPuppetJenkinsNexus]] - Multimachine Vagrant boxes with 1 Pupper Server, 1 Puppet Client, and 1 Jenkins/Nexus VM to deploy Tomcat via Puppet
 *[[ServerSetupCentOS7]] - CentOS7 Server setup  with NFS/rsyslog/chrony/hw_mon services + qemu+kvm libvirt + Foreman + Docker
 *[[ServerSetupFedora22]] - Fedora 22 Server Setup
+
+==Infrastructure Automation==
+===Chef===
+*[[InstallingChefServer]] - Installing Chef Server
+*[[KnifeBootstrapAWS]] - knife bootstrapping AWS instances
+*[[ChefEncryptedDataBags]] - Creating and using encrypted data bags
+*[[FoodcriticRubocop]] - Linting recipes with Foodcritic and Rubocop
+*[[TestingWithChefSpec]] - Examples of using ChefSpec for unit and integration tests in cookbooks
+*[[TestKitchenVagrant]] - Test Kitchen with Vagrant provisioner for testing cookbooks
+*[[TestKitchenDocker]] - Test Kitchen with Docker provisioner for testing cookbooks
+===Puppet===
+*[[MultiMachineVagrantPuppetJenkinsNexus]] - Multimachine Vagrant boxes with 1 Pupper Server, 1 Puppet Client, and 1 Jenkins/Nexus VM to deploy Tomcat via Puppet
+===Ansible===
+[https://github.com/drew-holt/ansible-invadelabs] - Invade Labs test environment for Ansible and VirtualBox on GitHub
 
 ==System Administration==
 *[[VirtualBoxPassSMBIOS]] - Passing SMBios data to a Virtual Box guest to appear more hardware like (Mainly for Windows licensing on EFI machines)

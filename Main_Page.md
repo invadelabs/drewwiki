@@ -8,14 +8,42 @@ A collection of randomness I've encountered and configured in Linux.
 System Setup
 ------------
 
--   [MultiMachineVagrantPuppetJenkinsNexus](MultiMachineVagrantPuppetJenkinsNexus "wikilink") -
-    Multimachine Vagrant boxes with 1 Pupper Server, 1 Puppet Client,
-    and 1 Jenkins/Nexus VM to deploy Tomcat via Puppet
 -   [ServerSetupCentOS7](ServerSetupCentOS7 "wikilink") - CentOS7 Server
     setup with NFS/rsyslog/chrony/hw\_mon services + qemu+kvm libvirt +
     Foreman + Docker
 -   [ServerSetupFedora22](ServerSetupFedora22 "wikilink") - Fedora 22
     Server Setup
+
+Infrastructure Automation
+-------------------------
+
+### Chef
+
+-   [InstallingChefServer](InstallingChefServer "wikilink") - Installing
+    Chef Server
+-   [KnifeBootstrapAWS](KnifeBootstrapAWS "wikilink") - knife
+    bootstrapping AWS instances
+-   [ChefEncryptedDataBags](ChefEncryptedDataBags "wikilink") - Creating
+    and using encrypted data bags
+-   [FoodcriticRubocop](FoodcriticRubocop "wikilink") - Linting recipes
+    with Foodcritic and Rubocop
+-   [TestingWithChefSpec](TestingWithChefSpec "wikilink") - Examples of
+    using ChefSpec for unit and integration tests in cookbooks
+-   [TestKitchenVagrant](TestKitchenVagrant "wikilink") - Test Kitchen
+    with Vagrant provisioner for testing cookbooks
+-   [TestKitchenDocker](TestKitchenDocker "wikilink") - Test Kitchen
+    with Docker provisioner for testing cookbooks
+
+### Puppet
+
+-   [MultiMachineVagrantPuppetJenkinsNexus](MultiMachineVagrantPuppetJenkinsNexus "wikilink") -
+    Multimachine Vagrant boxes with 1 Pupper Server, 1 Puppet Client,
+    and 1 Jenkins/Nexus VM to deploy Tomcat via Puppet
+
+### Ansible
+
+[1](https://github.com/drew-holt/ansible-invadelabs) - Invade Labs test
+environment for Ansible and VirtualBox on GitHub
 
 System Administration
 ---------------------
