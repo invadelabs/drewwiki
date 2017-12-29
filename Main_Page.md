@@ -33,6 +33,9 @@ Infrastructure Automation
     with Vagrant provisioner for testing cookbooks
 -   [TestKitchenDocker](TestKitchenDocker "wikilink") - Test Kitchen
     with Docker provisioner for testing cookbooks
+-   [ChefJenkinsGroovyShellOut](ChefJenkinsGroovyShellOut "wikilink") -
+    Shell out of recipe to use jenkins-cli to grab the encrypted or
+    unencrytped value of a secret using Jenkins Groovy
 
 ### Puppet
 
