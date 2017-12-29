@@ -192,19 +192,15 @@ Media
 Client Setup
 ------------
 
--   [DesktopSetup](DesktopSetup "wikilink") - Ubuntu 17.10 setup for
-    drew-itx
 -   [Ubuntu 17.10 Setup](Ubuntu_17.10_Setup "wikilink") - Ubuntu 17.10
     Setup for laptop
 -   [OSX Setup](OSX_Setup "wikilink") - macOS 10.11 MBP Sierra setup
+-   [Windows Setup](Windows_Setup "wikilink") - Windows 10 Laptop Setup
 -   [RaspberryPISetup](RaspberryPISetup "wikilink") - RaspberryPi setup
     for drew-pi
 -   [Pine64](Pine64 "wikilink") - Pine64 Armbian Notes
 -   [RikoAndroidMiniPC](RikoAndroidMiniPC "wikilink") - Rikomagic MK802
     III setup + picuntu
--   [Windows Setup](Windows_Setup "wikilink") - Windows 8 / Windows 10
-    Setup
--   [ChromebookSetup](ChromebookSetup "wikilink") - Chromebook Setup
 
 Outdated
 --------
