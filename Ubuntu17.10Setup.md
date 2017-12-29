@@ -3,8 +3,8 @@ title: Ubuntu17.10Setup
 layout: default
 ---
 
-After inistial install
-======================
+After initial install
+=====================
 
     sudo apt-get update
     sudo apt-get upgrade -y
