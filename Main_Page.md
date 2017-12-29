@@ -36,6 +36,7 @@ Infrastructure Automation
 -   [ChefJenkinsGroovyShellOut](ChefJenkinsGroovyShellOut "wikilink") -
     Shell out of recipe to use jenkins-cli to grab the encrypted or
     unencrytped value of a secret using Jenkins Groovy
+-   [ChefMisc](ChefMisc "wikilink") - Misc Chef
 
 ### Puppet
 

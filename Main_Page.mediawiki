@@ -14,6 +14,7 @@ A collection of randomness I've encountered and configured in Linux.
 *[[TestKitchenVagrant]] - Test Kitchen with Vagrant provisioner for testing cookbooks
 *[[TestKitchenDocker]] - Test Kitchen with Docker provisioner for testing cookbooks
 *[[ChefJenkinsGroovyShellOut]] - Shell out of recipe to use jenkins-cli to grab the encrypted or unencrytped value of a secret using Jenkins Groovy
+*[[ChefMisc]] - Misc Chef
 ===Puppet===
 *[[MultiMachineVagrantPuppetJenkinsNexus]] - Multimachine Vagrant boxes with 1 Pupper Server, 1 Puppet Client, and 1 Jenkins/Nexus VM to deploy Tomcat via Puppet
 ===Ansible===
