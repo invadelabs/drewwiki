@@ -1,0 +1,12 @@
+= berkshelf selfhosted certificate authenticity =
+<syntaxhighlight>
+$ cat ~/.berkshelf/config.json
+{  
+   "ssl":{  
+      "verify":false
+   }
+}
+</syntaxhighlight>
+
+=Freeze Chef cookbooks for versioning=
+​use -- freeze on knife cookbook upload job
