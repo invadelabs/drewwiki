@@ -63,6 +63,10 @@ Install Main Apps
     ** Studio 3T (mongodb browswer)
     ** IntelliJ
     ** Android Studio
+    ** Eclipse
+    ** NetBeans
+    ** IDLE
+    ** PyCharm
 
     oracle-java8-installer
     cairo-dock
