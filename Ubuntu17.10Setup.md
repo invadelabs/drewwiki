@@ -59,6 +59,10 @@ Install Main Apps
     ** Ramlog or equivalent for SSD
     ** nvm
     ** rvm
+    ** sqlitebrowser
+    ** Studio 3T (mongodb browswer)
+    ** IntelliJ
+    ** Android Studio
 
     oracle-java8-installer
     cairo-dock
