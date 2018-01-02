@@ -102,7 +102,7 @@ A collection of randomness I've encountered and configured in Linux.
 *[[N64Mupen64plus]] - Using mupen64plus (N64 Emulator) in Linux
 
 == Client Setup ==
-*[[Ubuntu 17.10 Setup]] - Ubuntu 17.10 Setup for laptop
+*[[Ubuntu 17.10 Setup]] - Ubuntu 17.10 workstation / laptop Setup
 *[[OSX Setup]] - macOS 10.11 MBP Sierra setup
 *[[Windows Setup]] - Windows 10 Laptop Setup
 *[[RaspberryPISetup]] - RaspberryPi setup for drew-pi
