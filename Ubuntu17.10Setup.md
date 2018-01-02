@@ -51,44 +51,43 @@ Install Main Apps
     chrome-gnome-shell \
     gnome-tweaks
 
+    ** Atom (snap)
+    ** sqlitebrowser (snap)
     ** VirtualBox
     ** Chrome, verify Google Hangouts
     ** Insynq
-    ** Atom
     ** Synergy
     ** Ramlog or equivalent for SSD
     ** nvm
     ** rvm
-    ** sqlitebrowser
     ** Studio 3T (mongodb browswer)
     ** IntelliJ
     ** Android Studio
     ** Eclipse
     ** NetBeans
-    ** IDLE
     ** PyCharm
 
     drew@drew-8570w:~$ snap list
-    Name                  Version                  Rev   Developer       Notes
-    atom                  1.23.1                   109   snapcrafters    classic
-    core                  16-2.29.4.2              3604  canonical       core
-    cumulonimbus          1.6.7                    18    snapcrafters    -
-    drive                 current                  22    fireeye         -
-    gitter-desktop        3.1.0                    20    snapcrafters    -
-    go                    1.9.2                    1016  mwhudson        classic
-    jenkins               2.8                      6     snapcrafters    -
-    juju                  2.3.1                    3106  canonical       classic
-    kubectl               1.9.0                    266   canonical       classic
-    lxd                   2.21                     5408  canonical       -
-    mongo33               3.3.9                    2     niemeyer        -
-    openhab               2.0.0                    167   openhab         -
-    picard                1.4.2                    2     pachulo         -
-    pycharm-professional  2017.3.2                 46    jetbrains       classic
-    spotify               1.0.70.399.g5ffabd56-26  5     spotify         -
-    sqlitebrowser-casept  3.9.1                    2     casept          -
-    vault                 v0.9.0                   236   snapcrafters    -
-    vscode                1.19.1-1513676564        22    flexiondotorg   classic
-    whois-snap            0.1                      1     marius-quabeck  -
+    Name                  Version                  Rev   Developer      Notes
+    atom                  1.23.1                   109   snapcrafters   classic
+    core                  16-2.29.4.2              3604  canonical      core
+    cumulonimbus          1.6.7                    18    snapcrafters   -
+    drive                 current                  22    fireeye        -
+    gitter-desktop        3.1.0                    20    snapcrafters   -
+    go                    1.9.2                    1016  mwhudson       classic
+    jenkins               2.8                      6     snapcrafters   -
+    juju                  2.3.1                    3106  canonical      classic
+    kubectl               1.9.0                    266   canonical      classic
+    lxd                   2.21                     5408  canonical      -
+    mongo33               3.3.9                    2     niemeyer       -
+    openhab               2.0.0                    167   openhab        -
+    picard                1.4.2                    2     pachulo        -
+    pycharm-professional  2017.3.2                 46    jetbrains      classic
+    spotify               1.0.70.399.g5ffabd56-26  5     spotify        -
+    sqlitebrowser-casept  3.9.1                    2     casept         -
+    vault                 v0.9.0                   236   snapcrafters   -
+    vscode                1.19.1-1513676564        22    flexiondotorg  classic
+
 
     oracle-java8-installer
     cairo-dock
