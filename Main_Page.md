@@ -71,6 +71,8 @@ Infrastructure Automation
 System Administration
 ---------------------
 
+-   [ForceTextConsoleResolution](ForceTextConsoleResolution "wikilink") -
+    Force text console resolution when using remote KVM
 -   [VirtualBoxPassSMBIOS](VirtualBoxPassSMBIOS "wikilink") - Passing
     SMBios data to a Virtual Box guest to appear more hardware like
     (Mainly for Windows licensing on EFI machines)
