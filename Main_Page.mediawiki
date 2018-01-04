@@ -32,6 +32,7 @@ A collection of randomness I've encountered and configured in Linux.
 * [[KubernetesInstallConfigure]] - Install and configure Kubernetes
 
 ==System Administration==
+*[https://github.com/drew-holt/selenium-invadelabs] - GitHub: Selenium dockerized with Stand Alone Chrome and Firefox on separate ports.
 *[https://github.com/drew-holt/nagios-invadelabs NagiosDocker] - GitHub: Invade Labs Nagios config using Docker
 *[[ForceTextConsoleResolution]] - Force text console resolution when using remote KVM
 *[[VirtualBoxPassSMBIOS]] - Passing SMBios data to a Virtual Box guest to appear more hardware like (Mainly for Windows licensing on EFI machines)
