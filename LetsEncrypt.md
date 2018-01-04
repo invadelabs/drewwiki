@@ -10,7 +10,7 @@ certbot
 
 ### Install certbot
 
-    $ sudo apt-get install python-certbot-apache -t jessie-backports
+    $ sudo apt-get install certbot
 
 ### Obtain / Renew certs
 

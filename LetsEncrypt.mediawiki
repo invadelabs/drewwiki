@@ -3,7 +3,7 @@
 
 === Install certbot ===
 <pre>
-$ sudo apt-get install python-certbot-apache -t jessie-backports
+$ sudo apt-get install certbot
 </pre>
 
 === Obtain / Renew certs ===
