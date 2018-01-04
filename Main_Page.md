@@ -72,9 +72,9 @@ Infrastructure Automation
 System Administration
 ---------------------
 
--   [1](https://github.com/drew-holt/selenium-invadelabs) - GitHub:
-    Selenium dockerized with Stand Alone Chrome and Firefox on separate
-    ports.
+-   [SeleniumDocker](https://github.com/drew-holt/selenium-invadelabs) -
+    GitHub: Selenium dockerized with Stand Alone Chrome and Firefox on
+    separate ports.
 -   [NagiosDocker](https://github.com/drew-holt/nagios-invadelabs) -
     GitHub: Invade Labs Nagios config using Docker
 -   [ForceTextConsoleResolution](ForceTextConsoleResolution "wikilink") -
