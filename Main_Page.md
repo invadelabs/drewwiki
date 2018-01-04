@@ -72,6 +72,8 @@ Infrastructure Automation
 System Administration
 ---------------------
 
+-   [NagiosDocker](https://github.com/drew-holt/nagios-invadelabs) -
+    GitHub: Invade Labs Nagios config using Docker
 -   [ForceTextConsoleResolution](ForceTextConsoleResolution "wikilink") -
     Force text console resolution when using remote KVM
 -   [VirtualBoxPassSMBIOS](VirtualBoxPassSMBIOS "wikilink") - Passing
