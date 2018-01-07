@@ -38,6 +38,17 @@ https://extensions.gnome.org/extension/307/dash-to-dock/
 ==  Set gnome-screenshot default save directory ==
 ?
 
+== Gnome3 Fix alt+tab to move across widnows and not just grouped apps ==
+<pre>Open dconf-editor
+Go to org/gnome/desktop/wm/keybindings
+Move the value '<Alt>Tab' from switch-applications to switch-windows
+Optionally move '<Shift><Alt>Tab' from switch-applications-backward to switch-windows-backward
+If you want switch-windows to work across desktops, not just in the current desktop, you can also uncheck org/gnome/shell/window-switcher/current-workspace-only (Courtesy of @CharlBotha)
+Close dconf-editor
+Press <Alt>F2, then type r to restart Gnome.
+</pre>
+[https://superuser.com/questions/394376/how-to-prevent-gnome-shells-alttab-from-grouping-windows-from-similar-apps]
+
 =Install Main Apps=
 <syntaxhighlight>
 sudo apt-get install \
