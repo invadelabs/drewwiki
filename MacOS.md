@@ -57,10 +57,13 @@ from brew
     openssl
     p7zip
     pstree
+    psutils
     watch
     sqlite
     wget
     xz
+
+    $ brew cask install java vlc atom vagrant vlc google-drive vnc-viewer sublime keepassx
 
 extra deps?
 
