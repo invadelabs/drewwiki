@@ -71,8 +71,8 @@ Infrastructure Automation
 
 ### OpenShift
 
-[OpenShiftOrigin](OpenShiftOrigin "wikilink") - placeholder
-[MiniShift](MiniShift "wikilink") - Minishift install and configure
+-   [OpenShiftOrigin](OpenShiftOrigin "wikilink") - placeholder
+-   [MiniShift](MiniShift "wikilink") - Minishift install and configure
 
 System Administration
 ---------------------
