@@ -27,9 +27,14 @@ A collection of randomness I've encountered and configured in Linux.
 * [[DockerSwarm]] - Docker Swarm Usage
 * [[CleanUpDocker]] - Clean up (delete) docker containers and images on local machine
 * [[RemoveDockerCache]] - Prune Docker Cache
+
 ===Kubernetes===
-* Place holder
+* [[MiniKube]] - MiniKube install and configure
 * [[KubernetesInstallConfigure]] - Install and configure Kubernetes
+
+===OpenShift===
+[[OpenShiftOrigin]] - placeholder
+[[MiniShift]] - Minishift install and configure
 
 ==System Administration==
 *[https://github.com/drew-holt/selenium-invadelabs SeleniumDocker] - GitHub: Selenium dockerized with Stand Alone Chrome and Firefox on separate ports.

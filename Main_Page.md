@@ -65,9 +65,14 @@ Infrastructure Automation
 
 ### Kubernetes
 
--   Place holder
+-   [MiniKube](MiniKube "wikilink") - MiniKube install and configure
 -   [KubernetesInstallConfigure](KubernetesInstallConfigure "wikilink") -
     Install and configure Kubernetes
+
+### OpenShift
+
+[OpenShiftOrigin](OpenShiftOrigin "wikilink") - placeholder
+[MiniShift](MiniShift "wikilink") - Minishift install and configure
 
 System Administration
 ---------------------
