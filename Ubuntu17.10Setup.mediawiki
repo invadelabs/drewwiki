@@ -32,6 +32,12 @@ visudo:
 username ALL=(ALL) NOPASSWD: ALL
 </syntaxhighlight>
 
+== Dash to Dock ==
+https://extensions.gnome.org/extension/307/dash-to-dock/
+
+==  Set gnome-screenshot default save directory ==
+?
+
 =Install Main Apps=
 <syntaxhighlight>
 sudo apt-get install \

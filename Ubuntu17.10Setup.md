@@ -36,6 +36,16 @@ Set passwordless sudo
     visudo:
     username ALL=(ALL) NOPASSWD: ALL
 
+Dash to Dock
+------------
+
+<https://extensions.gnome.org/extension/307/dash-to-dock/>
+
+Set gnome-screenshot default save directory
+-------------------------------------------
+
+?
+
 Install Main Apps
 =================
 
