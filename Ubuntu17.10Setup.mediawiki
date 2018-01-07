@@ -37,7 +37,6 @@ https://extensions.gnome.org/extension/307/dash-to-dock/
 
 ==  Set gnome-screenshot default save directory ==
 ?
-
 == Gnome3 Fix alt+tab to move across widnows and not just grouped apps ==
 <pre>Open dconf-editor
 Go to org/gnome/desktop/wm/keybindings
@@ -48,6 +47,17 @@ Close dconf-editor
 Press <Alt>F2, then type r to restart Gnome.
 </pre>
 [https://superuser.com/questions/394376/how-to-prevent-gnome-shells-alttab-from-grouping-windows-from-similar-apps]
+
+== Gnome Tweak Tool ==
+<pre>
+TopIcons-plus - for insync prime, slack
+Extension update notifier
+Freon
+Status area horizontal spacing
+$ ~/.local/share/gnome-shell/extensions
+sudo apt-get install chrome-gnome-shell
+* restart GNOME Shell (Alt+F2, r, Enter) and enable the extension through gnome-tweak-tool.
+</pre>
 
 =Install Main Apps=
 <syntaxhighlight>

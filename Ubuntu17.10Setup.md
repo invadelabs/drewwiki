@@ -59,6 +59,17 @@ Gnome3 Fix alt+tab to move across widnows and not just grouped apps
 
 [1](https://superuser.com/questions/394376/how-to-prevent-gnome-shells-alttab-from-grouping-windows-from-similar-apps)
 
+Gnome Tweak Tool
+----------------
+
+    TopIcons-plus - for insync prime, slack
+    Extension update notifier
+    Freon
+    Status area horizontal spacing
+    $ ~/.local/share/gnome-shell/extensions
+    sudo apt-get install chrome-gnome-shell
+    * restart GNOME Shell (Alt+F2, r, Enter) and enable the extension through gnome-tweak-tool.
+
 Install Main Apps
 =================
 
