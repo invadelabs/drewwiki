@@ -50,6 +50,9 @@ Infrastructure Automation
     GitHub: Invade Labs test environment for Ansible with VirtualBox VMs
     running Docker in a dind cluster
 
+Containerization
+----------------
+
 ### Docker
 
 -   [CentOS7Docker](CentOS7Docker "wikilink") - Install and configure
