@@ -3,6 +3,9 @@ title: MultiMachineVagrantPuppetJenkinsNexus
 layout: default
 ---
 
+Multimachine Vagrant boxes with 1 Puppet Server, 1 Puppet Client, and 1
+Jenkins/Nexus VM to deploy Tomcat via Puppet
+
 Vagrant Setup
 =============
 
