@@ -41,7 +41,7 @@ Infrastructure Automation
 ### Puppet
 
 -   [MultiMachineVagrantPuppetJenkinsNexus](MultiMachineVagrantPuppetJenkinsNexus "wikilink") -
-    Multimachine Vagrant boxes with 1 Pupper Server, 1 Puppet Client,
+    Multimachine Vagrant boxes with 1 Puppet Server, 1 Puppet Client,
     and 1 Jenkins/Nexus VM to deploy Tomcat via Puppet
 
 ### Ansible
