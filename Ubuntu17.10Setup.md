@@ -89,6 +89,7 @@ Install Main Apps
     ** sqlitebrowser
     ** VirtualBox
     ** Vagrant
+    ** vagrant plugin install vagrant-berkshelf
     ** vagrant plugin install berkshelf
     ** Docker
     ** Chrome, verify Google Hangouts
