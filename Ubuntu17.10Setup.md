@@ -85,9 +85,11 @@ Install Main Apps
     chrome-gnome-shell \
     gnome-tweaks
 
-    ** Atom (snap)
-    ** sqlitebrowser (snap)
+    ** Atom
+    ** sqlitebrowser
     ** VirtualBox
+    ** Vagrant
+    ** Docker
     ** Chrome, verify Google Hangouts
     ** Insynq
     ** Synergy
