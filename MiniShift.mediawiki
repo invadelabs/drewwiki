@@ -1,0 +1,25 @@
+=Install oc openshift client=
+Pull from [https://github.com/openshift/origin/releases CLI tool]
+
+Or from Red Hat [https://docs.openshift.com/enterprise/3.0/cli_reference/get_started_cli.html]
+
+=Install Minishift=
+Pull from [https://github.com/minishift/minishift/releases github.com/minishift]
+
+=Use Minishift with Virtual box=
+<syntaxhighlight>
+minishift start --vm-driver=virtualbox
+</syntaxhighlight>
+
+=Login, deploy an app, expose, describe it=
+<syntaxhighlight>
+./oc login
+
+./oc new-app centos/httpd-24-centos7~https://github.com/drew-holt/httpd-ex
+
+./oc status
+
+./oc expose svc/httpd-ex
+
+./oc describe deploymentconfig httpd-ex
+</syntaxhighlight>
