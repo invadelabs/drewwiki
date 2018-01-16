@@ -35,7 +35,6 @@ A collection of randomness I've encountered and configured in Linux.
 * [[KubernetesInstallConfigure]] - Install and configure Kubernetes
 
 ===OpenShift===
-* [[OpenShiftOrigin]] - placeholder
 * [[MiniShift]] - Minishift install and configure
 
 ==System Administration==
