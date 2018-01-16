@@ -1,0 +1,65 @@
+Notes [https://kubernetes.io/docs/getting-started-guides/minikube/] [https://kubernetes.io/docs/concepts/containers/images/#using-a-private-registry] [https://kubernetes.io/docs/getting-started-guides/ubuntu/local/]
+
+Ubuntu Minikube VirtualBox
+
+=Install kubectl=
+<syntaxhighlight>
+sudo snap install juju --classic
+sudo snap install kubectl --classic
+</syntaxhighlight>
+
+=Install and place minikube=
+Drop into /usr/local/bin/minikube
+<syntaxhighlight>
+curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.24.1/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
+</syntaxhighlight>
+
+=Start Minikube with VirtualBox=
+<syntaxhighlight>
+minikube start --vm-driver=virtualbox
+</syntaxhighlight>
+
+=Setup environment=
+<syntaxhighlight>
+eval $(minikube docker-env)
+docker ps
+</syntaxhighlight>
+
+=Add bash completion for minikube and kubectl=
+<syntaxhighlight>
+kubectl completion bash >> ~/.bash_completion
+minikube completion bash >> ~/.bash_completion
+source ~/.bash_profile
+</syntaxhighlight>
+
+=Start a sample container=
+<syntaxhighlight>
+drew@drew-8570w:~$ kubectl run hello-minikube --image=k8s.gcr.io/echoserver:1.4 --port 8080
+deployment "hello-minikube" created
+</syntaxhighlight>
+
+==Expose an endpoint into the container==
+<syntaxhighlight>
+drew@drew-8570w:~$ kubectl expose deployment hello-minikube --type=NodePort
+service "hello-minikube" exposed
+drew@drew-8570w:~$ kubectl get pod
+NAME                              READY     STATUS    RESTARTS   AGE
+hello-minikube-7844bdb9c6-ntm28   1/1       Running   0          30s
+
+drew@drew-8570w:~$ curl $(minikube service hello-minikube --url)
+ curl http://192.168.99.100:31919
+</syntaxhighlight>
+
+=Notes=
+Start, drop, delete, checkout k8s dashboard, status, etc:
+<syntaxhighlight>
+minikube get-k8s-versions
+
+minikube stop
+
+minikube delete
+
+minikube dashboard
+
+minikube status
+</syntaxhighlight>
