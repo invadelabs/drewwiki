@@ -10,7 +10,7 @@ Premise
 =======
 
 Started around 1PM MST off and on through the day and spent roughly 5
-hours on the test.
+hours on the this.
 
 -   30 minutes to fork each repo and setup up build triggers from
     bitbucket to GC Container Registry

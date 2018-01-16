@@ -1,7 +1,7 @@
 CI/CD example of a 4 container weather application using Google Container Register and Google Kubernetes Clusters
 
 =Premise=
-Started around 1PM MST off and on through the day and spent roughly 5 hours on the test.
+Started around 1PM MST off and on through the day and spent roughly 5 hours on the this.
 * 30 minutes to fork each repo and setup up build triggers from bitbucket to GC Container Registry
 * 1 hour looking into each containers configuration
 * 30mins due to npm (network?) issue when building weather-ui, resolved
@@ -10,6 +10,7 @@ Started around 1PM MST off and on through the day and spent roughly 5 hours on
 * 1 hour looking at different code in repo to understand why weather-geo and weather-api we're not returning any data from Dark Sky / Google Maps
 * 1 hour working on issues with Ubuntu 17.10 and not being able to use 'dep' to pull down go dependencies. The 'dep' install instructions are all for homebrew. When I ran the linux-x86_64 binary it wasn't letting me compile with my $GOPATH set correctly.
  
+
 =Notes=
 * Note: I don't know Go however from a CI/CD perspective all of the containers were deployed via build triggers from BitBucket to a k8's cluster with the correct configuration.
 * Note: I don't know Go, but I would have likely been able to troubleshoot the weather-api and weather-geo containers had my Ubuntu laptop not had issues working with the 'dep' tool.
