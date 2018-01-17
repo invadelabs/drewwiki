@@ -10,7 +10,7 @@ System Setup
 
 -   [ServerSetupCentOS7](ServerSetupCentOS7 "wikilink") - CentOS7 Server
     setup with NFS/rsyslog/chrony/hw\_mon services + qemu+kvm libvirt +
-    Puppet Foreman + Docker
+    Puppet + Foreman + Docker
 -   [ServerSetupFedora22](ServerSetupFedora22 "wikilink") - Fedora 22
     Server Setup
 
