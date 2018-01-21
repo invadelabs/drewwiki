@@ -23,6 +23,9 @@ A collection of randomness I've encountered and configured in Linux.
 *[[TerraformExamples]] - Terraform examples placeholder
 
 ==Containerization==
+===LXC===
+*[[lxc]] - LXC Setup and Usage
+
 ===Docker===
 * [[CentOS7Docker]] - Install and configure Docker on CentOS7
 * [[DockerFile]] - Example Dockerfile 

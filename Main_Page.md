@@ -58,6 +58,10 @@ Infrastructure Automation
 Containerization
 ----------------
 
+### LXC
+
+-   [lxc](lxc "wikilink") - LXC Setup and Usage
+
 ### Docker
 
 -   [CentOS7Docker](CentOS7Docker "wikilink") - Install and configure
