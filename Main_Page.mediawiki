@@ -4,8 +4,9 @@ A collection of randomness I've encountered and configured in Linux.
 *[[ServerSetupCentOS7]] - CentOS7 Server setup  with NFS/rsyslog/chrony/hw_mon services + qemu+kvm libvirt + Puppet + Foreman + Docker
 *[[ServerSetupFedora22]] - Fedora 22 Server Setup
 
-==Infrastructure Automation==
-===Chef===
+==Infrastructure==
+===Infrastructure Automation===
+====Chef====
 *[[InstallingChefServer]] - Installing Chef Server
 *[[KnifeBootstrapAWS]] - knife bootstrapping AWS instances
 *[[ChefEncryptedDataBags]] - Creating and using encrypted data bags
@@ -15,18 +16,18 @@ A collection of randomness I've encountered and configured in Linux.
 *[[TestKitchenDocker]] - Test Kitchen with Docker provisioner for testing cookbooks
 *[[ChefJenkinsGroovyShellOut]] - Shell out of recipe to use jenkins-cli to grab the encrypted or unencrytped value of a secret using Jenkins Groovy
 *[[ChefMisc]] - Misc Chef
-===Puppet===
+====Puppet====
 *[[MultiMachineVagrantPuppetJenkinsNexus]] - Multimachine Vagrant boxes with 1 Puppet Server, 1 Puppet Client, and 1 Jenkins/Nexus VM to deploy Tomcat via Puppet
-===Ansible===
+====Ansible====
 *[https://github.com/drew-holt/ansible-invadelabs AnsibleVirtualboxDocker] - GitHub: Invade Labs test environment for Ansible with VirtualBox VMs running Docker in a dind cluster
-===Terraform===
+====Terraform====
 *[[TerraformExamples]] - Terraform examples placeholder
 
-==Containerization==
-===LXC===
+===Containerization===
+====LXC====
 *[[lxc]] - LXC Setup and Usage
 
-===Docker===
+====Docker====
 *[[DockerOnUbuntu]] - Docker on Ubuntu + Foreman Integration
 *[[CentOS7Docker]] - Install and configure Docker on CentOS7
 *[[DockerFile]] - Example Dockerfile 
@@ -35,14 +36,14 @@ A collection of randomness I've encountered and configured in Linux.
 *[[CleanUpDocker]] - Clean up (delete) docker containers and images on local machine
 *[[RemoveDockerCache]] - Prune Docker Cache
 
-===Kubernetes===
+====Kubernetes====
 *[[KubernetesClusterGoogleCloud]] - CI/CD example of a 4 container weather application using Google Container Register and Google Kubernetes Clusters
 *[[MiniKube]] - MiniKube install and configure
 
-===OpenShift===
+====OpenShift====
 *[[MiniShift]] - Minishift install and configure
 
-== Virtualization / Hypervisor / Cloud==
+=== Virtualization / Hypervisor / Cloud===
 *[[VirtualBoxPassSMBIOS]] - Passing SMBios data to a Virtual Box guest to appear more hardware like (Mainly for Windows licensing on EFI machines)
 *[[GoogleCloud]] - Quick setup on Google Cloud
 *[[KVM/qemu CentOS6]] - KVM notes for CentOS6

@@ -14,10 +14,12 @@ System Setup
 -   [ServerSetupFedora22](ServerSetupFedora22 "wikilink") - Fedora 22
     Server Setup
 
-Infrastructure Automation
--------------------------
+Infrastructure
+--------------
 
-### Chef
+### Infrastructure Automation
+
+#### Chef
 
 -   [InstallingChefServer](InstallingChefServer "wikilink") - Installing
     Chef Server
@@ -38,31 +40,30 @@ Infrastructure Automation
     unencrytped value of a secret using Jenkins Groovy
 -   [ChefMisc](ChefMisc "wikilink") - Misc Chef
 
-### Puppet
+#### Puppet
 
 -   [MultiMachineVagrantPuppetJenkinsNexus](MultiMachineVagrantPuppetJenkinsNexus "wikilink") -
     Multimachine Vagrant boxes with 1 Puppet Server, 1 Puppet Client,
     and 1 Jenkins/Nexus VM to deploy Tomcat via Puppet
 
-### Ansible
+#### Ansible
 
 -   [AnsibleVirtualboxDocker](https://github.com/drew-holt/ansible-invadelabs) -
     GitHub: Invade Labs test environment for Ansible with VirtualBox VMs
     running Docker in a dind cluster
 
-### Terraform
+#### Terraform
 
 -   [TerraformExamples](TerraformExamples "wikilink") - Terraform
     examples placeholder
 
-Containerization
-----------------
+### Containerization
 
-### LXC
+#### LXC
 
 -   [lxc](lxc "wikilink") - LXC Setup and Usage
 
-### Docker
+#### Docker
 
 -   [DockerOnUbuntu](DockerOnUbuntu "wikilink") - Docker on Ubuntu +
     Foreman Integration
@@ -77,19 +78,18 @@ Containerization
 -   [RemoveDockerCache](RemoveDockerCache "wikilink") - Prune Docker
     Cache
 
-### Kubernetes
+#### Kubernetes
 
 -   [KubernetesClusterGoogleCloud](KubernetesClusterGoogleCloud "wikilink") -
     CI/CD example of a 4 container weather application using Google
     Container Register and Google Kubernetes Clusters
 -   [MiniKube](MiniKube "wikilink") - MiniKube install and configure
 
-### OpenShift
+#### OpenShift
 
 -   [MiniShift](MiniShift "wikilink") - Minishift install and configure
 
-Virtualization / Hypervisor / Cloud
------------------------------------
+### Virtualization / Hypervisor / Cloud
 
 -   [VirtualBoxPassSMBIOS](VirtualBoxPassSMBIOS "wikilink") - Passing
     SMBios data to a Virtual Box guest to appear more hardware like
