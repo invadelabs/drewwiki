@@ -107,7 +107,6 @@ System Administration
     Backup boot and system partitions with dd and sfdisk
 -   [KVM/qemu CentOS6](KVM/qemu_CentOS6 "wikilink") - KVM notes for
     CentOS6
--   [lxc](lxc "wikilink") - LXC Setup and Usage(Linux Containers)
 -   [CustomKernelDebian](CustomKernelDebian "wikilink") - Compile a
     custom kernel from source in Debian / Ubuntu
 -   [OctoPrint](OctoPrint "wikilink") - 3D printer interface

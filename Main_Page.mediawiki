@@ -50,7 +50,6 @@ A collection of randomness I've encountered and configured in Linux.
 *[[LetsEncrypt]] - letsencrypt.org config
 *[[backuppartitionsddandsfdisk]] - Backup boot and system partitions with dd and sfdisk
 *[[KVM/qemu CentOS6]] - KVM notes for CentOS6
-*[[lxc]] - LXC Setup and Usage(Linux Containers)
 *[[CustomKernelDebian]] - Compile a custom kernel from source in Debian / Ubuntu
 *[[OctoPrint]] - 3D printer interface
 *[[xDripNightScout]] - Configuration for Dexcom G5, xDrip, xDripPebble, and NightScout
