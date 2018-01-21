@@ -237,43 +237,37 @@ Setup
 
 ### terraform destroy
 
-drew@drew-8570w:~/terraform$ ./terraform destroy
-aws\_instance.invadelabs-web001: Refreshing state... (ID:
-i-08e94c2ef875fe3fa)
+    drew@drew-8570w:~/terraform$ ./terraform destroy
+    aws_instance.invadelabs-web001: Refreshing state... (ID: i-08e94c2ef875fe3fa)
 
-An execution plan has been generated and is shown below. Resource
-actions are indicated with the following symbols:
+    An execution plan has been generated and is shown below.
+    Resource actions are indicated with the following symbols:
+      - destroy
 
-` - destroy`
+    Terraform will perform the following actions:
 
-Terraform will perform the following actions:
+      - aws_instance.invadelabs-web001
 
-` - aws_instance.invadelabs-web001`
 
-Plan: 0 to add, 0 to change, 1 to destroy.
+    Plan: 0 to add, 0 to change, 1 to destroy.
 
-Do you really want to destroy?
+    Do you really want to destroy?
+      Terraform will destroy all your managed infrastructure, as shown above.
+      There is no undo. Only 'yes' will be accepted to confirm.
 
-` Terraform will destroy all your managed infrastructure, as shown above.`  
-` There is no undo. Only 'yes' will be accepted to confirm.`
+      Enter a value: yes
 
-` Enter a value: yes`
+    aws_instance.invadelabs-web001: Destroying... (ID: i-08e94c2ef875fe3fa)
+    aws_instance.invadelabs-web001: Still destroying... (ID: i-08e94c2ef875fe3fa, 10s elapsed)
+    aws_instance.invadelabs-web001: Still destroying... (ID: i-08e94c2ef875fe3fa, 20s elapsed)
+    aws_instance.invadelabs-web001: Still destroying... (ID: i-08e94c2ef875fe3fa, 30s elapsed)
+    aws_instance.invadelabs-web001: Still destroying... (ID: i-08e94c2ef875fe3fa, 40s elapsed)
+    aws_instance.invadelabs-web001: Still destroying... (ID: i-08e94c2ef875fe3fa, 50s elapsed)
+    aws_instance.invadelabs-web001: Still destroying... (ID: i-08e94c2ef875fe3fa, 1m0s elapsed)
+    aws_instance.invadelabs-web001: Destruction complete after 1m3s
 
-aws\_instance.invadelabs-web001: Destroying... (ID: i-08e94c2ef875fe3fa)
-aws\_instance.invadelabs-web001: Still destroying... (ID:
-i-08e94c2ef875fe3fa, 10s elapsed) aws\_instance.invadelabs-web001: Still
-destroying... (ID: i-08e94c2ef875fe3fa, 20s elapsed)
-aws\_instance.invadelabs-web001: Still destroying... (ID:
-i-08e94c2ef875fe3fa, 30s elapsed) aws\_instance.invadelabs-web001: Still
-destroying... (ID: i-08e94c2ef875fe3fa, 40s elapsed)
-aws\_instance.invadelabs-web001: Still destroying... (ID:
-i-08e94c2ef875fe3fa, 50s elapsed) aws\_instance.invadelabs-web001: Still
-destroying... (ID: i-08e94c2ef875fe3fa, 1m0s elapsed)
-aws\_instance.invadelabs-web001: Destruction complete after 1m3s
+    Destroy complete! Resources: 1 destroyed.
 
-Destroy complete! Resources: 1 destroyed.
-
-</syntaxhighlight>
 Configuration
 -------------
 

@@ -235,6 +235,7 @@ aws_instance.invadelabs-web001:
 </syntaxhighlight>
 
 ===terraform destroy===
+<syntaxhighlight>
 drew@drew-8570w:~/terraform$ ./terraform destroy
 aws_instance.invadelabs-web001: Refreshing state... (ID: i-08e94c2ef875fe3fa)
 
