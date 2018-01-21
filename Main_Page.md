@@ -128,13 +128,16 @@ System Administration
     -   [lm\_sensorsPDMSi](lm_sensorsPDMSi "wikilink") -
         /etc/sensors.d/pdsmi
 -   [iptables](iptables "wikilink") - iptables setup
--   DD-WRT - all things dd-wrt
-    -   [ddwrt-ddns-namecheap](ddwrt-ddns-namecheap "wikilink") - Setup
+
+#### DD-WRT
+
+-   -   [ddwrt-ddns-namecheap](ddwrt-ddns-namecheap "wikilink") - Setup
         DDNS on DD-WRT for Namecheap
     -   [ddwrtdnsmasq](ddwrtdnsmasq "wikilink") - dnsmasq for DD-WRT
     -   [PXEiSCSIboot](PXEiSCSIboot "wikilink") - Booting off SAN via
         PXE and iSCSI target
     -   [ddwrtopsware](ddwrtopsware "wikilink") - opsware
+
 -   [PortMirroringDDWRTiptables](PortMirroringDDWRTiptables "wikilink") -
     Port mirroring with iptable in dd-wrt
 
