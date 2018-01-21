@@ -46,12 +46,9 @@ A collection of randomness I've encountered and configured in Linux.
 *[https://github.com/drew-holt/selenium-invadelabs SeleniumDocker] - GitHub: Selenium dockerized with Stand Alone Chrome and Firefox on separate ports.
 *[https://github.com/drew-holt/nagios-invadelabs NagiosDocker] - GitHub: Invade Labs Nagios config using Docker
 *[[ForceTextConsoleResolution]] - Force text console resolution when using remote KVM
-*[[VirtualBoxPassSMBIOS]] - Passing SMBios data to a Virtual Box guest to appear more hardware like (Mainly for Windows licensing on EFI machines)
 *[[EmailViaNCorTelnet]] - Send an email via nc or telnet
-*[[GoogleCloud]] - Quick setup on Google Cloud
 *[[LetsEncrypt]] - letsencrypt.org config
 *[[backuppartitionsddandsfdisk]] - Backup boot and system partitions with dd and sfdisk
-*[[KVM/qemu CentOS6]] - KVM notes for CentOS6
 *[[CustomKernelDebian]] - Compile a custom kernel from source in Debian / Ubuntu
 *[[OctoPrint]] - 3D printer interface
 *[[xDripNightScout]] - Configuration for Dexcom G5, xDrip, xDripPebble, and NightScout
@@ -61,15 +58,15 @@ A collection of randomness I've encountered and configured in Linux.
 *[[SendmailRelayGmailCentos]] - Sendmail with gmail relay in Fedora 10+
 *[[SendmailRelayISP]] - Sendmail using ISP as relay in Fedora 10+
 *[[IPMI]] - IPMI on SuperMicro AOC-IPMI20 with Serial-Over-LAN Console
-*lm_sensors
-** [[lm_sensorsPDMSi]] - /etc/sensors.d/pdsmi
 *[[iptables]] - iptables setup
+*[[lm_sensorsPDMSi]] - lm_sensors lmsensors /etc/sensors.d/pdsmi
+
 =====DD-WRT=====
 **[[ddwrt-ddns-namecheap]] - Setup DDNS on DD-WRT for Namecheap
+*[[PortMirroringDDWRTiptables]] - Port mirroring with iptable in dd-wrt
 **[[ddwrtdnsmasq]] - dnsmasq for DD-WRT
 **[[PXEiSCSIboot]] - Booting off SAN via PXE and iSCSI target
 **[[ddwrtopsware]] - opsware
-*[[PortMirroringDDWRTiptables]] - Port mirroring with iptable in dd-wrt
 
 =====File Server=====
 *[[NFS Optimization]] - NFS Performance and Optimization

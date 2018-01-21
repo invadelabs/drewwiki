@@ -98,17 +98,11 @@ System Administration
     GitHub: Invade Labs Nagios config using Docker
 -   [ForceTextConsoleResolution](ForceTextConsoleResolution "wikilink") -
     Force text console resolution when using remote KVM
--   [VirtualBoxPassSMBIOS](VirtualBoxPassSMBIOS "wikilink") - Passing
-    SMBios data to a Virtual Box guest to appear more hardware like
-    (Mainly for Windows licensing on EFI machines)
 -   [EmailViaNCorTelnet](EmailViaNCorTelnet "wikilink") - Send an email
     via nc or telnet
--   [GoogleCloud](GoogleCloud "wikilink") - Quick setup on Google Cloud
 -   [LetsEncrypt](LetsEncrypt "wikilink") - letsencrypt.org config
 -   [backuppartitionsddandsfdisk](backuppartitionsddandsfdisk "wikilink") -
     Backup boot and system partitions with dd and sfdisk
--   [KVM/qemu CentOS6](KVM/qemu_CentOS6 "wikilink") - KVM notes for
-    CentOS6
 -   [CustomKernelDebian](CustomKernelDebian "wikilink") - Compile a
     custom kernel from source in Debian / Ubuntu
 -   [OctoPrint](OctoPrint "wikilink") - 3D printer interface
@@ -124,22 +118,21 @@ System Administration
     as relay in Fedora 10+
 -   [IPMI](IPMI "wikilink") - IPMI on SuperMicro AOC-IPMI20 with
     Serial-Over-LAN Console
--   lm\_sensors
-    -   [lm\_sensorsPDMSi](lm_sensorsPDMSi "wikilink") -
-        /etc/sensors.d/pdsmi
 -   [iptables](iptables "wikilink") - iptables setup
+-   [lm\_sensorsPDMSi](lm_sensorsPDMSi "wikilink") - lm\_sensors
+    lmsensors /etc/sensors.d/pdsmi
 
 ##### DD-WRT
 
 -   -   [ddwrt-ddns-namecheap](ddwrt-ddns-namecheap "wikilink") - Setup
         DDNS on DD-WRT for Namecheap
+
+-   [PortMirroringDDWRTiptables](PortMirroringDDWRTiptables "wikilink") -
+    Port mirroring with iptable in dd-wrt
     -   [ddwrtdnsmasq](ddwrtdnsmasq "wikilink") - dnsmasq for DD-WRT
     -   [PXEiSCSIboot](PXEiSCSIboot "wikilink") - Booting off SAN via
         PXE and iSCSI target
     -   [ddwrtopsware](ddwrtopsware "wikilink") - opsware
-
--   [PortMirroringDDWRTiptables](PortMirroringDDWRTiptables "wikilink") -
-    Port mirroring with iptable in dd-wrt
 
 ##### File Server
 
