@@ -37,7 +37,6 @@ A collection of randomness I've encountered and configured in Linux.
 ===Kubernetes===
 * [[KubernetesClusterGoogleCloud]] - CI/CD example of a 4 container weather application using Google Container Register and Google Kubernetes Clusters
 * [[MiniKube]] - MiniKube install and configure
-* [[KubernetesInstallConfigure]] - Install and configure Kubernetes
 
 ===OpenShift===
 * [[MiniShift]] - Minishift install and configure
