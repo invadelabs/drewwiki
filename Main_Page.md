@@ -134,15 +134,14 @@ System Administration
 
 ##### DD-WRT
 
--   -   [ddwrt-ddns-namecheap](ddwrt-ddns-namecheap "wikilink") - Setup
-        DDNS on DD-WRT for Namecheap
-
+-   [ddwrt-ddns-namecheap](ddwrt-ddns-namecheap "wikilink") - Setup DDNS
+    on DD-WRT for Namecheap
 -   [PortMirroringDDWRTiptables](PortMirroringDDWRTiptables "wikilink") -
     Port mirroring with iptable in dd-wrt
-    -   [ddwrtdnsmasq](ddwrtdnsmasq "wikilink") - dnsmasq for DD-WRT
-    -   [PXEiSCSIboot](PXEiSCSIboot "wikilink") - Booting off SAN via
-        PXE and iSCSI target
-    -   [ddwrtopsware](ddwrtopsware "wikilink") - opsware
+-   [ddwrtdnsmasq](ddwrtdnsmasq "wikilink") - dnsmasq for DD-WRT
+-   [PXEiSCSIboot](PXEiSCSIboot "wikilink") - Booting off SAN via PXE
+    and iSCSI target
+-   [ddwrtopsware](ddwrtopsware "wikilink") - opsware
 
 ##### File Server
 
