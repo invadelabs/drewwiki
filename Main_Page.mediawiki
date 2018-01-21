@@ -18,7 +18,9 @@ A collection of randomness I've encountered and configured in Linux.
 ===Puppet===
 *[[MultiMachineVagrantPuppetJenkinsNexus]] - Multimachine Vagrant boxes with 1 Puppet Server, 1 Puppet Client, and 1 Jenkins/Nexus VM to deploy Tomcat via Puppet
 ===Ansible===
-* [https://github.com/drew-holt/ansible-invadelabs AnsibleVirtualboxDocker] - GitHub: Invade Labs test environment for Ansible with VirtualBox VMs running Docker in a dind cluster
+*[https://github.com/drew-holt/ansible-invadelabs AnsibleVirtualboxDocker] - GitHub: Invade Labs test environment for Ansible with VirtualBox VMs running Docker in a dind cluster
+===Terraform===
+*[[TerraformExamples]] - Terraform examples placeholder
 
 ==Containerization==
 ===Docker===

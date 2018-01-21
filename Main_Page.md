@@ -50,6 +50,11 @@ Infrastructure Automation
     GitHub: Invade Labs test environment for Ansible with VirtualBox VMs
     running Docker in a dind cluster
 
+### Terraform
+
+-   [TerraformExamples](TerraformExamples "wikilink") - Terraform
+    examples placeholder
+
 Containerization
 ----------------
 
