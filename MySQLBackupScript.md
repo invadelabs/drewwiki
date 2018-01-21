@@ -6,19 +6,8 @@ layout: default
 The Script
 ----------
 
-    #!/bin/sh
-    USER=some_user
-    PW=some_pw
-    DIR=/mnt/raid5/backup/mysql
-
-    echo Running: `date`;
-
-    mkdir -vp $DIR;
-
-    mysqldump -u$USER -p$PW --all-databases | gzip > $DIR/mysql.`hostname`.`date +%F.%T`.sql.gz;
-
-    # DELETE backups older than 30 days
-    find $DIR -type f -mtime +30 -exec rm -v {} \;
+Moved to
+[GitHub](https://github.com/invadelabs/cron-invadelabs/blob/master/mysql_backup.sh)
 
 -   Need to get pw off console command
 
