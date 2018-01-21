@@ -42,6 +42,11 @@ A collection of randomness I've encountered and configured in Linux.
 ===OpenShift===
 *[[MiniShift]] - Minishift install and configure
 
+== Virtualization / Hypervisor / Cloud==
+*[[VirtualBoxPassSMBIOS]] - Passing SMBios data to a Virtual Box guest to appear more hardware like (Mainly for Windows licensing on EFI machines)
+*[[GoogleCloud]] - Quick setup on Google Cloud
+*[[KVM/qemu CentOS6]] - KVM notes for CentOS6
+
 ==System Administration==
 *[https://github.com/drew-holt/selenium-invadelabs SeleniumDocker] - GitHub: Selenium dockerized with Stand Alone Chrome and Firefox on separate ports.
 *[https://github.com/drew-holt/nagios-invadelabs NagiosDocker] - GitHub: Invade Labs Nagios config using Docker
