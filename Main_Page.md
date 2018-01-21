@@ -64,6 +64,8 @@ Containerization
 
 ### Docker
 
+-   [DockerOnUbuntu](DockerOnUbuntu "wikilink") - Docker on Ubuntu +
+    Foreman Integration
 -   [CentOS7Docker](CentOS7Docker "wikilink") - Install and configure
     Docker on CentOS7
 -   [DockerFile](DockerFile "wikilink") - Example Dockerfile
@@ -102,8 +104,6 @@ System Administration
 -   [EmailViaNCorTelnet](EmailViaNCorTelnet "wikilink") - Send an email
     via nc or telnet
 -   [GoogleCloud](GoogleCloud "wikilink") - Quick setup on Google Cloud
--   [DockerOnUbuntu](DockerOnUbuntu "wikilink") - Docker on Ubuntu +
-    Foreman Integration
 -   [LetsEncrypt](LetsEncrypt "wikilink") - letsencrypt.org config
 -   [backuppartitionsddandsfdisk](backuppartitionsddandsfdisk "wikilink") -
     Backup boot and system partitions with dd and sfdisk
@@ -115,8 +115,6 @@ System Administration
 -   [xDripNightScout](xDripNightScout "wikilink") - Configuration for
     Dexcom G5, xDrip, xDripPebble, and NightScout
 -   [nmcli](nmcli "wikilink") - Joining wifi from nmcli
--   [ddwrt-ddns-namecheap](ddwrt-ddns-namecheap "wikilink") - Setup DDNS
-    on DD-WRT for Namecheap
 -   [OpenVPN](OpenVPN "wikilink") - OpenVPN Server Setup
 -   [ApachePAMunixAuth](ApachePAMunixAuth "wikilink") - Apache
     authentication against /etc/passwd
@@ -130,7 +128,9 @@ System Administration
     -   [lm\_sensorsPDMSi](lm_sensorsPDMSi "wikilink") -
         /etc/sensors.d/pdsmi
 -   [iptables](iptables "wikilink") - iptables setup
--   DD-WRT - all things dd-wwrt
+-   DD-WRT - all things dd-wrt
+    -   [ddwrt-ddns-namecheap](ddwrt-ddns-namecheap "wikilink") - Setup
+        DDNS on DD-WRT for Namecheap
     -   [ddwrtdnsmasq](ddwrtdnsmasq "wikilink") - dnsmasq for DD-WRT
     -   [PXEiSCSIboot](PXEiSCSIboot "wikilink") - Booting off SAN via
         PXE and iSCSI target
@@ -204,13 +204,9 @@ Media
     m4a with ffmpeg copy
 -   [bluray](bluray "wikilink") - Playing and backing up Blu-ray discs
     in Linux
-
-#### Window Manager Related
-
 -   [Compiz Profile
     Configuration](Compiz_Profile_Configuration "wikilink") - Dual
     monitor / GiantCube / Ice Exploding Windows
--   TomBoy notes - WebDav Sync
 
 #### Emulators
 
