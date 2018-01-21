@@ -15,6 +15,9 @@ Setup
     $ curl -o terraform http://....
     $ chmod 755 terraform
 
+Commands
+--------
+
 ### terraform init
 
     drew@drew-8570w:~/terraform$ ./terraform init

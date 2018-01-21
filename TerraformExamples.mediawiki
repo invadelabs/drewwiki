@@ -8,6 +8,8 @@ $ curl -o terraform http://....
 $ chmod 755 terraform
 </syntaxhighlight>
 
+
+==Commands==
 ===terraform init===
 <syntaxhighlight>
 drew@drew-8570w:~/terraform$ ./terraform init
