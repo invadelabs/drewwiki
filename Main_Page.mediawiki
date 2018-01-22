@@ -1,4 +1,4 @@
-A collection of randomness I've encountered and configured in Linux.
+A collection of randomness I've encountered and configured in Linux. - drew@invadelabs.com
 
 == System Setup ==
 *[[ServerSetupCentOS7]] - CentOS7 Server setup  with NFS/rsyslog/chrony/hw_mon services + qemu+kvm libvirt + Puppet + Foreman + Docker

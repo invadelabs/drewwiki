@@ -3,7 +3,8 @@ title: Main Page
 layout: default
 ---
 
-A collection of randomness I've encountered and configured in Linux.
+A collection of randomness I've encountered and configured in Linux. -
+drew@invadelabs.com
 
 System Setup
 ------------
