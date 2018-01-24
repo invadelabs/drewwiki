@@ -3,10 +3,8 @@ title: CentOS7Docker
 layout: default
 ---
 
-Add yum repo
-============
-
-​
+Add Docker YUM Repo
+===================
 
     sudo tee /etc/yum.repos.d/docker.repo <<-'EOF'
     [dockerrepo]
@@ -20,32 +18,34 @@ Add yum repo
 Install Docker
 ==============
 
-sudo yum install -y docker-engine sudo mkdir /srv/docker sudo mkdir
-/etc/systemd/system/docker.service.d
+    sudo yum install -y docker-engine
+    sudo mkdir /srv/docker
+    sudo mkdir /etc/systemd/system/docker.service.d
 
 Move standard mount point
 -------------------------
 
-<syntaxhiglight> sudo vi /etc/systemd/system/docker.service.d/graph.conf
-\[Service\] ExecStart= ExecStart=/usr/bin/dockerd --graph=“/srv/docker”
---storage-driver=overlay
+    sudo vi /etc/systemd/system/docker.service.d/graph.conf
+    [Service]
+    ExecStart=
+    ExecStart=/usr/bin/dockerd --graph="/srv/docker" --storage-driver=overlay
 
-</syntaxhighlight>
 Reload, enable, and start the daemon
 ------------------------------------
 
-<syntaxhightlight> sudo systemctl daemon-reload sudo systemctl enable
-docker.service sudo systemctl start docker </syntaxhightlight>
+    sudo systemctl daemon-reload
+    sudo systemctl enable docker.service
+    sudo systemctl start docker
 
 Install EPEL for PIP
 ====================
 
     sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
     sudo yum --disablerepo="*" --enablerepo="epel" install -y python-pip
-    </syntaxhightlight>
 
-    ==Install docker-compose via pip==
-    <syntaxhightlight>
+Install docker-compose via pip
+------------------------------
+
     yum upgrade python-*
     sudo yum install -y git # not installed on minimal
     sudo pip install docker-compose
@@ -55,7 +55,8 @@ Add docker group
 
     sudo groupadd docker
 
-==Add user to group=
+Add user to group
+-----------------
 
     useradd -m drew
     sudo usermod -aG docker drew

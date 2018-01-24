@@ -1,4 +1,5 @@
-= Add yum repo =​
+
+=Add Docker YUM Repo=
 <syntaxhighlight>
 sudo tee /etc/yum.repos.d/docker.repo <<-'EOF'
 [dockerrepo]
@@ -11,12 +12,14 @@ EOF
 </syntaxhighlight>
 
 =Install Docker=
+<syntaxhighlight>
 sudo yum install -y docker-engine
 sudo mkdir /srv/docker
 sudo mkdir /etc/systemd/system/docker.service.d
+</syntaxhighlight>
 
 ==Move standard mount point==
-<syntaxhiglight>
+<syntaxhighlight>
 sudo vi /etc/systemd/system/docker.service.d/graph.conf
 [Service]
 ExecStart=
@@ -24,20 +27,20 @@ ExecStart=/usr/bin/dockerd --graph="/srv/docker" --storage-driver=overlay
 </syntaxhighlight>
 
 ==Reload, enable, and start the daemon==
-<syntaxhightlight>
+<syntaxhighlight>
 sudo systemctl daemon-reload
 sudo systemctl enable docker.service
 sudo systemctl start docker
-</syntaxhightlight>
+</syntaxhighlight>
 
 =Install EPEL for PIP=
 <syntaxhighlight>
 sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 sudo yum --disablerepo="*" --enablerepo="epel" install -y python-pip
-</syntaxhightlight>
+</syntaxhighlight>
 
 ==Install docker-compose via pip==
-<syntaxhightlight>
+<syntaxhighlight>
 yum upgrade python-*
 sudo yum install -y git # not installed on minimal
 sudo pip install docker-compose
@@ -48,7 +51,7 @@ sudo pip install docker-compose
 sudo groupadd docker
 </syntaxhighlight>
 
-==Add user to group=
+==Add user to group==
 <syntaxhighlight>
 useradd -m drew
 sudo usermod -aG docker drew
