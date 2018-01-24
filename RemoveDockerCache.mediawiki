@@ -1,0 +1,5 @@
+Prune = remove unused data
+<syntaxhighlight>
+docker system df
+docker system prune
+</syntaxhighlight>
