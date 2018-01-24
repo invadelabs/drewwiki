@@ -17,9 +17,3 @@ Crontab Entry
 /etc/crontab;
 
     0 4    * * *   drew    /home/drew/cron/mysql_backup.sh >> /home/drew/cron/mysql_backup.log;
-
-OR
-
-crontab -e;
-
-    0 4 * * *  /home/drew/cron/mysql_backup.sh >> /home/drew/cron/mysql_backup.log;
