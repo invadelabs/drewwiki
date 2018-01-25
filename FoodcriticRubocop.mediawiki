@@ -1,5 +1,5 @@
 Raw notes... needs formatting, context, examples
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 ​gem install chefstyle
 - rubocop or rubocop -r chefstyle -D --format offenses
 foodcritic .
