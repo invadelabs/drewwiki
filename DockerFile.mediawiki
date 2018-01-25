@@ -1,6 +1,6 @@
 '''WIP''' A very boring container that installs curl and npm.
 =Dockerfile=
-<syntaxhighlight>
+<syntaxhighlight  lang=bash>
 FROM ubuntu:16.04
 MAINTAINER Drew Holt <drew@invadelabs.com>
 
@@ -10,11 +10,11 @@ ENV FOO bar
 </syntaxhighlight>
 
 =Build contanier=
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 docker build -t drewderivative/mycontainer:0.0.1
 </syntaxhighlight>
 
 =Run container=
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 docker run -p 8000:8888 drewderivative/mycontainer:0.0.1
 </syntaxhighlight>
