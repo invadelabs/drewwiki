@@ -1,30 +1,46 @@
 Format the drive for encryption, supply pass or key..
-<pre># cryptsetup luksFormat /dev/sdb</pre>
+<syntaxhighlight lang=bash>
+# cryptsetup luksFormat /dev/sdb
+</syntaxhighlight>
 
 Open and mount the drive, it will be available at /dev/mapper/external
-<pre># cryptsetup luksOpen /dev/sdb external</pre>
+<syntaxhighlight lang=bash>
+# cryptsetup luksOpen /dev/sdb external
+</syntaxhighlight>
 
 Create LVM (PV, VG, LV), format as ext4 reserving 0% for root, and mount the drive.
-<pre># pvcreate /dev/mapper/external
+<syntaxhighlight lang=bash>
+# pvcreate /dev/mapper/external
 # vgcreate vg-backup /dev/mapper/external
 # lvcreate -l 17884 vg-backup
 # mkfs.ext4 -m 0 /dev/vg-backup/lvol0
-# mount /dev/vg-backup/lvol0 /mnt/backup</pre>
+# mount /dev/vg-backup/lvol0 /mnt/backup
+</syntaxhighlight>
 
 To unmount;
-<pre># umount /mnt/backup
+<syntaxhighlight lang=bash>
+# umount /mnt/backup
 # lvchange -a n /dev/vg-backup/lvol0
 # vgchange -a n vg-backup
-# cryptsetup luksClose /dev/mapper/external</pre>
+# cryptsetup luksClose /dev/mapper/external
+</syntaxhighlight>
 
 To mount;
-<pre># cryptsetup luksOpen /dev/sdb
-# mount /dev/vg-backup/lvol0 /mnt/backup</pre>
+<syntaxhighlight lang=bash>
+# cryptsetup luksOpen /dev/sdb
+# mount /dev/vg-backup/lvol0 /mnt/backup
+</syntaxhighlight>
 
 Research: What is the best way to remove LVM's left over device files.
 
 Rsync backup;
 This is a '''dry run''' which will delete files not on the source, log everything to ~/backup.log, exclude a video directory from all files named /mnt/raid5 to /mnt/backup.
-<pre># rsync -avn --delete --log-file=/root/raid5_backup.log --exclude drew/video /mnt/raid5/ /mnt/backup</pre>
+
+<syntaxhighlight lang=bash>
+# rsync -avn --delete --log-file=/root/raid5_backup.log --exclude drew/video /mnt/raid5/ /mnt/backup
+</syntaxhighlight>
+
 The real deal.
-<pre># rsync -av --delete --log-file=/root/raid5_backup.log --exclude drew/video /mnt/raid5/ /mnt/backup</pre>
+<syntaxhighlight lang=bash>
+# rsync -av --delete --log-file=/root/raid5_backup.log --exclude drew/video /mnt/raid5/ /mnt/backup
+</syntaxhighlight>
