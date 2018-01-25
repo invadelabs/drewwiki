@@ -2,6 +2,7 @@ A collection of randomness I've encountered and configured in Linux. - drew@inva
 
 == System Setup ==
 *[[ServerSetupCentOS7]] - CentOS7 Server setup  with NFS/rsyslog/chrony/hw_mon services + qemu+kvm libvirt + Puppet + Foreman + Docker
+*[[ServerSetupFedora27]] - Fedora 27 Server Setup
 *[[ServerSetupFedora22]] - Fedora 22 Server Setup
 
 ==Infrastructure==
