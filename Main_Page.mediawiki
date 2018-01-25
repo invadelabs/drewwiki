@@ -74,7 +74,7 @@ A collection of randomness I've encountered and configured in Linux. - drew@inva
 *[[ddwrtopsware]] - opsware
 
 =====File Server=====
-**[[UbuntuRAID0ssd]] -- Ubuntu RAID0 LVM SSD on root without boot partition
+*[[UbuntuRAID0ssd]] -- Ubuntu RAID0 LVM SSD on root without boot partition
 *[[NFS Optimization]] - NFS Performance and Optimization
 *[[mdadm]] - Linux Software Raid Creation / Optimization
 ** [[mdadmLVMext4]] - Best practices using md raid5 / LVM / ext4

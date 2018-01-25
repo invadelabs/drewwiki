@@ -143,9 +143,8 @@ System Administration
 
 ##### File Server
 
--   -   [UbuntuRAID0ssd](UbuntuRAID0ssd "wikilink") -- Ubuntu RAID0 LVM
-        SSD on root without boot partition
-
+-   [UbuntuRAID0ssd](UbuntuRAID0ssd "wikilink") -- Ubuntu RAID0 LVM SSD
+    on root without boot partition
 -   [NFS Optimization](NFS_Optimization "wikilink") - NFS Performance
     and Optimization
 -   [mdadm](mdadm "wikilink") - Linux Software Raid Creation /
