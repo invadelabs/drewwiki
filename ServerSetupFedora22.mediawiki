@@ -4,7 +4,7 @@
 
 ==Install etckepper and fail2ban==
 Initalize and ensure service is running
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 sudo yum install etckeeper fail2ban
 sudo etckeepeer init
 sudo systemctl enable fail2ban
@@ -12,7 +12,7 @@ sudo systemctl start fail2ban
 </syntaxhighlight>
 
 ==Disable root login via password ssh==
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 $ grep Root /etc/ssh/sshd_config
 PermitRootLogin prohibit-password
 </syntaxhighlight>
@@ -20,7 +20,7 @@ PermitRootLogin prohibit-password
 ==Add TCP22/0 to IPTables==
 
 ==Enable sudo==
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 $ sudo grep drew /etc/sudoers
 drew	ALL=(ALL) NOPASSWD:ALL
 </syntaxhighlight>
@@ -32,7 +32,7 @@ drew	ALL=(ALL) NOPASSWD:ALL
 ==Enable SElinux==
 
 ==Extend days of sysstat logging==
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 $ grep -vE '^($|#)' /etc/sysconfig/sysstat
 HISTORY=365
 COMPRESSAFTER=10
@@ -40,24 +40,24 @@ SADC_OPTIONS=""
 </syntaxhighlight>
 
 = Install rest of software =
-<pre>
+<syntaxhighlight lang=bash>
 # yum install man screen wget strace rsync mailx fdupes logwatch grep lsof screen binutils tar mcelog nfs-utils \
 OpenIPMI ipmitool sysstat clamav clamav-update iscsi-initiator-utils samba openvpn lldpad ntp \
 php-pecl-apc lm_sensors hddtemp smartmontools apcupsd apcupsd-cgi 
-</pre>
+</syntaxhighlight>
 
 = Configure system, monitoring, mail, AV, and VPN =
 # Configure GRUB serial console redirection
 # Configure kdump for system panics
 # Configure lm-sensors, smartd/hddtemp+thermal alerts, lldpad, mcelog, and SMARTmon for temperature alerts.
 ### 
-<pre> DEVICESCAN -H -m root -M exec /usr/libexec/smartmontools/smartdnotify -n standby,10,q
+<syntaxhighlight lang=bash> DEVICESCAN -H -m root -M exec /usr/libexec/smartmontools/smartdnotify -n standby,10,q
 /dev/sda -H -m root -M daily -M exec /home/drew/cron/smartmon.sh -M daily -f -l error -o on -S on -s (S/../.././02|L/../../6/03) -W 0,0,45 -d sat
 /dev/sdb -H -m root -M daily -M exec /home/drew/cron/smartmon.sh -M daily -f -l error -o on -S on -s (S/../.././02|L/../../6/03) -W 0,0,45 -d sat
 /dev/sdc -H -m root -M daily -M exec /home/drew/cron/smartmon.sh -M daily -f -l error -o on -S on -s (S/../.././02|L/../../6/03) -W 0,0,45 -d sat
 /dev/sdd -H -m root -M daily -M exec /home/drew/cron/smartmon.sh -M daily -f -l error -o on -S on -s (S/../.././02|L/../../6/03) -W 0,0,45 -d sat
 /dev/sde -H -m root -M daily -M exec /home/drew/cron/smartmon.sh -M daily -f -l error -o on -S on -s (S/../.././02|L/../../6/03) -W 0,0,47 -d sat
-</pre>
+</syntaxhighlight>
 # Configure apcupsd for UPS alerts
 # Configure Time Server for local network access
 ## Add UDP123/24 to IPTables
@@ -78,7 +78,7 @@ php-pecl-apc lm_sensors hddtemp smartmontools apcupsd apcupsd-cgi
 ## Add TCP139,445/24 to IPTables
 ## <pre># systemctl enable smb; systemctl start smb</pre>
 ### 
-<pre> 
+<syntaxhighlight lang=bash> 
 [global]
         workgroup = WORKGROUP
         server string = drewserv
@@ -96,21 +96,23 @@ php-pecl-apc lm_sensors hddtemp smartmontools apcupsd apcupsd-cgi
         read only = No
 	create mode = 0665
 	directory mode = 0775
-</pre>
+</syntaxhighlight>
 # Enable iSCSI
 ## Add TCP3260/24
 # ^ Configure bacula and web interface
 
-= Setup cron jobs =
+=Setup cron jobs=
 # Keep anacron from waking me up at night! 
-<pre># vi /etc/anacrontab // START_HOURS_RANGE</pre>
+<syntaxhighlight lang=bash>
+# vi /etc/anacrontab // START_HOURS_RANGE
+</syntaxhighlight>
 
-= Configure Web Services =
+=Configure Web Services=
 # ddclient for dynamicdns updates
 # Configure MythTV / MythWeb / minidlna
 ## Add TCP80/24 and TCP443/0 for web services, TCP1900/0 TCP8200/0, TCP34531/0 for minidlna
 ### 
-<pre> 
+<syntaxhighlight lang=bash> 
 port=8200
 media_dir=/mnt/raid5/media
 db_dir=/var/cache/minidlna
@@ -123,10 +125,13 @@ notify_interval=900
 serial=12345678
 model_number=1
 root_container=B
-</pre>
+</syntaxhighlight>
 # Configure pecl-php-apc / DrewWiki / WebDAV
 
 = Completing / Wrap-up =
-# Verify all log files in /var/log are not giving any errors or notifications
-# Check logs for whats growing! <pre># ls -alR /var/log | grep ^- | awk {'print $5" "$8'} | sort -k 2| sort -n</pre>
-# Create MondoRescue restore image
+* Verify all log files in /var/log are not giving any errors or notifications
+* Check logs for whats growing! 
+<syntaxhighlight lang=bash>
+# ls -alR /var/log | grep ^- | awk {'print $5" "$8'} | sort -k 2| sort -n
+</syntaxhighlight>
+* Create MondoRescue restore image
