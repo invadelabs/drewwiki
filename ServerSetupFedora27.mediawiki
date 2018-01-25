@@ -7,53 +7,53 @@ Write to thumb drive https://download.fedoraproject.org/pub/fedora/linux/release
 =Immediate post install steps=
 
 ==Install etckepper and initalize it==
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 sudo dnf install etckeeper
 sudo etckeepeer init
 </syntaxhighlight>
 
 ==Install fail2ban, enable, and start it==
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 sudo dnf install fail2ban
 sudo systemctl enable fail2ban
 sudo systemctl start fail2ban
 </syntaxhighlight>
 
 ==Disable root login via password ssh==
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 $ grep Root /etc/ssh/sshd_config
 PermitRootLogin prohibit-password
 </syntaxhighlight>
 
 ==Add TCP/22 to firewalld==
 Done in kickstart, manually though:
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 firewall-cmd --permanent --add-port=22/tcp --add-port==80/tcp--add-port=443/tcp
 firewall-cmd --reload
 </syntaxhighlight>
 
 ==Enable sudo==
 User drew is added to wheel in kickstart, manually though:
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 $ sudo visudo
 drew	ALL=(ALL) NOPASSWD:ALL
 </syntaxhighlight>
 
 ==dnf upgrade==
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 sudo dnf upgrade -y
 </syntaxhighlight>
 
 ==Enable SElinux==
 Done in kickstart, however:
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 $ grep enforcing /etc/selinux/config
 SELINUXTYPE=enforcing
 $ setenforce 1
 </syntaxhighlight>
 
 ==Extend days of sysstat logging==
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 $ grep -vE '^($|#)' /etc/sysconfig/sysstat
 HISTORY=365
 COMPRESSAFTER=10
@@ -62,7 +62,7 @@ SADC_OPTIONS=""
 
 =Install other software=
 Do this in kickstart
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 # dnf install -y man screen wget strace rsync mailx fdupes logwatch grep lsof screen binutils tar mcelog nfs-utils \
 OpenIPMI ipmitool sysstat clamav clamav-update iscsi-initiator-utils samba openvpn lldpad ntp \
 php-pecl-apc lm_sensors hddtemp smartmontools apcupsd apcupsd-cgi 
@@ -74,7 +74,7 @@ php-pecl-apc lm_sensors hddtemp smartmontools apcupsd apcupsd-cgi
 Place holder for postfix config here and firewald rules for TCP25
 
 ===add .forward file===
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 $ sudo echo drew > /root/.forward
 $ sudo echo "andrew: drew" >> /etc/aliases
 $ sudo newaliases
@@ -87,26 +87,26 @@ Place holder for nagios client config
 
 ===Configure lm-sensors===
 Do this in kickstart
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 $ sudo sensors-detect --auto
 </syntaxhighlight>
 
 ===lldpad===
 Do this in kickstart
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 $ sudo systemctl enable llpdad
 $ sudo systemctl start llpdad
 </syntaxhighlight>
 
 ===mcelog===
 Do this in kickstart
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 systemctl enable mcelog
 systemctl start mcelog
 </syntaxhighlight>
 
 ===SMARTmon HDD Alerts===
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 DEVICESCAN -H -m root -M exec /usr/libexec/smartmontools/smartdnotify -n standby,10,q
 /dev/sda -H -m root -M daily -M exec /home/drew/cron/smartmon.sh -M daily -f -l error -o on -S on -s (S/../.././02|L/../../6/03) -W 0,0,45 -d sat
 /dev/sdb -H -m root -M daily -M exec /home/drew/cron/smartmon.sh -M daily -f -l error -o on -S on -s (S/../.././02|L/../../6/03) -W 0,0,45 -d sat
@@ -130,7 +130,7 @@ Do this via kickstart. For network clients, add UDP514/24 to IPTables
 
 ==Configure logrotate==
 Do this via kickstart. 
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 compress
 </syntaxhighlight>
 
@@ -144,13 +144,13 @@ Virus protection for Samba and weekly scan
 
 ==Enable samba==
 Add TCP139,445/24 to IPTables
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 sudo systemctl enable smb; 
 sudo systemctl start smb
 </syntaxhighlight>
 
 /etc/samba/smb.conf
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 [global]
         workgroup = WORKGROUP
         server string = drewserv
@@ -172,7 +172,7 @@ sudo systemctl start smb
 
 == Setup cron jobs ==
 Keep anacron from waking me up at night! 
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 $ sudo vi /etc/anacrontab // START_HOURS_RANGE</pre>
 </syntaxhighlight>
 

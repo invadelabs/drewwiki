@@ -20,68 +20,86 @@ Immediate post install steps
 Install etckepper and initalize it
 ----------------------------------
 
-    sudo dnf install etckeeper
-    sudo etckeepeer init
+``` bash
+sudo dnf install etckeeper
+sudo etckeepeer init
+```
 
 Install fail2ban, enable, and start it
 --------------------------------------
 
-    sudo dnf install fail2ban
-    sudo systemctl enable fail2ban
-    sudo systemctl start fail2ban
+``` bash
+sudo dnf install fail2ban
+sudo systemctl enable fail2ban
+sudo systemctl start fail2ban
+```
 
 Disable root login via password ssh
 -----------------------------------
 
-    $ grep Root /etc/ssh/sshd_config
-    PermitRootLogin prohibit-password
+``` bash
+$ grep Root /etc/ssh/sshd_config
+PermitRootLogin prohibit-password
+```
 
 Add TCP/22 to firewalld
 -----------------------
 
 Done in kickstart, manually though:
 
-    firewall-cmd --permanent --add-port=22/tcp --add-port==80/tcp--add-port=443/tcp
-    firewall-cmd --reload
+``` bash
+firewall-cmd --permanent --add-port=22/tcp --add-port==80/tcp--add-port=443/tcp
+firewall-cmd --reload
+```
 
 Enable sudo
 -----------
 
 User drew is added to wheel in kickstart, manually though:
 
-    $ sudo visudo
-    drew    ALL=(ALL) NOPASSWD:ALL
+``` bash
+$ sudo visudo
+drew    ALL=(ALL) NOPASSWD:ALL
+```
 
 dnf upgrade
 -----------
 
-    sudo dnf upgrade -y
+``` bash
+sudo dnf upgrade -y
+```
 
 Enable SElinux
 --------------
 
 Done in kickstart, however:
 
-    $ grep enforcing /etc/selinux/config
-    SELINUXTYPE=enforcing
-    $ setenforce 1
+``` bash
+$ grep enforcing /etc/selinux/config
+SELINUXTYPE=enforcing
+$ setenforce 1
+```
 
 Extend days of sysstat logging
 ------------------------------
 
-    $ grep -vE '^($|#)' /etc/sysconfig/sysstat
-    HISTORY=365
-    COMPRESSAFTER=10
-    SADC_OPTIONS=""
+``` bash
+$ grep -vE '^($|#)' /etc/sysconfig/sysstat
+HISTORY=365
+COMPRESSAFTER=10
+SADC_OPTIONS=""
+```
 
 Install other software
 ======================
 
 Do this in kickstart
 
-    # dnf install -y man screen wget strace rsync mailx fdupes logwatch grep lsof screen binutils tar mcelog nfs-utils \
-    OpenIPMI ipmitool sysstat clamav clamav-update iscsi-initiator-utils samba openvpn lldpad ntp \
-    php-pecl-apc lm_sensors hddtemp smartmontools apcupsd apcupsd-cgi 
+``` bash
+# dnf install -y man screen wget strace rsync mailx fdupes logwatch grep lsof screen binutils tar mcelog nfs-utils \
+OpenIPMI ipmitool sysstat clamav clamav-update iscsi-initiator-utils samba openvpn lldpad ntp \
+php-pecl-apc lm_sensors hddtemp smartmontools apcupsd apcupsd-cgi 
+```
 
 Configure system
 ================
@@ -93,11 +111,13 @@ Place holder for postfix config here and firewald rules for TCP25
 
 ### add .forward file
 
-    $ sudo echo drew > /root/.forward
-    $ sudo echo "andrew: drew" >> /etc/aliases
-    $ sudo newaliases
-    $ sudo echo "root: drew" >> /etc/aliases
-    $ sudo newaliases
+``` bash
+$ sudo echo drew > /root/.forward
+$ sudo echo "andrew: drew" >> /etc/aliases
+$ sudo newaliases
+$ sudo echo "root: drew" >> /etc/aliases
+$ sudo newaliases
+```
 
 Monitoring
 ----------
@@ -108,30 +128,38 @@ Place holder for nagios client config
 
 Do this in kickstart
 
-    $ sudo sensors-detect --auto
+``` bash
+$ sudo sensors-detect --auto
+```
 
 ### lldpad
 
 Do this in kickstart
 
-    $ sudo systemctl enable llpdad
-    $ sudo systemctl start llpdad
+``` bash
+$ sudo systemctl enable llpdad
+$ sudo systemctl start llpdad
+```
 
 ### mcelog
 
 Do this in kickstart
 
-    systemctl enable mcelog
-    systemctl start mcelog
+``` bash
+systemctl enable mcelog
+systemctl start mcelog
+```
 
 ### SMARTmon HDD Alerts
 
-    DEVICESCAN -H -m root -M exec /usr/libexec/smartmontools/smartdnotify -n standby,10,q
-    /dev/sda -H -m root -M daily -M exec /home/drew/cron/smartmon.sh -M daily -f -l error -o on -S on -s (S/../.././02|L/../../6/03) -W 0,0,45 -d sat
-    /dev/sdb -H -m root -M daily -M exec /home/drew/cron/smartmon.sh -M daily -f -l error -o on -S on -s (S/../.././02|L/../../6/03) -W 0,0,45 -d sat
-    /dev/sdc -H -m root -M daily -M exec /home/drew/cron/smartmon.sh -M daily -f -l error -o on -S on -s (S/../.././02|L/../../6/03) -W 0,0,45 -d sat
-    /dev/sdd -H -m root -M daily -M exec /home/drew/cron/smartmon.sh -M daily -f -l error -o on -S on -s (S/../.././02|L/../../6/03) -W 0,0,45 -d sat
-    /dev/sde -H -m root -M daily -M exec /home/drew/cron/smartmon.sh -M daily -f -l error -o on -S on -s (S/../.././02|L/../../6/03) -W 0,0,47 -d sat
+``` bash
+DEVICESCAN -H -m root -M exec /usr/libexec/smartmontools/smartdnotify -n standby,10,q
+/dev/sda -H -m root -M daily -M exec /home/drew/cron/smartmon.sh -M daily -f -l error -o on -S on -s (S/../.././02|L/../../6/03) -W 0,0,45 -d sat
+/dev/sdb -H -m root -M daily -M exec /home/drew/cron/smartmon.sh -M daily -f -l error -o on -S on -s (S/../.././02|L/../../6/03) -W 0,0,45 -d sat
+/dev/sdc -H -m root -M daily -M exec /home/drew/cron/smartmon.sh -M daily -f -l error -o on -S on -s (S/../.././02|L/../../6/03) -W 0,0,45 -d sat
+/dev/sdd -H -m root -M daily -M exec /home/drew/cron/smartmon.sh -M daily -f -l error -o on -S on -s (S/../.././02|L/../../6/03) -W 0,0,45 -d sat
+/dev/sde -H -m root -M daily -M exec /home/drew/cron/smartmon.sh -M daily -f -l error -o on -S on -s (S/../.././02|L/../../6/03) -W 0,0,47 -d sat
+```
 
 VPN
 ---
@@ -160,7 +188,9 @@ Configure logrotate
 
 Do this via kickstart.
 
-    compress
+``` bash
+compress
+```
 
 Configure RAID and filesharing
 ==============================
@@ -180,35 +210,41 @@ Enable samba
 
 Add TCP139,445/24 to IPTables
 
-    sudo systemctl enable smb; 
-    sudo systemctl start smb
+``` bash
+sudo systemctl enable smb; 
+sudo systemctl start smb
+```
 
 /etc/samba/smb.conf
 
-    [global]
-            workgroup = WORKGROUP
-            server string = drewserv
-            security = user
-            passdb backend = tdbsam
-            log file = /var/log/samba/log.%m
-            max log size = 50
-            load printers = no
-            show add printer wizard = no
-            printcap name = /dev/null
-            disable spoolss = yes
-    [share]
-            path = /mnt/raid5
-            valid users = drew pbr
-            read only = No
-        create mode = 0665
-        directory mode = 0775
+``` bash
+[global]
+        workgroup = WORKGROUP
+        server string = drewserv
+        security = user
+        passdb backend = tdbsam
+        log file = /var/log/samba/log.%m
+        max log size = 50
+        load printers = no
+        show add printer wizard = no
+        printcap name = /dev/null
+        disable spoolss = yes
+[share]
+        path = /mnt/raid5
+        valid users = drew pbr
+        read only = No
+    create mode = 0665
+    directory mode = 0775
+```
 
 Setup cron jobs
 ---------------
 
 Keep anacron from waking me up at night!
 
-    $ sudo vi /etc/anacrontab // START_HOURS_RANGE</pre>
+``` bash
+$ sudo vi /etc/anacrontab // START_HOURS_RANGE</pre>
+```
 
 Configure Web Services
 ----------------------
