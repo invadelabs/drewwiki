@@ -66,7 +66,7 @@ php-pecl-apc lm_sensors hddtemp smartmontools apcupsd apcupsd-cgi
 ** Add UDP514/24 to IPTables
 * Setup mail relay
 ** Remove 127.0.0.1 /etc/mail/sendmail.mc
-** <pre># echo drew > /root/.forward; echo "andrew: drew" >> /etc/aliases; newaliases; echo "root: drew" >> /etc/aliases; newaliases</pre>
+** <syntaxhighlight lang=bash># echo drew > /root/.forward; echo "andrew: drew" >> /etc/aliases; newaliases; echo "root: drew" >> /etc/aliases; newaliases</syntaxhighlight>
 ** Add TCP25/0 to IPTables
 * Configure logwatch
 * Setup clamav virus protection for Samba and weekly scan

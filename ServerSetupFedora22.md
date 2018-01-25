@@ -91,7 +91,9 @@ Configure system, monitoring, mail, AV, and VPN
     -   Add UDP514/24 to IPTables
 -   Setup mail relay
     -   Remove 127.0.0.1 /etc/mail/sendmail.mc
-    -   # echo drew > /root/.forward; echo "andrew: drew" >> /etc/aliases; newaliases; echo "root: drew" >> /etc/aliases; newaliases
+    -   ``` bash
+        # echo drew > /root/.forward; echo "andrew: drew" >> /etc/aliases; newaliases; echo "root: drew" >> /etc/aliases; newaliases
+        ```
 
     -   Add TCP25/0 to IPTables
 
