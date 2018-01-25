@@ -44,90 +44,94 @@ OS X Software to Install
 from brew
 ---------
 
-    ansible
-    gradle24
-    imagemagick
-    kdiff3
-    maven
-    mongodb
-    nmap
-    node
-    nvm
-    openconnect
-    openssl
-    p7zip
-    pstree
-    psutils
-    watch
-    sqlite
-    wget
-    xz
+``` bash
+ansible
+gradle24
+imagemagick
+kdiff3
+maven
+mongodb
+nmap
+node
+nvm
+openconnect
+openssl
+p7zip
+pstree
+psutils
+watch
+sqlite
+wget
+xz
 
-    $ brew cask install java vlc atom vagrant vlc google-drive vnc-viewer sublime keepassx
+$ brew cask install java vlc atom vagrant vlc google-drive vnc-viewer sublime keepassx
+```
 
 extra deps?
 
-    Drews-MacBook-Pro:~ drew$ brew list | sort
-    aalib
-    atk
-    autoconf
-    automake
-    babl
-    boost
-    boost-python
-    cairo
-    dbus
-    fontconfig
-    fortune
-    freetype
-    gd
-    gdbm
-    gdk-pixbuf
-    gettext
-    gimp
-    git-lfs
-    glib
-    gmp
-    gnutls
-    gobject-introspection
-    gsettings-desktop-schemas
-    gtk+
-    gtk+3
-    gtk-mac-integration
-    harfbuzz
-    hicolor-icon-theme
-    icu4c
-    jpeg
-    libcroco
-    libelf
-    libepoxy
-    libffi
-    libgpg-error
-    libksba
-    libmpc
-    libpng
-    librsvg
-    libtasn1
-    libtiff
-    libtool
-    libwmf
-    libyaml
-    mpfr
-    nettle
-    pango
-    pebble-qemu
-    pebble-sdk
-    pebble-toolchain
-    pixman
-    pkg-config
-    py2cairo
-    pygobject
-    pygtk
-    python
-    qt
-    readline
-    texinfo
-    webp
+``` bash
+Drews-MacBook-Pro:~ drew$ brew list | sort
+aalib
+atk
+autoconf
+automake
+babl
+boost
+boost-python
+cairo
+dbus
+fontconfig
+fortune
+freetype
+gd
+gdbm
+gdk-pixbuf
+gettext
+gimp
+git-lfs
+glib
+gmp
+gnutls
+gobject-introspection
+gsettings-desktop-schemas
+gtk+
+gtk+3
+gtk-mac-integration
+harfbuzz
+hicolor-icon-theme
+icu4c
+jpeg
+libcroco
+libelf
+libepoxy
+libffi
+libgpg-error
+libksba
+libmpc
+libpng
+librsvg
+libtasn1
+libtiff
+libtool
+libwmf
+libyaml
+mpfr
+nettle
+pango
+pebble-qemu
+pebble-sdk
+pebble-toolchain
+pixman
+pkg-config
+py2cairo
+pygobject
+pygtk
+python
+qt
+readline
+texinfo
+webp
+```
 
 Maybe
 -----

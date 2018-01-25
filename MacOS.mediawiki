@@ -35,7 +35,7 @@
 * Gitter
 
 == from brew ==
-<pre>
+<syntaxhighlight lang=bash>
 ansible
 gradle24
 imagemagick
@@ -56,10 +56,10 @@ wget
 xz
 
 $ brew cask install java vlc atom vagrant vlc google-drive vnc-viewer sublime keepassx
-</pre>
+</syntaxhighlight>
 
 extra deps?
-<pre>
+<syntaxhighlight lang=bash>
 Drews-MacBook-Pro:~ drew$ brew list | sort
 aalib
 atk
@@ -121,7 +121,7 @@ qt
 readline
 texinfo
 webp
-</pre>
+</syntaxhighlight>
 
 == Maybe ==
 * Adobe Reader
