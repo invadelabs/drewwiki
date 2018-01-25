@@ -12,4 +12,6 @@ Moved to
 Cron
 ====
 
-    0 4 * * * cd /mnt/raid5/backup/dd-wrt; wget --user=root --password=admin http://192.168.1.1/nvrambak.bin; mv nvrambak.bin nvrambak.bin`date +%F.%T`;
+``` bash
+0 4 * * * cd /mnt/raid5/backup/dd-wrt; wget --user=root --password=admin http://192.168.1.1/nvrambak.bin; mv nvrambak.bin nvrambak.bin`date +%F.%T`;
+```
