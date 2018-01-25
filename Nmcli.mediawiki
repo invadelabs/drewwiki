@@ -1,4 +1,4 @@
-<pre>
+<syntaxhighlight lang=bash>
 nmcli general status
 
 nmcli connection show active
@@ -15,4 +15,4 @@ Connection with UUID '1234568-1234-1234-1234-123456789012' created and activated
 nmcli connection edit con-name <name of new connection>
 
 nmcli connection edit con-name 1234568-1234-1234-1234-123456789012
-</pre>
+</syntaxhighlight>
