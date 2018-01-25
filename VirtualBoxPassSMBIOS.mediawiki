@@ -1,11 +1,11 @@
 Need to see what this section was for from my notes...
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 VBoxManage setextradata win10 "VBoxInternal/Devices/acpi/0/Config/CustomTable" "/tmp/SLIC"
 VBoxManage setextradata win10-vostro "VBoxInternal/Devices/acpi/0/Config/CustomTable" "/DATA/VirtualBox/Machines/win7-vostro/SLIC"
 </syntaxhighlight>
 
 Gather this data from `dmidecode command`. Run the command to set configure in in the <vm-name>.vbox configuration file.
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 VBoxManage setextradata win10 "VBoxInternal/Devices/pcbios/0/Config/DmiBIOSVendor" "Hewlett-Packard"
 VBoxManage setextradata win10 "VBoxInternal/Devices/pcbios/0/Config/DmiBIOSVersion" "68IAV Ver. F.61"
 VBoxManage setextradata win10 "VBoxInternal/Devices/pcbios/0/Config/DmiBIOSReleaseDate" "04/07/2015"
@@ -16,7 +16,7 @@ VBoxManage setextradata win10 "VBoxInternal/Devices/pcbios/0/Config/DmiBIOSFirmw
 </syntaxhighlight>
 
 Gather this data from `dmidecode command`. Run the command to set configure in in the <vm-name>.vbox configuration file.
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 VBoxManage setextradata win10 "VBoxInternal/Devices/pcbios/0/Config/DmiSystemVendor" "Hewlett-Packard"
 VBoxManage setextradata win10 "VBoxInternal/Devices/pcbios/0/Config/DmiSystemProduct" "Get from dmidecode"
 VBoxManage setextradata win10 "VBoxInternal/Devices/pcbios/0/Config/DmiSystemVersion" "Get from dmidecode"
@@ -26,7 +26,7 @@ VBoxManage setextradata win10 "VBoxInternal/Devices/pcbios/0/Config/DmiSystemUui
 </syntaxhighlight>
 
 Example generated <vmname>.vbox configuration file:
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 drew@drew-laptop:~/VirtualBox VMs/win10-base$ cat win10-base.vbox
 <?xml version="1.0"?>
 <!--
