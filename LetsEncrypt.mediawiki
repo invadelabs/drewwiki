@@ -2,28 +2,28 @@
 * https://certbot.eff.org/#debianjessie-apache
 
 === Install certbot ===
-<pre>
+<syntaxhighlight lang=bash>
 $ sudo apt-get install certbot
-</pre>
+</syntaxhighlight>
 
 === Obtain / Renew certs ===
 Dry-run:
-<pre>
+<syntaxhighlight lang=bash>
 $ sudo certbot renew --dry-run
-</pre>
+</syntaxhighlight>
 
 Update:
-<pre>
+<syntaxhighlight lang=bash>
 $ sudo certbot renew
-</pre>
+</syntaxhighlight>
 
 Add to root's cron and check twice daily:
-<pre>
+<syntaxhighlight lang=bash>
 0 3,15 * * * certbot renew --quiet 
-</pre>
+</syntaxhighlight>
 
 == Old method ==
-<pre>
+<syntaxhighlight lang=bash>
 ./letsencrypt-auto run --apache -d drew-bg.invadelabs.com
 
  - Congratulations! Your certificate and chain have been saved at
@@ -34,4 +34,4 @@ Add to root's cron and check twice daily:
 SSLCertificateFile /etc/letsencrypt/live/drew-bg.invadelabs.com/fullchain.pem
 SSLCertificateKeyFile /etc/letsencrypt/live/drew-bg.invadelabs.com/privkey.pem
 Include /etc/letsencrypt/options-ssl-apache.conf
-</pre>
+</syntaxhighlight>
