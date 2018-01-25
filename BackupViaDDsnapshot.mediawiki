@@ -2,21 +2,26 @@
 Apped to /etc/sysctl.conf per;
 * http://www.linux-usb.org/FAQ.html#i5
 * http://marc-abramowitz.com/archives/2007/02/17/getting-good-performance-out-of-usb-hard-drives-in-linux/
-<pre># Speed up writes on USB HD
-echo 1024 > /sys/block/sdf/device/max_sectors;</pre>
+<syntaxhighlight lang=bash>
+# Speed up writes on USB HD
+echo 1024 > /sys/block/sdf/device/max_sectors;
+</syntaxhighlight>
 
 ==Check Bus Speed USB Peripherals==
-<pre>[root@drewserv devices]# grep "" /sys/bus/usb/devices/*/speed
+<syntaxhighlight lang=bash>
+[root@drewserv devices]# grep "" /sys/bus/usb/devices/*/speed
 /sys/bus/usb/devices/1-1/speed:480
 /sys/bus/usb/devices/3-2/speed:1.5
 /sys/bus/usb/devices/usb1/speed:480
 /sys/bus/usb/devices/usb2/speed:12
 /sys/bus/usb/devices/usb3/speed:12
 /sys/bus/usb/devices/usb4/speed:12
-/sys/bus/usb/devices/usb5/speed:12</pre>
+/sys/bus/usb/devices/usb5/speed:12
+</syntaxhighlight>
 
 == Creating / copying snapshot ==
-<pre>[drew@drewserv ~]$ sudo lvcreate -L10G -s -n tmpbkup /dev/vg-raid5/lv-raid5 
+<syntaxhighlight lang=bash>
+[drew@drewserv ~]$ sudo lvcreate -L10G -s -n tmpbkup /dev/vg-raid5/lv-raid5 
   Logical volume "tmpbkup" created
 
 [drew@drewserv ~]$ sudo lvs
@@ -57,10 +62,10 @@ Do you really want to remove active logical volume tmpbkup? [y/n]: y
   lv_home   vg_drewserv -wi-ao 178.44g                                      
   lv_root   vg_drewserv -wi-ao  50.00g                                      
   lv_swap   vg_drewserv -wi-ao   3.94g                                      
-</pre>
+</syntaxhighlight>
 
 == USB Hard Drive Perf Tests ==
-<pre>
+<syntaxhighlight lang=bash>
 [root@drewserv backup]# dd if=dell-desktop7.22.2010.tar.gz of=/dev/null bs=4M
 6321+1 records in
 6321+1 records out
@@ -77,4 +82,4 @@ Do you really want to remove active logical volume tmpbkup? [y/n]: y
 2500+0 records in
 2500+0 records out
 10485760000 bytes (10 GB) copied, 264.512 s, 39.6 MB/s
-</pre>
+</syntaxhighlight>
