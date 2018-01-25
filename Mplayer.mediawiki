@@ -1,25 +1,38 @@
 ==Video Acceleration / Video decoder offload to GPU==
 ====Xvmc For mpeg2/DVD only====
 Setup Xvmc - http://www.mythtv.org/wiki/index.php/XvMC
-<pre>mplayer -vo xvmc -vc ffmpeg12mc -dvd://1</pre>
+<syntaxhighlight lang=bash>
+mplayer -vo xvmc -vc ffmpeg12mc -dvd://1
+</syntaxhighlight>
+
 ====VDPAU For h264/AVC, VC-1/WMV3, and Mpeg1/2 ====
 Setup VDPAU - http://www.nvnews.net/vbulletin/forumdisplay.php?f=14
-<pre>./mplayer -vc ffmpeg12vdpau,ffh264vdpau,ffwmv3vdpau,ffvc1vdpau -vo vdpau some_file.avi</pre>
-
+<syntaxhighlight lang=bash>
+./mplayer -vc ffmpeg12vdpau,ffh264vdpau,ffwmv3vdpau,ffvc1vdpau -vo vdpau some_file.avi
+</syntaxhighlight>
 
 ==DVD Related==
 ====Run DVD copied to hard drive====
-<pre>mplayer -dvd-device /mnt/raid5/drew/video_to_encode/futurama_beast_billion_backs/ dvd://</pre>
-====Force Different Language====
-<pre>mplayer -alang en</pre>
-or
-<pre>mplayer -aid 128</pre>
+<syntaxhighlight lang=bash>
+mplayer -dvd-device /mnt/raid5/drew/video_to_encode/futurama_beast_billion_backs/ dvd://
+</syntaxhighlight>
 
+====Force Different Language====
+<syntaxhighlight lang=bash>
+mplayer -alang en
+</syntaxhighlight>
+
+or
+<syntaxhighlight lang=bash>
+mplayer -aid 128
+</syntaxhighlight>
 
 ==Different X Server==
-<pre>mplayer -display :1</pre>
-
+<syntaxhighlight lang=bash>
+mplayer -display :1
+</syntaxhighlight>
 
 ==Audio Output==
-<pre>mplayer -ao alsa:device=hw=0.0</pre>
-<pre>mplayer -ao oss</pre>
+<syntaxhighlight lang=bash>mplayer -ao alsa:device=hw=0.0
+mplayer -ao oss
+</syntaxhighlight>
