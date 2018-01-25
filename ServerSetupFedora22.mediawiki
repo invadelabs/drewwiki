@@ -103,7 +103,7 @@ php-pecl-apc lm_sensors hddtemp smartmontools apcupsd apcupsd-cgi
 * ^ Configure bacula and web interface
 
 =Setup cron jobs=
-# Keep anacron from waking me up at night! 
+Keep anacron from waking me up at night! 
 <syntaxhighlight lang=bash>
 # vi /etc/anacrontab // START_HOURS_RANGE
 </syntaxhighlight>

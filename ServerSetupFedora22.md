@@ -138,7 +138,7 @@ Configure RAID and filesharing
 Setup cron jobs
 ===============
 
-1.  Keep anacron from waking me up at night!
+Keep anacron from waking me up at night!
 
 ``` bash
 # vi /etc/anacrontab // START_HOURS_RANGE
