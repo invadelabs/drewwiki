@@ -5,7 +5,7 @@ Configure sendmail in Centos5 with a gmail smtp relay. Information pulled from;
 
 
 ===Setup certs===
-<pre>
+<syntaxhighlight lang=bash>
 # mkdir /etc/mail/certs
 # chmod 700 /etc/mail/certs
 # cp /etc/pki/tls/certs/ca-bundle.crt /etc/mail/certs
@@ -13,27 +13,29 @@ Configure sendmail in Centos5 with a gmail smtp relay. Information pulled from;
 # openssl req -new -x509 -keyout cakey.pem -out cacert.pem -days 3650
 # openssl req -nodes -new -x509 -keyout sendmail.pem -out sendmail.pem -days 3650
 # chmod 600 /etc/mail/certs/*
-</pre>
+</syntaxhighlight>
 
 ===Setup client info===
-<pre>
+<syntaxhighlight lang=bash>
 # mkdir /etc/mail/auth 
 # chmod 700 /etc/mail/auth
 # vi /etc/mail/auth/client-info
-</pre>
+</syntaxhighlight>
+
 Add this to the file, changing username and password to gmail login info.
-<pre>
+<syntaxhighlight lang=bash>
 AuthInfo:smtp.gmail.com "U:root" "I:username" "P:password" "M:PLAIN"
 AuthInfo:smtp.gmail.com:587 "U:root" "I:username" "P:password" "M:PLAIN"
 </pre>
+
 Make hash of client-info
-<pre>
+<syntaxhighlight lang=bash>
 # makemap -r hash client-info.db < client-info
 # chmod 600 /etc/mail/auth/*
-</pre>
+</syntaxhighlight>
 
 ===/etc/mail/sendmail.mc===
-<pre>
+<syntaxhighlight lang=bash>
 divert(-1)dnl
 include(`/usr/share/sendmail-cf/m4/cf.m4')dnl
 VERSIONID(`setup for linux')dnl
@@ -130,24 +132,24 @@ MAILER(local)dnl
 MAILER(smtp)dnl
 #MAILER(procmail)dnl
 #MAILER(cyrusv2)dnl
-</pre>
+</syntaxhighlight>
 
 ===Build sendmail config===
-<pre>
+<syntaxhighlight lang=bash>
 # cd /etc/mail; make
-</pre>
+</syntaxhighlight>
 
 ===Restart sendmail===
-<pre>
+<syntaxhighlight lang=bash>
 # /etc/init.d/sendmail restart
-</pre>
+</syntaxhighlight>
 
 ===Send a test message===
-<pre>
+<syntaxhighlight lang=bash>
 echo "This is a test email..." | mail -s "Test Email" some-email@address.com
-</pre>
+</syntaxhighlight>
 
 ===Debug===
-<pre>
+<syntaxhighlight lang=bash>
 # tail -f /var/log/maillog
-</pre>
+</syntaxhighlight>
