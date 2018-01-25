@@ -1,6 +1,5 @@
-
-
-<pre># lvm pvs --units s
+<syntaxhighlight lang=bash>
+# lvm pvs --units s
   PV         VG          Fmt  Attr PSize       PFree     
   /dev/md127 vg-raid5    lvm2 a-   1953538048S 488398848S
   /dev/sde2  vg_drewserv lvm2 a-    209649664S 104792064S
@@ -20,4 +19,5 @@ Number  Start     End         Size        Type     File system  Flags
 # parted /dev/sde mkpart primary 1026048s 210806784s
 # partprobe
 # parted /dev/sde set 2 lvm on
-# pvresize /dev/sde2</pre>
+# pvresize /dev/sde2
+</syntaxhighlight>
