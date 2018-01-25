@@ -36,10 +36,11 @@ info.
 ``` bash
 AuthInfo:smtp.gmail.com "U:root" "I:username" "P:password" "M:PLAIN"
 AuthInfo:smtp.gmail.com:587 "U:root" "I:username" "P:password" "M:PLAIN"
-</pre>
+```
 
 Make hash of client-info
-<syntaxhighlight lang=bash>
+
+``` bash
 # makemap -r hash client-info.db < client-info
 # chmod 600 /etc/mail/auth/*
 ```

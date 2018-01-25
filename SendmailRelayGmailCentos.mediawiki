@@ -26,7 +26,7 @@ Add this to the file, changing username and password to gmail login info.
 <syntaxhighlight lang=bash>
 AuthInfo:smtp.gmail.com "U:root" "I:username" "P:password" "M:PLAIN"
 AuthInfo:smtp.gmail.com:587 "U:root" "I:username" "P:password" "M:PLAIN"
-</pre>
+</syntaxhighlight>
 
 Make hash of client-info
 <syntaxhighlight lang=bash>
