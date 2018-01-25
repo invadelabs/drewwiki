@@ -1,5 +1,5 @@
 = Installation =
-<pre>
+<syntaxhighlight lang=bash>
 # curl -fsSL https://get.docker.com/ | sh
 ...
 + sudo -E sh -c docker version
@@ -25,18 +25,18 @@ adding your user to the "docker" group with something like:
   sudo usermod -aG docker drew
 
 Remember that you will have to log out and back in for this to take effect!
-</pre>
+</syntaxhighlight>
 
 = Download a container =
 Download a container and run bash (-i interactive, -t tty)
-<pre>
+<syntaxhighlight lang=bash>
 $ docker run -it ubuntu bash
-</pre>
+</syntaxhighlight>
 
 = Enable Rest API =
 http://www.campalus.com/enable-remote-tcp-connections-to-docker-host-running-ubuntu-15-04/
 
 = Advanced Rest Client Application (Chrome) =
-<pre>
+<syntaxhighlight lang=bash>
 http://drew-desktop:4243/images/json
-</pre>
+</syntaxhighlight>
