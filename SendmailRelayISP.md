@@ -3,9 +3,11 @@ title: SendmailRelayISP
 layout: default
 ---
 
-    $ diff sendmail.mc sendmail.mc.orig
-    26c26
-    < define(`SMART_HOST', `mail.cableone.net')dnl
-    ---
-    > dnl define(`SMART_HOST', `smtp.your.provider')dnl
-    174,180d173
+``` bash
+$ diff sendmail.mc sendmail.mc.orig
+26c26
+< define(`SMART_HOST', `mail.cableone.net')dnl
+---
+> dnl define(`SMART_HOST', `smtp.your.provider')dnl
+174,180d173
+```
