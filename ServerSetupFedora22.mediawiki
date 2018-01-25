@@ -1,18 +1,37 @@
 = Immediate post install steps =
-# <pre>sudo yum install etckeeper fail2ban</pre>
-# Disable root login via ssh
-## Add TCP22/0 to IPTables
-# Enable sudo
-# yum remove unneeded software
-# yum update
-# Enable SElinux
-# Extend days of sysstat logging
-## 
-<pre>grep -vE '^($|#)' /etc/sysconfig/sysstat
+
+==Install etckepper and fail2ban==
+Initalize and ensure service is running
+<syntaxhighlight>
+sudo yum install etckeeper fail2ban
+sudo etckeepeer init
+sudo systemctl enable fail2ban
+sudo systemctl start fail2ban
+</syntaxhighlight>
+
+==Disable root login via password ssh==
+<syntaxhighlight>
+$ grep Root /etc/ssh/sshd_config
+PermitRootLogin prohibit-password
+</syntaxhighlight>
+
+==Add TCP22/0 to IPTables==
+
+==Enable sudo==
+
+==yum remove unneeded software==
+
+==yum update==
+
+==Enable SElinux==
+
+==Extend days of sysstat logging==
+<syntaxhighlight>
+$ grep -vE '^($|#)' /etc/sysconfig/sysstat
 HISTORY=365
 COMPRESSAFTER=10
 SADC_OPTIONS=""
-</pre>
+</syntaxhighlight>
 
 = Install rest of software =
 <pre>

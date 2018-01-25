@@ -6,20 +6,41 @@ layout: default
 Immediate post install steps
 ============================
 
-1.  sudo yum install etckeeper fail2ban
+Install etckepper and fail2ban
+------------------------------
 
-2.  Disable root login via ssh
-    1.  Add TCP22/0 to IPTables
-3.  Enable sudo
-4.  yum remove unneeded software
-5.  yum update
-6.  Enable SElinux
-7.  Extend days of sysstat logging
-    1.  
+Initalize and ensure service is running
 
-<!-- -->
+    sudo yum install etckeeper fail2ban
+    sudo etckeepeer init
+    sudo systemctl enable fail2ban
+    sudo systemctl start fail2ban
 
-    grep -vE '^($|#)' /etc/sysconfig/sysstat
+Disable root login via password ssh
+-----------------------------------
+
+    $ grep Root /etc/ssh/sshd_config
+    PermitRootLogin prohibit-password
+
+Add TCP22/0 to IPTables
+-----------------------
+
+Enable sudo
+-----------
+
+yum remove unneeded software
+----------------------------
+
+yum update
+----------
+
+Enable SElinux
+--------------
+
+Extend days of sysstat logging
+------------------------------
+
+    $ grep -vE '^($|#)' /etc/sysconfig/sysstat
     HISTORY=365
     COMPRESSAFTER=10
     SADC_OPTIONS=""
