@@ -1,5 +1,5 @@
 Prune = remove unused data
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 docker system df
 docker system prune
 </syntaxhighlight>
