@@ -9,22 +9,26 @@ net:2 ---&gt; 6 = DNS
 
 net:2 ---&gt; 42 = NTP
 
-    dhcp-option=net:2,3,192.168.1.5
-    dhcp-option=net:2,6,192.168.1.5
-    dhcp-host=00:1d:92:61:a1:6f,net:2,192.168.1.70,infinite
-    dhcp-host=00:22:64:5E:AD:8B,net:2
-    dhcp-host=00:22:15:8C:AF:79,net:2
+``` bash
+dhcp-option=net:2,3,192.168.1.5
+dhcp-option=net:2,6,192.168.1.5
+dhcp-host=00:1d:92:61:a1:6f,net:2,192.168.1.70,infinite
+dhcp-host=00:22:64:5E:AD:8B,net:2
+dhcp-host=00:22:15:8C:AF:79,net:2
+```
 
-    dhcp-option=42,192.168.1.20 # ntp server
-    dhcp-option=net:2,3,192.168.1.5 # gateway
-    dhcp-option=net:2,6,192.168.1.5 # dns
-    #dhcp-option=net:3,3,192.168.1.70
-    #dhcp-option=net:3,6,192.168.1.70
+``` bash
+dhcp-option=42,192.168.1.20 # ntp server
+dhcp-option=net:2,3,192.168.1.5 # gateway
+dhcp-option=net:2,6,192.168.1.5 # dns
+#dhcp-option=net:3,3,192.168.1.70
+#dhcp-option=net:3,6,192.168.1.70
 
-    dhcp-host=00:1d:92:61:a1:6f,net:2,192.168.1.70,infinite
-    dhcp-host=00:30:48:56:a8:15,net:2,192.168.1.20,infinite
-    dhcp-host=00:80:A3:8c:8E:F5,net:2,192.168.1.40,infinite
-    #dhcp-host=00:22:15:8C:AF:79,net:2 # ???
-    #dhcp-host=00:22:64:5E:AD:8B,net:2  # work laptop eth
-    #dhcp-host=00:21:5D:B9:1F:DA,net:2 # work laptop wifi
-    #dhcp-host=00:19:5B:8D:78:F1,net:3 # ???
+dhcp-host=00:1d:92:61:a1:6f,net:2,192.168.1.70,infinite
+dhcp-host=00:30:48:56:a8:15,net:2,192.168.1.20,infinite
+dhcp-host=00:80:A3:8c:8E:F5,net:2,192.168.1.40,infinite
+#dhcp-host=00:22:15:8C:AF:79,net:2 # ???
+#dhcp-host=00:22:64:5E:AD:8B,net:2  # work laptop eth
+#dhcp-host=00:21:5D:B9:1F:DA,net:2 # work laptop wifi
+#dhcp-host=00:19:5B:8D:78:F1,net:3 # ???
+```
