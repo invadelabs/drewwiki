@@ -2,10 +2,12 @@ Ubuntu RAID0 SSD no root w/o boot partition
 
 == Start install media ==
 === Jump over to another tty ===
-<pre># apt-get -y install lvm2</pre>
+<syntaxhighlight lang=bash>
+# apt-get -y install lvm2
+</syntaxhighlight>
 
 === Make sure partition starts on 2048 ===
-<pre># fdisk -l
+<syntaxhighlight lang=bash># fdisk -l
 
 Disk /dev/sda: 32.0 GB, 32017047552 bytes
 132 heads, 63 sectors/track, 7519 cylinders, total 62533296 sectors
@@ -26,21 +28,27 @@ Disk identifier: 0xd67db81c
 
    Device Boot      Start         End      Blocks   Id  System
 /dev/sdb1            2048    62533295    31265624   8e  Linux LVM
-</pre>
+</syntaxhighlight>
 
 === Create PV's with aligned metadata ===
-<pre># pvcreate --metadatasize 250k /dev/sda1
-# pvcreate --metadatasize 250k /dev/sdb1</pre>
+<syntaxhighlight lang=bash>
+# pvcreate --metadatasize 250k /dev/sda1
+# pvcreate --metadatasize 250k /dev/sdb1
+</syntaxhighlight>
 
 === Create VG and LV ===
-<pre># vgcreate  vgssd /dev/sda1 /dev/sdb1
+<syntaxhighlight lang=bash>
+# vgcreate  vgssd /dev/sda1 /dev/sdb1
 # vgdisplay vgssd | grep Total
   Total PE              15266
-# lvcreate -i2 -I128 -n lvssd vgssd --extents 15266</pre>
+# lvcreate -i2 -I128 -n lvssd vgssd --extents 15266
+</syntaxhighlight>
 
 === Create file system ===
-<pre># mkfs.ext4 -v -O ^has_journal -m 0.1 -E stride=32,stripe-width=64 /dev/vgssd/lvssd
-# tune2fs -c 0 /dev/vgssd/lvssd</pre>
+<syntaxhighlight lang=bash>
+# mkfs.ext4 -v -O ^has_journal -m 0.1 -E stride=32,stripe-width=64 /dev/vgssd/lvssd
+# tune2fs -c 0 /dev/vgssd/lvssd
+</syntaxhighlight>
 
 === Back to installer ===
 * When partitioner comes up, use the already created /dev/vgssd/lvssd as / **do not format, ruins the purpose of removing the journal and adding stride/stripe-width for alignment purposes.
@@ -48,14 +56,17 @@ Disk identifier: 0xd67db81c
 == After install is finished, but before Reboot ==
 === Add bits for lvm and nfs on next boot ===
 * Jump back to a tty
-<pre># mount -o bind /dev /target/dev
+<syntaxhighlight lang=bash>
+# mount -o bind /dev /target/dev
 # mount -o bind /sys /target/sys
 # mount -o bind /proc /target/proc
 # chroot /target
-# sudo apt-get -y install lvm2 nfs-common</pre>
+# sudo apt-get -y install lvm2 nfs-common
+</syntaxhighlight>
 
 === /etc/fstab modifications ===
-<pre>UUID="6239bc41-8816-47b6-b7d5-2be592f8b69b" /               ext4    noatime,discard,errors=remount-ro 0 1
+<syntaxhighlight lang=bash>
+UUID="6239bc41-8816-47b6-b7d5-2be592f8b69b" /               ext4    noatime,discard,errors=remount-ro 0 1
 
 # Keep excessive writes in /tmp, and I use a remote syslog server
 none		/tmp		tmpfs	size=300M	0 0
@@ -63,23 +74,30 @@ none		/var/log	tmpfs	defaults	0 0
 
 # Mount network raid array and lets keep apt cache over there via bind mount
 192.168.1.20:/mnt/raid5 /mnt/raid5	nfs	defaults	0 0
-/mnt/raid5/drew/drew-desktop/archives/ /var/cache/apt/archives/	nfs	bind 0 0</pre>
+/mnt/raid5/drew/drew-desktop/archives/ /var/cache/apt/archives/	nfs	bind 0 0
+</syntaxhighlight>
 
 === /etc/rc.local additions ===
-<pre>echo deadline >/sys/block/sdg/queue/scheduler
+<syntaxhighlight lang=bash>
+echo deadline >/sys/block/sdg/queue/scheduler
 echo deadline >/sys/block/sdh/queue/scheduler
-find /sys/devices -name nr_requests -exec sh -c 'echo 4096 > {}' \;</pre>
+find /sys/devices -name nr_requests -exec sh -c 'echo 4096 > {}' \;
+</syntaxhighlight>
 
 === /etc/sysctl.conf additions for swap===
-<pre>vm.swappiness to 1</pre>
+<syntaxhighlight lang=bash>
+vm.swappiness to 1
+</syntaxhighlight>
 
 === Update grub2 ===
 * Note may require rebuild of initial ram disk -
-<pre># mv /boot/initrd.img-3.2.0-20-generic initrd.img-3.2.0-20-generic.old
+<syntaxhighlight lang=bash>
+# mv /boot/initrd.img-3.2.0-20-generic initrd.img-3.2.0-20-generic.old
 # mkinitramfs -o /boot/initrd.img-3.2.0-20-generic
 # update-grub
 # grub-install /dev/sda
-# grub-install /dev/sdb</pre>
+# grub-install /dev/sdb
+</syntaxhighlight>
 
 == First boot into installed OS ==
 Once in OS lets stop a few things from wearing out the SSD's.
