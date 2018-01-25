@@ -197,10 +197,6 @@ Media
     Screen
 -   [LinuxGPS](LinuxGPS "wikilink") - Linux GPS with sirfmon, gpsd, and
     more
--   [mencoder](mencoder "wikilink") - codecs(x264, lavc, xvid) /
-    de-interlace filters / dvd
--   [mplayer](mplayer "wikilink") - dvd and dvb playback / xvmc and
-    vdpau gpu decoder offload
 -   [Independant X-server](Independant_X-server "wikilink") - Multi seat
     configuration for 2 seperate X servers on the same system
 -   [Lirc Config - MythTV /
@@ -208,13 +204,9 @@ Media
 -   [Lirc, Pinnacle 800i, and Comcast
     Remote](Lirc,_Pinnacle_800i,_and_Comcast_Remote "wikilink") -
     Remapping Comcast remote IR in ir-keymap.c kernel module
--   [bluray](bluray "wikilink") - Playing and backing up Blu-ray discs
-    in Linux
 -   [Compiz Profile
     Configuration](Compiz_Profile_Configuration "wikilink") - Dual
     monitor / GiantCube / Ice Exploding Windows
--   [N64Mupen64plus](N64Mupen64plus "wikilink") - Using mupen64plus (N64
-    Emulator) in Linux
 
 Client Setup
 ------------
