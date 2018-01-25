@@ -208,8 +208,6 @@ Media
 -   [Lirc, Pinnacle 800i, and Comcast
     Remote](Lirc,_Pinnacle_800i,_and_Comcast_Remote "wikilink") -
     Remapping Comcast remote IR in ir-keymap.c kernel module
--   [ConvertVideoToM4a](ConvertVideoToM4a "wikilink") - Convert video to
-    m4a with ffmpeg copy
 -   [bluray](bluray "wikilink") - Playing and backing up Blu-ray discs
     in Linux
 -   [Compiz Profile

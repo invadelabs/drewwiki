@@ -109,7 +109,6 @@ A collection of randomness I've encountered and configured in Linux. - drew@inva
 *[[Independant X-server]] - Multi seat configuration for 2 seperate X servers on the same system
 *[[Lirc Config - MythTV / mplayer]]
 *[[Lirc, Pinnacle 800i, and Comcast Remote]] - Remapping Comcast remote IR in ir-keymap.c kernel module
-*[[ConvertVideoToM4a]] - Convert video to m4a with ffmpeg copy
 *[[bluray]] - Playing and backing up Blu-ray discs in Linux
 *[[Compiz Profile Configuration]] - Dual monitor / GiantCube / Ice Exploding Windows
 *[[N64Mupen64plus]] - Using mupen64plus (N64 Emulator) in Linux
