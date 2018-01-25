@@ -70,11 +70,10 @@ php-pecl-apc lm_sensors hddtemp smartmontools apcupsd apcupsd-cgi
 Configure system, monitoring, mail, AV, and VPN
 ===============================================
 
-1.  Configure GRUB serial console redirection
-2.  Configure kdump for system panics
-3.  Configure lm-sensors, smartd/hddtemp+thermal alerts, lldpad, mcelog,
+-   Configure GRUB serial console redirection
+-   Configure kdump for system panics
+-   Configure lm-sensors, smartd/hddtemp+thermal alerts, lldpad, mcelog,
     and SMARTmon for temperature alerts.
-    1.  1.  
 
 ``` bash
  DEVICESCAN -H -m root -M exec /usr/libexec/smartmontools/smartdnotify -n standby,10,q
@@ -85,20 +84,20 @@ Configure system, monitoring, mail, AV, and VPN
 /dev/sde -H -m root -M daily -M exec /home/drew/cron/smartmon.sh -M daily -f -l error -o on -S on -s (S/../.././02|L/../../6/03) -W 0,0,47 -d sat
 ```
 
-1.  Configure apcupsd for UPS alerts
-2.  Configure Time Server for local network access
-    1.  Add UDP123/24 to IPTables
-3.  Configure rsyslog for network clients
-    1.  Add UDP514/24 to IPTables
-4.  Setup mail relay
-    1.  Remove 127.0.0.1 /etc/mail/sendmail.mc
-    2.  # echo drew > /root/.forward; echo "andrew: drew" >> /etc/aliases; newaliases; echo "root: drew" >> /etc/aliases; newaliases
+-   Configure apcupsd for UPS alerts
+-   Configure Time Server for local network access
+    -   Add UDP123/24 to IPTables
+-   Configure rsyslog for network clients
+    -   Add UDP514/24 to IPTables
+-   Setup mail relay
+    -   Remove 127.0.0.1 /etc/mail/sendmail.mc
+    -   # echo drew > /root/.forward; echo "andrew: drew" >> /etc/aliases; newaliases; echo "root: drew" >> /etc/aliases; newaliases
 
-    3.  Add TCP25/0 to IPTables
+    -   Add TCP25/0 to IPTables
 
-5.  Configure logwatch
-6.  Setup clamav virus protection for Samba and weekly scan
-7.  Configure OpenVPN
+-   Configure logwatch
+-   Setup clamav virus protection for Samba and weekly scan
+-   Configure OpenVPN
 
 Configure RAID and filesharing
 ==============================
