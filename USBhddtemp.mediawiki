@@ -1,1 +1,3 @@
-<pre># hddtemp SATA:/dev/sdf</pre>
+<syntaxhighlight lang=bash>
+# hddtemp SATA:/dev/sdf
+</syntaxhighlight>

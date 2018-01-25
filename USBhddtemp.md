@@ -3,4 +3,6 @@ title: USBhddtemp
 layout: default
 ---
 
-    # hddtemp SATA:/dev/sdf
+``` bash
+# hddtemp SATA:/dev/sdf
+```
