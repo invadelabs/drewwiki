@@ -1,58 +1,74 @@
 ===Software RAID===
 ====Create md device====
 Create a raid5 device with 256 chunk size on 4 devices with out any hot spares.
-<pre># mdadm --create /dev/md0 --level=raid5 --chunk=256 --raid-devices=4 --spare-devices=0 /dev/sd[b-e]</pre>
+<syntaxhighlight lang=bash>
+# mdadm --create /dev/md0 --level=raid5 --chunk=256 --raid-devices=4 --spare-devices=0 /dev/sd[b-e]
+</syntaxhighlight>
+
 ====Create /etc/mdadm.conf====
-<pre># mdadm  --examine  --scan --config=mdadm.conf >> /etc/mdadm.conf</pre>
+<syntaxhighlight lang=bash>
+# mdadm  --examine  --scan --config=mdadm.conf >> /etc/mdadm.conf</pre>
 Modify as appropriate, ex;
 <pre>
 DEVICE partitions
 CREATE owner=root group=disk mode=0660 auto=yes
 HOMEHOST <system>
 MAILADDR root
-</pre>
+</syntaxhighlight>
+
 ====Replace dead device====
-<pre># mdadm /dev/md0 -a /dev/sdc</pre>
+<syntaxhighlight lang=bash>
+# mdadm /dev/md0 -a /dev/sdc
+</syntaxhighlight>
 
 ====Force a degraded array to start====
 If a drive fails, reboot happens, and we need to restart an array with 3 out of 4 drives running
-<pre># mdadm -Af /dev/md0 -Af /dev/md0 /dev/sda /dev/sdb /dev/sdd</pre>
+<syntaxhighlight lang=bash>
+# mdadm -Af /dev/md0 -Af /dev/md0 /dev/sda /dev/sdb /dev/sdd
+</syntaxhighlight>
 
 ===Create filesystem===
 ====Ext3====
 Create an ext3 file system with 0% space reserved for root, a 4096 block size, and a raid stride of 16 ( 16 * 256 = 4096 | stride*chunk=block)
-<pre># mkfs.ext3 -m 0 -b 4096 -E stride=16 /dev/md0</pre>
+<syntaxhighlight lang=bash>
+# mkfs.ext3 -m 0 -b 4096 -E stride=16 /dev/md0
+</syntaxhighlight>
 
 ===Performance Testing===
 ====Bonnie++====
-<pre># bonnie++ -d /mnt/raid5/tmp -u drew -f</pre>
+<syntaxhighlight lang=bash>
+# bonnie++ -d /mnt/raid5/tmp -u drew -f
+</syntaxhighlight>
+
 ====Iozone====
 *-a auto 
 *-b output_excel file 
 *-i 0 run read test 
 *-i 1 run write test
 
-<pre># iozone -a -b werd.xls -i 0 -i 1 -C -E</pre>
+<syntaxhighlight lang=bash>
+# iozone -a -b werd.xls -i 0 -i 1 -C -E
+</syntaxhighlight>
 
 ===Additional Tunables===
 Most of this were pulled from http://www.3ware.com/KB/article.aspx?id=11050
 
 ====max_sectors_kb====
-<pre>
+<syntaxhighlight lang=bash>
 echo "Setting max_sectors_kb to chunk size of RAID5 arrays..."
 for i in sdb sdc sdd sde
 do
    echo "Setting /dev/$i to 128K..."
    echo 128 > /sys/block/"$i"/queue/max_sectors_kb
 done
-</pre>
+</syntaxhighlight>
 
 ====Read-ahead on md0====
 *I hear this eats a lot of RAM
-<pre>
+<syntaxhighlight lang=bash>
 echo "Setting read-ahead to 64MB for /dev/md3"
 blockdev --setra 65536 /dev/md0
-</pre>
+</syntaxhighlight>
 
 ====stripe_cache_size====
 * + stripe_cache_size (raid4, raid5 and raid6)
@@ -65,23 +81,23 @@ blockdev --setra 65536 /dev/md0
 * + The total size of the stripe cache is determined by this formula:
 * +
 * + PAGE_SIZE * raid_disks * stripe_cache_size = memory used
-<pre>
+<syntaxhighlight lang=bash>
 echo "Setting stripe_cache_size to 16MB for /dev/md3"
 echo 16384 > /sys/block/md0/md/stripe_cache_size
-</pre>
+</syntaxhighlight>
 
 ====Array resync speed====
 * Dramatically improves resync performance...
-<pre>
+<syntaxhighlight lang=bash>
 # Increase the minimum / maximum resync speed of the array..
 echo "Setting minimum and maximum resync speed to 100MB/s..."
 echo 100000 > /sys/block/md0/md/sync_speed_min
 echo 100000 > /sys/block/md0/md/sync_speed_max
-</pre>
+</syntaxhighlight>
 
 ====Disable NCQ====
 * Disabling native command queuing ... Benefits?
-<pre>
+<syntaxhighlight lang=bash>
 # Disable NCQ.
 echo "Disabling NCQ..."
 for i in sdc sdd sde sdf sdg sdh sdi sdj sdk sdl
@@ -89,4 +105,4 @@ do
    echo "Disabling NCQ on $i"
    echo 1 > /sys/block/"$i"/device/queue_depth
 done
-</pre>
+</syntaxhighlight>
