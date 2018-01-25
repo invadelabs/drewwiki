@@ -1,14 +1,14 @@
 Use ChefDk to install kitchen-docker into Chef's ruby omnibus
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 sudo chef gem install kitchen-docker
 </syntaxhighlight>
 
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 sudo chef kitchen test
 </syntaxhighlight>
 
 .kitchen.yml in repo
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 ---
 driver:
   name: docker
