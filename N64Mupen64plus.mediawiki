@@ -1,4 +1,5 @@
-<pre>mupen64plus --resolution 1024x768 --audio dummy \
+<syntaxhighlight lang=bash>
+mupen64plus --resolution 1024x768 --audio dummy \
 --set Video-Rice[LoadHiResTextures]=True \
 --gfx /usr/lib/mupen64plus/mupen64plus-video-arachnoid.so \
 Legend\ of\ Zelda\,\ The\ -\ Majora\'s\ Mask\ \(U\)\ \[\!\].z64
@@ -62,4 +63,5 @@ Mempak switch = ""
 Rumblepak switch = ""
 # Analog axis configuration mappings
 X Axis = "axis(0-,0+)"
-Y Axis = "axis(1-,1+)"</pre>
+Y Axis = "axis(1-,1+)"
+</syntaxhighlight>
