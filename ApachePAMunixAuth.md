@@ -17,7 +17,7 @@ Add to <Directory> or <Location>
     AuthType "basic"
     AuthName "Auth"
     require user drew
-    #require group blabla</pre>
+    #require group blabla
 ```
 
 Find safe work around
