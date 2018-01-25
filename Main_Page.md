@@ -123,15 +123,18 @@ System Administration
 -   [OpenVPN](OpenVPN "wikilink") - OpenVPN Server Setup
 -   [ApachePAMunixAuth](ApachePAMunixAuth "wikilink") - Apache
     authentication against /etc/passwd
--   [SendmailRelayGmailCentos](SendmailRelayGmailCentos "wikilink") -
-    Sendmail with gmail relay in Fedora 10+
--   [SendmailRelayISP](SendmailRelayISP "wikilink") - Sendmail using ISP
-    as relay in Fedora 10+
 -   [IPMI](IPMI "wikilink") - IPMI on SuperMicro AOC-IPMI20 with
     Serial-Over-LAN Console
 -   [iptables](iptables "wikilink") - iptables setup
 -   [lm\_sensorsPDMSi](lm_sensorsPDMSi "wikilink") - lm\_sensors
     lmsensors /etc/sensors.d/pdsmi
+
+##### Mail
+
+-   [SendmailRelayGmailCentos](SendmailRelayGmailCentos "wikilink") -
+    Sendmail with gmail relay in Fedora 10+
+-   [SendmailRelayISP](SendmailRelayISP "wikilink") - Sendmail using ISP
+    as relay in Fedora 10+
 
 ##### DD-WRT
 
@@ -145,6 +148,9 @@ System Administration
 -   [ddwrtopsware](ddwrtopsware "wikilink") - opsware
 
 ##### File Server
+
+-   -   [UbuntuRAID0ssd](UbuntuRAID0ssd "wikilink") -- Ubuntu RAID0 LVM
+        SSD on root without boot partition
 
 -   [NFS Optimization](NFS_Optimization "wikilink") - NFS Performance
     and Optimization
@@ -184,9 +190,6 @@ System Administration
 -   [RaspberryPi](RaspberryPi "wikilink") - Information for RPi
 -   [udevinfo](udevinfo "wikilink") - gathering system info
 -   [gps](gps "wikilink") - GPS Related
--   ssd - Solid State Drive articles
-    -   [UbuntuRAID0ssd](UbuntuRAID0ssd "wikilink") -- Ubuntu RAID0 LVM
-        on SSD on root no boot partition
 
 Media
 -----
