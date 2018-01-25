@@ -1,7 +1,7 @@
 Raw notes, needs formatting, context...
 
 =Create data bag=
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 $ openssl rand -base64 512 | tr -d '\r\n' > ~/encrypted_data_bag_secret
 $ knife data bag create --editor /usr/bin/vi --secret-file ./encrypted_data_bag_secret jenkins passwords
 $ knife data bag edit --editor /usr/bin/vi --secret-file ./encrypted_data_bag_secret jenkins passwords # do not mix up -s and --secret-file
@@ -11,7 +11,7 @@ $ knife data bag edit --editor /usr/bin/vi --secret-file ./encrypted_data_bag_se
 copy encrypted_data_bag_secret to chef-client:/etc/chef/encrypted_data_bag_secret
 
 =Example JSON contents=
-<syntaxhighlight>
+<syntaxhighlight lang=json>
 {  
    "jenkins_invadelabs":{  
       "install_plugins":{  
@@ -24,7 +24,7 @@ copy encrypted_data_bag_secret to chef-client:/etc/chef/encrypted_data_bag_secre
 </syntaxhighlight>
 
 =Create / edit data bags=
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 knife data bag create --editor /usr/bin/vi --secret-file ./encrypted_data_bag_secret jenkins passwords
 knife data bag edit --editor /usr/bin/vi --secret-file ./encrypted_data_bag_secret jenkins passwords
 
@@ -38,7 +38,7 @@ jenkins (pid 21599) is running...
 </syntaxhighlight>
 
 =Add a private key to a databag=
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 /usr/local/Cellar/gnu-sed/4.2.2/bin/gsed ':a;N;$!ba;s/\n/\\n/g' jenkins_is_rsa
 copy output to knife data bag create <some data bag>
 flatten json file
