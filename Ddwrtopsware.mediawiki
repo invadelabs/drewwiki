@@ -1,4 +1,5 @@
-<pre>nmap
+<syntaxhighlight lang=bash>
+nmap
 lynx
 file
 
@@ -86,4 +87,4 @@ tsocks - 1.8beta5-4 - Transparent SOCKS proxying library.
 ulogd - 1.24-1 - A userspace logging daemon for netfilter/iptables
 vnstat - 1.10-2 - Network traffic monitor with log
 weechat - 0.3.8-2 - (Wee Enhanced Environment for Chat) is a fast and light IRC client.
-</pre>
+</syntaxhighlight>
