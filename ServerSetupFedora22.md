@@ -147,11 +147,10 @@ Keep anacron from waking me up at night!
 Configure Web Services
 ======================
 
-1.  ddclient for dynamicdns updates
-2.  Configure MythTV / MythWeb / minidlna
-    1.  Add TCP80/24 and TCP443/0 for web services, TCP1900/0 TCP8200/0,
+-   ddclient for dynamicdns updates
+-   Configure MythTV / MythWeb / minidlna
+    -   Add TCP80/24 and TCP443/0 for web services, TCP1900/0 TCP8200/0,
         TCP34531/0 for minidlna
-        1.  
 
 ``` bash
  
@@ -169,7 +168,7 @@ model_number=1
 root_container=B
 ```
 
-1.  Configure pecl-php-apc / DrewWiki / WebDAV
+-   Configure pecl-php-apc / DrewWiki / WebDAV
 
 Completing / Wrap-up
 ====================

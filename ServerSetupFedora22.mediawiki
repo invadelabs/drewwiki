@@ -109,10 +109,10 @@ Keep anacron from waking me up at night!
 </syntaxhighlight>
 
 =Configure Web Services=
-# ddclient for dynamicdns updates
-# Configure MythTV / MythWeb / minidlna
-## Add TCP80/24 and TCP443/0 for web services, TCP1900/0 TCP8200/0, TCP34531/0 for minidlna
-### 
+* ddclient for dynamicdns updates
+* Configure MythTV / MythWeb / minidlna
+** Add TCP80/24 and TCP443/0 for web services, TCP1900/0 TCP8200/0, TCP34531/0 for minidlna
+
 <syntaxhighlight lang=bash> 
 port=8200
 media_dir=/mnt/raid5/media
@@ -127,7 +127,8 @@ serial=12345678
 model_number=1
 root_container=B
 </syntaxhighlight>
-# Configure pecl-php-apc / DrewWiki / WebDAV
+
+* Configure pecl-php-apc / DrewWiki / WebDAV
 
 = Completing / Wrap-up =
 * Verify all log files in /var/log are not giving any errors or notifications
