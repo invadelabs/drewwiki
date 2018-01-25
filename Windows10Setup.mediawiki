@@ -11,7 +11,7 @@
 *setup windows cortana
 
 == Apps to install ==
-<pre>
+<syntaxhighlight lang=bash>
 Fast_Track_Pro_Installer_6_0_7_77137.zip
 7z920-x64.msi
 audacity-win-2.0.3.exe then Lame_v3.99.3_for_Windows.exe
@@ -45,10 +45,10 @@ sdksetup.exe (only debug tools Windows Driver SDK for usbview)
 networx_setup (bandwidth utilization) 
 
 freepdfcompressor_setup.exe
-</pre>
+</syntaxhighlight>
 
 == Music Production == 
-<pre>
+<syntaxhighlight lang=bash>
 KeyFinder
 FL Studio 11
 Camel Phat 3
@@ -74,4 +74,4 @@ predator
 ??amptiube2
 m1
 kontakt
-</pre>
+</syntaxhighlight>
