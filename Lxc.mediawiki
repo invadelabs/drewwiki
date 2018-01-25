@@ -1,5 +1,6 @@
 ==Create container==
-<pre> drew@drew-itx:~$ sudo lxc-create -n test-container -t ubuntu
+<syntaxhighlight lang=bash>
+drew@drew-itx:~$ sudo lxc-create -n test-container -t ubuntu
 Checking cache download in /var/cache/lxc/trusty/rootfs-amd64 ...
 Installing packages in template: ssh,vim,language-pack-en
 Downloading ubuntu trusty minimal ...
@@ -12,31 +13,46 @@ I: Validating Packages
 I: Retrieving Packages
 I: Validating Packages
 I: Resolving dependencies of required packages...
-I: Resolving dependencies of base packages...</pre>
+I: Resolving dependencies of base packages...
+</syntaxhighlight>
 
 ==Show containers status==
-<pre># lxc-ls --fancy</pre>
+<syntaxhighlight lang=bash>
+# lxc-ls --fancy
+</syntaxhighlight>
 
 ==Start Container w/ Console==
-<pre># lxc-start -n test-container -d</pre>
+<syntaxhighlight lang=bash>
+# lxc-start -n test-container -d
+</syntaxhighlight>
 
 ==Connect to console==
-<pre># lxc-console -n test-container</pre>
+<syntaxhighlight lang=bash>
+# lxc-console -n test-container
+</syntaxhighlight>
 
 Exit by typing Ctrl-A followed by Q
 
 ==shutdown (lxc-stop for instant shutdown)==
-<pre># lxc-shutdown -n test-container</pre>
+<syntaxhighlight lang=bash>
+# lxc-shutdown -n test-container
+</syntaxhighlight>
 
 ==delete==
-<pre>lxc-destroy -n test-container</pre>
+<syntaxhighlight lang=bash>
+lxc-destroy -n test-container
+</syntaxhighlight>
 
 ==Configuration==
 config is /var/lib/lxc/test-container/config
 
 to auto start
+<syntaxhighlight lang=bash>
 ln -s /var/lib/lxc/test-container/config /etc/lxc/auto/test-container.conf
+</syntaxhighlight>
 
 ==Port forward to container==
-# iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j DNAT --to 10.0.3.143:80
-iptables -t nat -A PREROUTING -p tcp -i eth0 --dport 10022 -j DNAT --to-destination 10.0.3.239:22
+<syntaxhighlight lang=bash>
+$ iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j DNAT --to 10.0.3.143:80
+$ iptables -t nat -A PREROUTING -p tcp -i eth0 --dport 10022 -j DNAT --to-destination 10.0.3.239:22
+</syntaxhighlight>
