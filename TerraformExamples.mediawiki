@@ -2,7 +2,7 @@
 
 ==Setup==
 === Download Terraform===
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 $ mkdir ~/terraform && cd ~/terraform
 $ curl -o terraform http://....
 $ chmod 755 terraform
@@ -11,7 +11,7 @@ $ chmod 755 terraform
 
 ==Commands==
 ===terraform init===
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 drew@drew-8570w:~/terraform$ ./terraform init
 
 Initializing provider plugins...
@@ -40,7 +40,7 @@ commands will detect it and remind you to do so if necessary.
 </syntaxhighlight>
 
 ===terraform plan===
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 drew@drew-8570w:~/terraform$ ./terraform plan
 Refreshing Terraform state in-memory prior to plan...
 The refreshed state will be used to calculate this plan, but will not be
@@ -101,7 +101,7 @@ can't guarantee that exactly these actions will be performed if
 </syntaxhighlight>
 
 ===terraform apply===
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 drew@drew-8570w:~/terraform$ ./terraform apply
 
 An execution plan has been generated and is shown below.
@@ -194,7 +194,7 @@ Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
 </syntaxhighlight>
 
 ===terraform show===
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 drew@drew-8570w:~/terraform$ ./terraform show
 aws_instance.invadelabs-web001:
   id = i-0168a6fa363df0156
@@ -237,7 +237,7 @@ aws_instance.invadelabs-web001:
 </syntaxhighlight>
 
 ===terraform destroy===
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 drew@drew-8570w:~/terraform$ ./terraform destroy
 aws_instance.invadelabs-web001: Refreshing state... (ID: i-08e94c2ef875fe3fa)
 
@@ -272,7 +272,7 @@ Destroy complete! Resources: 1 destroyed.
 
 ==Configuration==
 ==example.tf file==
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 drew@drew-8570w:~/terraform$ cat example.tf 
 provider "aws" {
   access_key = "MYAWSACCESSKEY"
