@@ -1,4 +1,4 @@
-<pre>
+<syntaxhighlight lang=bash>
 Setup wireless:
 https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md
 
@@ -41,4 +41,4 @@ pyobd
 # sudo apt-get install python-wxgtk2.8 python-wxtools wx2.8-i18n libwxgtk2.8-dev
 # sudo apt-get install git-core
 wget from http://www.obdtester.com/pyobd-install
-</pre>
+</syntaxhighlight>
