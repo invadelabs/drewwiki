@@ -2,21 +2,21 @@
 
 === Install NVM ===
 NightScout install NVM
-<pre>
+<syntaxhighlight lang=bash>
 $ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
 $ nvm install 0.10.42
 $ nvm use 0.10.42
-</pre>
+</syntaxhighlight>
 
 === Clone and Build ===
-<pre>
+<syntaxhighlight lang=bash>
 $ git clone https://github.com/nightscout/cgm-remote-monitor.git
 $ cd cgm-remote-monitor
 $ npm install
-</pre>
+</syntaxhighlight>
 
 === Setup my.env ===
-<pre>
+<syntaxhighlight lang=bash>
 $ cat my.env 
 MONGO_CONNECTION=mongodb://user:password@my_mongodb_host:27071
 MONGO_COLLECTION=entries
@@ -33,23 +33,23 @@ ALARM_LOW=off
 ALARM_URGENT_LOW=off
 
 DEVICESTATUS_ADVANCED="true"
-</pre>
+</syntaxhighlight>
 
 === Start NightScout ===
-<pre>
+<syntaxhighlight lang=bash>
 env $(cat my.env) ENABLE="pump careportal iob cob basal" PUMP_FIELDS="reservoir battery" node server.js
-</pre> 
+</syntaxhighlight> 
 
 === NightScout API ===
-<pre>
+<syntaxhighlight lang=bash>
 https://drew.invadelabs.com/api/v1/entries
 https://drew.invadelabs.com/api/v1/current 
 
 https://apisecretkey@drew.invadelabs.com/api/v1/entries
-</pre>
+</syntaxhighlight>
 
 == mmcsv MiniMed Connect to CSV / JSON ==
-<pre>
+<syntaxhighlight lang=bash>
 $ git clone https://github.com/LittleDMatt/mmcsv.git
 $ vi lib/utils.js
  change to US time stamp
@@ -63,7 +63,7 @@ $ bin/mmcsv parse ~/this.csv > ~/bla.json
 
 Upload to nightscout:
 $ curl -vs -X POST --header "Content-Type: application/json" --header "Accept: application/json" --header "api-secret:my_api_secret" --data-binary @bla.json "http://192.168.1.124:1337/api/v1/treatments"
-</pre>
+</syntaxhighlight>
 
 == xDrip ==
 
