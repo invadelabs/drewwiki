@@ -1,4 +1,4 @@
-<syntaxhighlight>
+<syntaxhighlight lang->
 ​
 java -jar /opt/jenkins-cli.jar -s http://localhost:8080 help --username admin
 java -jar /opt/jenkins-cli.jar -s http://localhost:8080 groovy bla.txt --username admin
