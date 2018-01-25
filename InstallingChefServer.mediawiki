@@ -1,11 +1,13 @@
+Installation of Chef Server on CentOS6 with install target as /apps directory.
+
 =Configure Postfix=
 Add to /etc/postfix/main.cf:
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 relayhost = mail.invadelabs.org
 </syntaxhighlight>
 
 Enable, start, test
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 sudo chkconfig postfix on
 sudo service postfix start
 echo "test message" | mailx -s test drew@invadelabs.com
@@ -13,7 +15,7 @@ echo "test message" | mailx -s test drew@invadelabs.com
 
 =Install Chef=
 Work around to install in another directory
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 sudo ln -s /apps/opt/opscode/ /opt/opscode
 cd /apps
 wget https://packages.chef.io/stable/el/6/chef-server-core-12.8.0-1.el6.x86_64.rpm
@@ -22,7 +24,7 @@ sudo rpm -Uvh --prefix /apps chef-server-core-12.8.0-1.el6.x86_64.rpm
 
 =Configure Chef Server=
 Set configuration
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 [root@chef private]# cat /etc/opscode/chef-server.rb
 api_fqdn "chef.invadelabs.com"
 nginx['ssl_certificate'] = "/etc/pki/tls/private/chef.invadelabs.com.pem"
@@ -32,17 +34,17 @@ nginx['ssl_protocols'] = "TLSv1 TLSv1.1 TLSv1.2"
 </syntaxhighlight>
 
 Reconfigure Chef Server with our keys
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 sudo chef-server-ctl reconfigure
 </syntaxhighlight>
 
 =Configure First User=
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 chef-server-ctl user-create drewholt Drew Holt drew@invadelabs.com 'myawesomepassword' --filename drewholt.pem
 </syntaxhighlight>
 
 =Install Chef Manage=
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 cd /apps
 wget https://packages.chef.io/stable/el/6/chef-manage-2.4.1-1.el6.x86_64.rpm
 sudo rpm -Uvh --prefix /apps chef-manage-2.4.1-1.el6.x86_64.rpm
@@ -51,7 +53,7 @@ sudo chef-manage-ctl reconfigure
 </syntaxhighlight>
 
 =Install OpsCode Reporting=
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 cd /apps
 wget https://packages.chef.io/stable/el/6/opscode-reporting-1.6.0-1.el6.x86_64.rpm
 sudo rpm -Uvh --prefix /apps opscode-reporting-1.6.0-1.el6.x86_64.rpm
@@ -60,13 +62,13 @@ sudo ln -s /apps/opt/opscode-reporting /opt/opscode-reporting
 </syntaxhighlight>
 
 =Create First Chef org=
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 chef-server-ctl org-create short_name 'full_organization_name' --association_user user_name --filename ORGANIZATION-validator.pem
 </syntaxhighlight>
 
 =Backup and Restore Chef Server=
 Backup
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 sudo chef-server-ctl backup
 </syntaxhighlight>
 
