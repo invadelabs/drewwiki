@@ -1,4 +1,5 @@
-<pre># apt-get install gpsd gpsd-client
+<syntaxhighlight lang=bash>
+# apt-get install gpsd gpsd-client
 
 # ls -al /dev/ttyUSB*
 crw-rw---- 1 root dialout 188, 0 2011-04-26 23:26 /dev/ttyUSB0
@@ -25,4 +26,5 @@ gpsctl: 067b:2303 (bus 1, device 7)
 gpsctl: 047d:105e (bus 1, device 8)
 gpsctl: 03f0:8307 (bus 1, device 9)
 gpsctl: vendor/product match with 091e:0003 not found
-gpsctl: packet recognition timed out.</pre>
+gpsctl: packet recognition timed out.
+</syntaxhighlight>
