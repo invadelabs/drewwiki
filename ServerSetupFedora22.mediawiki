@@ -73,12 +73,12 @@ php-pecl-apc lm_sensors hddtemp smartmontools apcupsd apcupsd-cgi
 * Configure OpenVPN
 
 = Configure RAID and filesharing =
-# Mount raid array
-# Configure md alerts
-# Enable samba
-## Add TCP139,445/24 to IPTables
-## <pre># systemctl enable smb; systemctl start smb</pre>
-### 
+* Mount raid array
+* Configure md alerts
+* Enable samba
+** Add TCP139,445/24 to IPTables
+** <syntaxhighlight lang=bash># systemctl enable smb; systemctl start smb</syntaxhighlight>
+ 
 <syntaxhighlight lang=bash> 
 [global]
         workgroup = WORKGROUP
@@ -98,9 +98,9 @@ php-pecl-apc lm_sensors hddtemp smartmontools apcupsd apcupsd-cgi
 	create mode = 0665
 	directory mode = 0775
 </syntaxhighlight>
-# Enable iSCSI
-## Add TCP3260/24
-# ^ Configure bacula and web interface
+* Enable iSCSI
+** Add TCP3260/24
+* ^ Configure bacula and web interface
 
 =Setup cron jobs=
 # Keep anacron from waking me up at night! 

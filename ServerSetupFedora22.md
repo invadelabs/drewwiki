@@ -102,13 +102,13 @@ Configure system, monitoring, mail, AV, and VPN
 Configure RAID and filesharing
 ==============================
 
-1.  Mount raid array
-2.  Configure md alerts
-3.  Enable samba
-    1.  Add TCP139,445/24 to IPTables
-    2.  # systemctl enable smb; systemctl start smb
-
-        1.  
+-   Mount raid array
+-   Configure md alerts
+-   Enable samba
+    -   Add TCP139,445/24 to IPTables
+    -   ``` bash
+        # systemctl enable smb; systemctl start smb
+        ```
 
 ``` bash
  
@@ -131,9 +131,9 @@ Configure RAID and filesharing
     directory mode = 0775
 ```
 
-1.  Enable iSCSI
-    1.  Add TCP3260/24
-2.  ^ Configure bacula and web interface
+-   Enable iSCSI
+    -   Add TCP3260/24
+-   ^ Configure bacula and web interface
 
 Setup cron jobs
 ===============
