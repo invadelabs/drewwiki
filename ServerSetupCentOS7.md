@@ -19,9 +19,11 @@ Initial Setup
 Download CentOS7 DVD torrent
 ----------------------------
 
-    $ wget http://mirrors.rit.edu/centos/7/isos/x86_64/CentOS-7-x86_64-DVD-1511.torrent
-    $ sudo mkdir /var/www/html/centos
-    $ ctorrent CentOS-7-x86_64-DVD-1511.torrent
+``` bash
+$ wget http://mirrors.rit.edu/centos/7/isos/x86_64/CentOS-7-x86_64-DVD-1511.torrent
+$ sudo mkdir /var/www/html/centos
+$ ctorrent CentOS-7-x86_64-DVD-1511.torrent
+```
 
 Loop back mount ISO to serve http
 ---------------------------------
@@ -135,8 +137,10 @@ console resolution to 1600x1200. This can be annoying on a 1920x1080
 panel. To resolve append video=1024x768 to the GRUM\_CMDLINE\_LINUX,
 update grub, and reboot.
 
-    $ vi /etc/sysconfig/grub
-    GRUB_CMDLINE_LINUX="rd.md=0 rd.dm=0  KEYTABLE=us SYSFONT=True rd.luks=0 rd.lvm.lv=vg_drewserv/lv_drewserv LANG=en_US.UTF-8 rhgb quiet video=1024x768"
+``` bash
+$ vi /etc/sysconfig/grub
+GRUB_CMDLINE_LINUX="rd.md=0 rd.dm=0  KEYTABLE=us SYSFONT=True rd.luks=0 rd.lvm.lv=vg_drewserv/lv_drewserv LANG=en_US.UTF-8 rhgb quiet video=1024x768"
+```
 
 Update grub:
 
@@ -645,7 +649,9 @@ Adapted from
 
 Basic adaptation
 
-    virt-install --name inv-foreman01 --ram 768 --vcpus=1 --arch=x86_64 --hvm --os-type=linux --nographics --disk path=/mnt/raid5/vm/inv-foreman01.img,size=15,sparse=true --network bridge=virbr0,model=virtio --location 'http://192.168.1.120/centos7/' --extra-args 'ks=http://192.168.1.120/inv-foreman01.cfg console=ttyS0,115200n8 serial'
+``` bash
+virt-install --name inv-foreman01 --ram 768 --vcpus=1 --arch=x86_64 --hvm --os-type=linux --nographics --disk path=/mnt/raid5/vm/inv-foreman01.img,size=15,sparse=true --network bridge=virbr0,model=virtio --location 'http://192.168.1.120/centos7/' --extra-args 'ks=http://192.168.1.120/inv-foreman01.cfg console=ttyS0,115200n8 serial'
+```
 
 ### Instance with Static IP
 
@@ -653,7 +659,9 @@ What I ended up going with on my network. ksdevice=eth0 had to be
 specified along with the network line modified in the kickstart for a
 static IP to be set in /etc/sysconfig/network-scripts/ifcfg-eth0:
 
-    virt-install --name inv-foreman01 --ram 1024 --vcpus=2 --arch=x86_64 --hvm --os-type=linux --nographics --disk path=/mnt/raid5/vm/inv-foreman01.img,size=15,sparse=true --network bridge=br0,model=virtio --location 'http://192.168.1.120/centos7/' --extra-args 'ks=http://192.168.1.120/inv-foreman01.cfg --ip=192.168.1.200 --gateway=192.168.1.1 --netmask=255.255.255.0 --nameserver=192.168.1.1 --hostname=foreman ksdevice=eth0 console=ttyS0,115200n8 serial'
+``` bash
+virt-install --name inv-foreman01 --ram 1024 --vcpus=2 --arch=x86_64 --hvm --os-type=linux --nographics --disk path=/mnt/raid5/vm/inv-foreman01.img,size=15,sparse=true --network bridge=br0,model=virtio --location 'http://192.168.1.120/centos7/' --extra-args 'ks=http://192.168.1.120/inv-foreman01.cfg --ip=192.168.1.200 --gateway=192.168.1.1 --netmask=255.255.255.0 --nameserver=192.168.1.1 --hostname=foreman ksdevice=eth0 console=ttyS0,115200n8 serial'
+```
 
 ### Alias to quickly destroy then re-run
 
@@ -790,162 +798,162 @@ install uppet.
 -   Todo **Need to create an epel and centos-updates mirror to reduce
     bandwidth, also uncomment \#yum -y update**
 
-<!-- -->
+``` bash
+<%#
+kind: provision
+name: Kickstart default
+oses:
+- CentOS 4
+- CentOS 5
+- CentOS 6
+- CentOS 7
+- Fedora 16
+- Fedora 17
+- Fedora 18
+- Fedora 19
+- Fedora 20
+%>
+<%#
+This template accepts the following parameters:
+- lang: string (default="en_US.UTF-8")
+- selinux: string (default="enforcing")
+- keyboard: string (default="us")
+- time-zone: string (default="UTC")
+- http-proxy: string (default="")
+- http-proxy-port: string (default="")
+- force-puppet: boolean (default=false)
+- enable-puppetlabs-repo: boolean (default=false)
+- salt_master: string (default=undef)
+- ntp-server: string (default="0.fedora.pool.ntp.org")
+- bootloader-append: string (default="nofb quiet splash=quiet")
+%>
+<%
+  rhel_compatible = @host.operatingsystem.family == 'Redhat' && @host.operatingsystem.name != 'Fedora'
+  os_major = @host.operatingsystem.major.to_i
+  realm_compatible = (@host.operatingsystem.name == 'Fedora' && os_major >= 20) || (rhel_compatible && os_major >= 7)
+  # safemode renderer does not support unary negation
+  pm_set = @host.puppetmaster.empty? ? false : true
+  proxy_uri = @host.params['http-proxy'] ? "http://#{@host.params['http-proxy']}:#{@host.params['http-proxy-port']}" : nil
+  proxy_string = proxy_uri ? " --proxy=#{proxy_uri}" : ''
+  puppet_enabled = pm_set || @host.params['force-puppet'] && @host.params['force-puppet'] == 'true'
+  salt_enabled = @host.params['salt_master'] ? true : false
+  chef_enabled = @host.respond_to?(:chef_proxy) && @host.chef_proxy
+  section_end = (rhel_compatible && os_major <= 5) ? '' : '%end'
+%>
+install
+<%= @mediapath %><%= proxy_string %>
+lang <%= @host.params['lang'] || 'en_US.UTF-8' %>
+selinux --<%= @host.params['selinux'] || 'enforcing' %>
+keyboard <%= @host.params['keyboard'] || 'us' %>
+skipx
 
-    <%#
-    kind: provision
-    name: Kickstart default
-    oses:
-    - CentOS 4
-    - CentOS 5
-    - CentOS 6
-    - CentOS 7
-    - Fedora 16
-    - Fedora 17
-    - Fedora 18
-    - Fedora 19
-    - Fedora 20
-    %>
-    <%#
-    This template accepts the following parameters:
-    - lang: string (default="en_US.UTF-8")
-    - selinux: string (default="enforcing")
-    - keyboard: string (default="us")
-    - time-zone: string (default="UTC")
-    - http-proxy: string (default="")
-    - http-proxy-port: string (default="")
-    - force-puppet: boolean (default=false)
-    - enable-puppetlabs-repo: boolean (default=false)
-    - salt_master: string (default=undef)
-    - ntp-server: string (default="0.fedora.pool.ntp.org")
-    - bootloader-append: string (default="nofb quiet splash=quiet")
-    %>
-    <%
-      rhel_compatible = @host.operatingsystem.family == 'Redhat' && @host.operatingsystem.name != 'Fedora'
-      os_major = @host.operatingsystem.major.to_i
-      realm_compatible = (@host.operatingsystem.name == 'Fedora' && os_major >= 20) || (rhel_compatible && os_major >= 7)
-      # safemode renderer does not support unary negation
-      pm_set = @host.puppetmaster.empty? ? false : true
-      proxy_uri = @host.params['http-proxy'] ? "http://#{@host.params['http-proxy']}:#{@host.params['http-proxy-port']}" : nil
-      proxy_string = proxy_uri ? " --proxy=#{proxy_uri}" : ''
-      puppet_enabled = pm_set || @host.params['force-puppet'] && @host.params['force-puppet'] == 'true'
-      salt_enabled = @host.params['salt_master'] ? true : false
-      chef_enabled = @host.respond_to?(:chef_proxy) && @host.chef_proxy
-      section_end = (rhel_compatible && os_major <= 5) ? '' : '%end'
-    %>
-    install
-    <%= @mediapath %><%= proxy_string %>
-    lang <%= @host.params['lang'] || 'en_US.UTF-8' %>
-    selinux --<%= @host.params['selinux'] || 'enforcing' %>
-    keyboard <%= @host.params['keyboard'] || 'us' %>
-    skipx
+<% subnet = @host.subnet -%>
+<% if subnet.respond_to?(:dhcp_boot_mode?) -%>
+<% dhcp = subnet.dhcp_boot_mode? && !@static -%>
+<% else -%>
+<% dhcp = !@static -%>
+<% end -%>
 
-    <% subnet = @host.subnet -%>
-    <% if subnet.respond_to?(:dhcp_boot_mode?) -%>
-    <% dhcp = subnet.dhcp_boot_mode? && !@static -%>
-    <% else -%>
-    <% dhcp = !@static -%>
-    <% end -%>
+network --bootproto <%= dhcp ? 'dhcp' : "static --ip=#{@host.ip} --netmask=#{subnet.mask} --gateway=#{subnet.gateway} --nameserver=#{[subnet.dns_primary, subnet.dns_secondary].select(&:syntaxhighlightsent?).join(',')}" %> --hostname <%= @host %><%= os_major >= 6 ? " --device=#{@host.mac}" : '' -%>
 
-    network --bootproto <%= dhcp ? 'dhcp' : "static --ip=#{@host.ip} --netmask=#{subnet.mask} --gateway=#{subnet.gateway} --nameserver=#{[subnet.dns_primary, subnet.dns_secondary].select(&:syntaxhighlightsent?).join(',')}" %> --hostname <%= @host %><%= os_major >= 6 ? " --device=#{@host.mac}" : '' -%>
+rootpw --iscrypted <%= root_pass %>
+firewall --<%= os_major >= 6 ? 'service=' : '' %>ssh
+authconfig --useshadow --passalgo=sha256 --kickstart
+timezone --utc <%= @host.params['time-zone'] || 'UTC' %>
+services --enabled=<%= os_major <= 6 ? 'ntpd' : 'chronyd' %>
 
-    rootpw --iscrypted <%= root_pass %>
-    firewall --<%= os_major >= 6 ? 'service=' : '' %>ssh
-    authconfig --useshadow --passalgo=sha256 --kickstart
-    timezone --utc <%= @host.params['time-zone'] || 'UTC' %>
-    services --enabled=<%= os_major <= 6 ? 'ntpd' : 'chronyd' %>
+bootloader --location=mbr --append="<%= @host.params['bootloader-append'] || 'nofb quiet splash=quiet' %>" <%= grub_pass %>
 
-    bootloader --location=mbr --append="<%= @host.params['bootloader-append'] || 'nofb quiet splash=quiet' %>" <%= grub_pass %>
+<% if @dynamic -%>
+%include /tmp/diskpart.cfg
+<% else -%>
+<%= @host.diskLayout %>
+<% end -%>
 
-    <% if @dynamic -%>
-    %include /tmp/diskpart.cfg
-    <% else -%>
-    <%= @host.diskLayout %>
-    <% end -%>
+text
+reboot
 
-    text
-    reboot
+%packages
+@core
+<% if os_major <= 6 -%>
+ntp
+<% else -%>
+chrony
+<% end -%>
+sysstat
+logwatch
+mailx
+rsync
+strace
+wget
+tcpdump
+deltarpm
+screen
+vim-enhanced
+bind-utils
+ntpdate
+%end
 
-    %packages
-    @core
-    <% if os_major <= 6 -%>
-    ntp
-    <% else -%>
-    chrony
-    <% end -%>
-    sysstat
-    logwatch
-    mailx
-    rsync
-    strace
-    wget
-    tcpdump
-    deltarpm
-    screen
-    vim-enhanced
-    bind-utils
-    ntpdate
-    %end
+<% if @dynamic -%>
+%syntaxhighlight
+<%= @host.diskLayout %>
+<%= section_end -%>
+<% end -%>
 
-    <% if @dynamic -%>
-    %syntaxhighlight
-    <%= @host.diskLayout %>
-    <%= section_end -%>
-    <% end -%>
+%post --nochroot
+exec < /dev/tty3 > /dev/tty3
+#changing to VT 3 so that we can see whats going on....
+/usr/bin/chvt 3
+(
+cp -va /etc/resolv.conf /mnt/sysimage/etc/resolv.conf
+/usr/bin/chvt 1
+) 2>&1 | tee /mnt/sysimage/root/install.postnochroot.log
+<%= section_end -%>
 
-    %post --nochroot
-    exec < /dev/tty3 > /dev/tty3
-    #changing to VT 3 so that we can see whats going on....
-    /usr/bin/chvt 3
-    (
-    cp -va /etc/resolv.conf /mnt/sysimage/etc/resolv.conf
-    /usr/bin/chvt 1
-    ) 2>&1 | tee /mnt/sysimage/root/install.postnochroot.log
-    <%= section_end -%>
+%post
+logger "Starting anaconda <%= @host %> postinstall"
+exec < /dev/tty3 > /dev/tty3
+#changing to VT 3 so that we can see whats going on....
+/usr/bin/chvt 3
+(
+<% if subnet.respond_to?(:dhcp_boot_mode?) -%>
+<%= snippet 'kickstart_networking_setup' %>
+<% end -%>
 
-    %post
-    logger "Starting anaconda <%= @host %> postinstall"
-    exec < /dev/tty3 > /dev/tty3
-    #changing to VT 3 so that we can see whats going on....
-    /usr/bin/chvt 3
-    (
-    <% if subnet.respond_to?(:dhcp_boot_mode?) -%>
-    <%= snippet 'kickstart_networking_setup' %>
-    <% end -%>
+#update local time
+echo "updating system time"
+/usr/sbin/ntpdate -sub <%= @host.params['ntp-server'] || '0.fedora.pool.ntp.org' %>
+/usr/sbin/hwclock --systohc
 
-    #update local time
-    echo "updating system time"
-    /usr/sbin/ntpdate -sub <%= @host.params['ntp-server'] || '0.fedora.pool.ntp.org' %>
-    /usr/sbin/hwclock --systohc
+# update all the base packages from the updates repository
+#yum -t -y -e 0 update
 
-    # update all the base packages from the updates repository
-    #yum -t -y -e 0 update
+# setup puppet
+<% if puppet_enabled %>
+echo "Configuring puppet"
+su -c 'rpm -Uvh <%= @host.os.medium_uri(@host, "http://dl.fedoraproject.org/pub/epel/epel-release-latest-#{@host.operatingsystem.major}.noarch.rpm") %>'
+yum -y --nogpgcheck install puppet
+cat > /etc/puppet/puppet.conf << EOF
+<%= snippet 'puppet.conf' %>
+EOF
 
-    # setup puppet
-    <% if puppet_enabled %>
-    echo "Configuring puppet"
-    su -c 'rpm -Uvh <%= @host.os.medium_uri(@host, "http://dl.fedoraproject.org/pub/epel/epel-release-latest-#{@host.operatingsystem.major}.noarch.rpm") %>'
-    yum -y --nogpgcheck install puppet
-    cat > /etc/puppet/puppet.conf << EOF
-    <%= snippet 'puppet.conf' %>
-    EOF
+# Setup puppet to run on system reboot
+/sbin/chkconfig --level 345 puppet on
 
-    # Setup puppet to run on system reboot
-    /sbin/chkconfig --level 345 puppet on
-
-    /usr/bin/puppet agent --config /etc/puppet/puppet.conf -o --tags no_such_tag <%= @host.puppetmaster.blank? ? '' : "--server #{@host.puppetmaster}" %> --no-daemonize
-    <% end -%>
+/usr/bin/puppet agent --config /etc/puppet/puppet.conf -o --tags no_such_tag <%= @host.puppetmaster.blank? ? '' : "--server #{@host.puppetmaster}" %> --no-daemonize
+<% end -%>
 
 
-    sync
+sync
 
-    # Inform the build system that we are done.
-    echo "Informing Foreman that we are built"
-    wget -q -O /dev/null --no-check-certificate <%= foreman_url %>
-    ) 2>&1 | tee /root/install.post.log
-    exit 0
+# Inform the build system that we are done.
+echo "Informing Foreman that we are built"
+wget -q -O /dev/null --no-check-certificate <%= foreman_url %>
+) 2>&1 | tee /root/install.post.log
+exit 0
 
-    <%= section_end -%>
+<%= section_end -%>
+```
 
 ### Added to puppet.conf snippet
 
@@ -1241,21 +1249,23 @@ deric/accounts
 
 Set JSON paramter in foreman UI for accounts::users
 
-    {  
-      "drew":{  
-        "uid":1001,
-        "gid":1001,
-        "shell":"/bin/bash",
-        "groups":"wheel",
-        "pwhash":"$6$6387KljVTcBSUe6U$pfLTBdCJsFsM.XrkH68yNmvxJkDJtycnjrPi2NJAoxbtjS3fMNT/COgX0nn6y6XOgpAB8LizsFTSKkHjX3UqR1",
-        "comment":"Drew User",
-        "ssh_key":{  
-          "type":"ssh-rsa",
-          "key":"AAAAB3NzaC1yc2EAAAABJQAAAQEAsZeKEXj+5Is6OXLDEWDhRb51lNZj2hQRUCCMIcYtjzEbkgpEH7b5x6d5vg2uZy5uc0INrTW4Fy5Z/A5t+cTf+SfT5oGjMjQQ5f5ShA+RsOuB5gI+2b1eyyGBOcgJxjqgDKakc10OKssPJS1qk/NvWQoDOzBRGO0Vgy5a9fizyDcR0rRD0dqmV/Fly3SEHLHkMZDENYL2h5icHoZ9j/r8qqkMCKBpKY9ysVRIQERmDZT+qKoShNUj5b4dBv5csk3TJnMyoFIBL9P7wBJUEFSir3O2whNc+OtcqTVxqrCqdOAcGheFFxW4O907ncckfTxRKB+6WfWcb80BLn+6Avfetw==",
-          "comment":"drewderivative@gmail.com"
-        }
-      }
+``` bash
+{  
+  "drew":{  
+    "uid":1001,
+    "gid":1001,
+    "shell":"/bin/bash",
+    "groups":"wheel",
+    "pwhash":"$6$6387KljVTcBSUe6U$pfLTBdCJsFsM.XrkH68yNmvxJkDJtycnjrPi2NJAoxbtjS3fMNT/COgX0nn6y6XOgpAB8LizsFTSKkHjX3UqR1",
+    "comment":"Drew User",
+    "ssh_key":{  
+      "type":"ssh-rsa",
+      "key":"AAAAB3NzaC1yc2EAAAABJQAAAQEAsZeKEXj+5Is6OXLDEWDhRb51lNZj2hQRUCCMIcYtjzEbkgpEH7b5x6d5vg2uZy5uc0INrTW4Fy5Z/A5t+cTf+SfT5oGjMjQQ5f5ShA+RsOuB5gI+2b1eyyGBOcgJxjqgDKakc10OKssPJS1qk/NvWQoDOzBRGO0Vgy5a9fizyDcR0rRD0dqmV/Fly3SEHLHkMZDENYL2h5icHoZ9j/r8qqkMCKBpKY9ysVRIQERmDZT+qKoShNUj5b4dBv5csk3TJnMyoFIBL9P7wBJUEFSir3O2whNc+OtcqTVxqrCqdOAcGheFFxW4O907ncckfTxRKB+6WfWcb80BLn+6Avfetw==",
+      "comment":"drewderivative@gmail.com"
     }
+  }
+}
+```
 
 Module install notes:
 

@@ -2,7 +2,7 @@ This is the rebuilt lab configuration. The end goal is to use the old server (16
 
 = Initial Setup =
 == Download CentOS7 DVD torrent ==
-<syntaxhighlight style="white-space: syntaxhighlight-wrap">
+<syntaxhighlight lang=bash style="white-space: syntaxhighlight-wrap">
 $ wget http://mirrors.rit.edu/centos/7/isos/x86_64/CentOS-7-x86_64-DVD-1511.torrent
 $ sudo mkdir /var/www/html/centos
 $ ctorrent CentOS-7-x86_64-DVD-1511.torrent
@@ -101,7 +101,7 @@ vim-enhanced
 
 = Fix Lantronix Spider KVM for 1024x768 resolution =
 While plugged into the VGA port, the Lantronix Spider KVM sets the console resolution to 1600x1200. This can be annoying on a 1920x1080 panel. To resolve append video=1024x768 to the GRUM_CMDLINE_LINUX, update grub, and reboot.
-<syntaxhighlight style="white-space: syntaxhighlight-wrap">
+<syntaxhighlight lang=bash style="white-space: syntaxhighlight-wrap">
 $ vi /etc/sysconfig/grub
 GRUB_CMDLINE_LINUX="rd.md=0 rd.dm=0  KEYTABLE=us SYSFONT=True rd.luks=0 rd.lvm.lv=vg_drewserv/lv_drewserv LANG=en_US.UTF-8 rhgb quiet video=1024x768"
 </syntaxhighlight>
@@ -522,13 +522,13 @@ Adapted from https://raymii.org/s/articles/virt-install_introduction_and_copy_pa
 * Note provisioning CentOS7 only 512MB RAM would fail at disk partitioning in the kickstart.
 === Basic Instance with DHCP ===
 Basic adaptation
-<syntaxhighlight style="white-space: syntaxhighlight-wrap">
+<syntaxhighlight lang=bash style="white-space: syntaxhighlight-wrap">
 virt-install --name inv-foreman01 --ram 768 --vcpus=1 --arch=x86_64 --hvm --os-type=linux --nographics --disk path=/mnt/raid5/vm/inv-foreman01.img,size=15,sparse=true --network bridge=virbr0,model=virtio --location 'http://192.168.1.120/centos7/' --extra-args 'ks=http://192.168.1.120/inv-foreman01.cfg console=ttyS0,115200n8 serial'
 </syntaxhighlight>
 
 === Instance with Static IP ===
 What I ended up going with on my network. ksdevice=eth0 had to be specified along with the network line modified in the kickstart for a static IP to be set in /etc/sysconfig/network-scripts/ifcfg-eth0:
-<syntaxhighlight  style="white-space: syntaxhighlight-wrap">
+<syntaxhighlight lang=bash style="white-space: syntaxhighlight-wrap">
 virt-install --name inv-foreman01 --ram 1024 --vcpus=2 --arch=x86_64 --hvm --os-type=linux --nographics --disk path=/mnt/raid5/vm/inv-foreman01.img,size=15,sparse=true --network bridge=br0,model=virtio --location 'http://192.168.1.120/centos7/' --extra-args 'ks=http://192.168.1.120/inv-foreman01.cfg --ip=192.168.1.200 --gateway=192.168.1.1 --netmask=255.255.255.0 --nameserver=192.168.1.1 --hostname=foreman ksdevice=eth0 console=ttyS0,115200n8 serial'
 </syntaxhighlight>
 
@@ -629,7 +629,7 @@ foreman$ ssh root@hostname.com
 Cloned the "Kickstart Default Template" since it would break failing to add epel and trying to download puppet. Cloning it to "Drew1 Kickstart Default Template" and ripping out some stuff add, added a %package list I wanted and setup EPEL in %post to rpm -Uvh the epl rpm then yum install uppet.
 
 * Todo '''Need to create an epel and centos-updates mirror to reduce bandwidth, also uncomment #yum -y update'''
-<syntaxhighlight  style="white-space: syntaxhighlight-wrap">
+<syntaxhighlight lang=bash style="white-space: syntaxhighlight-wrap">
 <%#
 kind: provision
 name: Kickstart default
@@ -1028,7 +1028,7 @@ Notice: Installing -- do not interrupt ...
 
 == deric/accounts ==
 Set JSON paramter in foreman UI for accounts::users
-<syntaxhighlight style="white-space: syntaxhighlight-wrap; 
+<syntaxhighlight lang=bash style="white-space: syntaxhighlight-wrap; 
 white-space: -moz-syntaxhighlight-wrap; 
 white-space: -syntaxhighlight-wrap; 
 white-space: -o-syntaxhighlight-wrap; 
