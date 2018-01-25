@@ -1,5 +1,5 @@
 = berkshelf selfhosted certificate authenticity =
-<syntaxhighlight>
+<syntaxhighlight lang=json>
 $ cat ~/.berkshelf/config.json
 {  
    "ssl":{  
@@ -12,7 +12,7 @@ $ cat ~/.berkshelf/config.json
 ​use -- freeze on knife cookbook upload job
 
 =Blurb=
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 ​
 510 knife ssh "role:base" --ssh-user drew -P mypassword -y sudo service chef-client restart
 511 knife ssh "role:base" --ssh-user drew -P mypassword -y sudo chef-client
