@@ -29,7 +29,7 @@ Started around 1PM MST off and on through the day and spent roughly 5 hours on
 =Commands run=
 * Need formatting
 
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 ############################################################################
 Investigate weather-ui container:
 drew@drew-8570w:~/test/weather-ui$ nvm use stable

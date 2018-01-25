@@ -71,97 +71,97 @@ Commands run
 
 -   Need formatting
 
-<!-- -->
+``` bash
+############################################################################
+Investigate weather-ui container:
+drew@drew-8570w:~/test/weather-ui$ nvm use stable
+drew@drew-8570w:~/test/weather-ui$ npm i -g npm
+drew@drew-8570w:~/test/weather-ui$ npm install
+drew@drew-8570w:~/test/weather-ui$ npm start
+drew@drew-8570w:~/test/weather-ui$ npm run build
+drew@drew-8570w:~/test/weather-ui$ docker build . -t weather-ui:0.0.1
+Successfully built 74e456707719
+drew@drew-8570w:~/test/weather-proxy$  docker run -p 5000:5000 74e456707719
+serve: Running on port 5000
+drew@drew-8570w:~/test/weather-ui$ curl localhost:5000
+-- Now triggered by commit to master in bitbucket, build trigger builds contanier in Google Container Repositor
 
-    ############################################################################
-    Investigate weather-ui container:
-    drew@drew-8570w:~/test/weather-ui$ nvm use stable
-    drew@drew-8570w:~/test/weather-ui$ npm i -g npm
-    drew@drew-8570w:~/test/weather-ui$ npm install
-    drew@drew-8570w:~/test/weather-ui$ npm start
-    drew@drew-8570w:~/test/weather-ui$ npm run build
-    drew@drew-8570w:~/test/weather-ui$ docker build . -t weather-ui:0.0.1
-    Successfully built 74e456707719
-    drew@drew-8570w:~/test/weather-proxy$  docker run -p 5000:5000 74e456707719
-    serve: Running on port 5000
-    drew@drew-8570w:~/test/weather-ui$ curl localhost:5000
-    -- Now triggered by commit to master in bitbucket, build trigger builds contanier in Google Container Repositor
+############################################################################
+Investigate weather-proxy container:
+drew@drew-8570w:~/test/weather-proxy$ npm install
+drew@drew-8570w:~/test/weather-proxy$ npm start
+drew@drew-8570w:~/test/weather-proxy$ docker build . -t weather-proxy:0.0.1
+Successfully built d040720a9abb
+drew@drew-8570w:~/test/weather-proxy$ docker run -p 3003:3003 d040720a9abb
+npm info it worked if it ends with ok
+npm info using npm@5.0.3
+npm info using node@v8.1.4
+npm info lifecycle api-proxy@1.0.0~prestart: api-proxy@1.0.0
+npm info lifecycle api-proxy@1.0.0~start: api-proxy@1.0.0
+> api-proxy@1.0.0 start /app
+> node index.js
+180115/223519.695, [log,info] data: Server running at: http://0.0.0.0:3003
+drew@drew-8570w:~/test/weather-proxy$ curl localhost:3003/latlong/test
+{"statusCode":500,"error":"Internal Server Error","message":"An internal server error occurred"}
+-- Now triggered by commit to master in bitbucket, build trigger builds contanier in Google Container Repositor
 
-    ############################################################################
-    Investigate weather-proxy container:
-    drew@drew-8570w:~/test/weather-proxy$ npm install
-    drew@drew-8570w:~/test/weather-proxy$ npm start
-    drew@drew-8570w:~/test/weather-proxy$ docker build . -t weather-proxy:0.0.1
-    Successfully built d040720a9abb
-    drew@drew-8570w:~/test/weather-proxy$ docker run -p 3003:3003 d040720a9abb
-    npm info it worked if it ends with ok
-    npm info using npm@5.0.3
-    npm info using node@v8.1.4
-    npm info lifecycle api-proxy@1.0.0~prestart: api-proxy@1.0.0
-    npm info lifecycle api-proxy@1.0.0~start: api-proxy@1.0.0
-    > api-proxy@1.0.0 start /app
-    > node index.js
-    180115/223519.695, [log,info] data: Server running at: http://0.0.0.0:3003
-    drew@drew-8570w:~/test/weather-proxy$ curl localhost:3003/latlong/test
-    {"statusCode":500,"error":"Internal Server Error","message":"An internal server error occurred"}
-    -- Now triggered by commit to master in bitbucket, build trigger builds contanier in Google Container Repositor
+############################################################################
+Issues with Ubuntu 17.10, golang, and dep:
+drew@drew-8570w:~$ bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+drew@drew-8570w:~$ gvm install go1.4 --binary # ubuntu work around
+drew@drew-8570w:~$ gvm use go1.4 
+drew@drew-8570w:~$ gvm install go1.9.2
+drew@drew-8570w:~$ gvm use go1.9.2
+drew@drew-8570w:~/test$ curl -L -o dep https://github.com/golang/dep/releases/download/v0.3.2/dep-linux-amd64
+drew@drew-8570w:~/test$ chmod 755 dep
 
-    ############################################################################
-    Issues with Ubuntu 17.10, golang, and dep:
-    drew@drew-8570w:~$ bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
-    drew@drew-8570w:~$ gvm install go1.4 --binary # ubuntu work around
-    drew@drew-8570w:~$ gvm use go1.4 
-    drew@drew-8570w:~$ gvm install go1.9.2
-    drew@drew-8570w:~$ gvm use go1.9.2
-    drew@drew-8570w:~/test$ curl -L -o dep https://github.com/golang/dep/releases/download/v0.3.2/dep-linux-amd64
-    drew@drew-8570w:~/test$ chmod 755 dep
+############################################################################
+Investigate weather-api container:
+drew@drew-8570w:~/test/weather-api$ docker run -p 3002:3002 88eaf64178f7
+drew@drew-8570w:~/test/weather-api$ curl localhost:3002/weatherByLatLongAndDate/
+curl: (52) Empty reply from server
+-- Now triggered by commit to master in bitbucket, build trigger builds contanier in Google Container Repositor
 
-    ############################################################################
-    Investigate weather-api container:
-    drew@drew-8570w:~/test/weather-api$ docker run -p 3002:3002 88eaf64178f7
-    drew@drew-8570w:~/test/weather-api$ curl localhost:3002/weatherByLatLongAndDate/
-    curl: (52) Empty reply from server
-    -- Now triggered by commit to master in bitbucket, build trigger builds contanier in Google Container Repositor
+############################################################################
+Investigate weather-geo container:
+drew@drew-8570w:~/test/weather-geo$ docker run -p 3001:3001 b881f51cead4
+2018/01/15 22:31:23 Server listening on port 3001
+2018/01/15 22:31:23  Routes:
+2018/01/15 22:31:23  GET /latlongByAddress
+drew@drew-8570w:~/test/weather-geo$ curl localhost:3001/latlongByAddress/
+{"Err":"maps: address, components and LatLng are all missing","Code":400}
+-- Now triggered by commit to master in bitbucket, build trigger builds contanier in Google Container Repositor
 
-    ############################################################################
-    Investigate weather-geo container:
-    drew@drew-8570w:~/test/weather-geo$ docker run -p 3001:3001 b881f51cead4
-    2018/01/15 22:31:23 Server listening on port 3001
-    2018/01/15 22:31:23  Routes:
-    2018/01/15 22:31:23  GET /latlongByAddress
-    drew@drew-8570w:~/test/weather-geo$ curl localhost:3001/latlongByAddress/
-    {"Err":"maps: address, components and LatLng are all missing","Code":400}
-    -- Now triggered by commit to master in bitbucket, build trigger builds contanier in Google Container Repositor
+############################################################################
+Setup Kubernetes Cluser:
+$ gcloud config set project arcus-weather-test
+$ gcloud config set compute/zone us-central1-a
+$ gcloud container clusters create weather
 
-    ############################################################################
-    Setup Kubernetes Cluser:
-    $ gcloud config set project arcus-weather-test
-    $ gcloud config set compute/zone us-central1-a
-    $ gcloud container clusters create weather
+##setup my kubectl env
+$ gcloud container clusters get-credentials weather --zone us-central1-a --project arcus-weather-test
 
-    ##setup my kubectl env
-    $ gcloud container clusters get-credentials weather --zone us-central1-a --project arcus-weather-test
+## decided not to go this route
+# kubectl run weather-api --image gcr.io/arcus-weather-test/bitbucket-drewderivative-weather-api:4eea724482475ba216cd564a03b7de784a92eec8 --port 3002
+# kubectl run weather-geo --image gcr.io/arcus-weather-test/bitbucket-drewderivative-weather-geo:e421ab4011b95d3fc6d193539c5023342a5d7c0a --port 3001
+# kubectl run weather-proxy --image gcr.io/arcus-weather-test/bitbucket-drewderivative-weather-proxy:f22e4f9e39d8089672d38c5e0ec702fedd0ad382 --port 3003
+# kubectl run weather-ui --image gcr.io/arcus-weather-test/bitbucket-drewderivative-weather-ui:b3e0c5e503dbab41a0e46c4b3d5694b825b665a9 --port 5000
+# kubectl expose deployment weather-ui --type "LoadBalancer" --port 80 --target-port 5000
 
-    ## decided not to go this route
-    # kubectl run weather-api --image gcr.io/arcus-weather-test/bitbucket-drewderivative-weather-api:4eea724482475ba216cd564a03b7de784a92eec8 --port 3002
-    # kubectl run weather-geo --image gcr.io/arcus-weather-test/bitbucket-drewderivative-weather-geo:e421ab4011b95d3fc6d193539c5023342a5d7c0a --port 3001
-    # kubectl run weather-proxy --image gcr.io/arcus-weather-test/bitbucket-drewderivative-weather-proxy:f22e4f9e39d8089672d38c5e0ec702fedd0ad382 --port 3003
-    # kubectl run weather-ui --image gcr.io/arcus-weather-test/bitbucket-drewderivative-weather-ui:b3e0c5e503dbab41a0e46c4b3d5694b825b665a9 --port 5000
-    # kubectl expose deployment weather-ui --type "LoadBalancer" --port 80 --target-port 5000
+# Modified each deployment.yaml to point to the container in Google Container Repository
+$ for i in weather-api weather-geo weather-proxy weather-ui; do kubectl create -f $i/deployment.yaml; kubectl create -f $i/service.yaml; done
 
-    # Modified each deployment.yaml to point to the container in Google Container Repository
-    $ for i in weather-api weather-geo weather-proxy weather-ui; do kubectl create -f $i/deployment.yaml; kubectl create -f $i/service.yaml; done
+drew@drew-8570w:~$ kubectl get services
+NAME            TYPE           CLUSTER-IP      EXTERNAL-IP     PORT(S)        AGE
+kubernetes      ClusterIP      10.15.240.1     <none>          443/TCP        1h
+weather-api     ClusterIP      10.15.240.11    <none>          80/TCP         1h
+weather-geo     ClusterIP      10.15.240.190   <none>          80/TCP         1h
+weather-proxy   LoadBalancer   10.15.250.194   35.192.29.110   80:30763/TCP   1h
+weather-ui      LoadBalancer   10.15.248.200   35.225.60.72    80:30503/TCP   1h
 
-    drew@drew-8570w:~$ kubectl get services
-    NAME            TYPE           CLUSTER-IP      EXTERNAL-IP     PORT(S)        AGE
-    kubernetes      ClusterIP      10.15.240.1     <none>          443/TCP        1h
-    weather-api     ClusterIP      10.15.240.11    <none>          80/TCP         1h
-    weather-geo     ClusterIP      10.15.240.190   <none>          80/TCP         1h
-    weather-proxy   LoadBalancer   10.15.250.194   35.192.29.110   80:30763/TCP   1h
-    weather-ui      LoadBalancer   10.15.248.200   35.225.60.72    80:30503/TCP   1h
-
-    ## notes
-    # kubectl get services
-    # kubectl delete service weather-{api,geo,proxy,ui}
-    # kubectl delete deployment weather-{api,geo,proxy,ui}
-    # kubectl exec -it weather-ui-2033027954-rn8fg -- /bin/sh
+## notes
+# kubectl get services
+# kubectl delete service weather-{api,geo,proxy,ui}
+# kubectl delete deployment weather-{api,geo,proxy,ui}
+# kubectl exec -it weather-ui-2033027954-rn8fg -- /bin/sh
+```
