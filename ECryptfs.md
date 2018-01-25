@@ -6,10 +6,12 @@ layout: default
 ecryptfs
 --------
 
-    sudo apt-get install ecryptfs-utils
-    ecryptfs-setup-private
-    umount.ecryptfs_private
-    mount.ecryptfs_private
+``` bash
+sudo apt-get install ecryptfs-utils
+ecryptfs-setup-private
+umount.ecryptfs_private
+mount.ecryptfs_private
+```
 
 encfs
 -----
@@ -18,16 +20,21 @@ encfs
 
 Install encfs
 
-    apt-get install encfs
-
-    mkdir -p ~/encrypted ~/temp_encr
+``` bash
+apt-get install encfs
+mkdir -p ~/encrypted ~/temp_encr
+```
 
 Created encrypted dir / create password
 
-    encfs ~/encrypted ~/temp_encr
+``` bash
+encfs ~/encrypted ~/temp_encr
+```
 
 Copy files to ~/temp\_encr
 
 Umount encrypted dir
 
-    fusermount -u ~/temp_encr
+``` bash
+fusermount -u ~/temp_encr
+```

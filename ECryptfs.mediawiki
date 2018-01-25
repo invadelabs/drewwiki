@@ -1,19 +1,27 @@
 ==ecryptfs==
-<pre>sudo apt-get install ecryptfs-utils
+<syntaxhighlight lang=bash>
+sudo apt-get install ecryptfs-utils
 ecryptfs-setup-private
 umount.ecryptfs_private
-mount.ecryptfs_private</pre>
+mount.ecryptfs_private
+</syntaxhighlight>
 
 ==encfs==
 http://ubuntuforums.org/showthread.php?t=148600
 
 Install encfs
-<pre>apt-get install encfs</pre>
-<pre>mkdir -p ~/encrypted ~/temp_encr</pre>
+<syntaxhighlight lang=bash>
+apt-get install encfs
+mkdir -p ~/encrypted ~/temp_encr
+</syntaxhighlight>
 Created encrypted dir / create password
-<pre>encfs ~/encrypted ~/temp_encr</pre>
+<syntaxhighlight lang=bash>
+encfs ~/encrypted ~/temp_encr
+</syntaxhighlight>
 
 Copy files to ~/temp_encr
 
 Umount encrypted dir
-<pre>fusermount -u ~/temp_encr</pre>
+<syntaxhighlight lang=bash>
+fusermount -u ~/temp_encr
+</syntaxhighlight>
