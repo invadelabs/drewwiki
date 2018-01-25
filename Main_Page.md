@@ -14,8 +14,6 @@ System Setup
     Puppet + Foreman + Docker
 -   [ServerSetupFedora27](ServerSetupFedora27 "wikilink") - Fedora 27
     Server Setup
--   [ServerSetupFedora22](ServerSetupFedora22 "wikilink") - Fedora 22
-    Server Setup
 
 Infrastructure
 --------------
@@ -236,6 +234,8 @@ Client Setup
 Outdated
 --------
 
+-   [ServerSetupFedora22](ServerSetupFedora22 "wikilink") - Fedora 22
+    Server Setup
 -   [BootOptimization](BootOptimization "wikilink") - Speed up Fedora15
     boot
 -   [NUTUPSMonitor](NUTUPSMonitor "wikilink") - Configure NUT for UPS
