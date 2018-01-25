@@ -50,7 +50,7 @@ Press <Alt>F2, then type r to restart Gnome.
 [https://superuser.com/questions/394376/how-to-prevent-gnome-shells-alttab-from-grouping-windows-from-similar-apps]
 
 == Gnome Tweak Tool ==
-<pre>
+<syntaxhighlight lang=bash>
 TopIcons-plus - for insync prime, slack
 Extension update notifier
 Freon
@@ -58,7 +58,7 @@ Status area horizontal spacing
 $ ~/.local/share/gnome-shell/extensions
 sudo apt-get install chrome-gnome-shell
 * restart GNOME Shell (Alt+F2, r, Enter) and enable the extension through gnome-tweak-tool.
-</pre>
+</syntaxhighlight>
 
 =Install Main Apps=
 <syntaxhighlight lang=bash>

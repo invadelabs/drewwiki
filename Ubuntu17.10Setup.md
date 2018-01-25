@@ -74,13 +74,15 @@ Press <Alt>F2, then type r to restart Gnome.
 Gnome Tweak Tool
 ----------------
 
-    TopIcons-plus - for insync prime, slack
-    Extension update notifier
-    Freon
-    Status area horizontal spacing
-    $ ~/.local/share/gnome-shell/extensions
-    sudo apt-get install chrome-gnome-shell
-    * restart GNOME Shell (Alt+F2, r, Enter) and enable the extension through gnome-tweak-tool.
+``` bash
+TopIcons-plus - for insync prime, slack
+Extension update notifier
+Freon
+Status area horizontal spacing
+$ ~/.local/share/gnome-shell/extensions
+sudo apt-get install chrome-gnome-shell
+* restart GNOME Shell (Alt+F2, r, Enter) and enable the extension through gnome-tweak-tool.
+```
 
 Install Main Apps
 =================
