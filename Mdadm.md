@@ -17,9 +17,12 @@ spares.
 #### Create /etc/mdadm.conf
 
 ``` bash
-# mdadm  --examine  --scan --config=mdadm.conf >> /etc/mdadm.conf</pre>
+# mdadm  --examine  --scan --config=mdadm.conf >> /etc/mdadm.conf
+```
+
 Modify as appropriate, ex;
-<pre>
+
+``` bash
 DEVICE partitions
 CREATE owner=root group=disk mode=0660 auto=yes
 HOMEHOST <system>

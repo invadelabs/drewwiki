@@ -7,9 +7,11 @@ Create a raid5 device with 256 chunk size on 4 devices with out any hot spares.
 
 ====Create /etc/mdadm.conf====
 <syntaxhighlight lang=bash>
-# mdadm  --examine  --scan --config=mdadm.conf >> /etc/mdadm.conf</pre>
+# mdadm  --examine  --scan --config=mdadm.conf >> /etc/mdadm.conf
+</syntaxhighlight>
+
 Modify as appropriate, ex;
-<pre>
+<syntaxhighlight lang=bash>
 DEVICE partitions
 CREATE owner=root group=disk mode=0660 auto=yes
 HOMEHOST <system>
