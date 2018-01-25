@@ -1,4 +1,5 @@
-<pre>[root@drewserv ~]# cat /etc/samba/smb.conf
+<syntaxhighlight lang=bash>
+[root@drewserv ~]# cat /etc/samba/smb.conf
 [global]
         workgroup = WORKGROUP
         server string = drewserv
@@ -17,4 +18,4 @@
         path = /mnt/raid5
         valid users = user,drew
         read only = No
-</pre>
+</syntaxhighlight>
