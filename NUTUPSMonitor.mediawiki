@@ -1,35 +1,42 @@
 1. Install network ups tool;
-<pre># yum install nut nut-client</pre>
+<syntaxhighlight lang=bash>
+# yum install nut nut-client
+</syntaxhighlight>
 
 
 2. Change mode from none -> standalone in /etc/ups/nut.conf
-<pre>
+<syntaxhighlight lang=bash>
 #MODE = none
 MODE = standalone
-</pre>
+</syntaxhighlight>
 
 
 3. Add a UPS device in /etc/ups/ups.conf;
 * Use auto for port if USB
-<pre>
+<syntaxhighlight lang=bash>
 [drewups]
         driver=usbhid-ups
         port = auto
         desc = "Office UPS"
-</pre>
+</syntaxhighlight>
 
 
 4. Create a master to use to communicate with nut in /etc/ups/upsd.users;
-<pre>[amasteruser]
+<syntaxhighlight lang=bash>
+[amasteruser]
        password = anawesomepassword
-       upsmon master</pre>
+       upsmon master
+</syntaxhighlight>
 
 
 5. Create a user on the system to monitor;
-<pre> # useradd -s /sbin/nologin -g nut nutmon</pre>
+<syntaxhighlight lang=bash>
+# useradd -s /sbin/nologin -g nut nutmon
+</syntaxhighlight>
 
 Configure /etc/ups/upsmon.conf to monitor drewups as amasteruser, run a script when an action occurs, as well as alert;
-<pre>[root@drewserv ~]# grep -v ^$ /etc/ups/upsmon.conf | grep -v ^#
+<syntaxhighlight lang=bash>
+[root@drewserv ~]# grep -v ^$ /etc/ups/upsmon.conf | grep -v ^#
 MINSUPPLIES 1
 SHUTDOWNCMD "/sbin/shutdown -h +0"
 POLLFREQ 5
@@ -53,13 +60,17 @@ NOTIFYFLAG SHUTDOWN     SYSLOG+EXEC+WALL
 NOTIFYFLAG REPLBATT     SYSLOG+EXEC+WALL
 NOTIFYFLAG NOCOMM       SYSLOG+EXEC+WALL
 NOTIFYFLAG NOPARENT     SYSLOG+EXEC+WALL
-</pre>
+</syntaxhighlight>
 
 
 6. upspager.sh script;
-<pre>#!/bin/bash
-echo "$*" | mail -s "drewups alert" me+alerts@gmail.com</pre>
+<syntaxhighlight lang=bash>
+#!/bin/bash
+echo "$*" | mail -s "drewups alert" me+alerts@gmail.com
+</syntaxhighlight>
 
 7. Start nut at boot and fire it up;
-<pre># chkconfig ups on
-# /etc/init.d/ups start</pre>
+<syntaxhighlight lang=bash>
+# chkconfig ups on
+# /etc/init.d/ups start
+</syntaxhighlight>
