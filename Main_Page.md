@@ -108,12 +108,8 @@ System Administration
 -   [NagiosDocker](https://github.com/drew-holt/nagios-invadelabs) -
     GitHub: Invade Labs Nagios config using Docker
 -   [ForceTextConsoleResolution](ForceTextConsoleResolution "wikilink") -
-    Force text console resolution when using remote KVM
--   [EmailViaNCorTelnet](EmailViaNCorTelnet "wikilink") - Send an email
-    via nc or telnet
+    Force text console resolution when using remote Lantronix Spider KVM
 -   [LetsEncrypt](LetsEncrypt "wikilink") - letsencrypt.org config
--   [backuppartitionsddandsfdisk](backuppartitionsddandsfdisk "wikilink") -
-    Backup boot and system partitions with dd and sfdisk
 -   [CustomKernelDebian](CustomKernelDebian "wikilink") - Compile a
     custom kernel from source in Debian / Ubuntu
 -   [OctoPrint](OctoPrint "wikilink") - 3D printer interface
@@ -123,14 +119,12 @@ System Administration
 -   [OpenVPN](OpenVPN "wikilink") - OpenVPN Server Setup
 -   [ApachePAMunixAuth](ApachePAMunixAuth "wikilink") - Apache
     authentication against /etc/passwd
--   [IPMI](IPMI "wikilink") - IPMI on SuperMicro AOC-IPMI20 with
-    Serial-Over-LAN Console
 -   [iptables](iptables "wikilink") - iptables setup
--   [lm\_sensorsPDMSi](lm_sensorsPDMSi "wikilink") - lm\_sensors
-    lmsensors /etc/sensors.d/pdsmi
 
 ##### Mail
 
+-   [EmailViaNCorTelnet](EmailViaNCorTelnet "wikilink") - Send an email
+    via nc or telnet
 -   [SendmailRelayGmailCentos](SendmailRelayGmailCentos "wikilink") -
     Sendmail with gmail relay in Fedora 10+
 -   [SendmailRelayISP](SendmailRelayISP "wikilink") - Sendmail using ISP
@@ -174,6 +168,8 @@ System Administration
 
 ##### Backup
 
+-   [backuppartitionsddandsfdisk](backuppartitionsddandsfdisk "wikilink") -
+    Backup boot and system partitions with dd and sfdisk
 -   [Backup DD-WRT Config](Backup_DD-WRT_Config "wikilink") - DD-WRT
     backup script (cron)
 -   [ClamAV Weekly Scan](ClamAV_Weekly_Scan "wikilink") - ClamAV script
@@ -187,6 +183,10 @@ System Administration
 
 #### Hardware Related
 
+-   [IPMI](IPMI "wikilink") - IPMI on SuperMicro AOC-IPMI20 with
+    Serial-Over-LAN Console
+-   [lm\_sensorsPDMSi](lm_sensorsPDMSi "wikilink") - lm\_sensors
+    lmsensors /etc/sensors.d/pdsmi
 -   [RaspberryPi](RaspberryPi "wikilink") - Information for RPi
 -   [udevinfo](udevinfo "wikilink") - gathering system info
 -   [gps](gps "wikilink") - GPS Related

@@ -51,21 +51,18 @@ A collection of randomness I've encountered and configured in Linux. - drew@inva
 ==System Administration==
 *[https://github.com/drew-holt/selenium-invadelabs SeleniumDocker] - GitHub: Selenium dockerized with Stand Alone Chrome and Firefox on separate ports.
 *[https://github.com/drew-holt/nagios-invadelabs NagiosDocker] - GitHub: Invade Labs Nagios config using Docker
-*[[ForceTextConsoleResolution]] - Force text console resolution when using remote KVM
-*[[EmailViaNCorTelnet]] - Send an email via nc or telnet
+*[[ForceTextConsoleResolution]] - Force text console resolution when using remote Lantronix Spider KVM
 *[[LetsEncrypt]] - letsencrypt.org config
-*[[backuppartitionsddandsfdisk]] - Backup boot and system partitions with dd and sfdisk
 *[[CustomKernelDebian]] - Compile a custom kernel from source in Debian / Ubuntu
 *[[OctoPrint]] - 3D printer interface
 *[[xDripNightScout]] - Configuration for Dexcom G5, xDrip, xDripPebble, and NightScout
 *[[nmcli]] - Joining wifi from nmcli
 *[[OpenVPN]] - OpenVPN Server Setup
 *[[ApachePAMunixAuth]] - Apache authentication against /etc/passwd
-*[[IPMI]] - IPMI on SuperMicro AOC-IPMI20 with Serial-Over-LAN Console
 *[[iptables]] - iptables setup
-*[[lm_sensorsPDMSi]] - lm_sensors lmsensors /etc/sensors.d/pdsmi
 
 =====Mail=====
+*[[EmailViaNCorTelnet]] - Send an email via nc or telnet
 *[[SendmailRelayGmailCentos]] - Sendmail with gmail relay in Fedora 10+
 *[[SendmailRelayISP]] - Sendmail using ISP as relay in Fedora 10+
 
@@ -90,6 +87,7 @@ A collection of randomness I've encountered and configured in Linux. - drew@inva
 *[[SambaTdbsamBackend]] - Using Samba Tdbsam backend with unix login
 
 =====Backup=====
+*[[backuppartitionsddandsfdisk]] - Backup boot and system partitions with dd and sfdisk
 *[[Backup DD-WRT Config]] - DD-WRT backup script (cron)
 *[[ClamAV Weekly Scan]] - ClamAV script (cron)
 *[[MySQL Backup Script]] - MySQL Backup Script - (cron)
@@ -97,6 +95,8 @@ A collection of randomness I've encountered and configured in Linux. - drew@inva
 *[[ExternalUSBEncryptedLVM]] - Encrypted LVM for External USB (rsync backup)
 
 ====Hardware Related====
+*[[IPMI]] - IPMI on SuperMicro AOC-IPMI20 with Serial-Over-LAN Console
+*[[lm_sensorsPDMSi]] - lm_sensors lmsensors /etc/sensors.d/pdsmi
 *[[RaspberryPi]] - Information for RPi
 *[[udevinfo]] - gathering system info
 *[[gps]] - GPS Related
