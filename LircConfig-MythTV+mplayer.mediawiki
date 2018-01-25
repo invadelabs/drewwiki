@@ -9,7 +9,8 @@ Arranged this way because Comcast Aux remote code doesn't support buttons: up, d
 *0		Skip Commercial
 
 ==~/.mythtv/lircrc==
-<pre>begin
+<syntaxhighlight lang=bash>
+begin
 prog = mythtv
 button = 2
 repeat = 2
@@ -128,4 +129,5 @@ prog = mythtv
 button = 0
 repeat = 2
 config = z
-end</pre>
+end
+</syntaxhighlight>
