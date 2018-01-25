@@ -2,23 +2,23 @@ Using a Raspberry Pi3 running Rasbian 8
 
 = Setup OctoPrint =
 Add your user to the dialout group;
-<pre>
+<syntaxhighlight lang=bash>
 $ usermod -a -G dialout drew
-</pre>
+</syntaxhighlight>
 
 == Build ==
-<pre>
+<syntaxhighlight lang=bash>
 $ git clone https://github.com/foosel/OctoPrint.git
 $ cd OctoPrint
 $ virtualenv venv
 $ ./venv/bin/python setup.py install
-</pre>
+</syntaxhighlight>
 
 == Run ==
-<pre>
+<syntaxhighlight lang=bash>
 $ cd ~/OctoPrint
 $ venv/local/bin/octoprint 
-</pre>
+</syntaxhighlight>
 
 == Browse ==
 * http://192.168.1.121:5000/
@@ -39,17 +39,17 @@ $ venv/local/bin/octoprint
 
 == Tune Extruder and Heatbed PID ==
 Issue
-<pre>
+<syntaxhighlight lang=bash>
 Recv: Error:Thermal Runaway, system stopped! Heater_ID:
 Changing monitoring state from 'Printing' to 'Error: Thermal Runaway, system stopped! Heater_ID: 
 '
 Recv: 9
 Changing monitoring state from 'Error: Thermal Runaway, system stopped! Heater_ID: 
 ' to 'Closed'
-</pre>
+</syntaxhighlight>
 
 Need to tune:
-<pre> 
+<syntaxhighlight lang=bash> 
 M105 # get extruder temp
 M303 # tunes to 150C
 M303 S180 # tunes to 180C
@@ -75,29 +75,29 @@ M304 P519.74 I72.10 D936.70 #tuned for heated bed
 Enter the following command to save the PID settings to EEPROM. 
 
  M500
-</pre>
+</syntaxhighlight>
 
 * https://www.lulzbot.com/fine-tune-your-marlin-pid-settings
 
 = Setup mjpg-streamer =
 Add your user to the video group;
-<pre>
+<syntaxhighlight lang=bash>
 $ usermod -a -G video drew
-</pre>
+</syntaxhighlight>
 
 == Build ==
-<pre>
+<syntaxhighlight lang=bash>
 $ git clone https://github.com/jacksonliam/mjpg-streamer.git
 $ cd mjpg-streamer-experimental
 $ make
-</pre>
+</syntaxhighlight>
 
 == Run == 
-<pre>
+<syntaxhighlight lang=bash>
 $ cd ~/mjpg-streamer/mjpg-streamer-experimental/
 $  ./mjpg_streamer -i "./input_uvc.so -r 1280x720 -d /dev/video0" -o "./output_http.so"
 $ uvcdynctrl -s "Focus, Auto" 1
-</pre>
+</syntaxhighlight>
 
 * Reference
 ** http://www.sphaero.org/blog:2012:0727_control_your_webcam_from_the_command_line
