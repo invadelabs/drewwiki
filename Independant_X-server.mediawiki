@@ -1,6 +1,7 @@
 ==x.org==
 http://www.mythtv.org/wiki/index.php/Running_MythTV_on_independent_X-server
-<pre>Section "ServerLayout"
+<syntaxhighlight lang=bash>
+Section "ServerLayout"
     Identifier     "Layout0"
     Screen      0  "Screen0" 1024 0
     InputDevice    "Keyboard0" "CoreKeyboard"
@@ -124,14 +125,21 @@ EndSection
 
 Section "Extensions"
     Option "Composite" "Enable"
-EndSection</pre>
+EndSection
+</syntaxhighlight>
 
 ==Execute :1==
-<pre>xinit mythfrontend -- :1 -sharevts -layout "Myth Layout" -br -nolisten</pre>
+<syntaxhighlight lang=bash>
+xinit mythfrontend -- :1 -sharevts -layout "Myth Layout" -br -nolisten
+</syntaxhighlight>
 
 ==Quick VNC==
-<pre>x11vnc -safer -nopw -once -display :1& vncviewer localhost</pre>
+<syntaxhighlight lang=bash>
+x11vnc -safer -nopw -once -display :1& vncviewer localhost
+</syntaxhighlight>
 
 ==Nvidia Settings on Display :1==
-<pre>nvidia-settings --display :1.0
-sudo nvidia-settings -c :1.0</pre>
+<syntaxhighlight lang=bash>
+nvidia-settings --display :1.0
+sudo nvidia-settings -c :1.0
+</syntaxhighlight>
