@@ -1,5 +1,5 @@
 /etc/default/grub
-<pre>
+<syntaxhighlight lang=bash>
 GRUB_TIMEOUT=5
 GRUB_DISTRIBUTOR="$(sed 's, release .*$,,g' /etc/system-release)"
 GRUB_DEFAULT=saved
@@ -13,4 +13,4 @@ GRUB_VIDEO_BACKEND="vbe"
 GRUB_TERMINAL_OUTPUT="gfxterm"
 GRUB_FONT_PATH="/boot/grub2/fonts/unicode.pf2"
 GRUB_GFXMODE="1024x768x32"
-</pre>
+</syntaxhighlight>
