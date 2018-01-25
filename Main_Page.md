@@ -213,9 +213,6 @@ Media
 -   [Compiz Profile
     Configuration](Compiz_Profile_Configuration "wikilink") - Dual
     monitor / GiantCube / Ice Exploding Windows
-
-#### Emulators
-
 -   [N64Mupen64plus](N64Mupen64plus "wikilink") - Using mupen64plus (N64
     Emulator) in Linux
 

@@ -111,8 +111,6 @@ A collection of randomness I've encountered and configured in Linux. - drew@inva
 *[[ConvertVideoToM4a]] - Convert video to m4a with ffmpeg copy
 *[[bluray]] - Playing and backing up Blu-ray discs in Linux
 *[[Compiz Profile Configuration]] - Dual monitor / GiantCube / Ice Exploding Windows
-
-====Emulators====
 *[[N64Mupen64plus]] - Using mupen64plus (N64 Emulator) in Linux
 
 == Client Setup ==
