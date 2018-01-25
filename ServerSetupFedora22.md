@@ -30,6 +30,9 @@ Add TCP22/0 to IPTables
 Enable sudo
 -----------
 
+    $ sudo grep drew /etc/sudoers
+    drew    ALL=(ALL) NOPASSWD:ALL
+
 yum remove unneeded software
 ----------------------------
 

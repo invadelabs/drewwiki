@@ -20,6 +20,10 @@ PermitRootLogin prohibit-password
 ==Add TCP22/0 to IPTables==
 
 ==Enable sudo==
+<syntaxhighlight>
+$ sudo grep drew /etc/sudoers
+drew	ALL=(ALL) NOPASSWD:ALL
+</syntaxhighlight>
 
 ==yum remove unneeded software==
 
