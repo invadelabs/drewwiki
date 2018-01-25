@@ -1,0 +1,184 @@
+=Fedora 27 Net Install ISO=
+Write to thumb drive https://download.fedoraproject.org/pub/fedora/linux/releases/27/Server/x86_64/iso/Fedora-Server-netinst-x86_64-27-1.6.iso
+
+==kickstart.ks==
+<script src="https://gist.github.com/drew-holt/e00fc2879db092e7c42b4d0101935caf.js"></script>
+
+=Immediate post install steps=
+
+==Install etckepper and initalize it==
+<syntaxhighlight>
+sudo dnf install etckeeper
+sudo etckeepeer init
+</syntaxhighlight>
+
+==Install fail2ban, enable, and start it==
+<syntaxhighlight>
+sudo dnf install fail2ban
+sudo systemctl enable fail2ban
+sudo systemctl start fail2ban
+</syntaxhighlight>
+
+==Disable root login via password ssh==
+<syntaxhighlight>
+$ grep Root /etc/ssh/sshd_config
+PermitRootLogin prohibit-password
+</syntaxhighlight>
+
+==Add TCP/22 to firewalld==
+Done in kickstart, manually though:
+<syntaxhighlight>
+firewall-cmd --permanent --add-port=80/tcp --add-port=443/tcp
+firewall-cmd --reload
+</syntaxhighlight>
+
+==Enable sudo==
+User drew is added to wheel in kickstart, manually though:
+<syntaxhighlight>
+$ sudo visudo
+drew	ALL=(ALL) NOPASSWD:ALL
+</syntaxhighlight>
+
+==dnf upgrade==
+<syntaxhighlight>
+sudo dnf upgrade -y
+</syntaxhighlight>
+
+==Enable SElinux==
+Done in kickstart, however:
+<syntaxhighlight>
+$ grep enforcing /etc/selinux/config
+SELINUXTYPE=enforcing
+$ setenforce 1
+</syntaxhighlight>
+
+==Extend days of sysstat logging==
+<syntaxhighlight>
+$ grep -vE '^($|#)' /etc/sysconfig/sysstat
+HISTORY=365
+COMPRESSAFTER=10
+SADC_OPTIONS=""
+</syntaxhighlight>
+
+=Install other software=
+Do this in kickstart
+<syntaxhighlight>
+# dnf install -y man screen wget strace rsync mailx fdupes logwatch grep lsof screen binutils tar mcelog nfs-utils \
+OpenIPMI ipmitool sysstat clamav clamav-update iscsi-initiator-utils samba openvpn lldpad ntp \
+php-pecl-apc lm_sensors hddtemp smartmontools apcupsd apcupsd-cgi 
+</syntaxhighlight>
+
+=Configure system=
+
+==Mail==
+Place holder for postfix config here and firewald rules for TCP25
+
+===add .forward file===
+<syntaxhighlight>
+$ sudo echo drew > /root/.forward
+$ sudo echo "andrew: drew" >> /etc/aliases
+$ sudo newaliases
+$ sudo echo "root: drew" >> /etc/aliases
+$ sudo newaliases
+</syntaxhighlight>
+
+==Monitoring==
+Place holder for nagios client config
+
+===Configure lm-sensors===
+Do this in kickstart
+<syntaxhighlight>
+$ sudo sensors-detect --auto
+</syntaxhighlight>
+
+===lldpad===
+Do this in kickstart
+<syntaxhighlight>
+$ sudo systemctl enable llpdad
+$ sudo systemctl start llpdad
+</syntaxhighlight>
+
+===mcelog===
+Do this in kickstart
+<syntaxhighlight>
+systemctl enable mcelog
+systemctl start mcelog
+</syntaxhighlight>
+
+===SMARTmon HDD Alerts===
+<syntaxhighlight>
+DEVICESCAN -H -m root -M exec /usr/libexec/smartmontools/smartdnotify -n standby,10,q
+/dev/sda -H -m root -M daily -M exec /home/drew/cron/smartmon.sh -M daily -f -l error -o on -S on -s (S/../.././02|L/../../6/03) -W 0,0,45 -d sat
+/dev/sdb -H -m root -M daily -M exec /home/drew/cron/smartmon.sh -M daily -f -l error -o on -S on -s (S/../.././02|L/../../6/03) -W 0,0,45 -d sat
+/dev/sdc -H -m root -M daily -M exec /home/drew/cron/smartmon.sh -M daily -f -l error -o on -S on -s (S/../.././02|L/../../6/03) -W 0,0,45 -d sat
+/dev/sdd -H -m root -M daily -M exec /home/drew/cron/smartmon.sh -M daily -f -l error -o on -S on -s (S/../.././02|L/../../6/03) -W 0,0,45 -d sat
+/dev/sde -H -m root -M daily -M exec /home/drew/cron/smartmon.sh -M daily -f -l error -o on -S on -s (S/../.././02|L/../../6/03) -W 0,0,47 -d sat
+</syntaxhighlight>
+
+==VPN==
+Place holder for openvpn server
+
+==Configure kdump==
+
+==Configure apcupsd==
+
+==Time==
+Do this via kickstart. Install chrony and configure, add to firewall UDP123/24
+
+==Rsyslog== 
+Do this via kickstart. For network clients, add UDP514/24 to IPTables
+
+==Configure logrotate==
+Do this via kickstart. 
+<syntaxhighlight>
+compress
+</syntaxhighlight>
+
+=Configure RAID and filesharing=
+
+==Mount raid array==
+Configure md alerts
+
+==Setup clamav==
+Virus protection for Samba and weekly scan
+
+==Enable samba==
+Add TCP139,445/24 to IPTables
+<syntaxhighlight>
+sudo systemctl enable smb; 
+sudo systemctl start smb
+</syntaxhighlight>
+
+/etc/samba/smb.conf
+<syntaxhighlight>
+[global]
+        workgroup = WORKGROUP
+        server string = drewserv
+        security = user
+        passdb backend = tdbsam
+        log file = /var/log/samba/log.%m
+        max log size = 50
+        load printers = no
+        show add printer wizard = no
+        printcap name = /dev/null
+        disable spoolss = yes
+[share]
+        path = /mnt/raid5
+        valid users = drew pbr
+        read only = No
+	create mode = 0665
+	directory mode = 0775
+</syntaxhighlight>
+
+== Setup cron jobs ==
+Keep anacron from waking me up at night! 
+<syntaxhighlight>
+$ sudo vi /etc/anacrontab // START_HOURS_RANGE</pre>
+</syntaxhighlight>
+
+==Configure Web Services==
+===ddclient for dynamicdns updates===
+
+= Completing / Wrap-up =
+* Verify all log files in /var/log are not giving any errors or notifications
+* Check logs for whats growing! <pre># ls -alR /var/log | grep ^- | awk {'print $5" "$8'} | sort -k 2| sort -n</pre>
