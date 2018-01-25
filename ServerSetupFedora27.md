@@ -243,7 +243,7 @@ Setup cron jobs
 Keep anacron from waking me up at night!
 
 ``` bash
-$ sudo vi /etc/anacrontab // START_HOURS_RANGE</pre>
+$ sudo vi /etc/anacrontab // START_HOURS_RANGE
 ```
 
 Configure Web Services
@@ -257,6 +257,8 @@ Completing / Wrap-up
 -   Verify all log files in /var/log are not giving any errors or
     notifications
 -   Check logs for whats growing!
-        # ls -alR /var/log | grep ^- | awk {'print $5" "$8'} | sort -k 2| sort -n
+    ``` bash
+    # ls -alR /var/log | grep ^- | awk {'print $5" "$8'} | sort -k 2| sort -n
+    ```
 
 

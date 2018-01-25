@@ -173,7 +173,7 @@ sudo systemctl start smb
 == Setup cron jobs ==
 Keep anacron from waking me up at night! 
 <syntaxhighlight lang=bash>
-$ sudo vi /etc/anacrontab // START_HOURS_RANGE</pre>
+$ sudo vi /etc/anacrontab // START_HOURS_RANGE
 </syntaxhighlight>
 
 ==Configure Web Services==
@@ -181,4 +181,4 @@ $ sudo vi /etc/anacrontab // START_HOURS_RANGE</pre>
 
 = Completing / Wrap-up =
 * Verify all log files in /var/log are not giving any errors or notifications
-* Check logs for whats growing! <pre># ls -alR /var/log | grep ^- | awk {'print $5" "$8'} | sort -k 2| sort -n</pre>
+* Check logs for whats growing! <syntaxhighlight lang=bash># ls -alR /var/log | grep ^- | awk {'print $5" "$8'} | sort -k 2| sort -n</syntaxhighlight>
