@@ -1,6 +1,6 @@
 
 =Add Docker YUM Repo=
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 sudo tee /etc/yum.repos.d/docker.repo <<-'EOF'
 [dockerrepo]
 name=Docker Repository
@@ -12,14 +12,14 @@ EOF
 </syntaxhighlight>
 
 =Install Docker=
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 sudo yum install -y docker-engine
 sudo mkdir /srv/docker
 sudo mkdir /etc/systemd/system/docker.service.d
 </syntaxhighlight>
 
 ==Move standard mount point==
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 sudo vi /etc/systemd/system/docker.service.d/graph.conf
 [Service]
 ExecStart=
@@ -27,38 +27,38 @@ ExecStart=/usr/bin/dockerd --graph="/srv/docker" --storage-driver=overlay
 </syntaxhighlight>
 
 ==Reload, enable, and start the daemon==
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 sudo systemctl daemon-reload
 sudo systemctl enable docker.service
 sudo systemctl start docker
 </syntaxhighlight>
 
 =Install EPEL for PIP=
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 sudo yum --disablerepo="*" --enablerepo="epel" install -y python-pip
 </syntaxhighlight>
 
 ==Install docker-compose via pip==
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 yum upgrade python-*
 sudo yum install -y git # not installed on minimal
 sudo pip install docker-compose
 </syntaxhighlight>
 
 =Add docker group=
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 sudo groupadd docker
 </syntaxhighlight>
 
 ==Add user to group==
-<syntaxhighlight>
+<syntaxhighlight  lang=bash>
 useradd -m drew
 sudo usermod -aG docker drew
 </syntaxhighlight>
 
 =Misc=
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 docker ps | grep mongo # find container id
 docker exec -t -i 7f71cedafaab bash
 mongo 172.17.0.2/admin --eval 'db.getSiblingDB("dashboard").createUser({user: "db", pwd: "dbpass", roles: [{role: "readWrite", db: "dashboard"}]})'
