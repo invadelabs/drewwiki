@@ -73,6 +73,6 @@ sudo chef-server-ctl backup
 </syntaxhighlight>
 
 Restore
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 sudo chef-server-ctl restore -c -d /apps/tmp chef-backup-2016-10-14-17-30-38.tgz
 </syntaxhighlight>
