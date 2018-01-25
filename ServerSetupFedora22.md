@@ -62,7 +62,7 @@ Install rest of software
 ========================
 
 ``` bash
-# yum install man screen wget strace rsync mailx fdupes logwatch grep lsof screen binutils tar mcelog nfs-utils \
+$ sudo yum install man screen wget strace rsync mailx fdupes logwatch grep lsof screen binutils tar mcelog nfs-utils \
 OpenIPMI ipmitool sysstat clamav clamav-update iscsi-initiator-utils samba openvpn lldpad ntp \
 php-pecl-apc lm_sensors hddtemp smartmontools apcupsd apcupsd-cgi 
 ```
