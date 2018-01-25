@@ -1,6 +1,6 @@
 
 = After initial install =
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 sudo apt-get update
 sudo apt-get upgrade -y
 sudo apt-get dist-upgrade
@@ -12,22 +12,22 @@ sudo vi .gitignore # remove sensitive files
 </syntaxhighlight>
 
 ==Disable Guest Login==
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 sudo sh -c "echo 'allow-guest=false' >> /usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf"
 </syntaxhighlight>
 
 ==Show username in Desktop Manager==
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 gsettings set com.canonical.indicator.session show-real-name-on-panel true
 </syntaxhighlight>
 
 ==Set vim Editor==
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 sudo update-alternatives --set editor /usr/bin/vim.basic
 </syntaxhighlight>
 
 ==Set passwordless sudo==
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 visudo:
 username ALL=(ALL) NOPASSWD: ALL
 </syntaxhighlight>
@@ -60,7 +60,7 @@ sudo apt-get install chrome-gnome-shell
 </pre>
 
 =Install Main Apps=
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 sudo apt-get install \
 keepass2 rdesktop vncviewer \
 lm-sensors p7zip-full exfat-utils exfat-fuse \
@@ -124,27 +124,27 @@ youtube-dl
 </syntaxhighlight>
 
 = Other =
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 sudo apt-get install -y nfs-common cifs-utils ethtool pm-utils
 </syntaxhighlight>
 
 = Other Configuration =
 Remote syslog
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 echo "*.* @192.168.1.200" >> /etc/rsyslog.d/50-default.conf
 </syntaxhighlight>
 
 *tmpfs for /tmp and (maybe make this a bind mount..)
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 tmpfs   /tmp       tmpfs   defaults,noatime,mode=1777   0  0
 </syntaxhighlight>
 
 */etc/fstab
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 192.168.1.200:/mnt/raid5 /mnt/raid5	nfs	defaults	0 0
 </syntaxhighlight>
 
 *web server if needed
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 sudo apt-get install apache2 php5 php5-sqlite
 </syntaxhighlight>
