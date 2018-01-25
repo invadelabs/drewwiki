@@ -1,8 +1,12 @@
 Hibernate/Power Off
 http://mygeekopinions.blogspot.com/2011/06/how-to-add-shutdownhibernate-menus-in.html
+<syntaxhighlight lang=bash>
 # yum install gnome-shell-extensions-alternative-status-menu
+</syntaxhighlight>
 
 http://ranjith.zfs.in/gnome-shell-extensions-for-fedora-15-open-suse-11-4-arch-linux/
+<syntaxhighlight lang=bash>
 # yum install gnome-tweak-tool
 # yum install gnome-shell-extensions-drive-menu
 # yum install gnome-shell-extensions-dock
+</syntaxhighlight>
