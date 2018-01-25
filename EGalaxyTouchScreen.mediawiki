@@ -1,10 +1,10 @@
 Intsall evtouch;
-<pre>
+<syntaxhighlight lang=bash>
 # sudo apt-get install xserver-xorg-input-evtouch
-</pre>
+</syntaxhighlight>
 
 Modify /etc/X11/xorg.conf;
-<pre>
+<syntaxhighlight lang=bash>
 Add to Section "ServerLayout"
         InputDevice "touchscreen" "CorePointer"
 
@@ -24,30 +24,31 @@ Section "InputDevice"
     Option "SendCoreEvents" "On"
     Option "SwapY" "true
 EndSection
-</pre>
+</syntaxhighlight>
 
 Had to;
-<pre>
+<syntaxhighlight lang=bash>
 # rmmod usbhid
 # insmod usbtouchscreen
-</pre>
+</syntaxhighlight>
 
 Restart X;
-<pre>
+<syntaxhighlight lang=bash>
 # sudo restart gdm
-</pre>
+</syntaxhighlight>
 
 Unable to get ev_calibrate to work
 
 How to use egalax driver;
 DL latest driver from eeti.com
-<pre>
+<syntaxhighlight lang=bash>
 tar zxvf 
 cd USBSrc
 vi tkusb.h
-</pre>
+</syntaxhighlight>
+
 change asm/semaphore.h to linux/semphore.h
-<pre>
+<syntaxhighlight lang=bash>
 make
 cp tkusb.ko /lib/modules 
 vi /etc/rc.local
@@ -59,4 +60,4 @@ Xorg -configure
 cp -i ~/xorg.conf.new /etc/X11/xorg.conf
 sudo sh setup.sh
 sudo restart gdm
-</pre>
+</syntaxhighlight>
