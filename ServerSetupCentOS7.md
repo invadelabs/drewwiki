@@ -578,62 +578,64 @@ Kickstart file for foreman vm
 
 Kickstart file used to create inv-foreman01.cfg on hypervisor drewserv:
 
-    #version=DEVEL
-    # System authorization information
-    auth --enableshadow --passalgo=sha512
-    # Use network installation
-    url --url="http://192.168.1.124/centos/"
-    # Use graphical install
-    graphical
-    # Run the Setup Agent on first boot
-    firstboot --enable
-    ignoredisk --only-use=sda
-    # Keyboard layouts
-    keyboard --vckeymap=us --xlayouts='us'
-    # System language
-    lang en_US.UTF-8
+``` bash
+#version=DEVEL
+# System authorization information
+auth --enableshadow --passalgo=sha512
+# Use network installation
+url --url="http://192.168.1.124/centos/"
+# Use graphical install
+graphical
+# Run the Setup Agent on first boot
+firstboot --enable
+ignoredisk --only-use=sda
+# Keyboard layouts
+keyboard --vckeymap=us --xlayouts='us'
+# System language
+lang en_US.UTF-8
 
-    # Network information
-    network  --bootproto=dhcp --device=enp3s0 --ipv6=auto --activate
-    network  --hostname=localhost.localdomain
+# Network information
+network  --bootproto=dhcp --device=enp3s0 --ipv6=auto --activate
+network  --hostname=localhost.localdomain
 
-    # Root password
-    rootpw --iscrypted $mycryptedpassword
-    # System services
-    services --enabled="chronyd"
-    # System timezone
-    timezone America/Denver --isUtc
-    user --groups=wheel --name=drew --password=$mycryptedpassword --iscrypted --gecos="drew"
-    # System bootloader configuration
-    bootloader --append=" crashkernel=auto" --location=mbr --boot-drive=sda
-    autopart --type=lvm
-    # Partition clearing information
-    clearpart --none --initlabel
+# Root password
+rootpw --iscrypted $mycryptedpassword
+# System services
+services --enabled="chronyd"
+# System timezone
+timezone America/Denver --isUtc
+user --groups=wheel --name=drew --password=$mycryptedpassword --iscrypted --gecos="drew"
+# System bootloader configuration
+bootloader --append=" crashkernel=auto" --location=mbr --boot-drive=sda
+autopart --type=lvm
+# Partition clearing information
+clearpart --none --initlabel
 
-    %packages
-    @^minimal
-    @core
-    chrony
-    kexec-tools
-    sysstat
-    logwatch
-    mailx
-    rsync
-    strace
-    wget
-    tcpdump
-    deltarpm
-    screen
-    vim-enhanced
-    bind-utils
-    ntpdate
-    %end
+%packages
+@^minimal
+@core
+chrony
+kexec-tools
+sysstat
+logwatch
+mailx
+rsync
+strace
+wget
+tcpdump
+deltarpm
+screen
+vim-enhanced
+bind-utils
+ntpdate
+%end
 
-    %addon com_redhat_kdump --enable --reserve-mb='auto'
+%addon com_redhat_kdump --enable --reserve-mb='auto'
 
-    %end
+%end
 
-    reboot
+reboot
+```
 
 Run virt-install
 ----------------
