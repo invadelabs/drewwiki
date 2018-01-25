@@ -7,12 +7,12 @@ Or from Red Hat [https://docs.openshift.com/enterprise/3.0/cli_reference/get_sta
 Pull from [https://github.com/minishift/minishift/releases github.com/minishift]
 
 =Use Minishift with Virtual box=
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 minishift start --vm-driver=virtualbox
 </syntaxhighlight>
 
 =Login, deploy an app, expose, describe it=
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 ./oc login
 
 ./oc new-app centos/httpd-24-centos7~https://github.com/drew-holt/httpd-ex

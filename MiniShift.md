@@ -20,17 +20,21 @@ Pull from
 Use Minishift with Virtual box
 ==============================
 
-    minishift start --vm-driver=virtualbox
+``` bash
+minishift start --vm-driver=virtualbox
+```
 
 Login, deploy an app, expose, describe it
 =========================================
 
-    ./oc login
+``` bash
+./oc login
 
-    ./oc new-app centos/httpd-24-centos7~https://github.com/drew-holt/httpd-ex
+./oc new-app centos/httpd-24-centos7~https://github.com/drew-holt/httpd-ex
 
-    ./oc status
+./oc status
 
-    ./oc expose svc/httpd-ex
+./oc expose svc/httpd-ex
 
-    ./oc describe deploymentconfig httpd-ex
+./oc describe deploymentconfig httpd-ex
+```
