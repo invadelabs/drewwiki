@@ -1,14 +1,20 @@
-<pre># yum install mod_auth_pam.x86_64 mod_auth_shadow.x86</pre>
+<syntaxhighlight lang=bash>
+$ sudo yum install mod_auth_pam.x86_64 mod_auth_shadow.x86
+</syntaxhighlight>
 http://pam.sourceforge.net/mod_auth_pam/shadow.html
 
 Add to <Directory> or <Location>
-<pre>
+<syntaxhighlight lang=bash>
     AuthPAM_Enabled on
     AuthShadow on
     AuthType "basic"
     AuthName "Auth"
     require user drew
     #require group blabla</pre>
+</syntaxhighlight>
 
-<pre>chmod 444 /etc/passwd</pre> (orig 000)
----> Find safe work around
+=Find safe work around=
+<syntaxhighlight lang=bash>
+chmod 440 /etc/passwd
+</syntaxhighlight> 
+(orig 400)
