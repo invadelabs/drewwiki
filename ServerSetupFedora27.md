@@ -41,7 +41,7 @@ Add TCP/22 to firewalld
 
 Done in kickstart, manually though:
 
-    firewall-cmd --permanent --add-port=80/tcp --add-port=443/tcp
+    firewall-cmd --permanent --add-port=22/tcp --add-port==80/tcp--add-port=443/tcp
     firewall-cmd --reload
 
 Enable sudo
