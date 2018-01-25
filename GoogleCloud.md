@@ -11,24 +11,30 @@ Download gcloud sdk
 Running gcloud
 --------------
 
-    # if needed $ export PATH=$PATH:~/google-cloud-sdk/bin
+``` bash
+# if needed $ export PATH=$PATH:~/google-cloud-sdk/bin
 
-    $ gcloud auth list
-    $ gcloud auth login
-    $ gcloud config set project drew-1298
-    $ gcloud compute instances list
-    $ gcloud compute ssh
-    $ gcloud compute ssh drewderivative@instance-1 --zone us-central1-a
+$ gcloud auth list
+$ gcloud auth login
+$ gcloud config set project drew-1298
+$ gcloud compute instances list
+$ gcloud compute ssh
+$ gcloud compute ssh drewderivative@instance-1 --zone us-central1-a
+```
 
 Setup sendgrid email relay
 --------------------------
 
-    https://cloud.google.com/compute/docs/tutorials/sending-mail/using-sendgrid
+``` bash
+https://cloud.google.com/compute/docs/tutorials/sending-mail/using-sendgrid
+```
 
 Install heirloom-mailx
 ----------------------
 
 Needed to attach files via mailx, i.e.
 
-    $ sudo apt-get install heirloom-mailx
-    $ echo "sqlite db drew.invadelabs.com" | mailx -a drew_wiki.sqlite.xz -s "sqlite db drew.invadelabs.com" drewderivative@gmail.com
+``` bash
+$ sudo apt-get install heirloom-mailx
+$ echo "sqlite db drew.invadelabs.com" | mailx -a drew_wiki.sqlite.xz -s "sqlite db drew.invadelabs.com" drewderivative@gmail.com
+```
