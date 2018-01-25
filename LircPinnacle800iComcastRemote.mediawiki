@@ -1,9 +1,12 @@
 /var/log/messages shows errors like the following for the unmapped buttons on the remote.
-<pre>messages.0:Dec 10 15:08:35 drew-desktop kernel: [81408.914101] cx88 IR (Pinnacle PCTV HD 800i): unknown key: key=0x3b raw=0x317b down=0</pre>
+<syntaxhighlight lang=bash>
+messages.0:Dec 10 15:08:35 drew-desktop kernel: [81408.914101] cx88 IR (Pinnacle PCTV HD 800i): unknown key: key=0x3b raw=0x317b down=0
+</syntaxhighlight>
 Use key='''0x3b''' or whatever key reported to modify ir-keymap.c
 
 ==Module Compile==
-<pre>sudo apt-get build-dep linux-source-2.6.24
+<syntaxhighlight lang=bash>
+sudo apt-get build-dep linux-source-2.6.24
 sudo apt-get install linux-source-2.6.24 build-essential
 tar -jxvf /usr/src/linux-source-2.6.24.tar.bz2
 ln -sf linux-source-2.6.24 linux
@@ -14,10 +17,11 @@ strip --strip-debug ir-common.ko
 sudo install -m644 -b ir-common.ko /lib/modules/`uname -r`/kernel/drivers/media/common
 sudo depmod -ae
 sudo update-initramfs -u
-sudo reboot</pre>
+sudo reboot
+</syntaxhighlight>
 
 ==Changes to ir-keymap.c==
-<pre>
+<syntaxhighlight lang=c>
 /* Pinnacle PCTV HD 800i mini remote */
 IR_KEYTAB_TYPE ir_codes_pinnacle_pctv_hd[IR_KEYTAB_SIZE] = {
 
@@ -54,7 +58,7 @@ IR_KEYTAB_TYPE ir_codes_pinnacle_pctv_hd[IR_KEYTAB_SIZE] = {
         [0x3b] = KEY_LAST,      /* Labeled "?" */
 };
 EXPORT_SYMBOL_GPL(ir_codes_pinnacle_pctv_hd);
-</pre>
+</syntaxhighlight>
 
 ==Comcast remote==
 AUX - I think it was code 1081 or 0180
