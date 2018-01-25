@@ -1,4 +1,4 @@
-<pre>
+<syntaxhighlight lang=bash>
 root@drew-8570w:~# ddrescue -S -b 8M /dev/sdd /mnt/hdd/drive_1_of_3.raw
 GNU ddrescue 1.19
 Press Ctrl-C to interrupt
@@ -43,4 +43,4 @@ root@drew-8570w:~# lvs
 
 
 # mount /dev/vg_raid5/lv_raid5 /mnt/raid5
-</pre>
+</syntaxhighlight>
