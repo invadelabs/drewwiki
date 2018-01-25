@@ -1,0 +1,5 @@
+Rules /etc/udev/rules.d
+<syntaxhighlight lang=bash>
+cd /sys/class/net/eth0
+udevinfo -p `pwd` -a
+</syntaxhighlight>
