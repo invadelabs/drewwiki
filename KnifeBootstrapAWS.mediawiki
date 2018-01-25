@@ -1,4 +1,4 @@
-<syntaxhighlight>
+<syntaxhighlight lang=bash>
 create instance
 8GB for root, 50GB for /var/lib/jenkins
 yum -y update

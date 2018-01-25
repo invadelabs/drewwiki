@@ -3,26 +3,28 @@ title: KnifeBootstrapAWS
 layout: default
 ---
 
-    create instance
-    8GB for root, 50GB for /var/lib/jenkins
-    yum -y update
+``` bash
+create instance
+8GB for root, 50GB for /var/lib/jenkins
+yum -y update
 
-    install/configure postfix
+install/configure postfix
 
-    aws ec2 run-instances --image-id ami-d2c924b2 --count 1 --instance-type t2.medium--key-name invadelabs-2016.03.25 --security-groups build.invadelabs.com | grep InstanceId > instance_id.txt
-    XXX add script to set $INSTANCE_ID
-    aws ec2 create-tags --resources $INSTANCE_ID --tags "Key=Name,Value=build.invadelabs.com”
-    aws ec2 modify-instance-attribute --instance-id $INSTANCE_ID --disable-api-termination
-    aws ec2 associate-address --instance-id $INSTANCE_ID --public-ip 52.21.104.251
+aws ec2 run-instances --image-id ami-d2c924b2 --count 1 --instance-type t2.medium--key-name invadelabs-2016.03.25 --security-groups build.invadelabs.com | grep InstanceId > instance_id.txt
+XXX add script to set $INSTANCE_ID
+aws ec2 create-tags --resources $INSTANCE_ID --tags "Key=Name,Value=build.invadelabs.com”
+aws ec2 modify-instance-attribute --instance-id $INSTANCE_ID --disable-api-termination
+aws ec2 associate-address --instance-id $INSTANCE_ID --public-ip 52.21.104.251
 
-    knife bootstrap build.invadelabs.com -N build.invadelabs.com \
-    -E _default -r 'role[base]' -j '{ "foo": "bar" }' \
-    --ssh-user centos --sudo \
-    -i Desktop/build.invadelabs.com-20160325.pem
+knife bootstrap build.invadelabs.com -N build.invadelabs.com \
+-E _default -r 'role[base]' -j '{ "foo": "bar" }' \
+--ssh-user centos --sudo \
+-i Desktop/build.invadelabs.com-20160325.pem
 
-    ssh -i Desktop/invadelabs-20160325.pem centos@build.invadelabs.com
+ssh -i Desktop/invadelabs-20160325.pem centos@build.invadelabs.com
 
-    sudo chef-client
+sudo chef-client
 
-    $ knife cookbook upload apt runit yum compat_resource packagecloud yum-epel jenkins jenkins-invadelabs
-    $ knife ssh name:jenkins-master "sudo chef-client" -x drew --sudo
+$ knife cookbook upload apt runit yum compat_resource packagecloud yum-epel jenkins jenkins-invadelabs
+$ knife ssh name:jenkins-master "sudo chef-client" -x drew --sudo
+```
