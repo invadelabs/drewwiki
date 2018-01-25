@@ -1,4 +1,5 @@
-<pre># cat /etc/sensors.d/pdsmi
+<syntaxhighlight lang=bash>
+# cat /etc/sensors.d/pdsmi
 chip "w83792d-*"
 	ignore temp1
 	ignore fan1
@@ -11,4 +12,5 @@ chip "w83792d-*"
 	#label fan5 "CPU Fan" # ?
 	#label fan6 "CPU Fan" # ?
 	label temp2 "CPU Temp"
-	label temp3 "System Temp"</pre>
+	label temp3 "System Temp"
+</syntaxhighlight>
