@@ -3,6 +3,8 @@ title: ServerSetupFedora22
 layout: default
 ---
 
+**To-do:** This page is outdated and needs better formatting.
+
 Immediate post install steps
 ============================
 

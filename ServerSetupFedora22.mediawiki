@@ -1,3 +1,5 @@
+'''To-do:''' This page is outdated and needs better formatting.
+
 = Immediate post install steps =
 
 ==Install etckepper and fail2ban==
