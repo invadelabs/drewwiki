@@ -1,98 +1,134 @@
 Debian Weezy on Raspberry Pi
 
 == RPi CPU Tempurature ==
-<pre># /opt/vc/bin/vcgencmd measure_temp
+<syntaxhighlight lang=bash>
+# /opt/vc/bin/vcgencmd measure_temp
 # cat /sys/class/thermal/thermal_zone0/temp
 49768
 # expr `cat /sys/class/thermal/thermal_zone0/temp` / 1000 # divide by 1000 for C
-50</pre>
-
+50
+</syntaxhighlight>
 
 == Force Sleep Mode / Screen off ==
-<pre>Off: /opt/vc/bin/tvservice -o
-On: /opt/vc/bin/tvservice -p</pre>
+<syntaxhighlight lang=bash>
+Off: /opt/vc/bin/tvservice -o
+On: /opt/vc/bin/tvservice -p
+</syntaxhighlight>
 
 == HDMI Audio Issues ==
 Append to /boot/config.txt;
-<pre>hdmi_force_hotplug=1
-hdmi_drive=2</pre>
+<syntaxhighlight lang=bash>
+hdmi_force_hotplug=1
+hdmi_drive=2
+</syntaxhighlight>
 
 == Reduce Wear Leveling ==
-<pre>$ cat /etc/fstab
+<syntaxhighlight lang=bash>
+$ cat /etc/fstab
 proc        	/proc       	proc	defaults      	0   	0
 /dev/mmcblk0p1  /boot       	vfat	defaults      	0   	2
 /dev/mmcblk0p2  /           	ext4	defaults,noatime  0   	1
 # a swapfile is not a swap partition, so no using swapon|off from here on, use  dphys-swapfile swap[on|off]  for that
-tmpfs /var/log tmpfs defaults 0 0<pre>
+tmpfs /var/log tmpfs defaults 0 0
+</syntaxhighlight>
 
 http://www.raspberrypi.org/phpBB3/viewtopic.php?f=29&t=13889
-<pre>sudo apt-get install lsof rsync; dpkg -i ramlog*.deb; reboot twice</pre>
+<syntaxhighlight lang=bash>
+sudo apt-get install lsof rsync; dpkg -i ramlog*.deb; reboot twice
+</syntaxhighlight>
 
 == MP3 Plackback ==
-<pre>sox, or rather AUDIODEV=hw:1 play
+<syntaxhighlight lang=bash>
+sox, or rather AUDIODEV=hw:1 play
 moc or mocp
-mpd</pre>
+mpd
+</syntaxhighlight>
 
 == Software to Install ==
-<pre>sudo apt-get install \
+<syntaxhighlight lang=bash>
+sudo apt-get install \
 tightvncserver youtube-dl synergy transmission-daemon \
 chromium \
 nginx php5 php-apc php5-sqlite sqlite mailutils python dns-utils \
-php5-cgi php5-fpm php5-cli</pre>
+php5-cgi php5-fpm php5-cli
+</syntaxhighlight>
 
 == raspi-config autologin not as user pi ==
 By default when setting to enable straight to desktop, this script will make it pi;
-<pre># /usr/bin/raspi-config
+<syntaxhighlight lang=bash>
+# /usr/bin/raspi-config
 update-rc.d lightdm enable 2
-sed /etc/lightdm/lightdm.conf -i -e "s/^#autologin-user=.*/autologin-user=pi/"</pre>
+sed /etc/lightdm/lightdm.conf -i -e "s/^#autologin-user=.*/autologin-user=pi/"
+</syntaxhighlight>
 
 == RDP with rdesktop and xfreerdp ==
-<pre>$ rdesktop -g 1280x720 -u drew -r sound=local 192.168.1.10
+<syntaxhighlight lang=bash>
+$ rdesktop -g 1280x720 -u drew -r sound=local 192.168.1.10
 sound is choppy, clipboard works
 -f for full, ctrl+alt+enter to exit
 keymap is broken, found doesn't work??
 $ xfreerdp -u drew -g 1280x720 -x l --plugin rdpsnd --data alsa -- 192.168.1.10
 -x experience, l is for lan
--z is compression</pre>
+-z is compression
+</syntaxhighlight>
 
 == LXDE autostart synergyc ==
-<pre># mkdir ~/.config/autostart
+<syntaxhighlight lang=bash>
+# mkdir ~/.config/autostart
 # cat ~/.config/autostart/synergyc.desktop
 [Desktop Entry]
 Type=Application
-Exec=/usr/bin/synergyc 192.168.1.10</pre>
+Exec=/usr/bin/synergyc 192.168.1.10
+</syntaxhighlight>
 
 == Fix Time / Date ==
-<pre>dpkg-reconfigure tzdata</pre>
+<syntaxhighlight lang=bash>
+dpkg-reconfigure tzdata
+</syntaxhighlight>
 ^ set locale
 
 == Sound ==
-<pre># amixer get PCM
-# amixer set PCM 20%</pre>
+<syntaxhighlight lang=bash>
+# amixer get PCM
+# amixer set PCM 20%
+</syntaxhighlight>
 ^ one off to set lower noise http://man.he.net/man1/amixer
 
-<pre># alsamixer</pre>
+<syntaxhighlight lang=bash>
+# alsamixer
+</syntaxhighlight>
 ^ tui to set PCM volume / sound card info
 
-<pre># amixer cset numid=3 1</pre>
+<syntaxhighlight lang=bash>
+# amixer cset numid=3 1
+</syntaxhighlight>
 ^ 1 for headphones, 0 for hdmi
 
 == Video with omxplayer ==
-<pre># omxplayer -o local <filename></pre>
+<syntaxhighlight lang=bash>
+# omxplayer -o local <filename>
+</syntaxhighlight>
 ^ head phones output
 
-<pre># omxplayer -o hdmi <filename></pre>
+<syntaxhighlight lang=bash>
+# omxplayer -o hdmi <filename>
+</syntaxhighlight>
 ^ hdmi output
 
-<pre># omxplayer -r <filename></pre>
+<syntaxhighlight lang=bash>
+# omxplayer -r <filename>
+</syntaxhighlight>
 ^ full screen, skewed though?
 
-<pre># setterm -blank force && omxplayer filename
-# setterm -blank poke</pre>
+<syntaxhighlight lang=bash>
+# setterm -blank force && omxplayer filename
+# setterm -blank poke
+</syntaxhighlight>
 ^ command on console so only the video shows (and not console text scroll back), poke gets it back
 
 === omxplayer - Key bindings ===
-<pre>1 Increase Speed
+<syntaxhighlight lang=bash>
+1 Increase Speed
 2 Decrease Speed
 j Previous Audio stream
 k Next Audio stream
@@ -108,11 +144,13 @@ Space or p Pause/Resume
 Left Seek -30
 Right Seek +30
 Down Seek -600
-Up Seek +600</pre>
+Up Seek +600
+</syntaxhighlight>
 
 == Admin groups ==
 be in these groups: s/:pi/:pi,drew/
-<pre>drew@drew-rpi ~ $ grep pi /etc/group
+<syntaxhighlight lang=bash>
+drew@drew-rpi ~ $ grep pi /etc/group
 adm:x:4:pi,drew
 dialout:x:20:pi,drew
 cdrom:x:24:pi,drew
@@ -124,4 +162,5 @@ games:x:60:pi,drew
 users:x:100:pi,drew
 pi:x:1000:
 netdev:x:105:pi,drew
-input:x:999:pi,drew</pre>
+input:x:999:pi,drew
+</syntaxhighlight>
