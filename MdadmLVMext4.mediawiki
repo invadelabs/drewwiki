@@ -1,21 +1,27 @@
-== Preliminaries ==
+==Preliminaries==
 For faster rebuild
-<pre># echo "dev.raid.speed_limit_min=100000 # set higher raid rebuild limit" >> /etc/sysctl.conf</pre>
+<syntaxhighlight lang=bash>
+# echo "dev.raid.speed_limit_min=100000 # set higher raid rebuild limit" >> /etc/sysctl.conf
+</syntaxhighlight>
 
 For Faster Writes
 Add this to a script on boot ( rc.local ) 
-<pre># echo 16384 > /sys/block/md127/md/stripe_cache_size</pre>
+<syntaxhighlight lang=bash>
+# echo 16384 > /sys/block/md127/md/stripe_cache_size
+</syntaxhighlight>
 '''Beware of RAM usage: Value in pages per device, i.e. on 4 devices at 8192 comes out to 128MB'''
 
 After enabling SATA AHCI in BIOS!
-<pre>[root@drewserv ~]# dd if=/dev/md127 of=/dev/null bs=4M count=2500
+<syntaxhighlight lang=bash>
+[root@drewserv ~]# dd if=/dev/md127 of=/dev/null bs=4M count=2500
 2500+0 records in
 2500+0 records out
-10485760000 bytes (10 GB) copied, 57.1676 s, 183 MB/s</pre>
+10485760000 bytes (10 GB) copied, 57.1676 s, 183 MB/s
+</syntaxhighlight>
 
 
-== Build the array==
-<pre>
+==Build the array==
+<syntaxhighlight lang=bash>
 # mdadm -v --create /dev/md127 -l 5 -c 512 --bitmap=internal --raid-devices=3 /dev/sdb /dev/sdd /dev/sde
 -------------------------------------------------------------------------------------------
 [root@drewserv ~]# mdadm -D /dev/md127
@@ -49,10 +55,11 @@ Working Devices : 3
        0       8       16        0      active sync   /dev/sdb
        1       8       48        1      active sync   /dev/sdd
        3       8       64        2      active sync   /dev/sde
-</pre>
+</syntaxhighlight>
 
-=== MD RAID5 Perf Tests ===
-<pre>[root@drewserv ~]# dd if=/dev/md127 of=/dev/null count=10000 bs=1M
+===MD RAID5 Perf Tests===
+<syntaxhighlight lang=bash>
+[root@drewserv ~]# dd if=/dev/md127 of=/dev/null count=10000 bs=1M
 10000+0 records in
 10000+0 records out
 10485760000 bytes (10 GB) copied, 63.5414 s, 165 MB/s
@@ -66,11 +73,13 @@ Write Test
 [root@drewserv ~]# dd if=/dev/zero of=/dev/md127 count=10000 bs=1M
 10000+0 records in
 10000+0 records out
-10485760000 bytes (10 GB) copied, 74.9109 s, 140 MB/s</pre>
+10485760000 bytes (10 GB) copied, 74.9109 s, 140 MB/s
+</syntaxhighlight>
 
 
-== Create LVM VG/PV/LV ==
-<pre>[root@drewserv ~]# vgcreate vg-raid5 /dev/md127
+==Create LVM VG/PV/LV==
+<syntaxhighlight lang=bash>
+[root@drewserv ~]# vgcreate vg-raid5 /dev/md127
   No physical volume label read from /dev/md127
   Physical volume "/dev/md127" successfully created
   Volume group "vg-raid5" successfully created
@@ -122,10 +131,12 @@ root@drewserv ~]# lvdisplay /dev/vg-raid5/lv-raid5
   Allocation             inherit
   Read ahead sectors     auto
   - currently set to     4096
-  Block device           253:4</pre>
+  Block device           253:4
+</syntaxhighlight>
 
-=== LVM Performance Tests ===
-<pre>[root@drewserv ~]# dd if=/dev/vg-raid5/lv-raid5 of=/dev/null count=10000 bs=1M
+===LVM Performance Tests===
+<syntaxhighlight lang=bash>
+[root@drewserv ~]# dd if=/dev/vg-raid5/lv-raid5 of=/dev/null count=10000 bs=1M
 10000+0 records in
 10000+0 records out
 10485760000 bytes (10 GB) copied, 67.0551 s, 156 MB/s
@@ -133,11 +144,13 @@ root@drewserv ~]# lvdisplay /dev/vg-raid5/lv-raid5
 [root@drewserv ~]# dd if=/dev/zero of=/dev/md127 count=10000 bs=1M
 10000+0 records in
 10000+0 records out
-10485760000 bytes (10 GB) copied, 71.3196 s, 147 MB/s</pre>
+10485760000 bytes (10 GB) copied, 71.3196 s, 147 MB/s
+</syntaxhighlight>
 
-== Create the filesystem (EXT4) ==
+==Create the filesystem (EXT4)==
 *Dry run for fs*
-<pre>[root@drewserv ~]# mkfs.ext4 -v -E stride=128 -E stripe-width=256 -m 0 -n /dev/vg-raid5/lv-raid5 
+<syntaxhighlight lang=bash>
+[root@drewserv ~]# mkfs.ext4 -v -E stride=128 -E stripe-width=256 -m 0 -n /dev/vg-raid5/lv-raid5 
 mke2fs 1.41.14 (22-Dec-2010)
 fs_types for mke2fs.conf resolution: 'ext4'
 Calling BLKDISCARD from 0 to 750151270400 failed.
@@ -156,10 +169,12 @@ Maximum filesystem blocks=4294967296
 Superblock backups stored on blocks: 
 	32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208, 
 	4096000, 7962624, 11239424, 20480000, 23887872, 71663616, 78675968, 
-	102400000</pre>
+	102400000
+</syntaxhighlight>
 
 Real run
-<pre>[root@drewserv ~]# mkfs.ext4 -v -E stride=128 -E stripe-width=256 -m 0 /dev/vg-raid5/lv-raid5 
+<syntaxhighlight lang=bash>
+[root@drewserv ~]# mkfs.ext4 -v -E stride=128 -E stripe-width=256 -m 0 /dev/vg-raid5/lv-raid5 
 mke2fs 1.41.14 (22-Dec-2010)
 fs_types for mke2fs.conf resolution: 'ext4'
 Calling BLKDISCARD from 0 to 750151270400 failed.
@@ -185,17 +200,21 @@ Creating journal (32768 blocks): done
 Writing superblocks and filesystem accounting information: done
 
 This filesystem will be automatically checked every 34 mounts or
-180 days, whichever comes first.  Use tune2fs -c or -i to override.</pre>
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+</syntaxhighlight>
 
-=== Filesystem Performance Tests ===
+===Filesystem Performance Tests===
 Write test
-<pre>[root@drewserv raid5]# dd if=/dev/zero of=/mnt/raid5/10Gtest count=10000 bs=1M
+<syntaxhighlight lang=bash>
+[root@drewserv raid5]# dd if=/dev/zero of=/mnt/raid5/10Gtest count=10000 bs=1M
 10000+0 records in
 10000+0 records out
-10485760000 bytes (10 GB) copied, 73.8108 s, 142 MB/s</pre>
+10485760000 bytes (10 GB) copied, 73.8108 s, 142 MB/s
+</syntaxhighlight>
 
 Read Test
-<pre>[root@drewserv raid5]# dd if=/mnt/raid5/10Gtest of=/dev/null count=10000 bs=1M
+<syntaxhighlight lang=bash>
+[root@drewserv raid5]# dd if=/mnt/raid5/10Gtest of=/dev/null count=10000 bs=1M
 10000+0 records in
 10000+0 records out
 10485760000 bytes (10 GB) copied, 85.8405 s, 122 MB/s
@@ -208,17 +227,21 @@ test2 after rebuild
 [drew@drewserv raid5]$ sudo dd if=/mnt/raid5/10Gtest of=/dev/null bs=1M count=10000
 10000+0 records in
 10000+0 records out
-10485760000 bytes (10 GB) copied, 76.3866 s, 137 MB/s</pre>
+10485760000 bytes (10 GB) copied, 76.3866 s, 137 MB/s
+</syntaxhighlight>
 
-=== Add to /etc/fstab ===
-<pre># blkid | grep raid5
+===Add to /etc/fstab===
+<syntaxhighlight lang=bash>
+# blkid | grep raid5
 /dev/mapper/vg--raid5-lv--raid5: UUID="16bf772d-bd34-4a14-b314-cea1ed737040" TYPE="ext4" 
 
-# echo "UUID="16bf772d-bd34-4a14-b314-cea1ed737040" /mnt/raid5 ext4 defaults  1 3" >> /etc/fstab</pre>
+# echo "UUID="16bf772d-bd34-4a14-b314-cea1ed737040" /mnt/raid5 ext4 defaults  1 3" >> /etc/fstab
+</syntaxhighlight>
 
-== Restore data from backup==
+==Restore data from backup==
 Copy data back:
-<pre>[root@drewserv ~]# rsync -aqv --log-file=/root/bkup-raid5 /mnt/backup/backup/ /mnt/raid5/
+<syntaxhighlight lang=bash>
+[root@drewserv ~]# rsync -aqv --log-file=/root/bkup-raid5 /mnt/backup/backup/ /mnt/raid5/
 2011/07/23 17:28:17 [8373] building file list
 2011/07/23 17:28:17 [8373] .d..t...... ./
 .
@@ -226,7 +249,8 @@ Copy data back:
 .
 2011/07/23 21:49:09 [8373] .d..t...... lost+found/
 2011/07/23 21:49:09 [8373] sent 428464277809 bytes  received 1589811 bytes  27373637.92 bytes/sec
-2011/07/23 21:49:09 [8373] total size is 428406181021  speedup is 1.00</pre>
+2011/07/23 21:49:09 [8373] total size is 428406181021  speedup is 1.00
+</syntaxhighlight>
 
 
 
@@ -278,5 +302,3 @@ mkfs.ext3 -b 4096 -E stride=16 -E stripe-width=48 -O dir_index /dev/XXXX
 http://www.nickyeates.com/technology/unix/raid_filesystem_lvm
 Note: You would want to change the stride-width if you added disks to array.
     tune2fs -E stride=n,stripe-width=m /dev/mdx
-
-rabble
