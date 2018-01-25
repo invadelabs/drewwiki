@@ -167,7 +167,7 @@ System Administration
 
 ##### Backup
 
--   [backuppartitionsddandsfdisk](backuppartitionsddandsfdisk "wikilink") -
+-   [BackupPartitionsViaDDandSfdisk](BackupPartitionsViaDDandSfdisk "wikilink") -
     Backup boot and system partitions with dd and sfdisk
 -   [Backup DD-WRT Config](Backup_DD-WRT_Config "wikilink") - DD-WRT
     backup script (cron)

@@ -87,7 +87,7 @@ A collection of randomness I've encountered and configured in Linux. - drew@inva
 *[[SambaTdbsamBackend]] - Using Samba Tdbsam backend with unix login
 
 =====Backup=====
-*[[backuppartitionsddandsfdisk]] - Backup boot and system partitions with dd and sfdisk
+*[[BackupPartitionsViaDDandSfdisk]] - Backup boot and system partitions with dd and sfdisk
 *[[Backup DD-WRT Config]] - DD-WRT backup script (cron)
 *[[ClamAV Weekly Scan]] - ClamAV script (cron)
 *[[MySQL Backup Script]] - MySQL Backup Script - (cron)
