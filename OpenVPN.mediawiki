@@ -1,4 +1,4 @@
-<pre>
+<syntaxhighlight lang=bash>
 $ grep -vE '^(#|$)' /etc/openvpn/server.conf
 port 1194
 proto tcp
@@ -23,4 +23,4 @@ persist-tun
 status openvpn-status.log
 verb 3
 mute 7
-</pre>
+</syntaxhighlight>
