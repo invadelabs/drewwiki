@@ -1,4 +1,4 @@
-<pre>
+<syntaxhighlight lang=bash>
 $ file compiz_settings.profile 
 compiz_settings.profile: ASCII text
 $ cat compiz_settings.profile
@@ -47,4 +47,5 @@ s0_minimize_effects = animation:Random;
 s0_minimize_random_effects = animation:Magic Lamp;
 
 [fade]
-s0_fullscreen_visual_bell = true</pre>
+s0_fullscreen_visual_bell = true
+</syntaxhighlight>
