@@ -14,7 +14,12 @@ MAINTAINER Drew Holt <drew@invadelabs.com>
 
 RUN apt-get update && apt-get install curl npm -y
 
-ENV FOO bar
+ENV foo /bar
+WORKDIR ${foo}   # WORKDIR /bar
+ADD . $foo       # ADD . /bar
+COPY \$foo /myapp # COPY $foo /myapp
+
+RUN /myapp/myapp
 ```
 
 Build contanier
