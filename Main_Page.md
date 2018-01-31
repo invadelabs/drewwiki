@@ -58,6 +58,15 @@ Infrastructure
 -   [TerraformExamples](TerraformExamples "wikilink") - Terraform
     examples placeholder
 
+#### Jenkins
+
+-   [DisableJenkins2Wizard](DisableJenkins2Wizard "wikilink") - Disable
+    Jenkins 2.0 Setup Wizard
+-   [JenkinsSecurityViaDSL](JenkinsSecurityViaDSL "wikilink") - Jenkins
+    Security via DSL
+-   [ListJenkinsPluginsViaCurl](ListJenkinsPluginsViaCurl "wikilink") -
+    List Jenkins plugins via curl
+
 ### Containerization
 
 #### LXC

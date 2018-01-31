@@ -22,6 +22,10 @@ A collection of randomness I've encountered and configured in Linux. - drew@inva
 *[https://github.com/drew-holt/ansible-invadelabs AnsibleVirtualboxDocker] - GitHub: Invade Labs test environment for Ansible with VirtualBox VMs running Docker in a dind cluster
 ====Terraform====
 *[[TerraformExamples]] - Terraform examples placeholder
+====Jenkins====
+*[[DisableJenkins2Wizard]] - Disable Jenkins 2.0 Setup Wizard
+*[[JenkinsSecurityViaDSL]] - Jenkins Security via DSL
+*[[ListJenkinsPluginsViaCurl]] - List Jenkins plugins via curl
 
 ===Containerization===
 ====LXC====
