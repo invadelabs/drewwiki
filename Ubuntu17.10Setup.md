@@ -24,13 +24,6 @@ Disable Guest Login
 sudo sh -c "echo 'allow-guest=false' >> /usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf"
 ```
 
-Show username in Desktop Manager
---------------------------------
-
-``` bash
-gsettings set com.canonical.indicator.session show-real-name-on-panel true
-```
-
 Set vim Editor
 --------------
 
@@ -75,7 +68,7 @@ Gnome Tweak Tool
 ----------------
 
 ``` bash
-TopIcons-plus - for insync prime, slack
+TopIcons-plus - for Insync, Slack, Skype icons
 Extension update notifier
 Freon
 Status area horizontal spacing
@@ -90,75 +83,73 @@ Install Main Apps
 ``` bash
 sudo apt-get install \
 keepass2 rdesktop vncviewer \
-lm-sensors p7zip-full exfat-utils exfat-fuse \
+lm-sensors p7zip-full exfat-utils exfat-fuse encfs \
 vim ssh git \
 ubuntu-restricted-extras qbittorrent gimp audacity \ 
-icedtea-8-plugin \
-network-manager-openvpn wireshark  nmap \
+openjdk-8-jre icedtea-8-plugin oracle-java8-installer \
+network-manager-openvpn wireshark nmap nikto chkrootkit wavemon namebench apache2-utils mailutils \
 openvpn openssh-server fail2ban \
 vlc vlc-plugin-fluidsynth ffmpeg atomicparsley \
+virtualenv python2.7-examples python-pip \
+xchat pidgin \
 chrome-gnome-shell \
+ansible \
 gnome-tweaks
 
-** Atom
-** sqlitebrowser
-** VirtualBox
-** Vagrant
-** vagrant plugin install vagrant-berkshelf
-** vagrant plugin install berkshelf
-** Docker
-** Chrome, verify Google Hangouts
-** Insynq
-** Synergy
-** Ramlog or equivalent for SSD
-** nvm
-** rvm
-** Studio 3T (mongodb browswer)
-** IntelliJ
-** Android Studio
-** Eclipse
-** NetBeans
-** PyCharm
+#xd exiftol
+```
 
+-   -   Atom [2](https://atom.io/)
+    -   sqlitebrowser
+    -   youtube-dl (via pip)
+    -   VirtualBox [3](https://www.virtualbox.org/)
+    -   Vagrant [4](https://www.vagrantup.com/)
+        -   vagrant plugin install vagrant-berkshelf
+        -   vagrant plugin install berkshelf
+    -   Terraform [5](https://www.terraform.io/)
+    -   Docker
+        [6](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+    -   Chrome, verify Google Hangouts
+    -   Insynq [7](https://www.insynchq.com/downloads)
+    -   Synergy
+    -   Ramlog or equivalent for SSD
+    -   nvm
+    -   gvm for goland
+    -   rvm [Ubuntu RVM Instructions](https://github.com/rvm/ubuntu_rvm)
+    -   Studio 3T (mongodb browswer) (https://studio3t.com/download/)
+    -   IntelliJ [8](https://www.jetbrains.com/idea/download/)
+    -   Android Studio
+        [9](https://developer.android.com/studio/index.html)
+    -   Eclipse [10](https://www.eclipse.org/)
+    -   NetBeans [11](https://netbeans.org/downloads/)
+    -   PyCharm
+        [12](https://www.jetbrains.com/pycharm/download/#section=linux)
+
+``` bash
 drew@drew-8570w:~$ snap list
 Name                  Version                  Rev   Developer      Notes
-atom                  1.23.1                   109   snapcrafters   classic
 core                  16-2.29.4.2              3604  canonical      core
 cumulonimbus          1.6.7                    18    snapcrafters   -
 drive                 current                  22    fireeye        -
 gitter-desktop        3.1.0                    20    snapcrafters   -
-go                    1.9.2                    1016  mwhudson       classic
-jenkins               2.8                      6     snapcrafters   -
 juju                  2.3.1                    3106  canonical      classic
 kubectl               1.9.0                    266   canonical      classic
-lxd                   2.21                     5408  canonical      -
-mongo33               3.3.9                    2     niemeyer       -
-openhab               2.0.0                    167   openhab        -
 picard                1.4.2                    2     pachulo        -
-pycharm-professional  2017.3.2                 46    jetbrains      classic
 spotify               1.0.70.399.g5ffabd56-26  5     spotify        -
 sqlitebrowser-casept  3.9.1                    2     casept         -
 vault                 v0.9.0                   236   snapcrafters   -
 vscode                1.19.1-1513676564        22    flexiondotorg  classic
-
-
-oracle-java8-installer
-cairo-dock
-adobe-flashplugin
-encfs youtube-dl nikto exiftool chkrootkit apache2-utils pidgin wavemon xd docker.io virtualenv python2.7-examples mailutils ansible namebench python-pip (via apt)
-xchat
-youtube-dl
 ```
 
-Other
-=====
+Other NFS
+=========
 
 ``` bash
 sudo apt-get install -y nfs-common cifs-utils ethtool pm-utils
 ```
 
-Other Configuration
-===================
+Other Syslog
+============
 
 Remote syslog
 

@@ -16,11 +16,6 @@ sudo vi .gitignore # remove sensitive files
 sudo sh -c "echo 'allow-guest=false' >> /usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf"
 </syntaxhighlight>
 
-==Show username in Desktop Manager==
-<syntaxhighlight lang=bash>
-gsettings set com.canonical.indicator.session show-real-name-on-panel true
-</syntaxhighlight>
-
 ==Set vim Editor==
 <syntaxhighlight lang=bash>
 sudo update-alternatives --set editor /usr/bin/vim.basic
@@ -51,7 +46,7 @@ Press <Alt>F2, then type r to restart Gnome.
 
 == Gnome Tweak Tool ==
 <syntaxhighlight lang=bash>
-TopIcons-plus - for insync prime, slack
+TopIcons-plus - for Insync, Slack, Skype icons
 Extension update notifier
 Freon
 Status area horizontal spacing
@@ -64,72 +59,67 @@ sudo apt-get install chrome-gnome-shell
 <syntaxhighlight lang=bash>
 sudo apt-get install \
 keepass2 rdesktop vncviewer \
-lm-sensors p7zip-full exfat-utils exfat-fuse \
+lm-sensors p7zip-full exfat-utils exfat-fuse encfs \
 vim ssh git \
 ubuntu-restricted-extras qbittorrent gimp audacity \ 
-icedtea-8-plugin \
-network-manager-openvpn wireshark  nmap \
+openjdk-8-jre icedtea-8-plugin oracle-java8-installer \
+network-manager-openvpn wireshark nmap nikto chkrootkit wavemon namebench apache2-utils mailutils \
 openvpn openssh-server fail2ban \
 vlc vlc-plugin-fluidsynth ffmpeg atomicparsley \
+virtualenv python2.7-examples python-pip \
+xchat pidgin \
 chrome-gnome-shell \
+ansible \
 gnome-tweaks
 
-** Atom
+#xd exiftol
+</syntaxhighlight>
+
+** Atom [https://atom.io/]
 ** sqlitebrowser
-** VirtualBox
-** Vagrant
-** vagrant plugin install vagrant-berkshelf
-** vagrant plugin install berkshelf
-** Docker
+** youtube-dl (via pip)
+** VirtualBox [https://www.virtualbox.org/]
+** Vagrant [https://www.vagrantup.com/]
+*** vagrant plugin install vagrant-berkshelf
+*** vagrant plugin install berkshelf
+** Terraform [https://www.terraform.io/]
+** Docker [https://docs.docker.com/install/linux/docker-ce/ubuntu/]
 ** Chrome, verify Google Hangouts
-** Insynq
+** Insynq [https://www.insynchq.com/downloads]
 ** Synergy
 ** Ramlog or equivalent for SSD
 ** nvm
-** rvm
-** Studio 3T (mongodb browswer)
-** IntelliJ
-** Android Studio
-** Eclipse
-** NetBeans
-** PyCharm
+** gvm for goland
+** rvm [https://github.com/rvm/ubuntu_rvm Ubuntu RVM Instructions]
+** Studio 3T (mongodb browswer) (https://studio3t.com/download/)
+** IntelliJ [https://www.jetbrains.com/idea/download/]
+** Android Studio [https://developer.android.com/studio/index.html]
+** Eclipse [https://www.eclipse.org/]
+** NetBeans [https://netbeans.org/downloads/]
+** PyCharm [https://www.jetbrains.com/pycharm/download/#section=linux]
 
+<syntaxhighlight lang=bash>
 drew@drew-8570w:~$ snap list
 Name                  Version                  Rev   Developer      Notes
-atom                  1.23.1                   109   snapcrafters   classic
 core                  16-2.29.4.2              3604  canonical      core
 cumulonimbus          1.6.7                    18    snapcrafters   -
 drive                 current                  22    fireeye        -
 gitter-desktop        3.1.0                    20    snapcrafters   -
-go                    1.9.2                    1016  mwhudson       classic
-jenkins               2.8                      6     snapcrafters   -
 juju                  2.3.1                    3106  canonical      classic
 kubectl               1.9.0                    266   canonical      classic
-lxd                   2.21                     5408  canonical      -
-mongo33               3.3.9                    2     niemeyer       -
-openhab               2.0.0                    167   openhab        -
 picard                1.4.2                    2     pachulo        -
-pycharm-professional  2017.3.2                 46    jetbrains      classic
 spotify               1.0.70.399.g5ffabd56-26  5     spotify        -
 sqlitebrowser-casept  3.9.1                    2     casept         -
 vault                 v0.9.0                   236   snapcrafters   -
 vscode                1.19.1-1513676564        22    flexiondotorg  classic
-
-
-oracle-java8-installer
-cairo-dock
-adobe-flashplugin
-encfs youtube-dl nikto exiftool chkrootkit apache2-utils pidgin wavemon xd docker.io virtualenv python2.7-examples mailutils ansible namebench python-pip (via apt)
-xchat
-youtube-dl
 </syntaxhighlight>
 
-= Other =
+= Other NFS =
 <syntaxhighlight lang=bash>
 sudo apt-get install -y nfs-common cifs-utils ethtool pm-utils
 </syntaxhighlight>
 
-= Other Configuration =
+= Other Syslog =
 Remote syslog
 <syntaxhighlight lang=bash>
 echo "*.* @192.168.1.200" >> /etc/rsyslog.d/50-default.conf
