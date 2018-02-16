@@ -148,6 +148,12 @@ Other NFS
 sudo apt-get install -y nfs-common cifs-utils ethtool pm-utils
 ```
 
+-   /etc/fstab
+
+``` bash
+192.168.1.200:/mnt/raid5 /mnt/raid5 nfs defaults    0 0
+```
+
 Other Syslog
 ============
 
@@ -157,20 +163,18 @@ Remote syslog
 echo "*.* @192.168.1.200" >> /etc/rsyslog.d/50-default.conf
 ```
 
+tmpfs if on SSD
+===============
+
 -   tmpfs for /tmp and (maybe make this a bind mount..)
 
 ``` bash
 tmpfs   /tmp       tmpfs   defaults,noatime,mode=1777   0  0
 ```
 
--   /etc/fstab
+Web server if needed
+====================
 
 ``` bash
-192.168.1.200:/mnt/raid5 /mnt/raid5 nfs defaults    0 0
-```
-
--   web server if needed
-
-``` bash
-sudo apt-get install apache2 php5 php5-sqlite
+sudo apt-get install apache2 php7 php7-sqlite
 ```
