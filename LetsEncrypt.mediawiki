@@ -1,25 +1,55 @@
+Instructions for Debian 9
 == certbot ==
-* https://certbot.eff.org/#debianjessie-apache
+* https://certbot.eff.org/#debiantesting-apache
+* https://certbot.eff.org/docs/using.html
 
 === Install certbot ===
 <syntaxhighlight lang=bash>
-$ sudo apt-get install certbot
+sudo apt-get install python-certbot-apache certbot
 </syntaxhighlight>
 
-=== Obtain / Renew certs ===
+=== Obtain SNI Cert ===
+Manually run due to existing configuration already redirecting port http -> https. Will require a small of downtime `systemctl stop apache2`.
+<syntaxhighlight lang=bash>
+certbot certonly --manual --cert-name invadelabs.com -d invadelabs.com -d drew.invadelabs.com -m drewderivative@gmail.com --agree-tos
+</syntaxhighlight>
+
+=== Check newly Issue Cert ===
+<syntaxhighlight lang=bash>
+root@invadelabs:~# certbot certificates
+Saving debug log to /var/log/letsencrypt/letsencrypt.log
+
+-------------------------------------------------------------------------------
+Found the following certs:
+  Certificate Name: invadelabs.com
+    Domains: invadelabs.com drew.invadelabs.com
+    Expiry Date: 2018-05-19 08:58:27+00:00 (VALID: 89 days)
+    Certificate Path: /etc/letsencrypt/live/invadelabs.com/fullchain.pem
+    Private Key Path: /etc/letsencrypt/live/invadelabs.com/privkey.pem
+-------------------------------------------------------------------------------
+</syntaxhighlight>
+
+=== Test Renewal ===
 Dry-run:
 <syntaxhighlight lang=bash>
 $ sudo certbot renew --dry-run
 </syntaxhighlight>
 
-Update:
+=== Renew Cert Manually ===
+Will need to manually reload apache.
 <syntaxhighlight lang=bash>
 $ sudo certbot renew
 </syntaxhighlight>
 
+=== Aapache Auto Renew On Cron ===
 Add to root's cron and check twice daily:
 <syntaxhighlight lang=bash>
-0 3,15 * * * certbot renew --quiet 
+0 3,15 * * * certbot renew --apache --quiet 
+</syntaxhighlight>
+
+=== Expand Additional Domains SNI Cert ===
+<syntaxhighlight lang=bash>
+certbot --expand -d invadelabs.com -d drew.invadelabs.com -d new.invadelabs.com
 </syntaxhighlight>
 
 == Old method ==
@@ -31,7 +61,7 @@ Add to root's cron and check twice daily:
    cert will expire on 2016-07-09. To obtain a new version of the
    certificate in the future, simply run Let's Encrypt again.
 
-SSLCertificateFile /etc/letsencrypt/live/drew-bg.invadelabs.com/fullchain.pem
-SSLCertificateKeyFile /etc/letsencrypt/live/drew-bg.invadelabs.com/privkey.pem
+SSLCertificateFile /etc/letsencrypt/live/invadelabs.com/fullchain.pem
+SSLCertificateKeyFile /etc/letsencrypt/live/invadelabs.com/privkey.pem
 Include /etc/letsencrypt/options-ssl-apache.conf
 </syntaxhighlight>
