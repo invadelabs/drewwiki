@@ -100,6 +100,13 @@ gnome-tweaks
 ```
 
 -   -   Atom [2](https://atom.io/)
+        -   atom-beautify
+        -   linter-flake8
+        -   linter-pep8
+        -   autocomplete-python
+        -   django-templates
+        -   script-runner
+        -   teletype
     -   sqlitebrowser
     -   youtube-dl (via pip)
     -   VirtualBox [3](https://www.virtualbox.org/)
