@@ -11,7 +11,7 @@ hypervisor level. Foreman will have control over other compute resource
 on the network via qemu+ssh (other node 32GB RAM /
 <nfs://drewserv/raid5> / core i7). This node will be used to stand up
 additional compute instances and docker containers when needed to house
-projects such as Jenkins farms, Chef, Salt, Ansible, and misc.
+projects such as Jenkins, Chef, Puppet, Ansible, misc.
 
 Initial Setup
 =============
@@ -126,9 +126,6 @@ Run the install
 -   Append to the line ks=<http://192.168.1.124/drewserv.cfg>
 -   Reboot when prompted
 
-``` bash
-```
-
 Fix Lantronix Spider KVM for 1024x768 resolution
 ================================================
 
@@ -158,7 +155,7 @@ nmcli general hostname drewserv.invadelabs.com
 Syncrhonize Time and Allow clients from 192.168/24
 ==================================================
 
-Add port
+Add port to firewalld
 
 ``` bash
 firewall-cmd --permanent --add-service=ntp
@@ -373,7 +370,7 @@ service will be up and running.
 Setup lm\_sensors
 =================
 
-Just run;
+Run;
 
 ``` bash
 # sensors-detect
@@ -382,8 +379,7 @@ Just run;
 Setup lldpad
 ============
 
-Already installed via kickstart, just need to enable and start the
-daemon;
+Installed via kickstart, just need to enable and start the daemon;
 
 ``` bash
 # systemctl enable lldpad; systemctl start lldpad
@@ -392,14 +388,13 @@ daemon;
 Setup logwatch
 ==============
 
-Default logwatch automatically sends to root. I've added a
-/root/.forward containing my email address to get the messages.
+Default logwatch automatically sends to root. Add to /root/.forward
+containing email address for forwarding.
 
 Setup NFS
 =========
 
-Can't afford a NAS, so we'll share this raid array with other white box
-hardware hypervisors.
+Share this raid array with other white box hardware hypervisors.
 
 ``` bash
 server centos7 https://www.howtoforge.com/nfs-server-and-client-on-centos-7
@@ -426,7 +421,7 @@ mount -a
 Setup Samba
 ===========
 
-Setup the personal file share.
+Setup SMB personal file share.
 
 ``` bash
 [root@drewserv ~]# yum -y install samba
@@ -468,7 +463,7 @@ Enable and start service
 # systemctl enable smb; systemctl start smb
 ```
 
-Add my user
+Add user
 
 ``` bash
 # smbpasswd -a drew
@@ -513,7 +508,7 @@ There is probably a cleaner way to do this, but will look into it later.
 Setup libvirt / qemu-kvm
 ========================
 
-Stolen from <http://www.server-world.info/en/note?os=CentOS_7&p=kvm>
+Taken from <http://www.server-world.info/en/note?os=CentOS_7&p=kvm>
 
 Install bits
 
@@ -569,8 +564,8 @@ firewall-cmd --reload
 Provision a VM
 ==============
 
-I'm going to be running the rest of my services as VMs provisioned
-through foreman and configured via puppet. The first VM was provisioned
+The remaining services will be VMs or containers provisioned through
+foreman and configured via puppet / docker. The first VM was provisioned
 via virt-install with the instructions below and kickstart following.
 
 Kickstart file for foreman vm
@@ -657,9 +652,9 @@ virt-install --name inv-foreman01 --ram 768 --vcpus=1 --arch=x86_64 --hvm --os-t
 
 ### Instance with Static IP
 
-What I ended up going with on my network. ksdevice=eth0 had to be
-specified along with the network line modified in the kickstart for a
-static IP to be set in /etc/sysconfig/network-scripts/ifcfg-eth0:
+Local network specific configuration. ksdevice=eth0 had to be specified
+along with the network line modified in the kickstart for a static IP to
+be set in /etc/sysconfig/network-scripts/ifcfg-eth0:
 
 ``` bash
 virt-install --name inv-foreman01 --ram 1024 --vcpus=2 --arch=x86_64 --hvm --os-type=linux --nographics --disk path=/mnt/raid5/vm/inv-foreman01.img,size=15,sparse=true --network bridge=br0,model=virtio --location 'http://192.168.1.120/centos7/' --extra-args 'ks=http://192.168.1.120/inv-foreman01.cfg --ip=192.168.1.200 --gateway=192.168.1.1 --netmask=255.255.255.0 --nameserver=192.168.1.1 --hostname=foreman ksdevice=eth0 console=ttyS0,115200n8 serial'
@@ -667,9 +662,9 @@ virt-install --name inv-foreman01 --ram 1024 --vcpus=2 --arch=x86_64 --hvm --os-
 
 ### Alias to quickly destroy then re-run
 
-I had to run through this about 20 times trying to figure out the 512MB
-ram issue. I wrote a quick alias to destroy, undefine, and remove the
-VM's disk image.
+I had to run through this about 20 times to figure out the installer
+will fail with only 512MB of memory (700MB needed). I wrote a quick
+alias to destroy, undefine, and remove the VM's disk image.
 
 ``` bash
 # alias bla="virsh destroy inv-foreman01; virsh undefine inv-foreman01; rm -f /mnt/raid5/vm/inv-foreman01.img"
@@ -678,8 +673,8 @@ VM's disk image.
 Setup Foreman
 =============
 
-Foreman and puppet go great together. I will be using it to provision
-the rest of my services on small instances configured by puppet.
+Foreman and puppet go great together. They will be used to provision the
+remaining services on small instances configured by puppet.
 
 Setup firewall
 --------------
@@ -708,9 +703,9 @@ yum -y install epel-release http://yum.theforeman.org/releases/1.10/el7/x86_64/f
 yum -y install foreman-installer
 ```
 
-Needed to do this for libvirt compute resource to work. If I rebuild
-I'll do this before running \`foreman-install\`, but after \`yum -y
-install foreman-installer\`.
+Needed to do this for libvirt compute resource to work. Do this before
+running \`foreman-install\`, but after \`yum -y install
+foreman-installer\`.
 
 ``` bash
 # yum install libvirt-client foreman-libvirt
@@ -727,7 +722,7 @@ yum install tfm-rubygem-foreman_cockpit
 Run foreman-install
 -------------------
 
-The flags I ended up running with after a couple iterations.
+The flags we ended up running with after a couple iterations.
 
 ``` bash
 foreman-installer \
@@ -792,10 +787,10 @@ Drew1 Kickstart Default Template
 --------------------------------
 
 Cloned the “Kickstart Default Template” since it would break failing to
-add epel and trying to download puppet. Cloning it to “Drew1 Kickstart
-Default Template” and ripping out some stuff add, added a %package list
-I wanted and setup EPEL in %post to rpm -Uvh the epl rpm then yum
-install uppet.
+add epel and trying to download puppet. Clone it to “Drew1 Kickstart
+Default Template” and pull out unneeded configuration, add our %package
+list, and setup EPEL in %post to rpm -Uvh the epl rpm then yum install
+puppet.
 
 -   Todo **Need to create an epel and centos-updates mirror to reduce
     bandwidth, also uncomment \#yum -y update**
@@ -971,7 +966,7 @@ Issue with Foreman + VNC on KVM
 -------------------------------
 
 It would be nice to get this working in the web ui, but it's not a
-nescity as you can just go to the console page, get the password, and
+necessity as you can just go to the console page, get the password, and
 VNC to the system with that password.
 
 ``` bash
@@ -990,11 +985,11 @@ mechnaism that will do something similar to virsh edit <vm> like in
 Provisioning VMs with Foreman
 =============================
 
-If I didn't already have a dhcp server on the network and left
-enable-dhcp on foreman-install, when going to create a new host it would
-automatically PXE boot and install. This worked well until my foreman
-dhcp and router dhcp servers started clashing. I didn't want to think of
-fancy ways to firewall off dhcp traffic or vlan my lab from the home
+If there wasn't already a dhcp server on the network and enable-dhcp was
+on during foreman-install; when going to create a new host it would
+automatically PXE boot and install. This worked well until foreman dhcp
+and our router dhcp servers started clashing. We didn't want to think of
+fancy ways to firewall off dhcp traffic or vlan the lab from the home
 network.
 
 Provision KVM without DHCP
@@ -1002,7 +997,7 @@ Provision KVM without DHCP
 
 Following “Provision KVM without DHCP” from
 <http://projects.theforeman.org/projects/foreman/wiki/Provision_KVM_VM_without_DHCP>
-- now I create the new host powered off and then do a
+- now we create the new host powered off and then do a
 
 1.  virsh edit inv-vm01.invadelabs.com
 
@@ -1020,7 +1015,7 @@ virt-install ;)
   </os>
 ```
 
-After the machine is provisioned, shut it down,do a \`virsh edit
+After the machine is provisioned, shut it down, do a \`virsh edit
 inv-vm01.invadelabs.com\`, and remove these lines
 
 ``` bash
@@ -1168,8 +1163,7 @@ exit 0
 Puppet Modules
 ==============
 
-Puppet modules I've added to my “production” config group and host
-groups.
+Puppet modules added to the “production” config group and host groups.
 
 puppetlabs/motd
 ---------------
@@ -1324,7 +1318,7 @@ Notice: Installing -- do not interrupt ...
 drewderivative/dotforward
 -------------------------
 
-Quick module I wrote to add an entry to /root/.forward to be available
+Simple module I wrote to add an entry to /root/.forward to be available
 as parameter in Foreman.
 
 Set dotforward::forwardemail to 'drew@invadelabs.com'
@@ -1440,7 +1434,7 @@ LDAP Login Module configuration
 
 These three modules work well together in Foreman to setup SSSD with
 just parameters, provided lines 363-369 are commented out in
-yguenane/authconfig.
+yguenane/authconfig-0.6.0.
 
 ``` bash
 walkamongus/sssd-1.2.0
@@ -1451,7 +1445,7 @@ trlinkin/nsswitch-1.2.0
 Other Foreman Friendly Modules
 ------------------------------
 
-These have worked well for some of my client use cases, but I'm not
+These have worked well for some of our client use cases, but we're not
 using snmp or setting ulimits at home.
 
 ``` bash
@@ -1503,10 +1497,10 @@ classes:
 Further interests
 -----------------
 
--   Deploying jenkins farm
+-   Deploying jenkins
 -   Write module to create /mnt/raid5 directory, mount nfs.
 -   Monitor + auto registration / deregistration with something like
-    zabbix/icinga/nagios
+    icinga/nagios/zabbix
 -   Cassandra
 -   collectd
 -   /etc/hosts
