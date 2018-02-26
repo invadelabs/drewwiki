@@ -1,4 +1,4 @@
-Our Spyder KVM resolution defaulted to 1600x1200. This isn't ideal on 1920x1080 displays. The following config sets the console resolution to 1024x768.
+Our Lantronics Spider KVM resolution defaulted to 1600x1200. This isn't ideal on 1920x1080 displays. The following config sets the console resolution to 1024x768.
 /etc/default/grub
 <syntaxhighlight lang=bash>
 GRUB_TIMEOUT=5

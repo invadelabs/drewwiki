@@ -3,9 +3,9 @@ title: ForceTextConsoleResolution
 layout: default
 ---
 
-Our Spyder KVM resolution defaulted to 1600x1200. This isn't ideal on
-1920x1080 displays. The following config sets the console resolution to
-1024x768. /etc/default/grub
+Our Lantronics Spider KVM resolution defaulted to 1600x1200. This isn't
+ideal on 1920x1080 displays. The following config sets the console
+resolution to 1024x768. /etc/default/grub
 
 ``` bash
 GRUB_TIMEOUT=5
