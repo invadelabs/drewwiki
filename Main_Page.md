@@ -105,7 +105,7 @@ Infrastructure
     SMBios data to a Virtual Box guest to appear more hardware like
     (Mainly for Windows licensing on EFI machines)
 -   [GoogleCloud](GoogleCloud "wikilink") - Quick setup on Google Cloud
--   [KVM/qemu CentOS6](KVM/qemu_CentOS6 "wikilink") - KVM notes for
+-   [KVM+qemu CentOS6](KVM+qemu_CentOS6 "wikilink") - KVM notes for
     CentOS6
 
 System Administration
