@@ -89,7 +89,7 @@ After install is finished, but before Reboot
 ``` bash
 UUID="6239bc41-8816-47b6-b7d5-2be592f8b69b" /               ext4    noatime,discard,errors=remount-ro 0 1
 
-# Keep excessive writes in /tmp, and I use a remote syslog server
+# to reduce wear on ssd keep excessive writes in /tmp and use a remote syslog server
 none        /tmp        tmpfs   size=300M   0 0
 none        /var/log    tmpfs   defaults    0 0
 
