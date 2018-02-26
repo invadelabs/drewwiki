@@ -24,7 +24,7 @@ Manually run due to existing configuration already redirecting port http
 apache2\`.
 
 ``` bash
-certbot certonly --manual --cert-name invadelabs.com -d invadelabs.com -d drew.invadelabs.com -m drewderivative@gmail.com --agree-tos
+certbot certonly --manual --cert-name invadelabs.com -d invadelabs.com -d drew.invadelabs.com -m drew@invadelabs.com --agree-tos
 ```
 
 ### Check newly Issue Cert
