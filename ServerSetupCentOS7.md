@@ -217,7 +217,7 @@ inet_interfaces = all
 Create /etc/postfix/sasl\_passwd
 
 ``` bash
-# echo "[smtp.gmail.com]:587 drewderivative:password" > /etc/postfix sasl_passwd
+# echo "[smtp.gmail.com]:587 user:password" > /etc/postfix sasl_passwd
 # postmap /etc/postfix sasl_passwd
 ```
 
@@ -1263,7 +1263,7 @@ Set JSON paramter in foreman UI for accounts::users
     "ssh_key":{  
       "type":"ssh-rsa",
       "key":"AAAAB3NzaC1yc2EAAAABJQAAAQEAsZeKEXj+5Is6OXLDEWDhRb51lNZj2hQRUCCMIcYtjzEbkgpEH7b5x6d5vg2uZy5uc0INrTW4Fy5Z/A5t+cTf+SfT5oGjMjQQ5f5ShA+RsOuB5gI+2b1eyyGBOcgJxjqgDKakc10OKssPJS1qk/NvWQoDOzBRGO0Vgy5a9fizyDcR0rRD0dqmV/Fly3SEHLHkMZDENYL2h5icHoZ9j/r8qqkMCKBpKY9ysVRIQERmDZT+qKoShNUj5b4dBv5csk3TJnMyoFIBL9P7wBJUEFSir3O2whNc+OtcqTVxqrCqdOAcGheFFxW4O907ncckfTxRKB+6WfWcb80BLn+6Avfetw==",
-      "comment":"drewderivative@gmail.com"
+      "comment":"drew@invadelabs.com"
     }
   }
 }
@@ -1327,7 +1327,7 @@ drewderivative/dotforward
 Quick module I wrote to add an entry to /root/.forward to be available
 as parameter in Foreman.
 
-Set dotforward::forwardemail to 'drewderivative@gmail.com'
+Set dotforward::forwardemail to 'drew@invadelabs.com'
 
 Create module from scratch;
 
@@ -1479,13 +1479,13 @@ classes:
         ssh_key:
           type: ssh-rsa
           key: AAAAB.....longprivatekey
-          comment: drewderivative@gmail.com
+          comment: drew@invadelabs.com
   chrony:
     servers:
     - drewserv.invadelabs.com
   colorprompt: 
   dotforward:
-    forwardemail: drewderivative@gmail.com
+    forwardemail: drew@invadelabs.com
   motd: 
   postfix:
     relayhost: drewserv.invadelabs.com
