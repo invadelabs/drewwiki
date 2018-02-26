@@ -31,40 +31,19 @@ hours on the this.
     are all for homebrew. When I ran the linux-x86\_64 binary it wasn't
     letting me compile with my $GOPATH set correctly.
 
- 
-
-Notes
-=====
-
--   Note: I don't know Go however from a CI/CD perspective all of the
-    containers were deployed via build triggers from BitBucket to a k8's
-    cluster with the correct configuration.
--   Note: I don't know Go, but I would have likely been able to
-    troubleshoot the weather-api and weather-geo containers had my
-    Ubuntu laptop not had issues working with the 'dep' tool.
--   Note: My scripting experience is mainly around Python, Ruby, and
-    Bash with some C, Java, and JS.
-
- 
-
 Assessment tasks
 ================
 
-1.  I forked the weather-{ui,proxy,geo,api} repos to my bitbucket
-    account (drewderivative).
-2.  All repos weres cloned to my local and I did a \`docker build .\`
-    against each to get an idea of what they do.
-3.  In Google Cloud Container Registery I setup a build trigger for each
+1.  Fork the weather-{ui,proxy,geo,api} repos to a bitbucket account.
+2.  All repos weres cloned locally and ran a \`docker build .\` against
+    each to get an idea of what they do.
+3.  In Google Cloud Container Registery setup a build trigger for each
     bitbucket repo to build containers on commits to master.
-4.  I triggered builds for weather-{ui,proxy,geo,api} to create the
+4.  Trigger builds for weather-{ui,proxy,geo,api} to create the
     containers in a CI/CD manor into Container Registery.
-5.  Created a Kubernetes cluster
+5.  Create a Kubernetes cluster
 6.  Used kubectl -f deployment.yaml / services.yaml in each repo to
     deploy containers and services
-7.  After much troubleshooting I was not able to get the application to
-    look anything up, but I verified the weather-ui endpoint was exposed
-    and available. 
-8.  <http://35.225.60.72/>
 
 Commands run
 ============
