@@ -71,7 +71,7 @@ Infrastructure
 
 #### LXC
 
--   [lxc](lxc "wikilink") - LXC Setup and Usage
+-   [Lxc](Lxc "wikilink") - LXC Setup and Usage
 
 #### Docker
 
@@ -128,7 +128,7 @@ System Administration
 -   [OpenVPN](OpenVPN "wikilink") - OpenVPN Server Setup
 -   [ApachePAMunixAuth](ApachePAMunixAuth "wikilink") - Apache
     authentication against /etc/passwd
--   [iptables](iptables "wikilink") - iptables setup
+-   [Iptables](Iptables "wikilink") - iptables setup
 
 ##### Mail
 
@@ -141,14 +141,14 @@ System Administration
 
 ##### DD-WRT
 
--   [ddwrt-ddns-namecheap](ddwrt-ddns-namecheap "wikilink") - Setup DDNS
+-   [Ddwrt-ddns-namecheap](Ddwrt-ddns-namecheap "wikilink") - Setup DDNS
     on DD-WRT for Namecheap
 -   [PortMirroringDDWRTiptables](PortMirroringDDWRTiptables "wikilink") -
     Port mirroring with iptable in dd-wrt
--   [ddwrtdnsmasq](ddwrtdnsmasq "wikilink") - dnsmasq for DD-WRT
+-   [Ddwrtdnsmasq](Ddwrtdnsmasq "wikilink") - dnsmasq for DD-WRT
 -   [PXEiSCSIboot](PXEiSCSIboot "wikilink") - Booting off SAN via PXE
     and iSCSI target
--   [ddwrtopsware](ddwrtopsware "wikilink") - opsware
+-   [Ddwrtopsware](Ddwrtopsware "wikilink") - opsware
 
 ##### File Server
 
@@ -156,13 +156,13 @@ System Administration
     on root without boot partition
 -   [NFS Optimization](NFS_Optimization "wikilink") - NFS Performance
     and Optimization
--   [mdadm](mdadm "wikilink") - Linux Software Raid Creation /
+-   [Mdadm](Mdadm "wikilink") - Linux Software Raid Creation /
     Optimization
-    -   [mdadmLVMext4](mdadmLVMext4 "wikilink") - Best practices using
+    -   [MdadmLVMext4](MdadmLVMext4 "wikilink") - Best practices using
         md raid5 / LVM / ext4
     -   [BackupViaDDsnapshot](BackupViaDDsnapshot "wikilink") - Using
         LVM snapshotting to copy an LV
-    -   [smartdMonitoring](smartdMonitoring "wikilink") - Monitor disks
+    -   [SmartdMonitoring](SmartdMonitoring "wikilink") - Monitor disks
         with smartmontools
     -   [USBhddtemp](USBhddtemp "wikilink") - Check hard drive temp for
         USB HD (Western Digital)
@@ -170,7 +170,7 @@ System Administration
         Imaging 2 of 3 RAID5 drives and loop back mounting for data
         extraction
 -   [ResizePV](ResizePV "wikilink") - Steps to resize PV
--   [eCryptfs](eCryptfs "wikilink") - Private Encrypted Folders
+-   [ECryptfs](ECryptfs "wikilink") - Private Encrypted Folders
 -   [SambaTdbsamBackend](SambaTdbsamBackend "wikilink") - Using Samba
     Tdbsam backend with unix login
 
@@ -184,7 +184,7 @@ System Administration
     (cron)
 -   [MySQL Backup Script](MySQL_Backup_Script "wikilink") - MySQL Backup
     Script - (cron)
--   [rsyncSSHkeys](rsyncSSHkeys "wikilink") - Rsync over SSH - Different
+-   [RsyncSSHkeys](RsyncSSHkeys "wikilink") - Rsync over SSH - Different
     port / SSH Keys
 -   [ExternalUSBEncryptedLVM](ExternalUSBEncryptedLVM "wikilink") -
     Encrypted LVM for External USB (rsync backup)
@@ -193,16 +193,16 @@ System Administration
 
 -   [IPMI](IPMI "wikilink") - IPMI on SuperMicro AOC-IPMI20 with
     Serial-Over-LAN Console
--   [lm\_sensorsPDMSi](lm_sensorsPDMSi "wikilink") - lm\_sensors
+-   [Lm\_sensorsPDMSi](Lm_sensorsPDMSi "wikilink") - lm\_sensors
     lmsensors /etc/sensors.d/pdsmi
 -   [RaspberryPi](RaspberryPi "wikilink") - Information for RPi
--   [udevinfo](udevinfo "wikilink") - gathering system info
--   [gps](gps "wikilink") - GPS Related
+-   [Udevinfo](Udevinfo "wikilink") - gathering system info
+-   [Gps](Gps "wikilink") - GPS Related
 
 Media
 -----
 
--   [eGalaxyTouchScreen](eGalaxyTouchScreen "wikilink") - eGalaxy Touch
+-   [EGalaxyTouchScreen](EGalaxyTouchScreen "wikilink") - eGalaxy Touch
     Screen
 -   [LinuxGPS](LinuxGPS "wikilink") - Linux GPS with sirfmon, gpsd, and
     more

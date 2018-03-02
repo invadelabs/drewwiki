@@ -29,7 +29,7 @@ A collection of randomness I've encountered and configured in Linux. - drew@inva
 
 ===Containerization===
 ====LXC====
-*[[lxc]] - LXC Setup and Usage
+*[[Lxc]] - LXC Setup and Usage
 
 ====Docker====
 *[[DockerOnUbuntu]] - Docker on Ubuntu + Foreman Integration
@@ -63,7 +63,7 @@ A collection of randomness I've encountered and configured in Linux. - drew@inva
 *[[nmcli]] - Joining wifi from nmcli
 *[[OpenVPN]] - OpenVPN Server Setup
 *[[ApachePAMunixAuth]] - Apache authentication against /etc/passwd
-*[[iptables]] - iptables setup
+*[[Iptables]] - iptables setup
 
 =====Mail=====
 *[[EmailViaNCorTelnet]] - Send an email via nc or telnet
@@ -71,23 +71,23 @@ A collection of randomness I've encountered and configured in Linux. - drew@inva
 *[[SendmailRelayISP]] - Sendmail using ISP as relay in Fedora 10+
 
 =====DD-WRT=====
-*[[ddwrt-ddns-namecheap]] - Setup DDNS on DD-WRT for Namecheap
+*[[Ddwrt-ddns-namecheap]] - Setup DDNS on DD-WRT for Namecheap
 *[[PortMirroringDDWRTiptables]] - Port mirroring with iptable in dd-wrt
-*[[ddwrtdnsmasq]] - dnsmasq for DD-WRT
+*[[Ddwrtdnsmasq]] - dnsmasq for DD-WRT
 *[[PXEiSCSIboot]] - Booting off SAN via PXE and iSCSI target
-*[[ddwrtopsware]] - opsware
+*[[Ddwrtopsware]] - opsware
 
 =====File Server=====
 *[[UbuntuRAID0ssd]] -- Ubuntu RAID0 LVM SSD on root without boot partition
 *[[NFS Optimization]] - NFS Performance and Optimization
-*[[mdadm]] - Linux Software Raid Creation / Optimization
-** [[mdadmLVMext4]] - Best practices using md raid5 / LVM / ext4
+*[[Mdadm]] - Linux Software Raid Creation / Optimization
+** [[MdadmLVMext4]] - Best practices using md raid5 / LVM / ext4
 ** [[BackupViaDDsnapshot]] - Using LVM snapshotting to copy an LV
-** [[smartdMonitoring]] - Monitor disks with smartmontools
+** [[SmartdMonitoring]] - Monitor disks with smartmontools
 ** [[USBhddtemp]] - Check hard drive temp for USB HD (Western Digital)
 ** [[LoopBackSoftwareRaidMount]] - Imaging 2 of 3 RAID5 drives and loop back mounting for data extraction
 * [[ResizePV]] - Steps to resize PV
-*[[eCryptfs]] - Private Encrypted Folders
+*[[ECryptfs]] - Private Encrypted Folders
 *[[SambaTdbsamBackend]] - Using Samba Tdbsam backend with unix login
 
 =====Backup=====
@@ -95,18 +95,18 @@ A collection of randomness I've encountered and configured in Linux. - drew@inva
 *[[Backup DD-WRT Config]] - DD-WRT backup script (cron)
 *[[ClamAV Weekly Scan]] - ClamAV script (cron)
 *[[MySQL Backup Script]] - MySQL Backup Script - (cron)
-*[[rsyncSSHkeys]] - Rsync over SSH - Different port / SSH Keys
+*[[RsyncSSHkeys]] - Rsync over SSH - Different port / SSH Keys
 *[[ExternalUSBEncryptedLVM]] - Encrypted LVM for External USB (rsync backup)
 
 ====Hardware Related====
 *[[IPMI]] - IPMI on SuperMicro AOC-IPMI20 with Serial-Over-LAN Console
-*[[lm_sensorsPDMSi]] - lm_sensors lmsensors /etc/sensors.d/pdsmi
+*[[Lm_sensorsPDMSi]] - lm_sensors lmsensors /etc/sensors.d/pdsmi
 *[[RaspberryPi]] - Information for RPi
-*[[udevinfo]] - gathering system info
-*[[gps]] - GPS Related
+*[[Udevinfo]] - gathering system info
+*[[Gps]] - GPS Related
 
 ==Media==
-*[[eGalaxyTouchScreen]] - eGalaxy Touch Screen
+*[[EGalaxyTouchScreen]] - eGalaxy Touch Screen
 *[[LinuxGPS]] - Linux GPS with sirfmon, gpsd, and more
 *[[Independant X-server]] - Multi seat configuration for 2 seperate X servers on the same system
 *[[Lirc Config - MythTV / mplayer]]
