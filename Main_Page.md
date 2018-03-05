@@ -105,7 +105,7 @@ Infrastructure
     SMBios data to a Virtual Box guest to appear more hardware like
     (Mainly for Windows licensing on EFI machines)
 -   [GoogleCloud](GoogleCloud "wikilink") - Quick setup on Google Cloud
--   [KVM+qemu CentOS6](KVM+qemu_CentOS6 "wikilink") - KVM notes for
+-   [KVM+qemuCentOS6](KVM+qemuCentOS6 "wikilink") - KVM notes for
     CentOS6
 
 System Administration
@@ -124,7 +124,7 @@ System Administration
 -   [OctoPrint](OctoPrint "wikilink") - 3D printer interface
 -   [xDripNightScout](xDripNightScout "wikilink") - Configuration for
     Dexcom G5, xDrip, xDripPebble, and NightScout
--   [nmcli](nmcli "wikilink") - Joining wifi from nmcli
+-   [Nmcli](Nmcli "wikilink") - Joining wifi from nmcli
 -   [OpenVPN](OpenVPN "wikilink") - OpenVPN Server Setup
 -   [ApachePAMunixAuth](ApachePAMunixAuth "wikilink") - Apache
     authentication against /etc/passwd
@@ -178,11 +178,11 @@ System Administration
 
 -   [BackupPartitionsViaDDandSfdisk](BackupPartitionsViaDDandSfdisk "wikilink") -
     Backup boot and system partitions with dd and sfdisk
--   [Backup DD-WRT Config](Backup_DD-WRT_Config "wikilink") - DD-WRT
-    backup script (cron)
--   [ClamAV Weekly Scan](ClamAV_Weekly_Scan "wikilink") - ClamAV script
+-   [BackupDD-WRTConfig](BackupDD-WRTConfig "wikilink") - DD-WRT backup
+    script (cron)
+-   [ClamAVWeeklyScan](ClamAVWeeklyScan "wikilink") - ClamAV script
     (cron)
--   [MySQL Backup Script](MySQL_Backup_Script "wikilink") - MySQL Backup
+-   [MySQLBackupScript](MySQLBackupScript "wikilink") - MySQL Backup
     Script - (cron)
 -   [RsyncSSHkeys](RsyncSSHkeys "wikilink") - Rsync over SSH - Different
     port / SSH Keys
@@ -208,22 +208,20 @@ Media
     more
 -   [Independant X-server](Independant_X-server "wikilink") - Multi seat
     configuration for 2 seperate X servers on the same system
--   [Lirc Config - MythTV /
-    mplayer](Lirc_Config_-_MythTV_/_mplayer "wikilink")
--   [Lirc, Pinnacle 800i, and Comcast
-    Remote](Lirc,_Pinnacle_800i,_and_Comcast_Remote "wikilink") -
+-   [LircConfig-MythTV+mplayer](LircConfig-MythTV+mplayer "wikilink")
+-   [LircPinnacle800iComcastRemote](LircPinnacle800iComcastRemote "wikilink") -
     Remapping Comcast remote IR in ir-keymap.c kernel module
--   [Compiz Profile
-    Configuration](Compiz_Profile_Configuration "wikilink") - Dual
-    monitor / GiantCube / Ice Exploding Windows
+-   [CompizProfileConfiguration](CompizProfileConfiguration "wikilink") -
+    Dual monitor / GiantCube / Ice Exploding Windows
 
 Client Setup
 ------------
 
--   [Ubuntu 17.10 Setup](Ubuntu_17.10_Setup "wikilink") - Ubuntu 17.10
+-   [Ubuntu17.10Setup](Ubuntu17.10Setup "wikilink") - Ubuntu 17.10
     workstation / laptop Setup
--   [OSX Setup](OSX_Setup "wikilink") - macOS 10.11 MBP Sierra setup
--   [Windows Setup](Windows_Setup "wikilink") - Windows 10 Laptop Setup
+-   [OSXSetup](OSXSetup "wikilink") - macOS 10.11 MBP Sierra setup
+-   [Windows10Setup](Windows10Setup "wikilink") - Windows 10 Laptop
+    Setup
 -   [RaspberryPISetup](RaspberryPISetup "wikilink") - RaspberryPi setup
     for drew-pi
 -   [Pine64](Pine64 "wikilink") - Pine64 Armbian Notes

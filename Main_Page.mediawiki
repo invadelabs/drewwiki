@@ -50,7 +50,7 @@ A collection of randomness I've encountered and configured in Linux. - drew@inva
 === Virtualization / Hypervisor / Cloud===
 *[[VirtualBoxPassSMBIOS]] - Passing SMBios data to a Virtual Box guest to appear more hardware like (Mainly for Windows licensing on EFI machines)
 *[[GoogleCloud]] - Quick setup on Google Cloud
-*[[KVM+qemu CentOS6]] - KVM notes for CentOS6
+*[[KVM+qemuCentOS6]] - KVM notes for CentOS6
 
 ==System Administration==
 *[https://github.com/drew-holt/selenium-invadelabs SeleniumDocker] - GitHub: Selenium dockerized with Stand Alone Chrome and Firefox on separate ports.
@@ -60,7 +60,7 @@ A collection of randomness I've encountered and configured in Linux. - drew@inva
 *[[CustomKernelDebian]] - Compile a custom kernel from source in Debian / Ubuntu
 *[[OctoPrint]] - 3D printer interface
 *[[xDripNightScout]] - Configuration for Dexcom G5, xDrip, xDripPebble, and NightScout
-*[[nmcli]] - Joining wifi from nmcli
+*[[Nmcli]] - Joining wifi from nmcli
 *[[OpenVPN]] - OpenVPN Server Setup
 *[[ApachePAMunixAuth]] - Apache authentication against /etc/passwd
 *[[Iptables]] - iptables setup
@@ -92,9 +92,9 @@ A collection of randomness I've encountered and configured in Linux. - drew@inva
 
 =====Backup=====
 *[[BackupPartitionsViaDDandSfdisk]] - Backup boot and system partitions with dd and sfdisk
-*[[Backup DD-WRT Config]] - DD-WRT backup script (cron)
-*[[ClamAV Weekly Scan]] - ClamAV script (cron)
-*[[MySQL Backup Script]] - MySQL Backup Script - (cron)
+*[[BackupDD-WRTConfig]] - DD-WRT backup script (cron)
+*[[ClamAVWeeklyScan]] - ClamAV script (cron)
+*[[MySQLBackupScript]] - MySQL Backup Script - (cron)
 *[[RsyncSSHkeys]] - Rsync over SSH - Different port / SSH Keys
 *[[ExternalUSBEncryptedLVM]] - Encrypted LVM for External USB (rsync backup)
 
@@ -109,14 +109,14 @@ A collection of randomness I've encountered and configured in Linux. - drew@inva
 *[[EGalaxyTouchScreen]] - eGalaxy Touch Screen
 *[[LinuxGPS]] - Linux GPS with sirfmon, gpsd, and more
 *[[Independant X-server]] - Multi seat configuration for 2 seperate X servers on the same system
-*[[Lirc Config - MythTV / mplayer]]
-*[[Lirc, Pinnacle 800i, and Comcast Remote]] - Remapping Comcast remote IR in ir-keymap.c kernel module
-*[[Compiz Profile Configuration]] - Dual monitor / GiantCube / Ice Exploding Windows
+*[[LircConfig-MythTV+mplayer]]
+*[[LircPinnacle800iComcastRemote]] - Remapping Comcast remote IR in ir-keymap.c kernel module
+*[[CompizProfileConfiguration]] - Dual monitor / GiantCube / Ice Exploding Windows
 
 == Client Setup ==
-*[[Ubuntu 17.10 Setup]] - Ubuntu 17.10 workstation / laptop Setup
-*[[OSX Setup]] - macOS 10.11 MBP Sierra setup
-*[[Windows Setup]] - Windows 10 Laptop Setup
+*[[Ubuntu17.10Setup]] - Ubuntu 17.10 workstation / laptop Setup
+*[[OSXSetup]] - macOS 10.11 MBP Sierra setup
+*[[Windows10Setup]] - Windows 10 Laptop Setup
 *[[RaspberryPISetup]] - RaspberryPi setup for drew-pi
 *[[Pine64]] - Pine64 Armbian Notes
 *[[RikoAndroidMiniPC]] - Rikomagic MK802 III setup + picuntu
