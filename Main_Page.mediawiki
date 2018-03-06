@@ -59,7 +59,7 @@ A collection of randomness I've encountered and configured in Linux. - drew@inva
 *[[LetsEncrypt]] - letsencrypt.org config
 *[[CustomKernelDebian]] - Compile a custom kernel from source in Debian / Ubuntu
 *[[OctoPrint]] - 3D printer interface
-*[[xDripNightScout]] - Configuration for Dexcom G5, xDrip, xDripPebble, and NightScout
+*[[XDripNightScout]] - Configuration for Dexcom G5, xDrip, xDripPebble, and NightScout
 *[[Nmcli]] - Joining wifi from nmcli
 *[[OpenVPN]] - OpenVPN Server Setup
 *[[ApachePAMunixAuth]] - Apache authentication against /etc/passwd

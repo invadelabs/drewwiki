@@ -122,7 +122,7 @@ System Administration
 -   [CustomKernelDebian](CustomKernelDebian "wikilink") - Compile a
     custom kernel from source in Debian / Ubuntu
 -   [OctoPrint](OctoPrint "wikilink") - 3D printer interface
--   [xDripNightScout](xDripNightScout "wikilink") - Configuration for
+-   [XDripNightScout](XDripNightScout "wikilink") - Configuration for
     Dexcom G5, xDrip, xDripPebble, and NightScout
 -   [Nmcli](Nmcli "wikilink") - Joining wifi from nmcli
 -   [OpenVPN](OpenVPN "wikilink") - OpenVPN Server Setup
