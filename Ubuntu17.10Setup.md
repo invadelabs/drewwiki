@@ -96,7 +96,8 @@ chrome-gnome-shell \
 ansible \
 gnome-tweaks
 
-#xd exiftol
+# xd exiftol
+# openconnect network-manager-openconnect network-manager-openconnect-gnome # cisco vpn
 ```
 
 -   -   Atom [2](https://atom.io/)
