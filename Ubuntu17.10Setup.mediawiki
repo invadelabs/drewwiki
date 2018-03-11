@@ -76,35 +76,37 @@ gnome-tweaks
 # openconnect network-manager-openconnect network-manager-openconnect-gnome # cisco vpn
 </syntaxhighlight>
 
-** Atom [https://atom.io/]
-*** atom-beautify
-*** linter-flake8
-*** linter-pep8
-*** autocomplete-python
-*** django-templates
-*** script-runner
-*** teletype
-** sqlitebrowser
-** youtube-dl (via pip)
-** VirtualBox [https://www.virtualbox.org/]
-** Vagrant [https://www.vagrantup.com/]
-*** vagrant plugin install vagrant-berkshelf
-*** vagrant plugin install berkshelf
-** Terraform [https://www.terraform.io/]
-** Docker [https://docs.docker.com/install/linux/docker-ce/ubuntu/]
-** Chrome, verify Google Hangouts
-** Insynq [https://www.insynchq.com/downloads]
-** Synergy
-** Ramlog or equivalent for SSD
-** nvm
-** gvm for goland
-** rvm [https://github.com/rvm/ubuntu_rvm Ubuntu RVM Instructions]
-** Studio 3T (mongodb browswer) (https://studio3t.com/download/)
-** IntelliJ [https://www.jetbrains.com/idea/download/]
-** Android Studio [https://developer.android.com/studio/index.html]
-** Eclipse [https://www.eclipse.org/]
-** NetBeans [https://netbeans.org/downloads/]
-** PyCharm [https://www.jetbrains.com/pycharm/download/#section=linux]
+* Atom [https://atom.io/]
+** atom-beautify
+** linter-flake8
+** linter-pep8
+** autocomplete-python
+** django-templates
+** script-runner
+** teletype
+* sqlitebrowser
+* youtube-dl (via pip)
+* VirtualBox [https://www.virtualbox.org/]
+* Vagrant [https://www.vagrantup.com/]
+** vagrant plugin install vagrant-berkshelf
+** vagrant plugin install berkshelf
+* Terraform [https://www.terraform.io/]
+* KeyBase [https://keybase.io]
+* DropBox [https://dropbox.com]
+* Docker [https://docs.docker.com/install/linux/docker-ce/ubuntu/]
+* Chrome, verify Google Hangouts
+* Insynq [https://www.insynchq.com/downloads]
+* Synergy
+* Ramlog or equivalent for SSD
+* nvm
+* gvm for goland
+* rvm [https://github.com/rvm/ubuntu_rvm Ubuntu RVM Instructions]
+* Studio 3T (mongodb browswer) (https://studio3t.com/download/)
+* IntelliJ [https://www.jetbrains.com/idea/download/]
+* Android Studio [https://developer.android.com/studio/index.html]
+* Eclipse [https://www.eclipse.org/]
+* NetBeans [https://netbeans.org/downloads/]
+* PyCharm [https://www.jetbrains.com/pycharm/download/#section=linux]
 
 <syntaxhighlight lang=bash>
 drew@drew-8570w:~$ snap list

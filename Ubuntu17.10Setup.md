@@ -100,38 +100,38 @@ gnome-tweaks
 # openconnect network-manager-openconnect network-manager-openconnect-gnome # cisco vpn
 ```
 
--   -   Atom [2](https://atom.io/)
-        -   atom-beautify
-        -   linter-flake8
-        -   linter-pep8
-        -   autocomplete-python
-        -   django-templates
-        -   script-runner
-        -   teletype
-    -   sqlitebrowser
-    -   youtube-dl (via pip)
-    -   VirtualBox [3](https://www.virtualbox.org/)
-    -   Vagrant [4](https://www.vagrantup.com/)
-        -   vagrant plugin install vagrant-berkshelf
-        -   vagrant plugin install berkshelf
-    -   Terraform [5](https://www.terraform.io/)
-    -   Docker
-        [6](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
-    -   Chrome, verify Google Hangouts
-    -   Insynq [7](https://www.insynchq.com/downloads)
-    -   Synergy
-    -   Ramlog or equivalent for SSD
-    -   nvm
-    -   gvm for goland
-    -   rvm [Ubuntu RVM Instructions](https://github.com/rvm/ubuntu_rvm)
-    -   Studio 3T (mongodb browswer) (https://studio3t.com/download/)
-    -   IntelliJ [8](https://www.jetbrains.com/idea/download/)
-    -   Android Studio
-        [9](https://developer.android.com/studio/index.html)
-    -   Eclipse [10](https://www.eclipse.org/)
-    -   NetBeans [11](https://netbeans.org/downloads/)
-    -   PyCharm
-        [12](https://www.jetbrains.com/pycharm/download/#section=linux)
+-   Atom [2](https://atom.io/)
+    -   atom-beautify
+    -   linter-flake8
+    -   linter-pep8
+    -   autocomplete-python
+    -   django-templates
+    -   script-runner
+    -   teletype
+-   sqlitebrowser
+-   youtube-dl (via pip)
+-   VirtualBox [3](https://www.virtualbox.org/)
+-   Vagrant [4](https://www.vagrantup.com/)
+    -   vagrant plugin install vagrant-berkshelf
+    -   vagrant plugin install berkshelf
+-   Terraform [5](https://www.terraform.io/)
+-   KeyBase [6](https://keybase.io)
+-   DropBox [7](https://dropbox.com)
+-   Docker [8](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+-   Chrome, verify Google Hangouts
+-   Insynq [9](https://www.insynchq.com/downloads)
+-   Synergy
+-   Ramlog or equivalent for SSD
+-   nvm
+-   gvm for goland
+-   rvm [Ubuntu RVM Instructions](https://github.com/rvm/ubuntu_rvm)
+-   Studio 3T (mongodb browswer) (https://studio3t.com/download/)
+-   IntelliJ [10](https://www.jetbrains.com/idea/download/)
+-   Android Studio [11](https://developer.android.com/studio/index.html)
+-   Eclipse [12](https://www.eclipse.org/)
+-   NetBeans [13](https://netbeans.org/downloads/)
+-   PyCharm
+    [14](https://www.jetbrains.com/pycharm/download/#section=linux)
 
 ``` bash
 drew@drew-8570w:~$ snap list
