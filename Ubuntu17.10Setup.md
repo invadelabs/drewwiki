@@ -17,6 +17,9 @@ sudo etckeeper init
 sudo vi .gitignore # remove sensitive files
 ```
 
+Disable Popcorn
+---------------
+
 Disable Guest Login
 -------------------
 

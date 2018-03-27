@@ -11,6 +11,8 @@ sudo etckeeper init
 sudo vi .gitignore # remove sensitive files
 </syntaxhighlight>
 
+==Disable Popcorn==
+
 ==Disable Guest Login==
 <syntaxhighlight lang=bash>
 sudo sh -c "echo 'allow-guest=false' >> /usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf"
