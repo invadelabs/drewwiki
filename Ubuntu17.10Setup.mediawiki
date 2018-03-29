@@ -1,30 +1,87 @@
-
-= After initial install =
+=Install Main Apps=
 <syntaxhighlight lang=bash>
 sudo apt-get update
 sudo apt-get upgrade -y
 sudo apt-get dist-upgrade
 
 sudo apt-get install -y etckeeper
+
 cd /etc
 sudo etckeeper init
-sudo vi .gitignore # remove sensitive files
+
+export DEBIAN_FRONTEND=noninteractive
+sudo apt-get install -y \
+keepass2 gnome-tweak-tool chrome-gnome-shell `#tools` \
+vim vim-scripts vim-runtime vim-doc curl xd \
+lm-sensors p7zip-full exfat-utils exfat-fuse encfs libimage-exiftool-perl `#systools` \
+ubuntu-restricted-extras gimp audacity vlc vlc-plugin-fluidsynth ffmpeg atomicparsley `#media` \
+openjdk-8-jdk icedtea-8-plugin `#java` \
+openssh-server fail2ban `#daemon` \
+openvpn network-manager-openconnect-gnome network-manager-openvpn-gnome `#network-client` \
+rdesktop freerdp2-x11 xtightvncviewer sshpass qbittorrent wireshark nmap nikto chkrootkit wavemon namebench apache2-utils mailutils `#netutils` \
+virtualenv python2.7-examples python-pip `#python` \
+build-essential `#build-tools` \
+xchat pidgin `#chatapps` \
+ansible `#automation`
+
+unset DEBIAN_FRONTEND
+</syntaxhighlight>
+
+* Chrome, verify Google Hangouts
+* Atom [https://atom.io/]
+** atom-beautify
+** linter-flake8
+** linter-pep8
+** autocomplete-python
+** django-templates
+** script-runner
+** teletype
+
+= Next =
+* sqlitebrowser
+* youtube-dl (via pip)
+* VirtualBox [https://www.virtualbox.org/]
+* Vagrant [https://www.vagrantup.com/]
+** vagrant plugin install vagrant-berkshelf
+** vagrant plugin install berkshelf
+* Terraform [https://www.terraform.io/]
+* KeyBase [https://keybase.io]
+* DropBox [https://dropbox.com]
+* Docker [https://docs.docker.com/install/linux/docker-ce/ubuntu/]
+* Insynq [https://www.insynchq.com/downloads]
+* Synergy
+* Gitter
+* Ramlog or equivalent for SSD
+* nvm
+* gvm for goland
+* rvm [https://github.com/rvm/ubuntu_rvm Ubuntu RVM Instructions]
+* Studio 3T (mongodb browswer) (https://studio3t.com/download/)
+* Oracle Java 8 (if needed)
+* IntelliJ [https://www.jetbrains.com/idea/download/]
+* Android Studio [https://developer.android.com/studio/index.html]
+* Eclipse [https://www.eclipse.org/]
+* NetBeans [https://netbeans.org/downloads/]
+* PyCharm [https://www.jetbrains.com/pycharm/download/#section=linux]
+
+<syntaxhighlight lang=bash>
+drew@drew-8570w:~$ snap list
+Name                  Version                  Rev   Developer      Notes
+core                  16-2.29.4.2              3604  canonical      core
+drive                 current                  22    fireeye        -
+juju                  2.3.1                    3106  canonical      classic
+kubectl               1.9.0                    266   canonical      classic
+</syntaxhighlight>
+
+=Configure misc=
+= After initial install =
+<syntaxhighlight lang=bash>
+sudo apt-get install -y
+sudo update-alternatives --set editor /usr/bin/vim.basic
 </syntaxhighlight>
 
 ==Disable Popcorn==
 <syntaxhighlight lang=bash>
 dpkg-reconfigure popularity-contest
-</syntaxhighlight>
-
-==Set full vim editor and set as default==
-Install full vim 
-<syntaxhighlight lang=bash>
-sudo apt install -y vim-scripts vim-runtime vim-doc vim
-</syntaxhighlight>
-
-Set Default Editor
-<syntaxhighlight lang=bash>
-sudo update-alternatives --set editor /usr/bin/vim.basic
 </syntaxhighlight>
 
 ==Set passwordless sudo==
@@ -53,98 +110,12 @@ sudo apt-get install chrome-gnome-shell
 * restart GNOME Shell (Alt+F2, r, Enter) and enable the extension through gnome-tweak-tool.
 </syntaxhighlight>
 
-=Install Main Apps=
-<syntaxhighlight lang=bash>
-sudo apt-get install \
-keepass2 rdesktop vncviewer \
-lm-sensors p7zip-full exfat-utils exfat-fuse encfs \
-vim ssh git \
-ubuntu-restricted-extras qbittorrent gimp audacity \ 
-openjdk-8-jre icedtea-8-plugin oracle-java8-installer \
-network-manager-openvpn wireshark nmap nikto chkrootkit wavemon namebench apache2-utils mailutils \
-openvpn openssh-server fail2ban \
-vlc vlc-plugin-fluidsynth ffmpeg atomicparsley \
-virtualenv python2.7-examples python-pip \
-xchat pidgin \
-chrome-gnome-shell \
-ansible \
-gnome-tweaks
-
-# xd exiftol
-# openconnect network-manager-openconnect network-manager-openconnect-gnome # cisco vpn
-</syntaxhighlight>
-
-* Atom [https://atom.io/]
-** atom-beautify
-** linter-flake8
-** linter-pep8
-** autocomplete-python
-** django-templates
-** script-runner
-** teletype
-* sqlitebrowser
-* youtube-dl (via pip)
-* VirtualBox [https://www.virtualbox.org/]
-* Vagrant [https://www.vagrantup.com/]
-** vagrant plugin install vagrant-berkshelf
-** vagrant plugin install berkshelf
-* Terraform [https://www.terraform.io/]
-* KeyBase [https://keybase.io]
-* DropBox [https://dropbox.com]
-* Docker [https://docs.docker.com/install/linux/docker-ce/ubuntu/]
-* Chrome, verify Google Hangouts
-* Insynq [https://www.insynchq.com/downloads]
-* Synergy
-* Ramlog or equivalent for SSD
-* nvm
-* gvm for goland
-* rvm [https://github.com/rvm/ubuntu_rvm Ubuntu RVM Instructions]
-* Studio 3T (mongodb browswer) (https://studio3t.com/download/)
-* IntelliJ [https://www.jetbrains.com/idea/download/]
-* Android Studio [https://developer.android.com/studio/index.html]
-* Eclipse [https://www.eclipse.org/]
-* NetBeans [https://netbeans.org/downloads/]
-* PyCharm [https://www.jetbrains.com/pycharm/download/#section=linux]
-
+==Maybe Snaps==
 <syntaxhighlight lang=bash>
 drew@drew-8570w:~$ snap list
-Name                  Version                  Rev   Developer      Notes
-core                  16-2.29.4.2              3604  canonical      core
-cumulonimbus          1.6.7                    18    snapcrafters   -
-drive                 current                  22    fireeye        -
-gitter-desktop        3.1.0                    20    snapcrafters   -
-juju                  2.3.1                    3106  canonical      classic
-kubectl               1.9.0                    266   canonical      classic
 picard                1.4.2                    2     pachulo        -
 spotify               1.0.70.399.g5ffabd56-26  5     spotify        -
 sqlitebrowser-casept  3.9.1                    2     casept         -
 vault                 v0.9.0                   236   snapcrafters   -
 vscode                1.19.1-1513676564        22    flexiondotorg  classic
-</syntaxhighlight>
-
-= Other NFS =
-<syntaxhighlight lang=bash>
-sudo apt-get install -y nfs-common cifs-utils ethtool pm-utils
-</syntaxhighlight>
-
-*/etc/fstab
-<syntaxhighlight lang=bash>
-192.168.1.200:/mnt/raid5 /mnt/raid5	nfs	defaults	0 0
-</syntaxhighlight>
-
-= Other Syslog =
-Remote syslog
-<syntaxhighlight lang=bash>
-echo "*.* @192.168.1.200" >> /etc/rsyslog.d/50-default.conf
-</syntaxhighlight>
-
-= tmpfs if on SSD =
-*tmpfs for /tmp and (maybe make this a bind mount..)
-<syntaxhighlight lang=bash>
-tmpfs   /tmp       tmpfs   defaults,noatime,mode=1777   0  0
-</syntaxhighlight>
-
-= Web server if needed =
-<syntaxhighlight lang=bash>
-sudo apt-get install apache2 php7 php7-sqlite
 </syntaxhighlight>
