@@ -181,26 +181,47 @@ kubectl               1.9.0                    266   canonical      classic
 Configure misc
 ==============
 
-Dash to Dock
-------------
+Configure SSH keys
+------------------
 
-<https://extensions.gnome.org/extension/307/dash-to-dock/>
+Create new ones or replenish from vault.
+
+Configure GPG keys
+------------------
+
+Replenish from vault.
 
 Set gnome-screenshot default save directory
 -------------------------------------------
 
 ?
 
+Set default downloads directory to Desktop
+------------------------------------------
+
+command for firefoxx, chrome, qbit, skype, slack, hangouts, etc
+
 Gnome Tweak Tool
 ----------------
 
+Install extension then use Tweak tool to configure.
+
+### Dash to Dock
+
+-   Dash to Dock
+    [19](https://extensions.gnome.org/extension/307/dash-to-dock/)
+-   TopIcons-plus
+    [20](https://extensions.gnome.org/extension/1031/topicons/) - for
+    Insync, Slack, Skype icons
+-   OpenWeather
+    [21](https://extensions.gnome.org/extension/750/openweather/)
+-   Grown-up notifications
+    [22](https://extensions.gnome.org/extension/1335/grown-up-notifications/)
+
+Extensions installed into:
+
 ``` bash
-TopIcons-plus - for Insync, Slack, Skype icons
-Extension update notifier
-Freon
-Status area horizontal spacing
 $ ~/.local/share/gnome-shell/extensions
-sudo apt-get install chrome-gnome-shell
 * restart GNOME Shell (Alt+F2, r, Enter) and enable the extension through gnome-tweak-tool.
 ```
 
