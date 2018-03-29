@@ -16,11 +16,6 @@ sudo vi .gitignore # remove sensitive files
 dpkg-reconfigure popularity-contest
 </syntaxhighlight>
 
-==Disable Guest Login==
-<syntaxhighlight lang=bash>
-sudo sh -c "echo 'allow-guest=false' >> /usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf"
-</syntaxhighlight>
-
 ==Set vim Editor==
 <syntaxhighlight lang=bash>
 sudo update-alternatives --set editor /usr/bin/vim.basic

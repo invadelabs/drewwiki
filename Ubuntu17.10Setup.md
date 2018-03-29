@@ -24,13 +24,6 @@ Disable Popcorn
 dpkg-reconfigure popularity-contest
 ```
 
-Disable Guest Login
--------------------
-
-``` bash
-sudo sh -c "echo 'allow-guest=false' >> /usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf"
-```
-
 Set vim Editor
 --------------
 
