@@ -7,25 +7,48 @@ Install Main Apps
 =================
 
 ``` bash
+#!/bin/bash
+# set github
 git config --global user.name "Drew Holt"
 git config --global user.email "drewderivative@gmail.com"
 
+# add me to sudoers
 sudo sh -c 'echo "drew ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers'
 
+# remove clutter
 cd $HOME; rmdir Documents/ Music/ Public/ Templates/ Videos/; rm examples.desktop
 
-sudo dpkg-reconfigure popularity-contest # disable
+# local installers already gathered
+sudo mkdir /mnt/hdd
+sudo mount /dev/vg_hdd/lv_hdd /mnt/hdd
+cd /mnt/hdd/iso_installers/ubuntu-installers
+sudo apt-get install -y ./atom-amd64.deb ./google-chrome-stable_current_amd64.deb ./insync_1.4.4.37065-artful_amd64.deb ./slack-desktop-3.1.0-amd64.deb ./vagrant_2.0.3_x86_64.deb ./virtualbox-5.2_5.2.8-121009_Ubuntu_zesty_amd64.deb ./skypeforlinux-64.deb ./keybase_amd64.deb
 
+## disable popularity-contest
+#sudo dpkg-reconfigure popularity-contest # disable
+
+# docker add repo
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+# oracle 8 add java repo
+sudo add-apt-repository -y ppa:webupd8team/java
+
+# update all repos, upgrade
 sudo apt-get update
-sudo apt-get upgrade -y
 sudo apt-get -y dist-upgrade
 
+# install etckeeper and initialize it
 sudo apt-get install -y etckeeper
-
-cd /etc
 sudo etckeeper init
-cd $HOME
 
+# Oracle Java 8 License
+echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
+echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections
+
+# install all the software
 DEBIAN_FRONTEND=noninteractive `#no prompting` \
 sudo apt-get install -y \
 keepass2 synergy gnome-tweak-tool chrome-gnome-shell `#tools` \
@@ -41,20 +64,12 @@ build-essential `#build-tools` \
 sqlitebrowser yamllint highlight gawk `#dev-tools` \
 lynis pandoc apt-transport-https `#misc` \
 xchat pidgin `#chatapps` \
+docker-ce `#docker` \
+oracle-java8-installer `#oraclejava8` \
 ansible `#automation`
 
 # Set good vim
 sudo update-alternatives --set editor /usr/bin/vim.basic
-
-# Install Oracle Java 8
-sudo add-apt-repository ppa:webupd8team/java
-sudo apt-get update
-echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
-echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections
-sudo apt-get install -y oracle-java8-installer
-#sudo apt-get install -y oracle-java9-installer
-#sudo update-alternatives --config java
-#per user JAVA_HOME="/usr/lib/jvm/java-8-oracle"
 
 # install youtube-dl
 pip install youtube-dl
@@ -68,17 +83,7 @@ alias get_ip='_get_ip() { VBoxManage guestproperty get "$1" "/VirtualBox/GuestIn
 EOF
 
 # docker
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository \
-   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-   $(lsb_release -cs) \
-   stable"
-sudo apt-get update
-sudo apt-get install -y docker-ce
 sudo usermod -a -G docker drew
-
-# local installers already gathered
-sudo apt-get install -y ./atom-amd64.deb ./google-chrome-stable_current_amd64.deb ./insync_1.4.4.37065-artful_amd64.deb ./slack-desktop-3.1.0-amd64.deb ./vagrant_2.0.3_x86_64.deb ./virtualbox-5.2_5.2.8-121009_Ubuntu_zesty_amd64.deb ./skypeforlinux-64.deb ./keybase_amd64.deb
 ```
 
 -   Chrome [1](https://www.google.com/chrome/)
