@@ -99,6 +99,10 @@ sudo usermod -a -G docker drew
 
 # configure lm_sensors
 sudo sensors-detect --auto
+
+# install rvm
+gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+\curl -sSL https://get.rvm.io | bash -s stable --ruby
 ```
 
 Local Installers and config needed
@@ -160,8 +164,9 @@ When needed
 -   Gitter
 -   Ramlog or equivalent for SSD
 -   nvm
--   gvm for goland
--   rvm [Ubuntu RVM Instructions](https://github.com/rvm/ubuntu_rvm)
+-   gvm for golang
+-   rvm (in script) [Ubuntu RVM
+    Instructions](https://github.com/rvm/ubuntu_rvm)
 -   Studio 3T (mongodb browswer) (https://studio3t.com/download/)
 -   IntelliJ [11](https://www.jetbrains.com/idea/download/)
 -   Android Studio [12](https://developer.android.com/studio/index.html)

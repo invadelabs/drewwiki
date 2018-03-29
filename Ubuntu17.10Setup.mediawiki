@@ -92,6 +92,10 @@ sudo usermod -a -G docker drew
 
 # configure lm_sensors
 sudo sensors-detect --auto
+
+# install rvm
+gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+\curl -sSL https://get.rvm.io | bash -s stable --ruby
 </syntaxhighlight>
 
 = Local Installers and config needed =
@@ -135,8 +139,8 @@ insync start ### do some magic here so we don't have to resync 200GB of google d
 * Gitter
 * Ramlog or equivalent for SSD
 * nvm
-* gvm for goland
-* rvm [https://github.com/rvm/ubuntu_rvm Ubuntu RVM Instructions]
+* gvm for golang
+* rvm (in script) [https://github.com/rvm/ubuntu_rvm Ubuntu RVM Instructions]
 * Studio 3T (mongodb browswer) (https://studio3t.com/download/)
 * IntelliJ [https://www.jetbrains.com/idea/download/]
 * Android Studio [https://developer.android.com/studio/index.html]
