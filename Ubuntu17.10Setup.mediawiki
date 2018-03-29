@@ -2,6 +2,8 @@
 <syntaxhighlight lang=bash>
 #!/bin/bash
 
+set -x
+
 # passwordless sudo for my local box
 sudo sh -c 'echo "drew ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers'
 
@@ -55,8 +57,8 @@ sudo apt-get install -y ./atom-amd64.deb ./google-chrome-stable_current_amd64.de
 DEBIAN_FRONTEND=noninteractive `#no prompting` \
 sudo apt-get install -y \
 keepass2 synergy gnome-tweak-tool chrome-gnome-shell `#tools` \
-vim vim-scripts vim-runtime vim-doc curl xd \
-lm-sensors p7zip-full exfat-utils exfat-fuse encfs libimage-exiftool-perl `#systools` \
+vim vim-scripts vim-runtime vim-doc curl xd `#systools` \
+lm-sensors p7zip-full exfat-utils exfat-fuse libimage-exiftool-perl `#systools` \
 ubuntu-restricted-extras gimp audacity vlc vlc-plugin-fluidsynth ffmpeg atomicparsley `#media` \
 openjdk-8-jdk icedtea-8-plugin `#java` \
 openssh-server fail2ban `#daemon` \
@@ -90,7 +92,6 @@ sudo usermod -a -G docker drew
 
 # configure lm_sensors
 sudo sensors-detect --auto
-
 </syntaxhighlight>
 
 = Local Installers and config needed =
@@ -125,6 +126,10 @@ insync start ### do some magic here so we don't have to resync 200GB of google d
 
 * Skype [https://www.skype.com/en/get-skype/skype-for-linux/]
 
+* Docker (in script) [https://docs.docker.com/install/linux/docker-ce/ubuntu/#upgrade-docker-ce]
+
+* Orackle 8 (in script)
+
 = When needed =
 * Terraform [https://www.terraform.io/]
 * Gitter
@@ -137,10 +142,8 @@ insync start ### do some magic here so we don't have to resync 200GB of google d
 * Android Studio [https://developer.android.com/studio/index.html]
 * Eclipse [https://www.eclipse.org/]
 * NetBeans [https://netbeans.org/downloads/]
-* PyCharm [https://www.jetbrains.com/pycharm/download/#section=linux]
-* Docker (in script) [https://docs.docker.com/install/linux/docker-ce/ubuntu/#upgrade-docker-ce]
-* Synergy (in script)
 * DropBox (only if needed for work)
+* PyCharm [https://www.jetbrains.com/pycharm/download/#section=linux]
 
 <syntaxhighlight lang=bash>
 drew@drew-8570w:~$ snap list

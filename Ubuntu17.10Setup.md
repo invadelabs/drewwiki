@@ -9,6 +9,8 @@ Install Main Apps
 ``` bash
 #!/bin/bash
 
+set -x
+
 # passwordless sudo for my local box
 sudo sh -c 'echo "drew ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers'
 
@@ -62,8 +64,8 @@ sudo apt-get install -y ./atom-amd64.deb ./google-chrome-stable_current_amd64.de
 DEBIAN_FRONTEND=noninteractive `#no prompting` \
 sudo apt-get install -y \
 keepass2 synergy gnome-tweak-tool chrome-gnome-shell `#tools` \
-vim vim-scripts vim-runtime vim-doc curl xd \
-lm-sensors p7zip-full exfat-utils exfat-fuse encfs libimage-exiftool-perl `#systools` \
+vim vim-scripts vim-runtime vim-doc curl xd `#systools` \
+lm-sensors p7zip-full exfat-utils exfat-fuse libimage-exiftool-perl `#systools` \
 ubuntu-restricted-extras gimp audacity vlc vlc-plugin-fluidsynth ffmpeg atomicparsley `#media` \
 openjdk-8-jdk icedtea-8-plugin `#java` \
 openssh-server fail2ban `#daemon` \
@@ -142,26 +144,32 @@ insync start ### do some magic here so we don't have to resync 200GB of google d
 
 -   Skype [8](https://www.skype.com/en/get-skype/skype-for-linux/)
 
+<!-- -->
+
+-   Docker (in script)
+    [9](https://docs.docker.com/install/linux/docker-ce/ubuntu/#upgrade-docker-ce)
+
+<!-- -->
+
+-   Orackle 8 (in script)
+
 When needed
 ===========
 
--   Terraform [9](https://www.terraform.io/)
+-   Terraform [10](https://www.terraform.io/)
 -   Gitter
 -   Ramlog or equivalent for SSD
 -   nvm
 -   gvm for goland
 -   rvm [Ubuntu RVM Instructions](https://github.com/rvm/ubuntu_rvm)
 -   Studio 3T (mongodb browswer) (https://studio3t.com/download/)
--   IntelliJ [10](https://www.jetbrains.com/idea/download/)
--   Android Studio [11](https://developer.android.com/studio/index.html)
--   Eclipse [12](https://www.eclipse.org/)
--   NetBeans [13](https://netbeans.org/downloads/)
--   PyCharm
-    [14](https://www.jetbrains.com/pycharm/download/#section=linux)
--   Docker (in script)
-    [15](https://docs.docker.com/install/linux/docker-ce/ubuntu/#upgrade-docker-ce)
--   Synergy (in script)
+-   IntelliJ [11](https://www.jetbrains.com/idea/download/)
+-   Android Studio [12](https://developer.android.com/studio/index.html)
+-   Eclipse [13](https://www.eclipse.org/)
+-   NetBeans [14](https://netbeans.org/downloads/)
 -   DropBox (only if needed for work)
+-   PyCharm
+    [15](https://www.jetbrains.com/pycharm/download/#section=linux)
 
 ``` bash
 drew@drew-8570w:~$ snap list
