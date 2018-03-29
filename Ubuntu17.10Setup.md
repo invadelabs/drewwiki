@@ -56,8 +56,10 @@ sudo apt-get install -y oracle-java8-installer
 #sudo update-alternatives --config java
 #per user JAVA_HOME="/usr/lib/jvm/java-8-oracle"
 
+# install youtube-dl
 pip install youtube-dl
 
+# set env and aliases
 cat <<EOF >> $HOME/.bashrc
 export PATH="$HOME/.local/bin:$PATH"
 alias xclip='xclip -selection clipboard'
@@ -75,60 +77,68 @@ sudo apt-get update
 sudo apt-get install -y docker-ce
 sudo usermod -a -G docker drew
 
-# keybase
-curl -O https://prerelease.keybase.io/keybase_amd64.deb
-# if you see an error about missing `libappindicator1`
-# from the next command, you can ignore it, as the
-# subsequent command corrects it
-sudo dpkg -i keybase_amd64.deb
-sudo apt-get install -f
-run_keybase
-
-sudo apt-get install -y ./atom-amd64.deb ./google-chrome-stable_current_amd64.deb ./insync_1.4.4.37065-artful_amd64.deb ./slack-desktop-3.1.0-amd64.deb ./vagrant_2.0.3_x86_64.deb ./virtualbox-5.2_5.2.8-121009_Ubuntu_zesty_amd64.deb
+# local installers already gathered
+sudo apt-get install -y ./atom-amd64.deb ./google-chrome-stable_current_amd64.deb ./insync_1.4.4.37065-artful_amd64.deb ./slack-desktop-3.1.0-amd64.deb ./vagrant_2.0.3_x86_64.deb ./virtualbox-5.2_5.2.8-121009_Ubuntu_zesty_amd64.deb ./skypeforlinux-64.deb ./keybase_amd64.deb
 ```
 
--   Chrome, verify Google Hangouts
--   Atom [1](https://atom.io/)
+-   Chrome [1](https://www.google.com/chrome/)
+
+<!-- -->
+
+-   Atom [2](https://atom.io/)
 
 ``` bash
-### run after installed
 apm install atom-beautify linter-flake8 linter-pep8 autocomplete-python django-templates script-runner teletype
-</syntaxhighlihgt>
-* VirtualBox [https://www.virtualbox.org/]
-<syntaxhighlight lang=bash>
+```
+
+-   VirtualBox [3](https://www.virtualbox.org/)
+
+``` bash
 echo y | sudo VBoxManage extpack install "Oracle_VM_VirtualBox_Extension_Pack-5.2.8.vbox-extpack"
 ```
 
--   Vagrant [2](https://www.vagrantup.com/)
+-   Vagrant [4](https://www.vagrantup.com/)
 
 ``` bash
-### run after installed
-vagrant plugin install vagrant-berkshelf
-vagrant plugin install berkshelf
+vagrant plugin install vagrant-berkshelf; vagrant plugin install berkshelf
 ```
 
--   KeyBase [3](https://keybase.io)
--   Insynq [4](https://www.insynchq.com/downloads)
--   Slack
+-   KeyBase [5](https://keybase.io)
+
+``` bash
+run_keybase
+```
+
+-   Insynq [6](https://www.insynchq.com/downloads)
+
+``` bash
+insync start ### do some magic here so we don't have to resync 200GB of google drive
+```
+
+-   Slack [7](https://slack.com/downloads/linux)
+
+<!-- -->
+
+-   Skype [8](https://www.skype.com/en/get-skype/skype-for-linux/)
 
 Next
 ====
 
--   Terraform [5](https://www.terraform.io/)
+-   Terraform [9](https://www.terraform.io/)
 -   Gitter
 -   Ramlog or equivalent for SSD
 -   nvm
 -   gvm for goland
 -   rvm [Ubuntu RVM Instructions](https://github.com/rvm/ubuntu_rvm)
 -   Studio 3T (mongodb browswer) (https://studio3t.com/download/)
--   IntelliJ [6](https://www.jetbrains.com/idea/download/)
--   Android Studio [7](https://developer.android.com/studio/index.html)
--   Eclipse [8](https://www.eclipse.org/)
--   NetBeans [9](https://netbeans.org/downloads/)
+-   IntelliJ [10](https://www.jetbrains.com/idea/download/)
+-   Android Studio [11](https://developer.android.com/studio/index.html)
+-   Eclipse [12](https://www.eclipse.org/)
+-   NetBeans [13](https://netbeans.org/downloads/)
 -   PyCharm
-    [10](https://www.jetbrains.com/pycharm/download/#section=linux)
+    [14](https://www.jetbrains.com/pycharm/download/#section=linux)
 -   Docker (in script)
-    [11](https://docs.docker.com/install/linux/docker-ce/ubuntu/#upgrade-docker-ce)
+    [15](https://docs.docker.com/install/linux/docker-ce/ubuntu/#upgrade-docker-ce)
 -   Synergy (in script)
 -   DropBox (only if needed for work)
 

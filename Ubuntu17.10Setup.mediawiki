@@ -49,8 +49,10 @@ sudo apt-get install -y oracle-java8-installer
 #sudo update-alternatives --config java
 #per user JAVA_HOME="/usr/lib/jvm/java-8-oracle"
 
+# install youtube-dl
 pip install youtube-dl
 
+# set env and aliases
 cat <<EOF >> $HOME/.bashrc
 export PATH="$HOME/.local/bin:$PATH"
 alias xclip='xclip -selection clipboard'
@@ -68,37 +70,41 @@ sudo apt-get update
 sudo apt-get install -y docker-ce
 sudo usermod -a -G docker drew
 
-# keybase
-curl -O https://prerelease.keybase.io/keybase_amd64.deb
-# if you see an error about missing `libappindicator1`
-# from the next command, you can ignore it, as the
-# subsequent command corrects it
-sudo dpkg -i keybase_amd64.deb
-sudo apt-get install -f
-run_keybase
-
-sudo apt-get install -y ./atom-amd64.deb ./google-chrome-stable_current_amd64.deb ./insync_1.4.4.37065-artful_amd64.deb ./slack-desktop-3.1.0-amd64.deb ./vagrant_2.0.3_x86_64.deb ./virtualbox-5.2_5.2.8-121009_Ubuntu_zesty_amd64.deb
+# local installers already gathered
+sudo apt-get install -y ./atom-amd64.deb ./google-chrome-stable_current_amd64.deb ./insync_1.4.4.37065-artful_amd64.deb ./slack-desktop-3.1.0-amd64.deb ./vagrant_2.0.3_x86_64.deb ./virtualbox-5.2_5.2.8-121009_Ubuntu_zesty_amd64.deb ./skypeforlinux-64.deb ./keybase_amd64.deb
 </syntaxhighlight>
 
-* Chrome, verify Google Hangouts
+* Chrome [https://www.google.com/chrome/]
+
 * Atom [https://atom.io/]
 <syntaxhighlight lang=bash>
-### run after installed
 apm install atom-beautify linter-flake8 linter-pep8 autocomplete-python django-templates script-runner teletype
-</syntaxhighlihgt>
+</syntaxhighlight>
+
 * VirtualBox [https://www.virtualbox.org/]
 <syntaxhighlight lang=bash>
 echo y | sudo VBoxManage extpack install "Oracle_VM_VirtualBox_Extension_Pack-5.2.8.vbox-extpack"
 </syntaxhighlight>
+
 * Vagrant [https://www.vagrantup.com/]
+
 <syntaxhighlight lang=bash>
-### run after installed
-vagrant plugin install vagrant-berkshelf
-vagrant plugin install berkshelf
+vagrant plugin install vagrant-berkshelf; vagrant plugin install berkshelf
 </syntaxhighlight>
+
 * KeyBase [https://keybase.io]
+<syntaxhighlight lang=bash>
+run_keybase
+</syntaxhighlight>
+
 * Insynq [https://www.insynchq.com/downloads]
-* Slack
+<syntaxhighlight lang=bash>
+insync start ### do some magic here so we don't have to resync 200GB of google drive
+</syntaxhighlight>
+
+* Slack [https://slack.com/downloads/linux]
+
+* Skype [https://www.skype.com/en/get-skype/skype-for-linux/]
 
 = Next =
 * Terraform [https://www.terraform.io/]
