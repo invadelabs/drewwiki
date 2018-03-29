@@ -7,6 +7,9 @@ Install Main Apps
 =================
 
 ``` bash
+sudo sh -c 'echo "drew ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers'
+sudo dpkg-reconfigure popularity-contest # disable
+
 sudo apt-get update
 sudo apt-get upgrade -y
 sudo apt-get dist-upgrade
@@ -28,10 +31,13 @@ openvpn network-manager-openconnect-gnome network-manager-openvpn-gnome `#networ
 rdesktop freerdp2-x11 xtightvncviewer sshpass qbittorrent wireshark nmap nikto chkrootkit wavemon namebench apache2-utils mailutils `#netutils` \
 virtualenv python2.7-examples python-pip `#python` \
 build-essential `#build-tools` \
+sqlitebrowser `#dev-tools` \
 xchat pidgin `#chatapps` \
 ansible `#automation`
 
 unset DEBIAN_FRONTEND
+
+sudo update-alternatives --set editor /usr/bin/vim.basic
 ```
 
 -   Chrome, verify Google Hangouts
@@ -47,7 +53,6 @@ unset DEBIAN_FRONTEND
 Next
 ====
 
--   sqlitebrowser
 -   youtube-dl (via pip)
 -   VirtualBox [2](https://www.virtualbox.org/)
 -   Vagrant [3](https://www.vagrantup.com/)
@@ -84,29 +89,6 @@ kubectl               1.9.0                    266   canonical      classic
 
 Configure misc
 ==============
-
-After initial install
-=====================
-
-``` bash
-sudo apt-get install -y
-sudo update-alternatives --set editor /usr/bin/vim.basic
-```
-
-Disable Popcorn
----------------
-
-``` bash
-dpkg-reconfigure popularity-contest
-```
-
-Set passwordless sudo
----------------------
-
-``` bash
-visudo:
-username ALL=(ALL) NOPASSWD: ALL
-```
 
 Dash to Dock
 ------------
