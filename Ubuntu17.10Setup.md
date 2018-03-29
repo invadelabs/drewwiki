@@ -103,6 +103,12 @@ sudo sensors-detect --auto
 # install rvm
 gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
 \curl -sSL https://get.rvm.io | bash -s stable --ruby
+
+# virtualbox extras pack
+echo y | sudo VBoxManage extpack install /mnt/hdd/iso_installers/ubuntu-installers/Oracle_VM_VirtualBox_Extension_Pack-5.2.8.vbox-extpack
+
+# atom plugins
+apm install atom-beautify linter-flake8 linter-pep8 autocomplete-python django-templates script-runner teletype
 ```
 
 Local Installers and config needed
@@ -114,15 +120,11 @@ Local Installers and config needed
 
 -   Atom [2](https://atom.io/)
 
-``` bash
-apm install atom-beautify linter-flake8 linter-pep8 autocomplete-python django-templates script-runner teletype
-```
+<!-- -->
 
 -   VirtualBox [3](https://www.virtualbox.org/)
 
-``` bash
-echo y | sudo VBoxManage extpack install "Oracle_VM_VirtualBox_Extension_Pack-5.2.8.vbox-extpack"
-```
+<!-- -->
 
 -   Vagrant [4](https://www.vagrantup.com/)
 
@@ -157,6 +159,11 @@ insync start ### do some magic here so we don't have to resync 200GB of google d
 
 -   Orackle 8 (in script)
 
+<!-- -->
+
+-   rvm (in script) [Ubuntu RVM
+    Instructions](https://github.com/rvm/ubuntu_rvm)
+
 When needed
 ===========
 
@@ -165,8 +172,6 @@ When needed
 -   Ramlog or equivalent for SSD
 -   nvm
 -   gvm for golang
--   rvm (in script) [Ubuntu RVM
-    Instructions](https://github.com/rvm/ubuntu_rvm)
 -   Studio 3T (mongodb browswer) (https://studio3t.com/download/)
 -   IntelliJ [11](https://www.jetbrains.com/idea/download/)
 -   Android Studio [12](https://developer.android.com/studio/index.html)
