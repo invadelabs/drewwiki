@@ -136,6 +136,7 @@ insync start ### do some magic here so we don't have to resync 200GB of google d
 * rvm (in script) ''requires '''/bin/bash --login''' or fixed shell'' [https://github.com/rvm/ubuntu_rvm Ubuntu RVM Instructions]
 * awscli (in script) [https://aws.amazon.com/cli/]
 * nvm (in script) ''requires '''/bin/bash --login''' or fixed shell'' (in script) [https://github.com/creationix/nvm]
+# ChefDK (in script) [https://downloads.chef.io/chefdk]
 
 = When needed =
 * Terraform [https://www.terraform.io/] 
@@ -143,12 +144,12 @@ insync start ### do some magic here so we don't have to resync 200GB of google d
 * Ramlog or equivalent for SSD
 * gvm for golang
 * Studio 3T (mongodb browswer) (https://studio3t.com/download/)
-* IntelliJ [https://www.jetbrains.com/idea/download/]
 * Android Studio [https://developer.android.com/studio/index.html]
 * Eclipse [https://www.eclipse.org/]
 * NetBeans [https://netbeans.org/downloads/]
 * DropBox (only if needed for work)
 * PyCharm [https://www.jetbrains.com/pycharm/download/#section=linux]
+* IntelliJ [https://www.jetbrains.com/idea/download/]
 
 <syntaxhighlight lang=bash>
 drew@drew-8570w:~$ snap list

@@ -151,21 +151,23 @@ insync start ### do some magic here so we don't have to resync 200GB of google d
 -   nvm (in script) *requires **/bin/bash --login** or fixed shell* (in
     script) [11](https://github.com/creationix/nvm)
 
+1.  ChefDK (in script) [12](https://downloads.chef.io/chefdk)
+
 When needed
 ===========
 
--   Terraform [12](https://www.terraform.io/)
+-   Terraform [13](https://www.terraform.io/)
 -   Gitter
 -   Ramlog or equivalent for SSD
 -   gvm for golang
 -   Studio 3T (mongodb browswer) (https://studio3t.com/download/)
--   IntelliJ [13](https://www.jetbrains.com/idea/download/)
 -   Android Studio [14](https://developer.android.com/studio/index.html)
 -   Eclipse [15](https://www.eclipse.org/)
 -   NetBeans [16](https://netbeans.org/downloads/)
 -   DropBox (only if needed for work)
 -   PyCharm
     [17](https://www.jetbrains.com/pycharm/download/#section=linux)
+-   IntelliJ [18](https://www.jetbrains.com/idea/download/)
 
 ``` bash
 drew@drew-8570w:~$ snap list
