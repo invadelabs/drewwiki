@@ -12,6 +12,9 @@ sudo vi .gitignore # remove sensitive files
 </syntaxhighlight>
 
 ==Disable Popcorn==
+<syntaxhighlight lang=bash>
+dpkg-reconfigure popularity-contest
+</syntaxhighlight>
 
 ==Disable Guest Login==
 <syntaxhighlight lang=bash>
