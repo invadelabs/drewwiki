@@ -7,19 +7,26 @@ Install Main Apps
 =================
 
 ``` bash
+git config --global user.name "Drew Holt"
+git config --global user.email "drewderivative@gmail.com"
+
 sudo sh -c 'echo "drew ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers'
+
+cd $HOME; rmdir Documents/ Music/ Public/ Templates/ Videos/; rm examples.desktop
+
 sudo dpkg-reconfigure popularity-contest # disable
 
 sudo apt-get update
 sudo apt-get upgrade -y
-sudo apt-get dist-upgrade
+sudo apt-get -y dist-upgrade
 
 sudo apt-get install -y etckeeper
 
 cd /etc
 sudo etckeeper init
+cd $HOME
 
-export DEBIAN_FRONTEND=noninteractive
+DEBIAN_FRONTEND=noninteractive `#no prompting` \
 sudo apt-get install -y \
 keepass2 gnome-tweak-tool chrome-gnome-shell `#tools` \
 vim vim-scripts vim-runtime vim-doc curl xd \
@@ -31,13 +38,32 @@ openvpn network-manager-openconnect-gnome network-manager-openvpn-gnome `#networ
 rdesktop freerdp2-x11 xtightvncviewer sshpass qbittorrent wireshark nmap nikto chkrootkit wavemon namebench apache2-utils mailutils `#netutils` \
 virtualenv python2.7-examples python-pip `#python` \
 build-essential `#build-tools` \
-sqlitebrowser `#dev-tools` \
+sqlitebrowser yamllint highlight gawk `#dev-tools` \
+lynis pandoc `#misc` \
 xchat pidgin `#chatapps` \
 ansible `#automation`
 
-unset DEBIAN_FRONTEND
-
+# Set good vim
 sudo update-alternatives --set editor /usr/bin/vim.basic
+
+# Install Oracle Java 8
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
+echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections
+sudo apt-get install -y oracle-java8-installer
+#sudo apt-get install -y oracle-java9-installer
+#sudo update-alternatives --config java
+#per user JAVA_HOME="/usr/lib/jvm/java-8-oracle"
+
+pip install youtube-dl
+
+cat <<EOF >> $HOME/.bashrc
+export PATH="$HOME/.local/bin:$PATH"
+alias xclip='xclip -selection clipboard'
+alias rdesktop='rdesktop -g 1280x720 -r clipboard:CLIPBOARD -r disk:share=/home/drew'
+alias get_ip='_get_ip() { VBoxManage guestproperty get "$1" "/VirtualBox/GuestInfo/Net/1/V4/IP";}; _get_ip'
+EOF
 ```
 
 -   Chrome, verify Google Hangouts
@@ -53,7 +79,6 @@ sudo update-alternatives --set editor /usr/bin/vim.basic
 Next
 ====
 
--   youtube-dl (via pip)
 -   VirtualBox [2](https://www.virtualbox.org/)
 -   Vagrant [3](https://www.vagrantup.com/)
     -   vagrant plugin install vagrant-berkshelf
@@ -70,7 +95,6 @@ Next
 -   gvm for goland
 -   rvm [Ubuntu RVM Instructions](https://github.com/rvm/ubuntu_rvm)
 -   Studio 3T (mongodb browswer) (https://studio3t.com/download/)
--   Oracle Java 8 (if needed)
 -   IntelliJ [9](https://www.jetbrains.com/idea/download/)
 -   Android Studio [10](https://developer.android.com/studio/index.html)
 -   Eclipse [11](https://www.eclipse.org/)
