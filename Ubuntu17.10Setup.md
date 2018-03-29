@@ -86,6 +86,9 @@ sudo update-alternatives --set editor /usr/bin/vim.basic
 # install youtube-dl
 pip install youtube-dl
 
+# install awscli
+pip install awscli
+
 # set env and aliases
 cat <<EOF >> $HOME/.bashrc
 export PATH="$HOME/.local/bin:$PATH"
@@ -100,7 +103,7 @@ sudo usermod -a -G docker drew
 # configure lm_sensors
 sudo sensors-detect --auto
 
-# install rvm
+# rvm install
 gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
 \curl -sSL https://get.rvm.io | bash -s stable --ruby
 
@@ -109,77 +112,60 @@ echo y | sudo VBoxManage extpack install /mnt/hdd/iso_installers/ubuntu-installe
 
 # atom plugins
 apm install atom-beautify linter-flake8 linter-pep8 autocomplete-python django-templates script-runner teletype
+
+# vagrant plugins
+vagrant plugin install vagrant-berkshelf
+vagrant plugin install berkshelf
+
+# nvm install
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
 ```
 
 Local Installers and config needed
 ==================================
 
--   Chrome [1](https://www.google.com/chrome/)
-
-<!-- -->
-
--   Atom [2](https://atom.io/)
-
-<!-- -->
-
--   VirtualBox [3](https://www.virtualbox.org/)
-
-<!-- -->
-
--   Vagrant [4](https://www.vagrantup.com/)
-
-``` bash
-vagrant plugin install vagrant-berkshelf; vagrant plugin install berkshelf
-```
-
--   KeyBase [5](https://keybase.io)
+-   KeyBase [1](https://keybase.io)
 
 ``` bash
 run_keybase
 ```
 
--   Insynq [6](https://www.insynchq.com/downloads)
+-   Insynq [2](https://www.insynchq.com/downloads)
 
 ``` bash
 insync start ### do some magic here so we don't have to resync 200GB of google drive
 ```
 
+-   Chrome [3](https://www.google.com/chrome/)
+-   Atom [4](https://atom.io/)
+-   VirtualBox [5](https://www.virtualbox.org/)
+-   Vagrant [6](https://www.vagrantup.com/)
 -   Slack [7](https://slack.com/downloads/linux)
-
-<!-- -->
-
 -   Skype [8](https://www.skype.com/en/get-skype/skype-for-linux/)
-
-<!-- -->
-
 -   Docker (in script)
     [9](https://docs.docker.com/install/linux/docker-ce/ubuntu/#upgrade-docker-ce)
-
-<!-- -->
-
 -   Orackle 8 (in script)
-
-<!-- -->
-
--   rvm (in script) [Ubuntu RVM
-    Instructions](https://github.com/rvm/ubuntu_rvm)
+-   rvm (in script) *requires **/bin/bash --login** or fixed shell*
+    [Ubuntu RVM Instructions](https://github.com/rvm/ubuntu_rvm)
+-   awscli (in script) [10](https://aws.amazon.com/cli/)
+-   nvm (in script) *requires **/bin/bash --login** or fixed shell* (in
+    script) [11](https://github.com/creationix/nvm)
 
 When needed
 ===========
 
--   Terraform [10](https://www.terraform.io/)
+-   Terraform [12](https://www.terraform.io/)
 -   Gitter
 -   Ramlog or equivalent for SSD
--   nvm
 -   gvm for golang
 -   Studio 3T (mongodb browswer) (https://studio3t.com/download/)
--   IntelliJ [11](https://www.jetbrains.com/idea/download/)
--   Android Studio [12](https://developer.android.com/studio/index.html)
--   Eclipse [13](https://www.eclipse.org/)
--   NetBeans [14](https://netbeans.org/downloads/)
+-   IntelliJ [13](https://www.jetbrains.com/idea/download/)
+-   Android Studio [14](https://developer.android.com/studio/index.html)
+-   Eclipse [15](https://www.eclipse.org/)
+-   NetBeans [16](https://netbeans.org/downloads/)
 -   DropBox (only if needed for work)
 -   PyCharm
-    [15](https://www.jetbrains.com/pycharm/download/#section=linux)
+    [17](https://www.jetbrains.com/pycharm/download/#section=linux)
 
 ``` bash
 drew@drew-8570w:~$ snap list
