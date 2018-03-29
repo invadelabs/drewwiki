@@ -24,8 +24,16 @@ Disable Popcorn
 dpkg-reconfigure popularity-contest
 ```
 
-Set vim Editor
---------------
+Set full vim editor and set as default
+--------------------------------------
+
+Install full vim
+
+``` bash
+sudo apt install -y vim-scripts vim-runtime vim-doc vim
+```
+
+Set Default Editor
 
 ``` bash
 sudo update-alternatives --set editor /usr/bin/vim.basic
