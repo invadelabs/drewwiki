@@ -57,20 +57,13 @@ Set gnome-screenshot default save directory
 
 ?
 
-Gnome3 Fix alt+tab to move across widnows and not just grouped apps
+Gnome3 Fix alt+tab to move across windows and not just grouped apps
 -------------------------------------------------------------------
 
-``` bash
-Open dconf-editor
-Go to org/gnome/desktop/wm/keybindings
-Move the value '<Alt>Tab' from switch-applications to switch-windows
-Optionally move '<Shift><Alt>Tab' from switch-applications-backward to switch-windows-backward
-If you want switch-windows to work across desktops, not just in the current desktop, you can also uncheck org/gnome/shell/window-switcher/current-workspace-only (Courtesy of @CharlBotha)
-Close dconf-editor
-Press <Alt>F2, then type r to restart Gnome.
-```
+Application Launcher &gt; Settings &gt; Keyboard
 
-[1](https://superuser.com/questions/394376/how-to-prevent-gnome-shells-alttab-from-grouping-windows-from-similar-apps)
+-   Under Navgiation, Set Switch Windows to alt+tab and replace. Yes to
+    confirm override of “Switch Applications”
 
 Gnome Tweak Tool
 ----------------
@@ -108,7 +101,7 @@ gnome-tweaks
 # openconnect network-manager-openconnect network-manager-openconnect-gnome # cisco vpn
 ```
 
--   Atom [2](https://atom.io/)
+-   Atom [1](https://atom.io/)
     -   atom-beautify
     -   linter-flake8
     -   linter-pep8
@@ -118,28 +111,28 @@ gnome-tweaks
     -   teletype
 -   sqlitebrowser
 -   youtube-dl (via pip)
--   VirtualBox [3](https://www.virtualbox.org/)
--   Vagrant [4](https://www.vagrantup.com/)
+-   VirtualBox [2](https://www.virtualbox.org/)
+-   Vagrant [3](https://www.vagrantup.com/)
     -   vagrant plugin install vagrant-berkshelf
     -   vagrant plugin install berkshelf
--   Terraform [5](https://www.terraform.io/)
--   KeyBase [6](https://keybase.io)
--   DropBox [7](https://dropbox.com)
--   Docker [8](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+-   Terraform [4](https://www.terraform.io/)
+-   KeyBase [5](https://keybase.io)
+-   DropBox [6](https://dropbox.com)
+-   Docker [7](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
 -   Chrome, verify Google Hangouts
--   Insynq [9](https://www.insynchq.com/downloads)
+-   Insynq [8](https://www.insynchq.com/downloads)
 -   Synergy
 -   Ramlog or equivalent for SSD
 -   nvm
 -   gvm for goland
 -   rvm [Ubuntu RVM Instructions](https://github.com/rvm/ubuntu_rvm)
 -   Studio 3T (mongodb browswer) (https://studio3t.com/download/)
--   IntelliJ [10](https://www.jetbrains.com/idea/download/)
--   Android Studio [11](https://developer.android.com/studio/index.html)
--   Eclipse [12](https://www.eclipse.org/)
--   NetBeans [13](https://netbeans.org/downloads/)
+-   IntelliJ [9](https://www.jetbrains.com/idea/download/)
+-   Android Studio [10](https://developer.android.com/studio/index.html)
+-   Eclipse [11](https://www.eclipse.org/)
+-   NetBeans [12](https://netbeans.org/downloads/)
 -   PyCharm
-    [14](https://www.jetbrains.com/pycharm/download/#section=linux)
+    [13](https://www.jetbrains.com/pycharm/download/#section=linux)
 
 ``` bash
 drew@drew-8570w:~$ snap list
