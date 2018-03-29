@@ -8,21 +8,26 @@ Install Main Apps
 
 ``` bash
 #!/bin/bash
+
+# passwordless sudo for my local box
+sudo sh -c 'echo "drew ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers'
+
 # set github
 git config --global user.name "Drew Holt"
 git config --global user.email "drewderivative@gmail.com"
 
-# add me to sudoers
-sudo sh -c 'echo "drew ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers'
+# set natural scrolling, GUI under 'Settings > Mouse'
+gsettings set org.gnome.desktop.peripherals.mouse natural-scroll true
+gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll false
+
+# switch windows, not applications. GUI under 'Settings > Keyboard'
+gsettings set org.gnome.desktop.wm.keybindings switch-applications "[]"
+gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "[]"
+gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"
+gsettings set org.gnome.desktop.wm.keybindings switch-windows-backward  "['<Alt><Shift>Tab']"
 
 # remove clutter
 cd $HOME; rmdir Documents/ Music/ Public/ Templates/ Videos/; rm examples.desktop
-
-# local installers already gathered
-sudo mkdir /mnt/hdd
-sudo mount /dev/vg_hdd/lv_hdd /mnt/hdd
-cd /mnt/hdd/iso_installers/ubuntu-installers
-sudo apt-get install -y ./atom-amd64.deb ./google-chrome-stable_current_amd64.deb ./insync_1.4.4.37065-artful_amd64.deb ./slack-desktop-3.1.0-amd64.deb ./vagrant_2.0.3_x86_64.deb ./virtualbox-5.2_5.2.8-121009_Ubuntu_zesty_amd64.deb ./skypeforlinux-64.deb ./keybase_amd64.deb
 
 ## disable popularity-contest
 #sudo dpkg-reconfigure popularity-contest # disable
@@ -33,8 +38,11 @@ sudo add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
    $(lsb_release -cs) \
    stable"
+
 # oracle 8 add java repo
 sudo add-apt-repository -y ppa:webupd8team/java
+echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
+echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections
 
 # update all repos, upgrade
 sudo apt-get update
@@ -44,9 +52,11 @@ sudo apt-get -y dist-upgrade
 sudo apt-get install -y etckeeper
 sudo etckeeper init
 
-# Oracle Java 8 License
-echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
-echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections
+# install local installers already gathered
+sudo mkdir /mnt/hdd
+sudo mount /dev/vg_hdd/lv_hdd /mnt/hdd
+cd /mnt/hdd/iso_installers/ubuntu-installers
+sudo apt-get install -y ./atom-amd64.deb ./google-chrome-stable_current_amd64.deb ./insync_1.4.4.37065-artful_amd64.deb ./slack-desktop-3.1.0-amd64.deb ./vagrant_2.0.3_x86_64.deb ./virtualbox-5.2_5.2.8-121009_Ubuntu_zesty_amd64.deb ./skypeforlinux-64.deb ./keybase_amd64.deb ./chefdk_2.4.17-1_amd64.deb
 
 # install all the software
 DEBIAN_FRONTEND=noninteractive `#no prompting` \
@@ -84,7 +94,13 @@ EOF
 
 # docker
 sudo usermod -a -G docker drew
+
+# configure lm_sensors
+sudo sensors-detect --auto
 ```
+
+Local Installers and config needed
+==================================
 
 -   Chrome [1](https://www.google.com/chrome/)
 
@@ -126,8 +142,8 @@ insync start ### do some magic here so we don't have to resync 200GB of google d
 
 -   Skype [8](https://www.skype.com/en/get-skype/skype-for-linux/)
 
-Next
-====
+When needed
+===========
 
 -   Terraform [9](https://www.terraform.io/)
 -   Gitter
@@ -168,14 +184,6 @@ Set gnome-screenshot default save directory
 -------------------------------------------
 
 ?
-
-Gnome3 Fix alt+tab to move across windows and not just grouped apps
--------------------------------------------------------------------
-
-Application Launcher &gt; Settings &gt; Keyboard
-
--   Under Navgiation, Set Switch Windows to alt+tab and replace. Yes to
-    confirm override of “Switch Applications”
 
 Gnome Tweak Tool
 ----------------
