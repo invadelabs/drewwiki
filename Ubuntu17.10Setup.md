@@ -42,7 +42,7 @@ if [[ ! $(gsettings get org.gnome.desktop.interface clock-format) == "'12h'" ]];
   profile=$(gsettings get org.gnome.Terminal.ProfilesList default)
   profile=${profile:1:-1} # remove leading and trailing single quotes
   for i in "${settings[@]}"; do
-    gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" "$i"
+    gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" $i
   done
 
   # remove clutter
@@ -71,9 +71,9 @@ done
 }
 
 # update all repos, upgrade, unless it's been 60 mins
-if ! find -H /var/lib/apt/lists -maxdepth 0 -mmin -60; then
+#if ! find -H /var/lib/apt/lists -maxdepth 0 -mmin -60; then
   wait_apt; sudo apt-get -qy update && sudo apt-get -qy dist-upgrade
-fi
+#fi
 
 # install etckeeper and initialize it
 if [ ! -d /etc/.git ]; then
