@@ -164,9 +164,13 @@ if ! echo $(vboxmanage list extpacks) | grep 1; then
 fi
 
 # atom plugins
-if ! apm list | grep teletype; then
-  apm install atom-beautify linter-flake8 linter-pep8 autocomplete-python django-templates script-runner teletype
-fi
+apm_pkgs=(atom-beautify linter linter-ui-default intentions busy-signal linter-flake8 linter-pycodestyle autocomplete-python django-templates script-runner teletype)
+
+for i in "${apm_pkgs[@]}"; do
+  if [ ! -d $HOME/.atom/packages/$i ]; then
+    apm install $i
+  fi
+done
 
 # vagrant plugins
 if ! vagrant plugin list | grep berkshelf; then
