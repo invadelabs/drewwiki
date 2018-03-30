@@ -11,8 +11,6 @@ Install Main Apps
 set -x
 set -e
 
-START=$(date +%s)
-
 date
 
 # passwordless sudo for my local box
@@ -44,7 +42,7 @@ if [[ ! $(gsettings get org.gnome.desktop.interface clock-format) == "'12h'" ]];
   profile=$(gsettings get org.gnome.Terminal.ProfilesList default)
   profile=${profile:1:-1} # remove leading and trailing single quotes
   for i in "${settings[@]}"; do
-    gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" $i
+    gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" "$i"
   done
 
   # remove clutter
@@ -64,15 +62,22 @@ if [ ! -f /etc/apt/sources.list.d/webupd8team-ubuntu-java-artful.list ]; then
   echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections
 fi
 
-# update all repos, upgrade, 3600 set to 0 when debugging
-#if ! find -H /var/lib/apt/lists -maxdepth 0 -mmin -10; then
-  sudo apt-get update
-  sudo apt-get -y dist-upgrade
-#fi
+wait_apt() {
+while true;
+  sudo fuser /var/{lib/{dpkg,apt/lists},cache/apt/archives}/lock >/dev/null 2>&1; do
+  echo "waiting for apt lock"
+  sleep 1
+done
+}
+
+# update all repos, upgrade, unless it's been 60 mins
+if ! find -H /var/lib/apt/lists -maxdepth 0 -mmin -60; then
+  wait_apt; sudo apt-get -qy update && sudo apt-get -qy dist-upgrade
+fi
 
 # install etckeeper and initialize it
 if [ ! -d /etc/.git ]; then
-  sudo apt-get install -y etckeeper
+  wait_apt; sudo apt-get install -qy etckeeper
 
   # set github here
   git config --global user.name "Drew Holt"
@@ -86,14 +91,21 @@ if [ ! -d /mnt/hdd ]; then
   sudo mkdir /mnt/hdd
   sudo mount /dev/vg_hdd/lv_hdd /mnt/hdd
   cd /mnt/hdd/iso_installers/ubuntu-installers
-  sudo apt-get install -y ./atom-amd64.deb ./google-chrome-stable_current_amd64.deb \
+  wait_apt; sudo apt-get install -qy ./atom-amd64.deb ./google-chrome-stable_current_amd64.deb \
     ./insync_1.4.4.37065-artful_amd64.deb ./slack-desktop-3.1.0-amd64.deb \
     ./vagrant_2.0.3_x86_64.deb ./virtualbox-5.2_5.2.8-121009_Ubuntu_zesty_amd64.deb \
     ./skypeforlinux-64.deb ./keybase_amd64.deb ./chefdk_2.4.17-1_amd64.deb
 fi
 
+# for wireshark mscorefonts postfix prompts
+echo wireshark-common wireshark-common/install-setuid boolean true | sudo debconf-set-selections
+echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
+echo postfix postfix/mailname string drew-8570w.local | sudo debconf-set-selections
+echo postfix postfix/main_mailer_type string 'Local only' | sudo debconf-set-selections
+
 # install all the software
-DEBIAN_FRONTEND=noninteractive `#no prompting` sudo apt-get install -y \
+wait_apt;
+DEBIAN_FRONTEND=noninteractive `#no prompting` sudo apt-get install -qy \
 keepass2 synergy gnome-tweak-tool chrome-gnome-shell `#tools` \
 vim vim-scripts vim-runtime vim-doc curl xd `#systools` \
 lm-sensors p7zip-full exfat-utils exfat-fuse libimage-exiftool-perl `#systools` \
@@ -115,7 +127,7 @@ ansible `#automation`
 sudo update-alternatives --set editor /usr/bin/vim.basic
 
 # set env and aliases
-if ! grep rdesktop $HOME/.bashrc; then
+if ! grep rdesktop "$HOME"/.bashrc; then
   cat <<EOF >> $HOME/.bashrc
   export PATH="$HOME/.local/bin:$PATH"
   alias xclip='xclip -selection clipboard'
@@ -125,12 +137,12 @@ EOF
 fi
 
 # install youtube-dl
-if [ ! -f $HOME/.local/bin/youtube-dl ]; then
+if [ ! -f "$HOME"/.local/bin/youtube-dl ]; then
   pip install youtube-dl
 fi
 
 # install awscli
-if [ ! -f $HOME/.local/bin/aws ]; then
+if [ ! -f "$HOME"/.local/bin/aws ]; then
   pip install awscli
 fi
 
@@ -140,15 +152,15 @@ if ! lsmod | grep coretemp; then
 fi
 
 # rvm install
-if [ ! -d $HOME/.rvm ]; then
+if [ ! -d "$HOME"/.rvm ]; then
   gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
   \curl -sSL https://get.rvm.io | bash -s stable --ruby
 fi
 
 # virtualbox extras pack
 if ! echo $(vboxmanage list extpacks) | grep 1; then
-  $location="/mnt/hdd/iso_installers/ubuntu-installers/"
-  echo y | sudo VBoxManage extpack install $location/Oracle_VM_VirtualBox_Extension_Pack-5.2.8.vbox-extpack
+  location="/mnt/hdd/iso_installers/ubuntu-installers/"
+  echo y | sudo VBoxManage extpack install "$location"/Oracle_VM_VirtualBox_Extension_Pack-5.2.8.vbox-extpack
 fi
 
 # atom plugins
@@ -163,14 +175,11 @@ if ! vagrant plugin list | grep berkshelf; then
 fi
 
 # nvm install
-if [ ! -d $HOME/.nvm ]; then
+if [ ! -d "$HOME"/.nvm ]; then
   curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
 fi
 
 date
-
-END=$(date +%s)
-DIFF=$(echo "$END - $START" | bc)
 ```
 
 Local Installers and config needed
