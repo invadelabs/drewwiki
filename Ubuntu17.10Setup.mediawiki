@@ -21,6 +21,15 @@ gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "[]"
 gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"
 gsettings set org.gnome.desktop.wm.keybindings switch-windows-backward  "['<Alt><Shift>Tab']"
 
+# set gnome-terminal colors
+# gsettings list-recursively  "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/"
+# gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" login-shell true
+settings=("use-theme-colors false" "login-shell true" "foreground-color 'rgb(255,255,255)'" "background-transparency-percent 6" "background-color 'rgb(0,0,0)'" "use-theme-transparency false" "scrollback-unlimited true" "use-transparent-background true")
+profile=$(gsettings get org.gnome.Terminal.ProfilesList default); profile=${profile:1:-1} # remove leading and trailing single quotes
+for i in "${settings[@]}"; do
+  gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" $i
+done
+
 # remove clutter
 cd $HOME; rmdir Documents/ Music/ Public/ Templates/ Videos/; rm examples.desktop
 
