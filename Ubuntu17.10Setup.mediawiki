@@ -191,13 +191,13 @@ insync start ### do some magic here so we don't have to resync 200GB of google d
 </syntaxhighlight>
 
 * Chrome [https://www.google.com/chrome/]
-* Atom [https://atom.io/]
-* VirtualBox [https://www.virtualbox.org/]
-* Vagrant [https://www.vagrantup.com/]
+* Atom (apm in script) [https://atom.io/]
+* VirtualBox (in script) [https://www.virtualbox.org/]
+* Vagrant (plugins in script) [https://www.vagrantup.com/]
 * Slack [https://slack.com/downloads/linux]
 * Skype [https://www.skype.com/en/get-skype/skype-for-linux/]
-* Docker (in script) [https://docs.docker.com/install/linux/docker-ce/ubuntu/#upgrade-docker-ce]
-* Orackle 8 (in script)
+* Docker (re-add to script) [https://docs.docker.com/install/linux/docker-ce/ubuntu/#upgrade-docker-ce]
+* Orackle 8 (in script) [https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04]
 * rvm (in script) ''requires '''/bin/bash --login''' or fixed shell'' [https://github.com/rvm/ubuntu_rvm Ubuntu RVM Instructions]
 * awscli (in script) [https://aws.amazon.com/cli/]
 * nvm (in script) ''requires '''/bin/bash --login''' or fixed shell'' (in script) [https://github.com/creationix/nvm]
