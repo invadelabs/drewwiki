@@ -157,7 +157,7 @@ if ! echo $(vboxmanage list extpacks) | grep 1; then
 fi
 
 # atom plugins
-apm_pkgs=(atom-beautify linter linter-ui-default intentions busy-signal linter-flake8 linter-pycodestyle autocomplete-python django-templates script-runner teletype)
+apm_pkgs=(atom-beautify autocomplete-python busy-signal django-templates intentions linter linter-ui-default script script-runner teletype)
 
 for i in "${apm_pkgs[@]}"; do
   if [ ! -d $HOME/.atom/packages/$i ]; then
