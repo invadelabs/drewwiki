@@ -262,6 +262,8 @@ git config --global user.signingkey 7A27C99359698874
 
 vi ~/.gnupg/gpg.conf:
 default-key 2018-03-01
+
+gpg -d somefile.tar.xz.pgp | tar -tJ
 ```
 
 Set gnome-screenshot default save directory
