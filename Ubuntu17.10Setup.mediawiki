@@ -201,7 +201,7 @@ insync start ### do some magic here so we don't have to resync 200GB of google d
 * rvm (in script) ''requires '''/bin/bash --login''' or fixed shell'' [https://github.com/rvm/ubuntu_rvm Ubuntu RVM Instructions]
 * awscli (in script) [https://aws.amazon.com/cli/]
 * nvm (in script) ''requires '''/bin/bash --login''' or fixed shell'' (in script) [https://github.com/creationix/nvm]
-# ChefDK (in script) [https://downloads.chef.io/chefdk]
+* ChefDK (in script) [https://downloads.chef.io/chefdk]
 
 = When needed =
 * Terraform [https://www.terraform.io/] 

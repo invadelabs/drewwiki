@@ -216,8 +216,7 @@ insync start ### do some magic here so we don't have to resync 200GB of google d
 -   awscli (in script) [11](https://aws.amazon.com/cli/)
 -   nvm (in script) *requires **/bin/bash --login** or fixed shell* (in
     script) [12](https://github.com/creationix/nvm)
-
-1.  ChefDK (in script) [13](https://downloads.chef.io/chefdk)
+-   ChefDK (in script) [13](https://downloads.chef.io/chefdk)
 
 When needed
 ===========
