@@ -258,6 +258,8 @@ Pull from vault, set git config
 
 ``` bash
 gpg --import drewholt-private-2018.03.01.key
+gpg --edit-key {KEY} trust quit
+
 git config --global user.signingkey 7A27C99359698874
 
 vi ~/.gnupg/gpg.conf:
