@@ -254,7 +254,12 @@ Create new ones or replenish from vault.
 Configure GPG keys
 ------------------
 
-Replenish from vault.
+Pull from vault, set git config
+
+``` bash
+gpg --import drewholt-private-2018.03.01.key
+git config --global user.signingkey 7A27C99359698874
+```
 
 Set gnome-screenshot default save directory
 -------------------------------------------
