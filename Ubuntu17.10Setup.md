@@ -15,7 +15,7 @@ chmod 755 drew-8570w_setup.sh
 ./drew-8570w_setup.sh | tee -a setup-$(date '+%Y-%m-%d-%H.%M.%S%z').log
 ```
 
-Local Installers and config needed
+Extra Installers and config needed
 ==================================
 
 -   KeyBase [1](https://keybase.io)
@@ -31,21 +31,21 @@ insync start ### do some magic here so we don't have to resync 200GB of google d
 ```
 
 -   Chrome [3](https://www.google.com/chrome/)
--   Atom (apm in script) [4](https://atom.io/)
--   VirtualBox (in script) [5](https://www.virtualbox.org/)
--   Vagrant (plugins in script) [6](https://www.vagrantup.com/)
+-   Atom [4](https://atom.io/)
+-   VirtualBox (script this?) [5](https://www.virtualbox.org/)
+-   Vagrant (script this?) [6](https://www.vagrantup.com/)
 -   Slack [7](https://slack.com/downloads/linux)
 -   Skype [8](https://www.skype.com/en/get-skype/skype-for-linux/)
--   Docker (re-add to script)
+-   Docker (script this?)
     [9](https://docs.docker.com/install/linux/docker-ce/ubuntu/#upgrade-docker-ce)
--   Orackle 8 (in script)
+-   Oracle JDK 8
     [10](https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04)
--   rvm (in script) *requires **/bin/bash --login** or fixed shell*
-    [Ubuntu RVM Instructions](https://github.com/rvm/ubuntu_rvm)
--   awscli (in script) [11](https://aws.amazon.com/cli/)
--   nvm (in script) *requires **/bin/bash --login** or fixed shell* (in
-    script) [12](https://github.com/creationix/nvm)
--   ChefDK (in script) [13](https://downloads.chef.io/chefdk)
+-   rvm *requires **/bin/bash --login** or fixed shell* [Ubuntu RVM
+    Instructions](https://github.com/rvm/ubuntu_rvm)
+-   awscli [11](https://aws.amazon.com/cli/)
+-   nvm *requires **/bin/bash --login** or fixed shell* (in script)
+    [12](https://github.com/creationix/nvm)
+-   ChefDK (script this) [13](https://downloads.chef.io/chefdk)
 
 When needed
 ===========
