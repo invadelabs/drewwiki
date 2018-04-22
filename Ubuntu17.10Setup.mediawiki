@@ -6,28 +6,31 @@ chmod 755 drew-8570w_setup.sh
 ./drew-8570w_setup.sh | tee -a setup-$(date '+%Y-%m-%d-%H.%M.%S%z').log
 </syntaxhighlight>
 
-= Extra Installers and config needed =
+= Installers needing extra config =
 * KeyBase [https://keybase.io]
 <syntaxhighlight lang=bash>
 run_keybase
 </syntaxhighlight>
 
-* Insynq [https://www.insynchq.com/downloads]
+* Insync [https://www.insynchq.com/downloads]
 <syntaxhighlight lang=bash>
 insync start ### do some magic here so we don't have to resync 200GB of google drive
 </syntaxhighlight>
 
 * Chrome [https://www.google.com/chrome/]
 * Atom [https://atom.io/]
-* VirtualBox (script this?) [https://www.virtualbox.org/]
-* Vagrant (script this?) [https://www.vagrantup.com/]
 * Slack [https://slack.com/downloads/linux]
 * Skype [https://www.skype.com/en/get-skype/skype-for-linux/]
-* Docker (script this?) [https://docs.docker.com/install/linux/docker-ce/ubuntu/#upgrade-docker-ce]
 * Oracle JDK 8 [https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04]
+* awscli (pip) [https://aws.amazon.com/cli/]
+* youtube-dl (pip) [https://rg3.github.io/youtube-dl/]
 * rvm ''requires '''/bin/bash --login''' or fixed shell'' [https://github.com/rvm/ubuntu_rvm Ubuntu RVM Instructions]
-* awscli [https://aws.amazon.com/cli/]
-* nvm ''requires '''/bin/bash --login''' or fixed shell'' (in script) [https://github.com/creationix/nvm]
+* nvm ''requires '''/bin/bash --login''' or fixed shell'' [https://github.com/creationix/nvm]
+
+Without repos:
+* VirtualBox (script this?) [https://www.virtualbox.org/]
+* Vagrant (script this?) [https://www.vagrantup.com/]
+* Docker (script this?) [https://docs.docker.com/install/linux/docker-ce/ubuntu/#upgrade-docker-ce]
 * ChefDK (script this) [https://downloads.chef.io/chefdk]
 
 = When needed =
