@@ -7,65 +7,74 @@ Install Main Apps
 =================
 
 Run install script from
-[drew-holt/u1710-setup-bash](https://github.com/drew-holt/u1710-setup-bash/blob/master/drew-8570w_setup.sh)
+[1](https://github.com/drew-holt/u1710-setup-bash/blob/master/drew-8570w_u1710setup.sh)
 
 ``` bash
-wget https://raw.githubusercontent.com/drew-holt/u1710-setup-bash/master/drew-8570w_setup.sh
-chmod 755 drew-8570w_setup.sh
-./drew-8570w_setup.sh | tee -a setup-$(date '+%Y-%m-%d-%H.%M.%S%z').log
+wget https://raw.githubusercontent.com/drew-holt/u1710-setup-bash/master/drew-8570w_u1710setup.sh
+chmod 755 drew-8570w_u1710setup.sh
+./drew-8570w_u1710setup.sh | tee -a setup-$(date '+%Y-%m-%d-%H.%M.%S%z').log
+```
+
+Additional install script for extra
+[2](https://github.com/drew-holt/u1710-setup-bash/blob/master/drew-8570w_u1710setup_extra.sh)
+
+``` bash
+wget https://raw.githubusercontent.com/drew-holt/u1710-setup-bash/master/drew-8570w_u1710setup_extra.sh
+chmod 755 drew-8570w_u1710setup_extra.sh
+./drew-8570w_u1710setup_extra.sh | tee -a setup-$(date '+%Y-%m-%d-%H.%M.%S%z').log
 ```
 
 Installers needing extra config
 ===============================
 
--   KeyBase [1](https://keybase.io)
+-   KeyBase [3](https://keybase.io)
 
 ``` bash
 run_keybase
 ```
 
--   Insync [2](https://www.insynchq.com/downloads)
+-   Insync [4](https://www.insynchq.com/downloads)
 
 ``` bash
 insync start ### do some magic here so we don't have to resync 200GB of google drive
 ```
 
--   Chrome [3](https://www.google.com/chrome/)
--   Atom [4](https://atom.io/)
--   Slack [5](https://slack.com/downloads/linux)
--   Skype [6](https://www.skype.com/en/get-skype/skype-for-linux/)
+-   Chrome [5](https://www.google.com/chrome/)
+-   Atom [6](https://atom.io/)
+-   Slack [7](https://slack.com/downloads/linux)
+-   Skype [8](https://www.skype.com/en/get-skype/skype-for-linux/)
 -   Oracle JDK 8
-    [7](https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04)
--   awscli (pip) [8](https://aws.amazon.com/cli/)
--   youtube-dl (pip) [9](https://rg3.github.io/youtube-dl/)
+    [9](https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04)
+-   awscli (pip) [10](https://aws.amazon.com/cli/)
+-   youtube-dl (pip) [11](https://rg3.github.io/youtube-dl/)
 -   rvm *requires **/bin/bash --login** or fixed shell* [Ubuntu RVM
     Instructions](https://github.com/rvm/ubuntu_rvm)
 -   nvm *requires **/bin/bash --login** or fixed shell*
-    [10](https://github.com/creationix/nvm)
+    [12](https://github.com/creationix/nvm)
 
 Without repos:
 
--   VirtualBox (script this?) [11](https://www.virtualbox.org/)
--   Vagrant (script this?) [12](https://www.vagrantup.com/)
+-   VirtualBox (script this?) [13](https://www.virtualbox.org/)
+-   Vagrant (script this?) [14](https://www.vagrantup.com/)
 -   Docker (script this?)
-    [13](https://docs.docker.com/install/linux/docker-ce/ubuntu/#upgrade-docker-ce)
--   ChefDK (script this) [14](https://downloads.chef.io/chefdk)
+    [15](https://docs.docker.com/install/linux/docker-ce/ubuntu/#upgrade-docker-ce)
+-   ChefDK (script this) [16](https://downloads.chef.io/chefdk)
 
 When needed
 ===========
 
--   Terraform [15](https://www.terraform.io/)
+-   Terraform [17](https://www.terraform.io/)
 -   Gitter
 -   Ramlog or equivalent for SSD
 -   gvm for golang
 -   Studio 3T (mongodb browswer) (https://studio3t.com/download/)
--   Android Studio [16](https://developer.android.com/studio/index.html)
--   Eclipse [17](https://www.eclipse.org/)
--   NetBeans [18](https://netbeans.org/downloads/)
+-   Android Studio [18](https://developer.android.com/studio/index.html)
+-   Eclipse [19](https://www.eclipse.org/)
+-   NetBeans [20](https://netbeans.org/downloads/)
 -   DropBox (only if needed for work)
 -   PyCharm
-    [19](https://www.jetbrains.com/pycharm/download/#section=linux)
--   IntelliJ [20](https://www.jetbrains.com/idea/download/)
+    [21](https://www.jetbrains.com/pycharm/download/#section=linux)
+-   IntelliJ [22](https://www.jetbrains.com/idea/download/)
 
 ``` bash
 drew@drew-8570w:~$ snap list
@@ -119,14 +128,14 @@ Install extension then use Tweak tool to configure.
 ### Dash to Dock
 
 -   Dash to Dock
-    [21](https://extensions.gnome.org/extension/307/dash-to-dock/)
+    [23](https://extensions.gnome.org/extension/307/dash-to-dock/)
 -   TopIcons-plus
-    [22](https://extensions.gnome.org/extension/1031/topicons/) - for
+    [24](https://extensions.gnome.org/extension/1031/topicons/) - for
     Insync, Slack, Skype icons
 -   OpenWeather
-    [23](https://extensions.gnome.org/extension/750/openweather/)
+    [25](https://extensions.gnome.org/extension/750/openweather/)
 -   Grown-up notifications
-    [24](https://extensions.gnome.org/extension/1335/grown-up-notifications/)
+    [26](https://extensions.gnome.org/extension/1335/grown-up-notifications/)
 
 Extensions installed into:
 
