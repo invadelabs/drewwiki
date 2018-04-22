@@ -10,7 +10,7 @@ Run install script from
 [drew-holt/u1710-setup-bash](https://github.com/drew-holt/u1710-setup-bash/blob/master/drew-8570w_setup.sh)
 
 ``` bash
-curl -O  https://raw.githubusercontent.com/drew-holt/u1710-setup-bash/master/drew-8570w_setup.sh
+wget https://raw.githubusercontent.com/drew-holt/u1710-setup-bash/master/drew-8570w_setup.sh
 chmod 755 drew-8570w_setup.sh
 ./drew-8570w_setup.sh | tee -a setup-$(date '+%Y-%m-%d-%H.%M.%S%z').log
 ```
