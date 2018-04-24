@@ -144,6 +144,11 @@ $ ~/.local/share/gnome-shell/extensions
 * restart GNOME Shell (Alt+F2, r, Enter) and enable the extension through gnome-tweak-tool.
 ```
 
+Gmail to handle mailto: links
+-----------------------------
+
+<https://developers.google.com/web/updates/2012/02/Getting-Gmail-to-handle-all-mailto-links-with-registerProtocolHandler>
+
 Maybe Snaps
 -----------
 
