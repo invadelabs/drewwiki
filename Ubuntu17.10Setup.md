@@ -45,19 +45,19 @@ insync start ### do some magic here so we don't have to resync 200GB of google d
 -   Skype [8](https://www.skype.com/en/get-skype/skype-for-linux/)
 -   Oracle JDK 8
     [9](https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04)
--   awscli (pip) [10](https://aws.amazon.com/cli/)
--   youtube-dl (pip) [11](https://rg3.github.io/youtube-dl/)
+-   Docker
+    [10](https://docs.docker.com/install/linux/docker-ce/ubuntu/#upgrade-docker-ce)
+-   awscli (pip) [11](https://aws.amazon.com/cli/)
+-   youtube-dl (pip) [12](https://rg3.github.io/youtube-dl/)
 -   rvm *requires **/bin/bash --login** or fixed shell* [Ubuntu RVM
     Instructions](https://github.com/rvm/ubuntu_rvm)
 -   nvm *requires **/bin/bash --login** or fixed shell*
-    [12](https://github.com/creationix/nvm)
+    [13](https://github.com/creationix/nvm)
 
 Without repos:
 
--   VirtualBox (script this?) [13](https://www.virtualbox.org/)
--   Vagrant (script this?) [14](https://www.vagrantup.com/)
--   Docker (script this?)
-    [15](https://docs.docker.com/install/linux/docker-ce/ubuntu/#upgrade-docker-ce)
+-   VirtualBox (script this?) [14](https://www.virtualbox.org/)
+-   Vagrant (script this?) [15](https://www.vagrantup.com/)
 -   ChefDK (script this) [16](https://downloads.chef.io/chefdk)
 
 When needed

@@ -29,6 +29,7 @@ insync start ### do some magic here so we don't have to resync 200GB of google d
 * Slack [https://slack.com/downloads/linux]
 * Skype [https://www.skype.com/en/get-skype/skype-for-linux/]
 * Oracle JDK 8 [https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04]
+* Docker [https://docs.docker.com/install/linux/docker-ce/ubuntu/#upgrade-docker-ce]
 * awscli (pip) [https://aws.amazon.com/cli/]
 * youtube-dl (pip) [https://rg3.github.io/youtube-dl/]
 * rvm ''requires '''/bin/bash --login''' or fixed shell'' [https://github.com/rvm/ubuntu_rvm Ubuntu RVM Instructions]
@@ -37,7 +38,6 @@ insync start ### do some magic here so we don't have to resync 200GB of google d
 Without repos:
 * VirtualBox (script this?) [https://www.virtualbox.org/]
 * Vagrant (script this?) [https://www.vagrantup.com/]
-* Docker (script this?) [https://docs.docker.com/install/linux/docker-ce/ubuntu/#upgrade-docker-ce]
 * ChefDK (script this) [https://downloads.chef.io/chefdk]
 
 = When needed =
