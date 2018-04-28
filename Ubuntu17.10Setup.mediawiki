@@ -1,16 +1,9 @@
 =Install Main Apps=
 Run install script from [https://github.com/drew-holt/u1710-setup-bash/blob/master/drew-8570w_u1710setup.sh]
 <syntaxhighlight lang=bash>
-wget https://raw.githubusercontent.com/drew-holt/u1710-setup-bash/master/drew-8570w_u1710setup.sh
+wget https://raw.githubusercontent.com/drew-holt/u1710-setup-bash/master/drew-8570w_setup.sh
 chmod 755 drew-8570w_u1710setup.sh
 ./drew-8570w_u1710setup.sh | tee -a setup-$(date '+%Y-%m-%d-%H.%M.%S%z').log
-</syntaxhighlight>
-
-Additional install script for extra [https://github.com/drew-holt/u1710-setup-bash/blob/master/drew-8570w_u1710setup_extra.sh]
-<syntaxhighlight lang=bash>
-wget https://raw.githubusercontent.com/drew-holt/u1710-setup-bash/master/drew-8570w_u1710setup_extra.sh
-chmod 755 drew-8570w_u1710setup_extra.sh
-./drew-8570w_u1710setup_extra.sh | tee -a setup-$(date '+%Y-%m-%d-%H.%M.%S%z').log
 </syntaxhighlight>
 
 = Installers needing extra config =
@@ -30,12 +23,12 @@ insync start ### do some magic here so we don't have to resync 200GB of google d
 * Skype [https://www.skype.com/en/get-skype/skype-for-linux/]
 * Oracle JDK 8 [https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04]
 * Docker [https://docs.docker.com/install/linux/docker-ce/ubuntu/#upgrade-docker-ce]
-* awscli (pip) [https://aws.amazon.com/cli/]
+* awscli [https://aws.amazon.com/cli/]
 * youtube-dl (pip) [https://rg3.github.io/youtube-dl/]
-* rvm ''requires '''/bin/bash --login''' or fixed shell'' [https://github.com/rvm/ubuntu_rvm Ubuntu RVM Instructions]
 * nvm ''requires '''/bin/bash --login''' or fixed shell'' [https://github.com/creationix/nvm]
+* rvm ''requires '''/bin/bash --login''' or fixed shell'' [https://github.com/rvm/ubuntu_rvm Ubuntu RVM Instructions]
 
-Without repos:
+== Install Manually ==
 * VirtualBox (script this?) [https://www.virtualbox.org/]
 * Vagrant (script this?) [https://www.vagrantup.com/]
 * ChefDK (script this) [https://downloads.chef.io/chefdk]
@@ -84,23 +77,16 @@ gpg -d somefile.tar.xz.pgp | tar -tJ
 ?
 
 ==Set default downloads directory to Desktop==
-command for firefoxx, chrome, qbit, skype, slack, hangouts, etc
+command for firefox, chrome, qbit, skype, slack, hangouts, etc
 
 == Gnome Tweak Tool ==
-Install extension then use Tweak tool to configure.
-=== Dash to Dock ===
+Install and configure extensions (done via script).
 * Dash to Dock [https://extensions.gnome.org/extension/307/dash-to-dock/]
 * TopIcons-plus [https://extensions.gnome.org/extension/1031/topicons/] - for Insync, Slack, Skype icons
-* OpenWeather [https://extensions.gnome.org/extension/750/openweather/]
-* Grown-up notifications [https://extensions.gnome.org/extension/1335/grown-up-notifications/]
-
-Extensions installed into:
-<syntaxhighlight lang=bash>
-$ ~/.local/share/gnome-shell/extensions
-* restart GNOME Shell (Alt+F2, r, Enter) and enable the extension through gnome-tweak-tool.
-</syntaxhighlight>
 
 ==Gmail to handle mailto: links==
+Partially scripted.
+
 https://developers.google.com/web/updates/2012/02/Getting-Gmail-to-handle-all-mailto-links-with-registerProtocolHandler
 
 ==Maybe Snaps==
