@@ -38,7 +38,7 @@ insync start ### do some magic here so we don't have to resync 200GB of google d
 * Gitter
 * Ramlog or equivalent for SSD
 * gvm for golang
-* Studio 3T MongoDB Browser (https://studio3t.com/download/)
+* Studio 3T MongoDB Browser [https://studio3t.com/download/]
 * Android Studio [https://developer.android.com/studio/index.html]
 * Eclipse [https://www.eclipse.org/]
 * NetBeans [https://netbeans.org/downloads/]

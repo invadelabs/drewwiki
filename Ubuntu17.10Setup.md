@@ -59,14 +59,14 @@ When needed
 -   Gitter
 -   Ramlog or equivalent for SSD
 -   gvm for golang
--   Studio 3T MongoDB Browser (https://studio3t.com/download/)
--   Android Studio [17](https://developer.android.com/studio/index.html)
--   Eclipse [18](https://www.eclipse.org/)
--   NetBeans [19](https://netbeans.org/downloads/)
+-   Studio 3T MongoDB Browser [17](https://studio3t.com/download/)
+-   Android Studio [18](https://developer.android.com/studio/index.html)
+-   Eclipse [19](https://www.eclipse.org/)
+-   NetBeans [20](https://netbeans.org/downloads/)
 -   DropBox (only if needed for work)
 -   PyCharm
-    [20](https://www.jetbrains.com/pycharm/download/#section=linux)
--   IntelliJ [21](https://www.jetbrains.com/idea/download/)
+    [21](https://www.jetbrains.com/pycharm/download/#section=linux)
+-   IntelliJ [22](https://www.jetbrains.com/idea/download/)
 
 ``` bash
 drew@drew-8570w:~$ snap list
@@ -118,9 +118,9 @@ Gnome Tweak Tool
 Install and configure extensions (done via script).
 
 -   Dash to Dock
-    [22](https://extensions.gnome.org/extension/307/dash-to-dock/)
+    [23](https://extensions.gnome.org/extension/307/dash-to-dock/)
 -   TopIcons-plus
-    [23](https://extensions.gnome.org/extension/1031/topicons/) - for
+    [24](https://extensions.gnome.org/extension/1031/topicons/) - for
     Insync, Slack, Skype icons
 
 Gmail to handle mailto: links
