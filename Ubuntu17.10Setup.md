@@ -7,10 +7,10 @@ Install Main Apps
 =================
 
 Run install script from
-[1](https://github.com/drew-holt/u1710-setup-bash/blob/master/drew-8570w_u1710setup.sh)
+[1](https://github.com/drew-holt/ubuntu-setup-bash/blob/master/drew-8570w_u1710setup.sh)
 
 ``` bash
-wget https://raw.githubusercontent.com/drew-holt/u1710-setup-bash/master/drew-8570w_setup.sh
+wget https://raw.githubusercontent.com/drew-holt/ubuntu-setup-bash/master/drew-8570w_setup.sh
 chmod 755 drew-8570w_u1710setup.sh
 ./drew-8570w_u1710setup.sh | tee -a setup-$(date '+%Y-%m-%d-%H.%M.%S%z').log
 ```
@@ -59,7 +59,7 @@ When needed
 -   Gitter
 -   Ramlog or equivalent for SSD
 -   gvm for golang
--   Studio 3T (mongodb browswer) (https://studio3t.com/download/)
+-   Studio 3T MongoDB Browser (https://studio3t.com/download/)
 -   Android Studio [17](https://developer.android.com/studio/index.html)
 -   Eclipse [18](https://www.eclipse.org/)
 -   NetBeans [19](https://netbeans.org/downloads/)

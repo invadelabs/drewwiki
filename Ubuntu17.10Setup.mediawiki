@@ -1,7 +1,7 @@
 =Install Main Apps=
-Run install script from [https://github.com/drew-holt/u1710-setup-bash/blob/master/drew-8570w_u1710setup.sh]
+Run install script from [https://github.com/drew-holt/ubuntu-setup-bash/blob/master/drew-8570w_u1710setup.sh]
 <syntaxhighlight lang=bash>
-wget https://raw.githubusercontent.com/drew-holt/u1710-setup-bash/master/drew-8570w_setup.sh
+wget https://raw.githubusercontent.com/drew-holt/ubuntu-setup-bash/master/drew-8570w_setup.sh
 chmod 755 drew-8570w_u1710setup.sh
 ./drew-8570w_u1710setup.sh | tee -a setup-$(date '+%Y-%m-%d-%H.%M.%S%z').log
 </syntaxhighlight>
@@ -38,7 +38,7 @@ insync start ### do some magic here so we don't have to resync 200GB of google d
 * Gitter
 * Ramlog or equivalent for SSD
 * gvm for golang
-* Studio 3T (mongodb browswer) (https://studio3t.com/download/)
+* Studio 3T MongoDB Browser (https://studio3t.com/download/)
 * Android Studio [https://developer.android.com/studio/index.html]
 * Eclipse [https://www.eclipse.org/]
 * NetBeans [https://netbeans.org/downloads/]
