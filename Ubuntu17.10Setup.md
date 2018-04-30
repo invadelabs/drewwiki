@@ -11,8 +11,8 @@ Run install script from
 
 ``` bash
 wget https://raw.githubusercontent.com/drew-holt/ubuntu-setup-bash/master/drew-8570w_setup.sh
-chmod 755 drew-8570w_u1710setup.sh
-./drew-8570w_u1710setup.sh | tee -a setup-$(date '+%Y-%m-%d-%H.%M.%S%z').log
+chmod 755 drew-8570w_setup.sh
+./drew-8570w_setup.sh | tee -a setup-$(date '+%Y-%m-%d-%H.%M.%S%z').log
 ```
 
 Installers needing extra config
