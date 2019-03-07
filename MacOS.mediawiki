@@ -3,8 +3,6 @@
 *git
 *KeePassX
 *Tunnelblick
-*<strike>Adium</strike>
-*Skype
 *Synergy
 *Google Chrome
 *VLC
@@ -31,7 +29,6 @@
 * Firefox
 * SketchUp
 * LibreOffice
-* HipChat
 * Gitter
 
 == from brew ==
@@ -122,9 +119,6 @@ readline
 texinfo
 webp
 </syntaxhighlight>
-
-== Maybe ==
-* Adobe Reader
 
 = To-do =
 *Time Machine Backup

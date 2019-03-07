@@ -10,8 +10,6 @@ OS X Software to Install
 -   git
 -   KeePassX
 -   Tunnelblick
--   ~~Adium~~
--   Skype
 -   Synergy
 -   Google Chrome
 -   VLC
@@ -38,7 +36,6 @@ OS X Software to Install
 -   Firefox
 -   SketchUp
 -   LibreOffice
--   HipChat
 -   Gitter
 
 from brew
@@ -132,11 +129,6 @@ readline
 texinfo
 webp
 ```
-
-Maybe
------
-
--   Adobe Reader
 
 To-do
 =====
