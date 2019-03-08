@@ -3,6 +3,7 @@ First manually:
 * synergy
 * google chrome
 * google drive
+* firefox
 
 Then Via Brew:
 <syntaxhighlight lang=bash>
@@ -11,7 +12,17 @@ brew install ansible git gnu-sed imagemagick nmap nvm openconnect openssl p7zip 
 
 Then Via Brew Cask:
 <syntaxhighlight lang=bash>
-brew cask install atom gimp java kdiff3 keepassx mongodb qbittorrent slack vlc tunnelblick vnc-viewer wireshark
+brew cask install android-file-transfer atom gimp java kdiff3 keepassx mongodb qbittorrent slack vlc tunnelblick vnc-viewer wireshark
+</syntaxhighlight>
+
+Install packages via apm (atom package manager):
+<syntaxhighlight lang=bash>
+Pull from github.com/drew-holt/ubuntu_setup_bash.sh
+</syntaxhighlight>
+
+Then Larger Via Brew Cask:
+<syntaxhighlight lang=bash>
+brew cask install libreoffice
 </syntaxhighlight>
 
 Pipe to clipboard from terminal
@@ -23,7 +34,6 @@ cat list_of_stuff | pbcopy
 * SoundFlower
 * 32 Lives
 * 3T MongoChef
-* Android File Transer
 * Android Studio
 * Arduino
 * Blender
@@ -34,16 +44,13 @@ cat list_of_stuff | pbcopy
 * VirtualBox
 * Xcode
 * ChefDK
-* Firefox
 * SketchUp
-* LibreOffice
 * Gitter
 
 == other brew ==
 <syntaxhighlight lang=bash>
 gradle24
 maven
-mongodb
 rvm
 </syntaxhighlight>
 
