@@ -7,7 +7,8 @@ First manually:
 
 -   brew
 -   synergy
--   chrome
+-   google chrome
+-   google drive
 
 Then Via Brew:
 
