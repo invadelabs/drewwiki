@@ -14,7 +14,7 @@ First manually:
 Then Via Brew:
 
 ``` bash
-brew install ansible git gnu-sed imagemagick nmap nvm openconnect openssl openvpn p7zip pstree psutils watch wget xz
+brew install ansible git gnu-sed imagemagick nmap nvm openconnect openssl openvpn p7zip pstree psutils rbenv watch wget xz
 ```
 
 Then Via Brew Cask:
@@ -66,7 +66,7 @@ other brew
 ``` bash
 gradle24
 maven
-rvm
+rvm ** using rbenv now
 ```
 
 To-do
