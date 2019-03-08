@@ -10,6 +10,7 @@ First manually:
 -   google chrome
 -   google drive
 -   firefox
+-   audacity
 
 Then Via Brew:
 
