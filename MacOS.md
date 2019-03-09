@@ -12,10 +12,12 @@ First manually:
 -   firefox
 -   audacity
 
+- sort out gpg client
+
 Then Via Brew:
 
 ``` bash
-brew install ansible git gnu-sed imagemagick nmap nvm openconnect openssl openvpn p7zip pstree psutils rbenv watch wget xz
+brew install ansible git gnu-sed hub imagemagick nmap nvm openconnect openssl openvpn p7zip pstree psutils rbenv watch wget xz
 ```
 
 Then Via Brew Cask:
