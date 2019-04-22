@@ -45,8 +45,8 @@ cat list_of_stuff | pbcopy
 Other OS X Software
 ===================
 
--   SoundFlower
--   32 Lives
+-   SoundFlower - <https://github.com/mattingalls/Soundflower>
+-   32 Lives (32-bit to 64-bit Audio Units and VST plug-ins adapter)
 -   3T MongoChef
 -   Android Studio
 -   Arduino
