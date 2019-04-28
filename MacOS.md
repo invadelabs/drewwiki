@@ -3,6 +3,8 @@ title: MacOS
 layout: default
 ---
 
+macOS Mojave 10.14.4 (at the time of this writing)
+
 First manually:
 
 -   brew
@@ -45,6 +47,8 @@ cat list_of_stuff | pbcopy
 Other OS X Software
 ===================
 
+-   XQuartz
+-   Inkscape
 -   SoundFlower - <https://github.com/mattingalls/Soundflower>
 -   32 Lives (32-bit to 64-bit Audio Units and VST plug-ins adapter)
 -   3T MongoChef
