@@ -115,7 +115,7 @@ A collection of randomness I've encountered and configured in Linux. - drew@inva
 
 == Client Setup ==
 *[[Ubuntu17.10Setup]] - Ubuntu 17.10 workstation / laptop Setup
-*[[OSXSetup]] - macOS 10.11 MBP Sierra setup
+*[[MacOS]] - macOS 10.14 MBP Mojave setup
 *[[Windows10Setup]] - Windows 10 Laptop Setup
 *[[RaspberryPISetup]] - RaspberryPi setup for drew-pi
 *[[Pine64]] - Pine64 Armbian Notes

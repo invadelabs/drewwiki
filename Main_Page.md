@@ -219,7 +219,7 @@ Client Setup
 
 -   [Ubuntu17.10Setup](Ubuntu17.10Setup "wikilink") - Ubuntu 17.10
     workstation / laptop Setup
--   [OSXSetup](OSXSetup "wikilink") - macOS 10.11 MBP Sierra setup
+-   [MacOS](MacOS "wikilink") - macOS 10.14 MBP Mojave setup
 -   [Windows10Setup](Windows10Setup "wikilink") - Windows 10 Laptop
     Setup
 -   [RaspberryPISetup](RaspberryPISetup "wikilink") - RaspberryPi setup
