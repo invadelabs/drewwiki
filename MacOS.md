@@ -17,7 +17,7 @@ First manually:
 Then Via Brew:
 
 ``` bash
-brew install ansible git gnu-sed gnupg hub imagemagick nmap nvm openconnect openssl openvpn p7zip pstree psutils rbenv watch wget xz
+brew install ansible git gnu-sed gnupg hub imagemagick nmap nvm openconnect openssl openvpn p7zip pstree psutils rbenv watch unrar wget xz
 ```
 
 Then Via Brew Cask:
