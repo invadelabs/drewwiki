@@ -9,6 +9,9 @@ drew@invadelabs.com
 System Setup
 ------------
 
+Now done via
+[invadelabs/ansible-invadelabs](https://github.com/invadelabs/ansible-invadelabs)
+
 -   [ServerSetupCentOS7](ServerSetupCentOS7 "wikilink") - CentOS7 Server
     setup with NFS/rsyslog/chrony/hw\_mon services + qemu+kvm libvirt +
     Puppet + Foreman + Docker
