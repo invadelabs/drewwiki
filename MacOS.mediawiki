@@ -10,12 +10,17 @@ First manually:
 
 Then Via Brew:
 <syntaxhighlight lang=bash>
-brew install ansible git gnu-sed gnupg hub imagemagick nmap nvm openconnect openssl openvpn p7zip pstree psutils rbenv watch unrar wget xz
+brew install ansible git gnu-sed gnupg hub imagemagick nmap nvm openconnect openssl openvpn p7zip pstree psutils rbenv telnet watch unrar wget xz
 </syntaxhighlight>
 
 Then Via Brew Cask:
 <syntaxhighlight lang=bash>
-brew cask install android-file-transfer atom gimp java kdiff3 keepassx mongodb qbittorrent slack vlc tunnelblick vnc-viewer wireshark
+brew cask install android-file-transfer atom gimp java kdiff3 keepassx mongodb osxfuse qbittorrent slack vlc tunnelblick vnc-viewer wireshark
+</syntaxhighlight>
+
+After osxfuse is installed
+<syntaxhighlight lang=bash>
+brew install sshfs
 </syntaxhighlight>
 
 Install packages via apm (atom package manager):
