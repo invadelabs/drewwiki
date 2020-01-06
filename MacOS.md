@@ -23,7 +23,7 @@ brew install ansible git gnu-sed gnupg hub imagemagick nmap nvm openconnect open
 Then Via Brew Cask:
 
 ``` bash
-brew cask install android-file-transfer atom gimp java keepassx mongodb osxfuse qbittorrent slack vlc tunnelblick vnc-viewer wireshark
+brew cask install android-file-transfer atom gimp java keepassx osxfuse qbittorrent slack vlc tunnelblick vnc-viewer wireshark
 ```
 
 After osxfuse is installed
