@@ -13,6 +13,7 @@ First manually:
 -   google drive
 -   firefox
 -   audacity
+-   keybase
 
 Then Via Brew:
 
