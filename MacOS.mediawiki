@@ -17,7 +17,7 @@ brew install ansible bash-completion git gnu-sed gnupg hub imagemagick nmap nvm 
 Add to ~/.profile
 <syntaxhighlight lang=bash>
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
-</syntaxhighlight/
+</syntaxhighlight>
 
 Then Via Brew Cask:
 <syntaxhighlight lang=bash>

@@ -27,10 +27,12 @@ Add to ~/.profile
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 ```
 
-brew cask install android-file-transfer atom gimp java keepassx osxfuse
-qbittorrent slack vlc tunnelblick vnc-viewer wireshark
+Then Via Brew Cask:
 
-</syntaxhighlight>
+``` bash
+brew cask install android-file-transfer atom gimp java keepassx osxfuse qbittorrent slack vlc tunnelblick vnc-viewer wireshark
+```
+
 After osxfuse is installed
 
 ``` bash
