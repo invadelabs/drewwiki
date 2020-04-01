@@ -18,15 +18,19 @@ First manually:
 Then Via Brew:
 
 ``` bash
-brew install ansible git gnu-sed gnupg hub imagemagick nmap nvm openconnect openssl openvpn p7zip pstree psutils rbenv telnet watch unrar wget xz
+brew install ansible bash-completion git gnu-sed gnupg hub imagemagick nmap nvm openconnect openssl openvpn p7zip pstree psutils rbenv telnet watch unrar wget xz
 ```
 
-Then Via Brew Cask:
+Add to ~/.profile
 
 ``` bash
-brew cask install android-file-transfer atom gimp java keepassx osxfuse qbittorrent slack vlc tunnelblick vnc-viewer wireshark
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 ```
 
+brew cask install android-file-transfer atom gimp java keepassx osxfuse
+qbittorrent slack vlc tunnelblick vnc-viewer wireshark
+
+</syntaxhighlight>
 After osxfuse is installed
 
 ``` bash
