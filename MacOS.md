@@ -51,6 +51,13 @@ Pipe to clipboard from terminal
 cat list_of_stuff | pbcopy
 ```
 
+Setup git
+
+    populate or import ~/.gnupg/
+    gpg --list-keys
+    brew install pinentry-mac
+    git config --global gpg.program /usr/local/bin/gpg
+
 Other OS X Software
 ===================
 

@@ -39,6 +39,14 @@ Pipe to clipboard from terminal
 cat list_of_stuff | pbcopy
 </syntaxhighlight>
 
+Setup git
+<syntaxhighlight>
+populate or import ~/.gnupg/
+gpg --list-keys
+brew install pinentry-mac
+git config --global gpg.program /usr/local/bin/gpg
+</syntaxhighlight>
+
 = Other OS X Software =
 * XQuartz
 * Inkscape
