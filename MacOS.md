@@ -18,7 +18,7 @@ First manually:
 Then Via Brew:
 
 ``` bash
-brew install ansible bash-completion ffmpeg git gnu-sed gnupg hub imagemagick nmap nvm openconnect openssl openvpn p7zip pstree psutils rbenv shellcheck telnet watch unrar wget xz
+brew install ansible atomicparsley bash-completion ffmpeg git gnu-sed gnupg hub imagemagick nmap nvm openconnect openssl openvpn p7zip pstree psutils rbenv shellcheck telnet watch unrar wget xz
 ```
 
 Add to ~/.profile
