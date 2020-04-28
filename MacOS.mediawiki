@@ -11,7 +11,7 @@ First manually:
 
 Then Via Brew:
 <syntaxhighlight lang=bash>
-brew install ansible atomicparsley bash-completion ffmpeg git gnu-sed gnupg hub imagemagick nmap nvm openconnect openssl openvpn p7zip pstree psutils rbenv shellcheck telnet watch unrar wget xz
+brew install ansible atomicparsley bash-completion ffmpeg git gnu-sed gnupg hub imagemagick nmap nvm openconnect openssl openvpn p7zip pstree psutils rename rbenv shellcheck telnet watch unrar wget xz
 </syntaxhighlight>
 
 Add to ~/.profile
