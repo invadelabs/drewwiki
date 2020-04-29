@@ -18,7 +18,7 @@ First manually:
 Then Via Brew:
 
 ``` bash
-brew install ansible atomicparsley bash-completion ffmpeg git gnu-sed gnupg hub imagemagick nmap nvm openconnect openssl openvpn p7zip pstree psutils rename rbenv shellcheck telnet watch unrar wget xz
+brew install ansible atomicparsley bash-completion ffmpeg git gnu-sed gnupg hub imagemagick kpcli nmap nvm openconnect openssl openvpn p7zip pstree psutils rename rbenv shellcheck telnet watch unrar wget xz
 ```
 
 Add to ~/.profile
@@ -30,7 +30,7 @@ Add to ~/.profile
 Then Via Brew Cask:
 
 ``` bash
-brew cask install android-file-transfer atom gimp java keepassx osxfuse qbittorrent slack vlc tunnelblick vnc-viewer wireshark
+brew cask install android-file-transfer atom gimp java keepassxc osxfuse qbittorrent slack vlc tunnelblick vnc-viewer wireshark
 ```
 
 After osxfuse is installed
