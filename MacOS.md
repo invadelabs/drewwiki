@@ -30,7 +30,7 @@ Add to ~/.profile
 Then Via Brew Cask:
 
 ``` bash
-brew cask install android-file-transfer atom gimp java keepassxc osxfuse qbittorrent slack vlc tunnelblick vnc-viewer wireshark
+brew cask install android-file-transfer atom gimp inkscape java keepassxc osxfuse qbittorrent slack vlc tunnelblick vnc-viewer wireshark
 ```
 
 After osxfuse is installed
@@ -68,7 +68,6 @@ Other OS X Software
 ===================
 
 -   XQuartz
--   Inkscape
 -   SoundFlower - <https://github.com/mattingalls/Soundflower>
 -   32 Lives (32-bit to 64-bit Audio Units and VST plug-ins adapter)
 -   3T MongoChef
