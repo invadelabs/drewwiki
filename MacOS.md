@@ -3,7 +3,7 @@ title: MacOS
 layout: default
 ---
 
-macOS Mojave 10.14.4 (at the time of this writing)
+macOS Mojave 10.14.6 (at the time of this writing)
 
 First manually:
 
@@ -25,6 +25,32 @@ Add to ~/.profile
 
 ``` bash
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+```
+
+~/.gitconfig
+
+``` bash
+[user]
+        name = Drew Holt
+        email = XXXXXXXXXXXXXXXX
+[gpg]
+        program = /usr/local/bin/gpg
+#[credential]
+#       helper = osxkeychain
+[color]
+        status = auto
+        branch = auto
+        interactive = auto
+        diff = auto
+```
+
+~/.bash\_profile
+
+``` bash
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
 ```
 
 Then Via Brew Cask:
