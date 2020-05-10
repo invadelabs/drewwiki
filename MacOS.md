@@ -62,7 +62,7 @@ brew cask install android-file-transfer atom gimp inkscape java keepassxc osxfus
 After osxfuse is installed
 
 ``` bash
-brew install sshfs
+brew install sshfs encfs
 ```
 
 Install packages via apm (atom package manager):
