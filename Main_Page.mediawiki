@@ -97,7 +97,7 @@ Now done via [https://github.com/invadelabs/ansible-invadelabs invadelabs/ansibl
 *[[ClamAVWeeklyScan]] - ClamAV script (cron)
 *[[MySQLBackupScript]] - MySQL Backup Script - (cron)
 *[[RsyncSSHkeys]] - Rsync over SSH - Different port / SSH Keys
-*[[ExternalUSBEncryptedLVM]] - Encrypted LVM for External USB (rsync backup)
+*[[ExternalUSB+LUKS+LVM]] - Encrypted LVM for External USB and LUKS for rsync backup
 
 ====Hardware Related====
 *[[IPMI]] - IPMI on SuperMicro AOC-IPMI20 with Serial-Over-LAN Console

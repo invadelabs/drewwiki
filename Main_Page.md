@@ -189,8 +189,8 @@ System Administration
     Script - (cron)
 -   [RsyncSSHkeys](RsyncSSHkeys "wikilink") - Rsync over SSH - Different
     port / SSH Keys
--   [ExternalUSBEncryptedLVM](ExternalUSBEncryptedLVM "wikilink") -
-    Encrypted LVM for External USB (rsync backup)
+-   [ExternalUSB+LUKS+LVM](ExternalUSB+LUKS+LVM "wikilink") - Encrypted
+    LVM for External USB and LUKS for rsync backup
 
 #### Hardware Related
 
