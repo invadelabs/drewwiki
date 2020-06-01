@@ -21,10 +21,28 @@ Then Via Brew:
 brew install ansible atomicparsley bash-completion ffmpeg git gnu-sed gnupg hub imagemagick jq kpcli nmap nvm openconnect openssl openvpn p7zip pstree psutils rename rbenv shellcheck sqlitebrowser telnet watch unrar wget xz
 ```
 
-Add to ~/.profile
+~/.bashrc
 
 ``` bash
+# wget -O .bash_aliases https://raw.githubusercontent.com/drew-holt/ubuntu-setup-bash/master/bash_profile
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+git-pers
+```
+
+~/.bash\_profile
+
+``` bash
+. "$HOME/.bashrc"
+
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+export PS1="\h:\[\033[32m\]\W\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
 ```
 
 ~/.gitconfig
@@ -42,15 +60,6 @@ Add to ~/.profile
         branch = auto
         interactive = auto
         diff = auto
-```
-
-~/.bash\_profile
-
-``` bash
-parse_git_branch() {
-     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
-export PS1="\h:\[\033[32m\]\W\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
 ```
 
 Then Via Brew Cask:
