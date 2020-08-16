@@ -11,7 +11,7 @@ First manually:
 
 Then Via Brew:
 <syntaxhighlight lang=bash>
-brew install ansible atomicparsley bash-completion ffmpeg git gnu-sed gnupg hub imagemagick jq kpcli nmap nvm openconnect openssl openvpn p7zip pstree psutils rename rbenv shellcheck sqlitebrowser telnet watch unrar wget xz
+brew install ansible atomicparsley bash-completion ffmpeg git gnu-sed gnupg hub imagemagick jq nmap nvm openconnect openssl openvpn p7zip pstree psutils rename rbenv shellcheck sqlitebrowser telnet watch unrar wget xz
 </syntaxhighlight>
 
 ~/.bashrc
@@ -58,7 +58,7 @@ export PS1="\h:\[\033[32m\]\W\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
 
 Then Via Brew Cask:
 <syntaxhighlight lang=bash>
-brew cask install android-file-transfer atom gimp inkscape java keepassxc osxfuse qbittorrent slack vlc tunnelblick vnc-viewer wireshark
+brew cask install android-file-transfer atom gimp inkscape java keepassxc mqtt-explorer osxfuse qbittorrent slack vlc tunnelblick vnc-viewer wireshark
 </syntaxhighlight>
 
 After osxfuse is installed
